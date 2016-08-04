@@ -1,7 +1,7 @@
 /**
  * @file    Gyro.h
  * @brief   Gyroscope header file
- * @details If you want to use Gyroscope methods, you need to include Gyro.h file.
+ * @details If you want to use Gyroscope methods, you need to include Gyro.h file. Defining register address for reading gyroscope output values.
 */
 
 #include <project.h>
