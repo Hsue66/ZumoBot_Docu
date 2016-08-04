@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccCBH72X.s 			page 1
+ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccthuLQW.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccCBH72X.s 			page 1
   29:.\Generated_Source\PSoC5/Timer.c **** /*******************************************************************************
   30:.\Generated_Source\PSoC5/Timer.c **** * Function Name: Timer_Init
   31:.\Generated_Source\PSoC5/Timer.c **** ********************************************************************************
-ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccCBH72X.s 			page 2
+ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccthuLQW.s 			page 2
 
 
   32:.\Generated_Source\PSoC5/Timer.c **** *
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccCBH72X.s 			page 1
   86:.\Generated_Source\PSoC5/Timer.c ****                 /* Set the default Run Mode of the Timer to Continuous */
   87:.\Generated_Source\PSoC5/Timer.c ****                 Timer_CONTROL2 |= Timer_CTRL_MODE_PULSEWIDTH;
   88:.\Generated_Source\PSoC5/Timer.c ****             #endif /* Set Continuous Run Mode in CONTROL2 for PSoC5A */
-ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccCBH72X.s 			page 3
+ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccthuLQW.s 			page 3
 
 
   89:.\Generated_Source\PSoC5/Timer.c **** 
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccCBH72X.s 			page 1
  143:.\Generated_Source\PSoC5/Timer.c **** 
  144:.\Generated_Source\PSoC5/Timer.c ****         /* Use the interrupt output of the status register for IRQ output */
  145:.\Generated_Source\PSoC5/Timer.c ****         Timer_STATUS_AUX_CTRL |= Timer_STATUS_ACTL_INT_EN_MASK;
-ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccCBH72X.s 			page 4
+ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccthuLQW.s 			page 4
 
 
  146:.\Generated_Source\PSoC5/Timer.c **** 
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccCBH72X.s 			page 1
  183:.\Generated_Source\PSoC5/Timer.c ****     #if (Timer_UsingFixedFunction)
  184:.\Generated_Source\PSoC5/Timer.c ****         Timer_GLOBAL_ENABLE |= Timer_BLOCK_EN_MASK;
  185:.\Generated_Source\PSoC5/Timer.c ****         Timer_GLOBAL_STBY_ENABLE |= Timer_BLOCK_STBY_EN_MASK;
-ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccCBH72X.s 			page 5
+ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccthuLQW.s 			page 5
 
 
  186:.\Generated_Source\PSoC5/Timer.c ****     #endif /* Set Enable bit for enabling Fixed function timer*/
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccCBH72X.s 			page 1
  240:.\Generated_Source\PSoC5/Timer.c **** * Return:
  241:.\Generated_Source\PSoC5/Timer.c **** *  void
  242:.\Generated_Source\PSoC5/Timer.c **** *
-ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccCBH72X.s 			page 6
+ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccthuLQW.s 			page 6
 
 
  243:.\Generated_Source\PSoC5/Timer.c **** * Side Effects: If the Enable mode is set to Hardware only then this function
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccCBH72X.s 			page 1
  280:.\Generated_Source\PSoC5/Timer.c **** {
   61              		.loc 1 280 0
   62              		.cfi_startproc
-ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccCBH72X.s 			page 7
+ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccthuLQW.s 			page 7
 
 
   63              		@ args = 0, pretend = 0, frame = 0
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccCBH72X.s 			page 1
  307:.\Generated_Source\PSoC5/Timer.c ****     #else
  308:.\Generated_Source\PSoC5/Timer.c ****         (void)CY_GET_REG8(Timer_COUNTER_LSB_PTR_8BIT);
   91              		.loc 1 308 0
-ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccCBH72X.s 			page 8
+ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccthuLQW.s 			page 8
 
 
   92 0000 014B     		ldr	r3, .L7
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccCBH72X.s 			page 1
  118              		.loc 1 336 0
  119 0004 7047     		bx	lr
  120              	.L11:
-ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccCBH72X.s 			page 9
+ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccthuLQW.s 			page 9
 
 
  121 0006 00BF     		.align	2
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccCBH72X.s 			page 1
  377:.\Generated_Source\PSoC5/Timer.c **** *
  378:.\Generated_Source\PSoC5/Timer.c **** *******************************************************************************/
  379:.\Generated_Source\PSoC5/Timer.c **** void Timer_WriteControlRegister(uint8 control) 
-ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccCBH72X.s 			page 10
+ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccthuLQW.s 			page 10
 
 
  380:.\Generated_Source\PSoC5/Timer.c **** {
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccCBH72X.s 			page 1
  156              		.thumb
  157              		.thumb_func
  158              		.type	Timer_WritePeriod, %function
-ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccCBH72X.s 			page 11
+ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccthuLQW.s 			page 11
 
 
  159              	Timer_WritePeriod:
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccCBH72X.s 			page 1
  440:.\Generated_Source\PSoC5/Timer.c **** 
  441:.\Generated_Source\PSoC5/Timer.c **** 
  442:.\Generated_Source\PSoC5/Timer.c **** /*******************************************************************************
-ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccCBH72X.s 			page 12
+ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccthuLQW.s 			page 12
 
 
  443:.\Generated_Source\PSoC5/Timer.c **** * Function Name: Timer_ReadCapture
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccCBH72X.s 			page 1
  471:.\Generated_Source\PSoC5/Timer.c **** *  This funtion is used to set the counter to a specific value
  472:.\Generated_Source\PSoC5/Timer.c **** *
  473:.\Generated_Source\PSoC5/Timer.c **** * Parameters:
-ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccCBH72X.s 			page 13
+ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccthuLQW.s 			page 13
 
 
  474:.\Generated_Source\PSoC5/Timer.c **** *  counter:  New counter value.
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccCBH72X.s 			page 1
  503:.\Generated_Source\PSoC5/Timer.c **** *
  504:.\Generated_Source\PSoC5/Timer.c **** * Return:
  505:.\Generated_Source\PSoC5/Timer.c **** *  Present compare value.
-ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccCBH72X.s 			page 14
+ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccthuLQW.s 			page 14
 
 
  506:.\Generated_Source\PSoC5/Timer.c **** *
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccCBH72X.s 			page 1
  530:.\Generated_Source\PSoC5/Timer.c ****     
  531:.\Generated_Source\PSoC5/Timer.c **** /*******************************************************************************
  532:.\Generated_Source\PSoC5/Timer.c ****  * The functions below this point are only available using the UDB
-ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccCBH72X.s 			page 15
+ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccthuLQW.s 			page 15
 
 
  533:.\Generated_Source\PSoC5/Timer.c ****  * implementation.  If a feature is selected, then the API is enabled.
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccCBH72X.s 			page 1
  587:.\Generated_Source\PSoC5/Timer.c **** * Function Name: Timer_SetTriggerMode
  588:.\Generated_Source\PSoC5/Timer.c **** ********************************************************************************
  589:.\Generated_Source\PSoC5/Timer.c **** *
-ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccCBH72X.s 			page 16
+ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccthuLQW.s 			page 16
 
 
  590:.\Generated_Source\PSoC5/Timer.c **** * Summary:
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccCBH72X.s 			page 1
  644:.\Generated_Source\PSoC5/Timer.c **** 
  645:.\Generated_Source\PSoC5/Timer.c **** 
  646:.\Generated_Source\PSoC5/Timer.c **** /*******************************************************************************
-ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccCBH72X.s 			page 17
+ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccthuLQW.s 			page 17
 
 
  647:.\Generated_Source\PSoC5/Timer.c **** * Function Name: Timer_DisableTrigger
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccCBH72X.s 			page 1
  278              		.align	2
  279              		.global	Timer_ClearFIFO
  280              		.thumb
-ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccCBH72X.s 			page 18
+ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccthuLQW.s 			page 18
 
 
  281              		.thumb_func
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccCBH72X.s 			page 1
  740:.\Generated_Source\PSoC5/Timer.c **** *
  741:.\Generated_Source\PSoC5/Timer.c **** *******************************************************************************/
  742:.\Generated_Source\PSoC5/Timer.c **** uint8 Timer_ReadCaptureCount(void) 
-ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccCBH72X.s 			page 19
+ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccthuLQW.s 			page 19
 
 
  743:.\Generated_Source\PSoC5/Timer.c **** {
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccCBH72X.s 			page 1
  311              		.section	.text.Timer_Init,"ax",%progbits
  312              		.align	2
  313              		.global	Timer_Init
-ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccCBH72X.s 			page 20
+ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccthuLQW.s 			page 20
 
 
  314              		.thumb
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccCBH72X.s 			page 1
  360              		.size	Timer_Init, .-Timer_Init
  361              		.section	.text.Timer_Start,"ax",%progbits
  362              		.align	2
-ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccCBH72X.s 			page 21
+ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccthuLQW.s 			page 21
 
 
  363              		.global	Timer_Start
@@ -1257,48 +1257,48 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccCBH72X.s 			page 1
  412 0006 00000000 		.4byte	.Ldebug_abbrev0
  413 000a 04       		.byte	0x4
  414 000b 01       		.uleb128 0x1
- 415 000c 74010000 		.4byte	.LASF35
-ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccCBH72X.s 			page 22
+ 415 000c 3E010000 		.4byte	.LASF35
+ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccthuLQW.s 			page 22
 
 
  416 0010 01       		.byte	0x1
- 417 0011 7F020000 		.4byte	.LASF36
- 418 0015 93000000 		.4byte	.LASF37
+ 417 0011 87020000 		.4byte	.LASF36
+ 418 0015 24020000 		.4byte	.LASF37
  419 0019 00000000 		.4byte	.Ldebug_ranges0+0
  420 001d 00000000 		.4byte	0
  421 0021 00000000 		.4byte	.Ldebug_line0
  422 0025 02       		.uleb128 0x2
  423 0026 01       		.byte	0x1
  424 0027 06       		.byte	0x6
- 425 0028 E8020000 		.4byte	.LASF0
+ 425 0028 F0020000 		.4byte	.LASF0
  426 002c 02       		.uleb128 0x2
  427 002d 01       		.byte	0x1
  428 002e 08       		.byte	0x8
- 429 002f E8000000 		.4byte	.LASF1
+ 429 002f B2000000 		.4byte	.LASF1
  430 0033 02       		.uleb128 0x2
  431 0034 02       		.byte	0x2
  432 0035 05       		.byte	0x5
- 433 0036 A0020000 		.4byte	.LASF2
+ 433 0036 A8020000 		.4byte	.LASF2
  434 003a 02       		.uleb128 0x2
  435 003b 02       		.byte	0x2
  436 003c 07       		.byte	0x7
- 437 003d 3E000000 		.4byte	.LASF3
+ 437 003d 38000000 		.4byte	.LASF3
  438 0041 02       		.uleb128 0x2
  439 0042 04       		.byte	0x4
  440 0043 05       		.byte	0x5
- 441 0044 CF020000 		.4byte	.LASF4
+ 441 0044 D7020000 		.4byte	.LASF4
  442 0048 02       		.uleb128 0x2
  443 0049 04       		.byte	0x4
  444 004a 07       		.byte	0x7
- 445 004b 0E020000 		.4byte	.LASF5
+ 445 004b D8010000 		.4byte	.LASF5
  446 004f 02       		.uleb128 0x2
  447 0050 08       		.byte	0x8
  448 0051 05       		.byte	0x5
- 449 0052 63020000 		.4byte	.LASF6
+ 449 0052 6B020000 		.4byte	.LASF6
  450 0056 02       		.uleb128 0x2
  451 0057 08       		.byte	0x8
  452 0058 07       		.byte	0x7
- 453 0059 D1000000 		.4byte	.LASF7
+ 453 0059 9B000000 		.4byte	.LASF7
  454 005d 03       		.uleb128 0x3
  455 005e 04       		.byte	0x4
  456 005f 05       		.byte	0x5
@@ -1306,34 +1306,34 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccCBH72X.s 			page 1
  458 0064 02       		.uleb128 0x2
  459 0065 04       		.byte	0x4
  460 0066 07       		.byte	0x7
- 461 0067 20020000 		.4byte	.LASF8
+ 461 0067 EA010000 		.4byte	.LASF8
  462 006b 04       		.uleb128 0x4
- 463 006c 39010000 		.4byte	.LASF9
+ 463 006c 03010000 		.4byte	.LASF9
  464 0070 02       		.byte	0x2
  465 0071 3801     		.2byte	0x138
  466 0073 2C000000 		.4byte	0x2c
  467 0077 04       		.uleb128 0x4
- 468 0078 6D010000 		.4byte	.LASF10
+ 468 0078 37010000 		.4byte	.LASF10
  469 007c 02       		.byte	0x2
  470 007d 3901     		.2byte	0x139
  471 007f 3A000000 		.4byte	0x3a
  472 0083 02       		.uleb128 0x2
-ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccCBH72X.s 			page 23
+ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccthuLQW.s 			page 23
 
 
  473 0084 04       		.byte	0x4
  474 0085 04       		.byte	0x4
- 475 0086 1F000000 		.4byte	.LASF11
+ 475 0086 8D000000 		.4byte	.LASF11
  476 008a 02       		.uleb128 0x2
  477 008b 08       		.byte	0x8
  478 008c 04       		.byte	0x4
- 479 008d 55010000 		.4byte	.LASF12
+ 479 008d 1F010000 		.4byte	.LASF12
  480 0091 02       		.uleb128 0x2
  481 0092 01       		.byte	0x1
  482 0093 08       		.byte	0x8
- 483 0094 D8020000 		.4byte	.LASF13
+ 483 0094 E0020000 		.4byte	.LASF13
  484 0098 04       		.uleb128 0x4
- 485 0099 1D010000 		.4byte	.LASF14
+ 485 0099 E7000000 		.4byte	.LASF14
  486 009d 02       		.byte	0x2
  487 009e E201     		.2byte	0x1e2
  488 00a0 A4000000 		.4byte	0xa4
@@ -1349,9 +1349,9 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccCBH72X.s 			page 1
  498 00ba 02       		.uleb128 0x2
  499 00bb 04       		.byte	0x4
  500 00bc 07       		.byte	0x7
- 501 00bd 5A020000 		.4byte	.LASF16
+ 501 00bd 62020000 		.4byte	.LASF16
  502 00c1 06       		.uleb128 0x6
- 503 00c2 02030000 		.4byte	.LASF17
+ 503 00c2 0A030000 		.4byte	.LASF17
  504 00c6 01       		.byte	0x1
  505 00c7 B4       		.byte	0xb4
  506 00c8 00000000 		.4byte	.LFB1
@@ -1359,7 +1359,7 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccCBH72X.s 			page 1
  508 00d0 01       		.uleb128 0x1
  509 00d1 9C       		.byte	0x9c
  510 00d2 06       		.uleb128 0x6
- 511 00d3 79000000 		.4byte	.LASF18
+ 511 00d3 73000000 		.4byte	.LASF18
  512 00d7 01       		.byte	0x1
  513 00d8 F7       		.byte	0xf7
  514 00d9 00000000 		.4byte	.LFB3
@@ -1367,7 +1367,7 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccCBH72X.s 			page 1
  516 00e1 01       		.uleb128 0x1
  517 00e2 9C       		.byte	0x9c
  518 00e3 07       		.uleb128 0x7
- 519 00e4 22010000 		.4byte	.LASF22
+ 519 00e4 EC000000 		.4byte	.LASF22
  520 00e8 01       		.byte	0x1
  521 00e9 1701     		.2byte	0x117
  522 00eb 00000000 		.4byte	.LFB4
@@ -1376,9 +1376,9 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccCBH72X.s 			page 1
  525 00f4 9C       		.byte	0x9c
  526 00f5 08010000 		.4byte	0x108
  527 00f9 08       		.uleb128 0x8
- 528 00fa 71020000 		.4byte	.LASF24
+ 528 00fa 79020000 		.4byte	.LASF24
  529 00fe 01       		.byte	0x1
-ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccCBH72X.s 			page 24
+ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccthuLQW.s 			page 24
 
 
  530 00ff 1701     		.2byte	0x117
@@ -1387,7 +1387,7 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccCBH72X.s 			page 1
  533 0106 50       		.byte	0x50
  534 0107 00       		.byte	0
  535 0108 09       		.uleb128 0x9
- 536 0109 3F010000 		.4byte	.LASF19
+ 536 0109 09010000 		.4byte	.LASF19
  537 010d 01       		.byte	0x1
  538 010e 2E01     		.2byte	0x12e
  539 0110 00000000 		.4byte	.LFB5
@@ -1404,7 +1404,7 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccCBH72X.s 			page 1
  550 012e 01       		.uleb128 0x1
  551 012f 9C       		.byte	0x9c
  552 0130 0A       		.uleb128 0xa
- 553 0131 5C010000 		.4byte	.LASF21
+ 553 0131 26010000 		.4byte	.LASF21
  554 0135 01       		.byte	0x1
  555 0136 9501     		.2byte	0x195
  556 0138 77000000 		.4byte	0x77
@@ -1413,7 +1413,7 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccCBH72X.s 			page 1
  559 0144 01       		.uleb128 0x1
  560 0145 9C       		.byte	0x9c
  561 0146 07       		.uleb128 0x7
- 562 0147 0B010000 		.4byte	.LASF23
+ 562 0147 D5000000 		.4byte	.LASF23
  563 014b 01       		.byte	0x1
  564 014c AF01     		.2byte	0x1af
  565 014e 00000000 		.4byte	.LFB8
@@ -1422,7 +1422,7 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccCBH72X.s 			page 1
  568 0157 9C       		.byte	0x9c
  569 0158 6B010000 		.4byte	0x16b
  570 015c 08       		.uleb128 0x8
- 571 015d 25000000 		.4byte	.LASF25
+ 571 015d 1F000000 		.4byte	.LASF25
  572 0161 01       		.byte	0x1
  573 0162 AF01     		.2byte	0x1af
  574 0164 77000000 		.4byte	0x77
@@ -1430,7 +1430,7 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccCBH72X.s 			page 1
  576 0169 50       		.byte	0x50
  577 016a 00       		.byte	0
  578 016b 0A       		.uleb128 0xa
- 579 016c AA020000 		.4byte	.LASF26
+ 579 016c B2020000 		.4byte	.LASF26
  580 0170 01       		.byte	0x1
  581 0171 C801     		.2byte	0x1c8
  582 0173 77000000 		.4byte	0x77
@@ -1438,11 +1438,11 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccCBH72X.s 			page 1
  584 017b 0C000000 		.4byte	.LFE9-.LFB9
  585 017f 01       		.uleb128 0x1
  586 0180 9C       		.byte	0x9c
-ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccCBH72X.s 			page 25
+ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccthuLQW.s 			page 25
 
 
  587 0181 07       		.uleb128 0x7
- 588 0182 BC020000 		.4byte	.LASF27
+ 588 0182 C4020000 		.4byte	.LASF27
  589 0186 01       		.byte	0x1
  590 0187 E001     		.2byte	0x1e0
  591 0189 00000000 		.4byte	.LFB10
@@ -1451,7 +1451,7 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccCBH72X.s 			page 1
  594 0192 9C       		.byte	0x9c
  595 0193 A6010000 		.4byte	0x1a6
  596 0197 08       		.uleb128 0x8
- 597 0198 C9000000 		.4byte	.LASF28
+ 597 0198 93000000 		.4byte	.LASF28
  598 019c 01       		.byte	0x1
  599 019d E001     		.2byte	0x1e0
  600 019f 77000000 		.4byte	0x77
@@ -1459,7 +1459,7 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccCBH72X.s 			page 1
  602 01a4 50       		.byte	0x50
  603 01a5 00       		.byte	0
  604 01a6 0A       		.uleb128 0xa
- 605 01a7 2C000000 		.4byte	.LASF29
+ 605 01a7 26000000 		.4byte	.LASF29
  606 01ab 01       		.byte	0x1
  607 01ac FC01     		.2byte	0x1fc
  608 01ae 77000000 		.4byte	0x77
@@ -1468,7 +1468,7 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccCBH72X.s 			page 1
  611 01ba 01       		.uleb128 0x1
  612 01bb 9C       		.byte	0x9c
  613 01bc 07       		.uleb128 0x7
- 614 01bd 51000000 		.4byte	.LASF30
+ 614 01bd 4B000000 		.4byte	.LASF30
  615 01c1 01       		.byte	0x1
  616 01c2 B002     		.2byte	0x2b0
  617 01c4 00000000 		.4byte	.LFB12
@@ -1477,14 +1477,14 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccCBH72X.s 			page 1
  620 01cd 9C       		.byte	0x9c
  621 01ce E3010000 		.4byte	0x1e3
  622 01d2 0B       		.uleb128 0xb
- 623 01d3 84000000 		.4byte	.LASF31
+ 623 01d3 7E000000 		.4byte	.LASF31
  624 01d7 01       		.byte	0x1
  625 01d8 B002     		.2byte	0x2b0
  626 01da 6B000000 		.4byte	0x6b
  627 01de 00000000 		.4byte	.LLST0
  628 01e2 00       		.byte	0
  629 01e3 07       		.uleb128 0x7
- 630 01e4 69000000 		.4byte	.LASF32
+ 630 01e4 63000000 		.4byte	.LASF32
  631 01e8 01       		.byte	0x1
  632 01e9 FB02     		.2byte	0x2fb
  633 01eb 00000000 		.4byte	.LFB13
@@ -1498,12 +1498,12 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccCBH72X.s 			page 1
  641 0202 0C       		.uleb128 0xc
  642 0203 0C000000 		.4byte	.LVL5
  643 0207 1A010000 		.4byte	0x11a
-ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccCBH72X.s 			page 26
+ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccthuLQW.s 			page 26
 
 
  644 020b 00       		.byte	0
  645 020c 0D       		.uleb128 0xd
- 646 020d DD020000 		.4byte	.LASF33
+ 646 020d E5020000 		.4byte	.LASF33
  647 0211 01       		.byte	0x1
  648 0212 2B       		.byte	0x2b
  649 0213 00000000 		.4byte	.LFB0
@@ -1512,7 +1512,7 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccCBH72X.s 			page 1
  652 021c 9C       		.byte	0x9c
  653 021d 85020000 		.4byte	0x285
  654 0221 0E       		.uleb128 0xe
- 655 0222 F6000000 		.4byte	.LASF38
+ 655 0222 C0000000 		.4byte	.LASF38
  656 0226 01       		.byte	0x1
  657 0227 2F       		.byte	0x2f
  658 0228 6B000000 		.4byte	0x6b
@@ -1558,11 +1558,11 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccCBH72X.s 			page 1
  698 0282 32       		.byte	0x32
  699 0283 00       		.byte	0
  700 0284 00       		.byte	0
-ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccCBH72X.s 			page 27
+ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccthuLQW.s 			page 27
 
 
  701 0285 0D       		.uleb128 0xd
- 702 0286 02020000 		.4byte	.LASF34
+ 702 0286 CC010000 		.4byte	.LASF34
  703 028a 01       		.byte	0x1
  704 028b D7       		.byte	0xd7
  705 028c 00000000 		.4byte	.LFB2
@@ -1575,7 +1575,7 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccCBH72X.s 			page 1
  712 029f 0C020000 		.4byte	0x20c
  713 02a3 00       		.byte	0
  714 02a4 12       		.uleb128 0x12
- 715 02a5 F4020000 		.4byte	.LASF39
+ 715 02a5 FC020000 		.4byte	.LASF39
  716 02a9 01       		.byte	0x1
  717 02aa 1A       		.byte	0x1a
  718 02ab 6B000000 		.4byte	0x6b
@@ -1583,12 +1583,12 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccCBH72X.s 			page 1
  720 02b0 03       		.byte	0x3
  721 02b1 00000000 		.4byte	Timer_initVar
  722 02b5 13       		.uleb128 0x13
- 723 02b6 43020000 		.4byte	.LASF40
+ 723 02b6 0D020000 		.4byte	.LASF40
  724 02ba 03       		.byte	0x3
  725 02bb 7E       		.byte	0x7e
  726 02bc 6B000000 		.4byte	0x6b
  727 02c0 14       		.uleb128 0x14
- 728 02c1 2D020000 		.4byte	.LASF41
+ 728 02c1 F7010000 		.4byte	.LASF41
  729 02c5 03       		.byte	0x3
  730 02c6 7F       		.byte	0x7f
  731 02c7 15       		.uleb128 0x15
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccCBH72X.s 			page 1
  755 0012 00       		.byte	0
  756 0013 02       		.uleb128 0x2
  757 0014 24       		.uleb128 0x24
-ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccCBH72X.s 			page 28
+ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccthuLQW.s 			page 28
 
 
  758 0015 00       		.byte	0
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccCBH72X.s 			page 1
  812 004b 01       		.uleb128 0x1
  813 004c 12       		.uleb128 0x12
  814 004d 06       		.uleb128 0x6
-ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccCBH72X.s 			page 29
+ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccthuLQW.s 			page 29
 
 
  815 004e 40       		.uleb128 0x40
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccCBH72X.s 			page 1
  869 0086 0B       		.uleb128 0xb
  870 0087 3B       		.uleb128 0x3b
  871 0088 05       		.uleb128 0x5
-ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccCBH72X.s 			page 30
+ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccthuLQW.s 			page 30
 
 
  872 0089 27       		.uleb128 0x27
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccCBH72X.s 			page 1
  926 00c3 00       		.byte	0
  927 00c4 11       		.uleb128 0x11
  928 00c5 01       		.uleb128 0x1
-ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccCBH72X.s 			page 31
+ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccthuLQW.s 			page 31
 
 
  929 00c6 31       		.uleb128 0x31
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccCBH72X.s 			page 1
  983 00ff 00       		.byte	0
  984 0100 10       		.uleb128 0x10
  985 0101 8A8201   		.uleb128 0x410a
-ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccCBH72X.s 			page 32
+ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccthuLQW.s 			page 32
 
 
  986 0104 00       		.byte	0
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccCBH72X.s 			page 1
  1040 013d 01       		.byte	0x1
  1041 013e 3F       		.uleb128 0x3f
  1042 013f 19       		.uleb128 0x19
-ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccCBH72X.s 			page 33
+ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccthuLQW.s 			page 33
 
 
  1043 0140 03       		.uleb128 0x3
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccCBH72X.s 			page 1
  1097 0014 02000000 		.4byte	.LFE1-.LFB1
  1098 0018 00000000 		.4byte	.LFB3
  1099 001c 02000000 		.4byte	.LFE3-.LFB3
-ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccCBH72X.s 			page 34
+ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccthuLQW.s 			page 34
 
 
  1100 0020 00000000 		.4byte	.LFB4
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccCBH72X.s 			page 1
  1154 0068 00000000 		.4byte	.LFB2
  1155 006c 18000000 		.4byte	.LFE2
  1156 0070 00000000 		.4byte	0
-ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccCBH72X.s 			page 35
+ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccthuLQW.s 			page 35
 
 
  1157 0074 00000000 		.4byte	0
@@ -2058,219 +2058,221 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccCBH72X.s 			page 1
  1164      61645374 
  1164      61747573 
  1164      52656769 
- 1165              	.LASF11:
- 1166 001f 666C6F61 		.ascii	"float\000"
- 1166      7400
- 1167              	.LASF25:
- 1168 0025 70657269 		.ascii	"period\000"
- 1168      6F6400
- 1169              	.LASF29:
- 1170 002c 54696D65 		.ascii	"Timer_ReadCounter\000"
- 1170      725F5265 
- 1170      6164436F 
- 1170      756E7465 
- 1170      7200
- 1171              	.LASF3:
- 1172 003e 73686F72 		.ascii	"short unsigned int\000"
- 1172      7420756E 
- 1172      7369676E 
- 1172      65642069 
- 1172      6E7400
- 1173              	.LASF30:
- 1174 0051 54696D65 		.ascii	"Timer_SetInterruptCount\000"
- 1174      725F5365 
- 1174      74496E74 
- 1174      65727275 
- 1174      7074436F 
- 1175              	.LASF32:
- 1176 0069 54696D65 		.ascii	"Timer_ClearFIFO\000"
- 1176      725F436C 
- 1176      65617246 
- 1176      49464F00 
- 1177              	.LASF18:
- 1178 0079 54696D65 		.ascii	"Timer_Stop\000"
- 1178      725F5374 
- 1178      6F7000
- 1179              	.LASF31:
- 1180 0084 696E7465 		.ascii	"interruptCount\000"
- 1180      72727570 
- 1180      74436F75 
- 1180      6E7400
- 1181              	.LASF37:
- 1182 0093 433A5C55 		.ascii	"C:\\Users\\dufma\\Desktop\\Project\\Docu\\ZumoBot_L"
-ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccCBH72X.s 			page 36
+ 1165              	.LASF25:
+ 1166 001f 70657269 		.ascii	"period\000"
+ 1166      6F6400
+ 1167              	.LASF29:
+ 1168 0026 54696D65 		.ascii	"Timer_ReadCounter\000"
+ 1168      725F5265 
+ 1168      6164436F 
+ 1168      756E7465 
+ 1168      7200
+ 1169              	.LASF3:
+ 1170 0038 73686F72 		.ascii	"short unsigned int\000"
+ 1170      7420756E 
+ 1170      7369676E 
+ 1170      65642069 
+ 1170      6E7400
+ 1171              	.LASF30:
+ 1172 004b 54696D65 		.ascii	"Timer_SetInterruptCount\000"
+ 1172      725F5365 
+ 1172      74496E74 
+ 1172      65727275 
+ 1172      7074436F 
+ 1173              	.LASF32:
+ 1174 0063 54696D65 		.ascii	"Timer_ClearFIFO\000"
+ 1174      725F436C 
+ 1174      65617246 
+ 1174      49464F00 
+ 1175              	.LASF18:
+ 1176 0073 54696D65 		.ascii	"Timer_Stop\000"
+ 1176      725F5374 
+ 1176      6F7000
+ 1177              	.LASF31:
+ 1178 007e 696E7465 		.ascii	"interruptCount\000"
+ 1178      72727570 
+ 1178      74436F75 
+ 1178      6E7400
+ 1179              	.LASF11:
+ 1180 008d 666C6F61 		.ascii	"float\000"
+ 1180      7400
+ 1181              	.LASF28:
+ 1182 0093 636F756E 		.ascii	"counter\000"
+ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccthuLQW.s 			page 36
 
 
- 1182      73657273 
- 1182      5C647566 
- 1182      6D615C44 
- 1182      65736B74 
- 1183 00c0 69622E63 		.ascii	"ib.cydsn\000"
- 1183      7964736E 
- 1183      00
- 1184              	.LASF28:
- 1185 00c9 636F756E 		.ascii	"counter\000"
- 1185      74657200 
- 1186              	.LASF7:
- 1187 00d1 6C6F6E67 		.ascii	"long long unsigned int\000"
- 1187      206C6F6E 
- 1187      6720756E 
- 1187      7369676E 
- 1187      65642069 
- 1188              	.LASF1:
- 1189 00e8 756E7369 		.ascii	"unsigned char\000"
- 1189      676E6564 
- 1189      20636861 
- 1189      7200
- 1190              	.LASF38:
- 1191 00f6 54696D65 		.ascii	"Timer_interruptState\000"
- 1191      725F696E 
- 1191      74657272 
- 1191      75707453 
- 1191      74617465 
- 1192              	.LASF23:
- 1193 010b 54696D65 		.ascii	"Timer_WritePeriod\000"
- 1193      725F5772 
- 1193      69746550 
- 1193      6572696F 
- 1193      6400
- 1194              	.LASF14:
- 1195 011d 72656738 		.ascii	"reg8\000"
- 1195      00
- 1196              	.LASF22:
- 1197 0122 54696D65 		.ascii	"Timer_SetInterruptMode\000"
- 1197      725F5365 
- 1197      74496E74 
- 1197      65727275 
- 1197      70744D6F 
- 1198              	.LASF9:
- 1199 0139 75696E74 		.ascii	"uint8\000"
- 1199      3800
- 1200              	.LASF19:
- 1201 013f 54696D65 		.ascii	"Timer_SoftwareCapture\000"
- 1201      725F536F 
- 1201      66747761 
- 1201      72654361 
- 1201      70747572 
- 1202              	.LASF12:
- 1203 0155 646F7562 		.ascii	"double\000"
- 1203      6C6500
- 1204              	.LASF21:
- 1205 015c 54696D65 		.ascii	"Timer_ReadPeriod\000"
- 1205      725F5265 
-ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccCBH72X.s 			page 37
+ 1182      74657200 
+ 1183              	.LASF7:
+ 1184 009b 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1184      206C6F6E 
+ 1184      6720756E 
+ 1184      7369676E 
+ 1184      65642069 
+ 1185              	.LASF1:
+ 1186 00b2 756E7369 		.ascii	"unsigned char\000"
+ 1186      676E6564 
+ 1186      20636861 
+ 1186      7200
+ 1187              	.LASF38:
+ 1188 00c0 54696D65 		.ascii	"Timer_interruptState\000"
+ 1188      725F696E 
+ 1188      74657272 
+ 1188      75707453 
+ 1188      74617465 
+ 1189              	.LASF23:
+ 1190 00d5 54696D65 		.ascii	"Timer_WritePeriod\000"
+ 1190      725F5772 
+ 1190      69746550 
+ 1190      6572696F 
+ 1190      6400
+ 1191              	.LASF14:
+ 1192 00e7 72656738 		.ascii	"reg8\000"
+ 1192      00
+ 1193              	.LASF22:
+ 1194 00ec 54696D65 		.ascii	"Timer_SetInterruptMode\000"
+ 1194      725F5365 
+ 1194      74496E74 
+ 1194      65727275 
+ 1194      70744D6F 
+ 1195              	.LASF9:
+ 1196 0103 75696E74 		.ascii	"uint8\000"
+ 1196      3800
+ 1197              	.LASF19:
+ 1198 0109 54696D65 		.ascii	"Timer_SoftwareCapture\000"
+ 1198      725F536F 
+ 1198      66747761 
+ 1198      72654361 
+ 1198      70747572 
+ 1199              	.LASF12:
+ 1200 011f 646F7562 		.ascii	"double\000"
+ 1200      6C6500
+ 1201              	.LASF21:
+ 1202 0126 54696D65 		.ascii	"Timer_ReadPeriod\000"
+ 1202      725F5265 
+ 1202      61645065 
+ 1202      72696F64 
+ 1202      00
+ 1203              	.LASF10:
+ 1204 0137 75696E74 		.ascii	"uint16\000"
+ 1204      313600
+ 1205              	.LASF35:
+ 1206 013e 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
+ 1206      4320342E 
+ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccthuLQW.s 			page 37
 
 
- 1205      61645065 
- 1205      72696F64 
- 1205      00
- 1206              	.LASF10:
- 1207 016d 75696E74 		.ascii	"uint16\000"
- 1207      313600
- 1208              	.LASF35:
- 1209 0174 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
- 1209      4320342E 
- 1209      392E3320 
- 1209      32303135 
- 1209      30333033 
- 1210 01a7 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m3 -mthumb -g -O"
- 1210      20726576 
- 1210      6973696F 
- 1210      6E203232 
- 1210      31323230 
- 1211 01da 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
- 1211      66756E63 
- 1211      74696F6E 
- 1211      2D736563 
- 1211      74696F6E 
- 1212              	.LASF34:
- 1213 0202 54696D65 		.ascii	"Timer_Start\000"
- 1213      725F5374 
- 1213      61727400 
- 1214              	.LASF5:
- 1215 020e 6C6F6E67 		.ascii	"long unsigned int\000"
- 1215      20756E73 
- 1215      69676E65 
- 1215      6420696E 
- 1215      7400
- 1216              	.LASF8:
- 1217 0220 756E7369 		.ascii	"unsigned int\000"
- 1217      676E6564 
- 1217      20696E74 
- 1217      00
- 1218              	.LASF41:
- 1219 022d 43794578 		.ascii	"CyExitCriticalSection\000"
- 1219      69744372 
- 1219      69746963 
- 1219      616C5365 
- 1219      6374696F 
- 1220              	.LASF40:
- 1221 0243 4379456E 		.ascii	"CyEnterCriticalSection\000"
- 1221      74657243 
- 1221      72697469 
- 1221      63616C53 
- 1221      65637469 
+ 1206      392E3320 
+ 1206      32303135 
+ 1206      30333033 
+ 1207 0171 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m3 -mthumb -g -O"
+ 1207      20726576 
+ 1207      6973696F 
+ 1207      6E203232 
+ 1207      31323230 
+ 1208 01a4 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 1208      66756E63 
+ 1208      74696F6E 
+ 1208      2D736563 
+ 1208      74696F6E 
+ 1209              	.LASF34:
+ 1210 01cc 54696D65 		.ascii	"Timer_Start\000"
+ 1210      725F5374 
+ 1210      61727400 
+ 1211              	.LASF5:
+ 1212 01d8 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1212      20756E73 
+ 1212      69676E65 
+ 1212      6420696E 
+ 1212      7400
+ 1213              	.LASF8:
+ 1214 01ea 756E7369 		.ascii	"unsigned int\000"
+ 1214      676E6564 
+ 1214      20696E74 
+ 1214      00
+ 1215              	.LASF41:
+ 1216 01f7 43794578 		.ascii	"CyExitCriticalSection\000"
+ 1216      69744372 
+ 1216      69746963 
+ 1216      616C5365 
+ 1216      6374696F 
+ 1217              	.LASF40:
+ 1218 020d 4379456E 		.ascii	"CyEnterCriticalSection\000"
+ 1218      74657243 
+ 1218      72697469 
+ 1218      63616C53 
+ 1218      65637469 
+ 1219              	.LASF37:
+ 1220 0224 433A5C55 		.ascii	"C:\\Users\\dufma\\Desktop\\Project\\ZumoBot_Docu\\Z"
+ 1220      73657273 
+ 1220      5C647566 
+ 1220      6D615C44 
+ 1220      65736B74 
+ 1221 0251 756D6F42 		.ascii	"umoBot_Lib.cydsn\000"
+ 1221      6F745F4C 
+ 1221      69622E63 
+ 1221      7964736E 
+ 1221      00
  1222              	.LASF16:
- 1223 025a 73697A65 		.ascii	"sizetype\000"
+ 1223 0262 73697A65 		.ascii	"sizetype\000"
  1223      74797065 
  1223      00
  1224              	.LASF6:
- 1225 0263 6C6F6E67 		.ascii	"long long int\000"
+ 1225 026b 6C6F6E67 		.ascii	"long long int\000"
+ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccthuLQW.s 			page 38
+
+
  1225      206C6F6E 
  1225      6720696E 
-ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccCBH72X.s 			page 38
-
-
  1225      7400
  1226              	.LASF24:
- 1227 0271 696E7465 		.ascii	"interruptMode\000"
+ 1227 0279 696E7465 		.ascii	"interruptMode\000"
  1227      72727570 
  1227      744D6F64 
  1227      6500
  1228              	.LASF36:
- 1229 027f 2E5C4765 		.ascii	".\\Generated_Source\\PSoC5\\Timer.c\000"
+ 1229 0287 2E5C4765 		.ascii	".\\Generated_Source\\PSoC5\\Timer.c\000"
  1229      6E657261 
  1229      7465645F 
  1229      536F7572 
  1229      63655C50 
  1230              	.LASF2:
- 1231 02a0 73686F72 		.ascii	"short int\000"
+ 1231 02a8 73686F72 		.ascii	"short int\000"
  1231      7420696E 
  1231      7400
  1232              	.LASF26:
- 1233 02aa 54696D65 		.ascii	"Timer_ReadCapture\000"
+ 1233 02b2 54696D65 		.ascii	"Timer_ReadCapture\000"
  1233      725F5265 
  1233      61644361 
  1233      70747572 
  1233      6500
  1234              	.LASF27:
- 1235 02bc 54696D65 		.ascii	"Timer_WriteCounter\000"
+ 1235 02c4 54696D65 		.ascii	"Timer_WriteCounter\000"
  1235      725F5772 
  1235      69746543 
  1235      6F756E74 
  1235      657200
  1236              	.LASF4:
- 1237 02cf 6C6F6E67 		.ascii	"long int\000"
+ 1237 02d7 6C6F6E67 		.ascii	"long int\000"
  1237      20696E74 
  1237      00
  1238              	.LASF13:
- 1239 02d8 63686172 		.ascii	"char\000"
+ 1239 02e0 63686172 		.ascii	"char\000"
  1239      00
  1240              	.LASF33:
- 1241 02dd 54696D65 		.ascii	"Timer_Init\000"
+ 1241 02e5 54696D65 		.ascii	"Timer_Init\000"
  1241      725F496E 
  1241      697400
  1242              	.LASF0:
- 1243 02e8 7369676E 		.ascii	"signed char\000"
+ 1243 02f0 7369676E 		.ascii	"signed char\000"
  1243      65642063 
  1243      68617200 
  1244              	.LASF39:
- 1245 02f4 54696D65 		.ascii	"Timer_initVar\000"
+ 1245 02fc 54696D65 		.ascii	"Timer_initVar\000"
  1245      725F696E 
  1245      69745661 
  1245      7200
  1246              	.LASF17:
- 1247 0302 54696D65 		.ascii	"Timer_Enable\000"
+ 1247 030a 54696D65 		.ascii	"Timer_Enable\000"
  1247      725F456E 
  1247      61626C65 
  1247      00

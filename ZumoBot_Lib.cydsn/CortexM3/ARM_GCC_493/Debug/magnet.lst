@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccJRYJHa.s 			page 1
+ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccw719ja.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccJRYJHa.s 			page 1
   35              	.LVL0:
   36 0000 38B5     		push	{r3, r4, r5, lr}
   37              		.cfi_def_cfa_offset 16
-ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccJRYJHa.s 			page 2
+ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccw719ja.s 			page 2
 
 
   38              		.cfi_offset 3, -16
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccJRYJHa.s 			page 1
   85              	.LVL11:
   86              	.L7:
   87              		.align	3
-ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccJRYJHa.s 			page 3
+ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccw719ja.s 			page 3
 
 
   88              	.L6:
@@ -154,49 +154,49 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccJRYJHa.s 			page 1
  114 0006 00000000 		.4byte	.Ldebug_abbrev0
  115 000a 04       		.byte	0x4
  116 000b 01       		.uleb128 0x1
- 117 000c A8000000 		.4byte	.LASF21
+ 117 000c 72000000 		.4byte	.LASF21
  118 0010 01       		.byte	0x1
- 119 0011 49010000 		.4byte	.LASF22
- 120 0015 22000000 		.4byte	.LASF23
+ 119 0011 13010000 		.4byte	.LASF22
+ 120 0015 8C010000 		.4byte	.LASF23
  121 0019 00000000 		.4byte	.Ldebug_ranges0+0
  122 001d 00000000 		.4byte	0
  123 0021 00000000 		.4byte	.Ldebug_line0
  124 0025 02       		.uleb128 0x2
  125 0026 08       		.byte	0x8
  126 0027 04       		.byte	0x4
- 127 0028 5D010000 		.4byte	.LASF0
+ 127 0028 27010000 		.4byte	.LASF0
  128 002c 02       		.uleb128 0x2
  129 002d 01       		.byte	0x1
  130 002e 06       		.byte	0x6
- 131 002f 58000000 		.4byte	.LASF1
+ 131 002f 22000000 		.4byte	.LASF1
  132 0033 02       		.uleb128 0x2
  133 0034 01       		.byte	0x1
  134 0035 08       		.byte	0x8
- 135 0036 36010000 		.4byte	.LASF2
+ 135 0036 00010000 		.4byte	.LASF2
  136 003a 02       		.uleb128 0x2
  137 003b 02       		.byte	0x2
  138 003c 05       		.byte	0x5
- 139 003d A9010000 		.4byte	.LASF3
+ 139 003d 73010000 		.4byte	.LASF3
  140 0041 02       		.uleb128 0x2
-ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccJRYJHa.s 			page 4
+ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccw719ja.s 			page 4
 
 
  141 0042 02       		.byte	0x2
  142 0043 07       		.byte	0x7
- 143 0044 95000000 		.4byte	.LASF4
+ 143 0044 5F000000 		.4byte	.LASF4
  144 0048 03       		.uleb128 0x3
- 145 0049 8C010000 		.4byte	.LASF10
+ 145 0049 56010000 		.4byte	.LASF10
  146 004d 02       		.byte	0x2
  147 004e 3F       		.byte	0x3f
  148 004f 53000000 		.4byte	0x53
  149 0053 02       		.uleb128 0x2
  150 0054 04       		.byte	0x4
  151 0055 05       		.byte	0x5
- 152 0056 54010000 		.4byte	.LASF5
+ 152 0056 1E010000 		.4byte	.LASF5
  153 005a 02       		.uleb128 0x2
  154 005b 04       		.byte	0x4
  155 005c 07       		.byte	0x7
- 156 005d 6C000000 		.4byte	.LASF6
+ 156 005d 36000000 		.4byte	.LASF6
  157 0061 02       		.uleb128 0x2
  158 0062 08       		.byte	0x8
  159 0063 05       		.byte	0x5
@@ -204,7 +204,7 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccJRYJHa.s 			page 1
  161 0068 02       		.uleb128 0x2
  162 0069 08       		.byte	0x8
  163 006a 07       		.byte	0x7
- 164 006b 7E000000 		.4byte	.LASF8
+ 164 006b 48000000 		.4byte	.LASF8
  165 006f 04       		.uleb128 0x4
  166 0070 04       		.byte	0x4
  167 0071 05       		.byte	0x5
@@ -214,7 +214,7 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccJRYJHa.s 			page 1
  171 0078 07       		.byte	0x7
  172 0079 15000000 		.4byte	.LASF9
  173 007d 03       		.uleb128 0x3
- 174 007e BA010000 		.4byte	.LASF11
+ 174 007e 84010000 		.4byte	.LASF11
  175 0082 03       		.byte	0x3
  176 0083 2C       		.byte	0x2c
  177 0084 48000000 		.4byte	0x48
@@ -226,19 +226,19 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccJRYJHa.s 			page 1
  183 0094 02       		.uleb128 0x2
  184 0095 04       		.byte	0x4
  185 0096 04       		.byte	0x4
- 186 0097 96010000 		.4byte	.LASF13
+ 186 0097 60010000 		.4byte	.LASF13
  187 009b 02       		.uleb128 0x2
  188 009c 01       		.byte	0x1
  189 009d 08       		.byte	0x8
- 190 009e 44010000 		.4byte	.LASF14
+ 190 009e 0E010000 		.4byte	.LASF14
  191 00a2 02       		.uleb128 0x2
  192 00a3 04       		.byte	0x4
  193 00a4 07       		.byte	0x7
- 194 00a5 C2010000 		.4byte	.LASF15
+ 194 00a5 CA010000 		.4byte	.LASF15
  195 00a9 06       		.uleb128 0x6
  196 00aa 04       		.byte	0x4
  197 00ab AF000000 		.4byte	0xaf
-ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccJRYJHa.s 			page 5
+ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccw719ja.s 			page 5
 
 
  198 00af 07       		.uleb128 0x7
@@ -246,9 +246,9 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccJRYJHa.s 			page 1
  200 00b4 02       		.uleb128 0x2
  201 00b5 08       		.byte	0x8
  202 00b6 04       		.byte	0x4
- 203 00b7 78010000 		.4byte	.LASF16
+ 203 00b7 42010000 		.4byte	.LASF16
  204 00bb 08       		.uleb128 0x8
- 205 00bc 84010000 		.4byte	.LASF24
+ 205 00bc 4E010000 		.4byte	.LASF24
  206 00c0 01       		.byte	0x1
  207 00c1 13       		.byte	0x13
  208 00c2 00000000 		.4byte	.LFB63
@@ -257,19 +257,19 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccJRYJHa.s 			page 1
  211 00cb 9C       		.byte	0x9c
  212 00cc 4F010000 		.4byte	0x14f
  213 00d0 09       		.uleb128 0x9
- 214 00d1 B3010000 		.4byte	.LASF17
+ 214 00d1 7D010000 		.4byte	.LASF17
  215 00d5 01       		.byte	0x1
  216 00d6 13       		.byte	0x13
  217 00d7 25000000 		.4byte	0x25
  218 00db 00000000 		.4byte	.LLST0
  219 00df 09       		.uleb128 0x9
- 220 00e0 9C010000 		.4byte	.LASF18
+ 220 00e0 66010000 		.4byte	.LASF18
  221 00e4 01       		.byte	0x1
  222 00e5 13       		.byte	0x13
  223 00e6 25000000 		.4byte	0x25
  224 00ea 28000000 		.4byte	.LLST1
  225 00ee 0A       		.uleb128 0xa
- 226 00ef 84010000 		.4byte	.LASF24
+ 226 00ef 4E010000 		.4byte	.LASF24
  227 00f3 01       		.byte	0x1
  228 00f4 15       		.byte	0x15
  229 00f5 25000000 		.4byte	0x25
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccJRYJHa.s 			page 1
  252 011b 93       		.byte	0x93
  253 011c 04       		.uleb128 0x4
  254 011d 51       		.byte	0x51
-ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccJRYJHa.s 			page 6
+ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccw719ja.s 			page 6
 
 
  255 011e 93       		.byte	0x93
@@ -333,14 +333,14 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccJRYJHa.s 			page 1
  284 014d 00       		.byte	0
  285 014e 00       		.byte	0
  286 014f 0E       		.uleb128 0xe
- 287 0150 64010000 		.4byte	.LASF25
+ 287 0150 2E010000 		.4byte	.LASF25
  288 0154 07       		.byte	0x7
  289 0155 5506     		.2byte	0x655
  290 0157 5B010000 		.4byte	0x15b
  291 015b 0F       		.uleb128 0xf
  292 015c 7D000000 		.4byte	0x7d
  293 0160 10       		.uleb128 0x10
- 294 0161 A3010000 		.4byte	.LASF19
+ 294 0161 6D010000 		.4byte	.LASF19
  295 0165 05       		.byte	0x5
  296 0166 7E       		.byte	0x7e
  297 0167 25000000 		.4byte	0x25
@@ -351,20 +351,20 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccJRYJHa.s 			page 1
  302 0175 25000000 		.4byte	0x25
  303 0179 00       		.byte	0
  304 017a 10       		.uleb128 0x10
- 305 017b 71010000 		.4byte	.LASF20
+ 305 017b 3B010000 		.4byte	.LASF20
  306 017f 06       		.byte	0x6
  307 0180 B2       		.byte	0xb2
  308 0181 6F000000 		.4byte	0x6f
  309 0185 90010000 		.4byte	0x190
  310 0189 11       		.uleb128 0x11
  311 018a A9000000 		.4byte	0xa9
-ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccJRYJHa.s 			page 7
+ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccw719ja.s 			page 7
 
 
  312 018e 12       		.uleb128 0x12
  313 018f 00       		.byte	0
  314 0190 13       		.uleb128 0x13
- 315 0191 64000000 		.4byte	.LASF26
+ 315 0191 2E000000 		.4byte	.LASF26
  316 0195 08       		.byte	0x8
  317 0196 77       		.byte	0x77
  318 0197 11       		.uleb128 0x11
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccJRYJHa.s 			page 1
  366 002a 00       		.byte	0
  367 002b 04       		.uleb128 0x4
  368 002c 24       		.uleb128 0x24
-ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccJRYJHa.s 			page 8
+ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccw719ja.s 			page 8
 
 
  369 002d 00       		.byte	0
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccJRYJHa.s 			page 1
  423 0063 06       		.uleb128 0x6
  424 0064 40       		.uleb128 0x40
  425 0065 18       		.uleb128 0x18
-ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccJRYJHa.s 			page 9
+ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccw719ja.s 			page 9
 
 
  426 0066 9642     		.uleb128 0x2116
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccJRYJHa.s 			page 1
  480 00a2 00       		.byte	0
  481 00a3 00       		.byte	0
  482 00a4 0D       		.uleb128 0xd
-ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccJRYJHa.s 			page 10
+ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccw719ja.s 			page 10
 
 
  483 00a5 898201   		.uleb128 0x4109
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccJRYJHa.s 			page 1
  537 00dd 05       		.uleb128 0x5
  538 00de 00       		.byte	0
  539 00df 49       		.uleb128 0x49
-ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccJRYJHa.s 			page 11
+ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccw719ja.s 			page 11
 
 
  540 00e0 13       		.uleb128 0x13
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccJRYJHa.s 			page 1
  594 0033 93       		.byte	0x93
  595 0034 04       		.uleb128 0x4
  596 0035 53       		.byte	0x53
-ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccJRYJHa.s 			page 12
+ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccw719ja.s 			page 12
 
 
  597 0036 93       		.byte	0x93
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccJRYJHa.s 			page 1
  651 0000 85010000 		.section	.debug_str,"MS",%progbits,1
  651      02006B01 
  651      00000201 
-ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccJRYJHa.s 			page 13
+ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccw719ja.s 			page 13
 
 
  651      FB0E0D00 
@@ -736,121 +736,123 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccJRYJHa.s 			page 1
  657      676E6564 
  657      20696E74 
  657      00
- 658              	.LASF23:
- 659 0022 433A5C55 		.ascii	"C:\\Users\\dufma\\Desktop\\Project\\Docu\\ZumoBot_L"
- 659      73657273 
- 659      5C647566 
- 659      6D615C44 
- 659      65736B74 
- 660 004f 69622E63 		.ascii	"ib.cydsn\000"
- 660      7964736E 
- 660      00
- 661              	.LASF1:
- 662 0058 7369676E 		.ascii	"signed char\000"
- 662      65642063 
- 662      68617200 
- 663              	.LASF26:
- 664 0064 43794465 		.ascii	"CyDelay\000"
- 664      6C617900 
- 665              	.LASF6:
- 666 006c 6C6F6E67 		.ascii	"long unsigned int\000"
- 666      20756E73 
- 666      69676E65 
- 666      6420696E 
- 666      7400
- 667              	.LASF8:
- 668 007e 6C6F6E67 		.ascii	"long long unsigned int\000"
- 668      206C6F6E 
- 668      6720756E 
- 668      7369676E 
- 668      65642069 
- 669              	.LASF4:
- 670 0095 73686F72 		.ascii	"short unsigned int\000"
- 670      7420756E 
- 670      7369676E 
- 670      65642069 
- 670      6E7400
- 671              	.LASF21:
- 672 00a8 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
- 672      4320342E 
- 672      392E3320 
- 672      32303135 
- 672      30333033 
- 673 00db 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m3 -mthumb -g -O"
- 673      20726576 
-ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccJRYJHa.s 			page 14
+ 658              	.LASF1:
+ 659 0022 7369676E 		.ascii	"signed char\000"
+ 659      65642063 
+ 659      68617200 
+ 660              	.LASF26:
+ 661 002e 43794465 		.ascii	"CyDelay\000"
+ 661      6C617900 
+ 662              	.LASF6:
+ 663 0036 6C6F6E67 		.ascii	"long unsigned int\000"
+ 663      20756E73 
+ 663      69676E65 
+ 663      6420696E 
+ 663      7400
+ 664              	.LASF8:
+ 665 0048 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 665      206C6F6E 
+ 665      6720756E 
+ 665      7369676E 
+ 665      65642069 
+ 666              	.LASF4:
+ 667 005f 73686F72 		.ascii	"short unsigned int\000"
+ 667      7420756E 
+ 667      7369676E 
+ 667      65642069 
+ 667      6E7400
+ 668              	.LASF21:
+ 669 0072 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
+ 669      4320342E 
+ 669      392E3320 
+ 669      32303135 
+ 669      30333033 
+ 670 00a5 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m3 -mthumb -g -O"
+ 670      20726576 
+ 670      6973696F 
+ 670      6E203232 
+ 670      31323230 
+ 671 00d8 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 671      66756E63 
+ 671      74696F6E 
+ 671      2D736563 
+ 671      74696F6E 
+ 672              	.LASF2:
+ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccw719ja.s 			page 14
 
 
- 673      6973696F 
- 673      6E203232 
- 673      31323230 
- 674 010e 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
- 674      66756E63 
- 674      74696F6E 
- 674      2D736563 
- 674      74696F6E 
- 675              	.LASF2:
- 676 0136 756E7369 		.ascii	"unsigned char\000"
- 676      676E6564 
- 676      20636861 
- 676      7200
- 677              	.LASF14:
- 678 0144 63686172 		.ascii	"char\000"
- 678      00
- 679              	.LASF22:
- 680 0149 2E5C4D61 		.ascii	".\\Magnet.c\000"
- 680      676E6574 
- 680      2E6300
- 681              	.LASF5:
- 682 0154 6C6F6E67 		.ascii	"long int\000"
- 682      20696E74 
- 682      00
- 683              	.LASF0:
- 684 015d 646F7562 		.ascii	"double\000"
- 684      6C6500
- 685              	.LASF25:
- 686 0164 49544D5F 		.ascii	"ITM_RxBuffer\000"
- 686      52784275 
- 686      66666572 
- 686      00
- 687              	.LASF20:
- 688 0171 7072696E 		.ascii	"printf\000"
- 688      746600
- 689              	.LASF16:
- 690 0178 6C6F6E67 		.ascii	"long double\000"
- 690      20646F75 
- 690      626C6500 
- 691              	.LASF24:
- 692 0184 68656164 		.ascii	"heading\000"
- 692      696E6700 
- 693              	.LASF10:
- 694 018c 5F5F696E 		.ascii	"__int32_t\000"
- 694      7433325F 
- 694      7400
- 695              	.LASF13:
- 696 0196 666C6F61 		.ascii	"float\000"
- 696      7400
- 697              	.LASF18:
- 698 019c 595F4158 		.ascii	"Y_AXIS\000"
- 698      495300
- 699              	.LASF19:
- 700 01a3 6174616E 		.ascii	"atan2\000"
- 700      3200
- 701              	.LASF3:
- 702 01a9 73686F72 		.ascii	"short int\000"
-ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccJRYJHa.s 			page 15
+ 673 0100 756E7369 		.ascii	"unsigned char\000"
+ 673      676E6564 
+ 673      20636861 
+ 673      7200
+ 674              	.LASF14:
+ 675 010e 63686172 		.ascii	"char\000"
+ 675      00
+ 676              	.LASF22:
+ 677 0113 2E5C4D61 		.ascii	".\\Magnet.c\000"
+ 677      676E6574 
+ 677      2E6300
+ 678              	.LASF5:
+ 679 011e 6C6F6E67 		.ascii	"long int\000"
+ 679      20696E74 
+ 679      00
+ 680              	.LASF0:
+ 681 0127 646F7562 		.ascii	"double\000"
+ 681      6C6500
+ 682              	.LASF25:
+ 683 012e 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 683      52784275 
+ 683      66666572 
+ 683      00
+ 684              	.LASF20:
+ 685 013b 7072696E 		.ascii	"printf\000"
+ 685      746600
+ 686              	.LASF16:
+ 687 0142 6C6F6E67 		.ascii	"long double\000"
+ 687      20646F75 
+ 687      626C6500 
+ 688              	.LASF24:
+ 689 014e 68656164 		.ascii	"heading\000"
+ 689      696E6700 
+ 690              	.LASF10:
+ 691 0156 5F5F696E 		.ascii	"__int32_t\000"
+ 691      7433325F 
+ 691      7400
+ 692              	.LASF13:
+ 693 0160 666C6F61 		.ascii	"float\000"
+ 693      7400
+ 694              	.LASF18:
+ 695 0166 595F4158 		.ascii	"Y_AXIS\000"
+ 695      495300
+ 696              	.LASF19:
+ 697 016d 6174616E 		.ascii	"atan2\000"
+ 697      3200
+ 698              	.LASF3:
+ 699 0173 73686F72 		.ascii	"short int\000"
+ 699      7420696E 
+ 699      7400
+ 700              	.LASF17:
+ 701 017d 585F4158 		.ascii	"X_AXIS\000"
+ 701      495300
+ 702              	.LASF11:
+ 703 0184 696E7433 		.ascii	"int32_t\000"
+ 703      325F7400 
+ 704              	.LASF23:
+ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccw719ja.s 			page 15
 
 
- 702      7420696E 
- 702      7400
- 703              	.LASF17:
- 704 01b3 585F4158 		.ascii	"X_AXIS\000"
- 704      495300
- 705              	.LASF11:
- 706 01ba 696E7433 		.ascii	"int32_t\000"
- 706      325F7400 
+ 705 018c 433A5C55 		.ascii	"C:\\Users\\dufma\\Desktop\\Project\\ZumoBot_Docu\\Z"
+ 705      73657273 
+ 705      5C647566 
+ 705      6D615C44 
+ 705      65736B74 
+ 706 01b9 756D6F42 		.ascii	"umoBot_Lib.cydsn\000"
+ 706      6F745F4C 
+ 706      69622E63 
+ 706      7964736E 
+ 706      00
  707              	.LASF15:
- 708 01c2 73697A65 		.ascii	"sizetype\000"
+ 708 01ca 73697A65 		.ascii	"sizetype\000"
  708      74797065 
  708      00
  709              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br
