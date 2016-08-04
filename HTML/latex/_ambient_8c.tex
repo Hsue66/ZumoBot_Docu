@@ -1,0 +1,67 @@
+\hypertarget{_ambient_8c}{}\section{Ambient.\+c File Reference}
+\label{_ambient_8c}\index{Ambient.\+c@{Ambient.\+c}}
+
+
+Ambient light sensor method file.  
+
+
+{\ttfamily \#include \char`\"{}Ambient.\+h\char`\"{}}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+double \hyperlink{_ambient_8c_a4f2753f74c2249bf17da11de745e8da4}{get\+Lux} (double C\+H0, double C\+H1)
+\begin{DoxyCompactList}\small\item\em Get lux from raw value. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Ambient light sensor method file. 
+
+
+
+\subsection{Function Documentation}
+\index{Ambient.\+c@{Ambient.\+c}!get\+Lux@{get\+Lux}}
+\index{get\+Lux@{get\+Lux}!Ambient.\+c@{Ambient.\+c}}
+\subsubsection[{\texorpdfstring{get\+Lux(double C\+H0, double C\+H1)}{getLux(double CH0, double CH1)}}]{\setlength{\rightskip}{0pt plus 5cm}double get\+Lux (
+\begin{DoxyParamCaption}
+\item[{double}]{C\+H0, }
+\item[{double}]{C\+H1}
+\end{DoxyParamCaption}
+)}\hypertarget{_ambient_8c_a4f2753f74c2249bf17da11de745e8da4}{}\label{_ambient_8c_a4f2753f74c2249bf17da11de745e8da4}
+
+
+Get lux from raw value. 
+
+get lux using Channel 0 value and Channel 1 value 
+\begin{DoxyParams}{Parameters}
+{\em double} & Channel 0 \\
+\hline
+{\em double} & Channel 1 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+double return calculated value 
+\end{DoxyReturn}
+
+
+Definition at line 15 of file Ambient.\+c.
+
+
+\begin{DoxyCode}
+16 \{
+17     \textcolor{keywordtype}{double} result = 0;
+18     \textcolor{keywordtype}{double} ChannelRatio = (double)CH1/CH0;
+19     
+20     \textcolor{keywordflow}{if}((0<ChannelRatio) && (ChannelRatio <= 0.5))
+21         result = (0.0304 * CH0) - (0.062 * CH0 * pow(ChannelRatio, 1.4));
+22     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}((0.5<ChannelRatio)&&(ChannelRatio <= 0.61))
+23         result = (0.0224 * CH0) - (0.031 * CH1);
+24     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}((0.61<ChannelRatio)&&(ChannelRatio <= 0.80))
+25         result = (0.0128 * CH0) - (0.0153 * CH1);
+26     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}((0.80<ChannelRatio)&&(ChannelRatio <= 1.30))
+27         result = (0.00146 * CH0) - (0.00112 * CH1);
+28     \textcolor{keywordflow}{else} 
+29         result = 0;
+30 
+31     \textcolor{keywordflow}{return} result;
+32 \}
+\end{DoxyCode}

@@ -1,0 +1,55 @@
+\hypertarget{accel_8c}{}\section{accel.\+c File Reference}
+\label{accel_8c}\index{accel.\+c@{accel.\+c}}
+{\ttfamily \#include $<$project.\+h$>$}\\*
+{\ttfamily \#include $<$math.\+h$>$}\\*
+{\ttfamily \#include $<$accel\+\_\+magnet.\+h$>$}\\*
+{\ttfamily \#include $<$stdio.\+h$>$}\\*
+Include dependency graph for accel.\+c\+:
+% FIG 0
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{accel_8c_afd262b693d21cb2585621aa7f8c7d2a1}{O\+U\+T\+\_\+\+Z\+\_\+\+H\+\_\+A}~0x2D
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{accel_8c_a66765f03c5817d1c93c09d519b67f58a}{value\+\_\+convert\+\_\+accel} (uint16 X\+\_\+\+A\+X\+IS, uint16 Y\+\_\+\+A\+X\+IS, uint16 Z\+\_\+\+A\+X\+IS)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\index{accel.\+c@{accel.\+c}!O\+U\+T\+\_\+\+Z\+\_\+\+H\+\_\+A@{O\+U\+T\+\_\+\+Z\+\_\+\+H\+\_\+A}}
+\index{O\+U\+T\+\_\+\+Z\+\_\+\+H\+\_\+A@{O\+U\+T\+\_\+\+Z\+\_\+\+H\+\_\+A}!accel.\+c@{accel.\+c}}
+\subsubsection[{\texorpdfstring{O\+U\+T\+\_\+\+Z\+\_\+\+H\+\_\+A}{OUT_Z_H_A}}]{\setlength{\rightskip}{0pt plus 5cm}\#define O\+U\+T\+\_\+\+Z\+\_\+\+H\+\_\+A~0x2D}\hypertarget{accel_8c_afd262b693d21cb2585621aa7f8c7d2a1}{}\label{accel_8c_afd262b693d21cb2585621aa7f8c7d2a1}
+
+
+Definition at line 39 of file accel\+\_\+magnet.\+h.
+
+
+
+\subsection{Function Documentation}
+\index{accel.\+c@{accel.\+c}!value\+\_\+convert\+\_\+accel@{value\+\_\+convert\+\_\+accel}}
+\index{value\+\_\+convert\+\_\+accel@{value\+\_\+convert\+\_\+accel}!accel.\+c@{accel.\+c}}
+\subsubsection[{\texorpdfstring{value\+\_\+convert\+\_\+accel(uint16 X\+\_\+\+A\+X\+I\+S, uint16 Y\+\_\+\+A\+X\+I\+S, uint16 Z\+\_\+\+A\+X\+I\+S)}{value_convert_accel(uint16 X_AXIS, uint16 Y_AXIS, uint16 Z_AXIS)}}]{\setlength{\rightskip}{0pt plus 5cm}void value\+\_\+convert\+\_\+accel (
+\begin{DoxyParamCaption}
+\item[{uint16}]{X\+\_\+\+A\+X\+IS, }
+\item[{uint16}]{Y\+\_\+\+A\+X\+IS, }
+\item[{uint16}]{Z\+\_\+\+A\+X\+IS}
+\end{DoxyParamCaption}
+)}\hypertarget{accel_8c_a66765f03c5817d1c93c09d519b67f58a}{}\label{accel_8c_a66765f03c5817d1c93c09d519b67f58a}
+
+
+Definition at line 20 of file accel.\+c.
+
+
+\begin{DoxyCode}
+21 \{
+22     \textcolor{keywordtype}{double} AccXangle, AccYangle;
+23    
+24     AccXangle = (float) (atan2(Y\_AXIS, Z\_AXIS)+M\_PI) *180 / M\_PI;
+25     AccYangle = (float) (atan2(Z\_AXIS, X\_AXIS)+M\_PI) *180 / M\_PI;
+26     
+27     printf(\textcolor{stringliteral}{"%7.3f %7.3f \(\backslash\)r\(\backslash\)n"}, AccXangle, AccYangle);
+28 \}
+\end{DoxyCode}

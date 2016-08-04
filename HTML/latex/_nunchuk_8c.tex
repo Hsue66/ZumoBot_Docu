@@ -1,0 +1,117 @@
+\hypertarget{_nunchuk_8c}{}\section{Nunchuk.\+c File Reference}
+\label{_nunchuk_8c}\index{Nunchuk.\+c@{Nunchuk.\+c}}
+
+
+Nunchuk method file.  
+
+
+{\ttfamily \#include \char`\"{}nunchuk.\+h\char`\"{}}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{_nunchuk_8c_ad40f6458669d05040ade1f3f96e57dad}{nunchuk\+\_\+start} ()
+\begin{DoxyCompactList}\small\item\em Start Nunchuk. \end{DoxyCompactList}\item 
+void \hyperlink{_nunchuk_8c_a51b63a0b8182292380da4823f7757fb9}{nunchuk\+\_\+init} ()
+\begin{DoxyCompactList}\small\item\em Initializing Nunchuk. \end{DoxyCompactList}\item 
+void \hyperlink{_nunchuk_8c_ad16ed7544dc4b29ae079905b35b1b318}{nunchuk\+\_\+read} ()
+\begin{DoxyCompactList}\small\item\em Read Nunchuk value. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Nunchuk method file. 
+
+
+
+\subsection{Function Documentation}
+\index{Nunchuk.\+c@{Nunchuk.\+c}!nunchuk\+\_\+init@{nunchuk\+\_\+init}}
+\index{nunchuk\+\_\+init@{nunchuk\+\_\+init}!Nunchuk.\+c@{Nunchuk.\+c}}
+\subsubsection[{\texorpdfstring{nunchuk\+\_\+init()}{nunchuk_init()}}]{\setlength{\rightskip}{0pt plus 5cm}void nunchuk\+\_\+init (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{_nunchuk_8c_a51b63a0b8182292380da4823f7757fb9}{}\label{_nunchuk_8c_a51b63a0b8182292380da4823f7757fb9}
+
+
+Initializing Nunchuk. 
+
+write value(0x00) to register(address -\/ 0x40) to initialize nunchuk 
+
+Definition at line 22 of file Nunchuk.\+c.
+
+
+\begin{DoxyCode}
+23 \{
+24     uint8\_t buf[2] = \{ 0x40, 0x00 \};
+25     uint8\_t status;
+26     I2C\_MasterClearStatus();
+27     CyDelay(100);
+28     status = I2C\_MasterWriteBuf(0x52, buf, 2, I2C\_MODE\_COMPLETE\_XFER);
+29     \textcolor{keywordflow}{while}(((status = I2C\_MasterStatus()) & I2C\_MSTAT\_WR\_CMPLT) == 0);
+30     CyDelay(100);
+31 \}    
+\end{DoxyCode}
+\index{Nunchuk.\+c@{Nunchuk.\+c}!nunchuk\+\_\+read@{nunchuk\+\_\+read}}
+\index{nunchuk\+\_\+read@{nunchuk\+\_\+read}!Nunchuk.\+c@{Nunchuk.\+c}}
+\subsubsection[{\texorpdfstring{nunchuk\+\_\+read()}{nunchuk_read()}}]{\setlength{\rightskip}{0pt plus 5cm}void nunchuk\+\_\+read (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{_nunchuk_8c_ad16ed7544dc4b29ae079905b35b1b318}{}\label{_nunchuk_8c_ad16ed7544dc4b29ae079905b35b1b318}
+
+
+Read Nunchuk value. 
+
+read nunchuk value and get Joystick values and accelerometer values 
+
+Definition at line 37 of file Nunchuk.\+c.
+
+
+\begin{DoxyCode}
+38 \{
+39     uint8\_t status;
+40     uint8\_t buf[6];
+41     \textcolor{comment}{// send conversion command}
+42     buf[0] = 0x00;
+43     I2C\_MasterClearStatus();
+44     status = I2C\_MasterWriteBuf(0x52, buf, 1, I2C\_MODE\_COMPLETE\_XFER);
+45     \textcolor{keywordflow}{while}(((status = I2C\_MasterStatus()) & I2C\_MSTAT\_WR\_CMPLT) == 0);
+46     \textcolor{comment}{// wait for conversion to complete}
+47     CyDelay(50); \textcolor{comment}{// todo: check if shorter wait would work}
+48     \textcolor{comment}{// read values}
+49     I2C\_MasterClearStatus();
+50     status = I2C\_MasterReadBuf(0x52, buf, 6, I2C\_MODE\_COMPLETE\_XFER);
+51     \textcolor{keywordflow}{while}(((status = I2C\_MasterStatus()) & I2C\_MSTAT\_RD\_CMPLT) == 0);
+52     
+53     \textcolor{keywordtype}{int} \hyperlink{_ultra_8c_a78f7a37dba921e0b0347b960fb40bc51}{i};
+54     \textcolor{comment}{// decrypt data}
+55     \textcolor{keywordflow}{for}(i = 0; i < 6; i++) buf[i] = (buf[i] ^ 0x17) + 0x17;
+56     \textcolor{comment}{// accelerometer values}
+57     \textcolor{keywordtype}{int} x,y,z;
+58     x = (buf[2] << 2) | ((buf[5] >> 2) & 0x03);
+59     y = (buf[3] << 2) | ((buf[5] >> 4) & 0x03);
+60     z = (buf[4] << 2) | ((buf[5] >> 6) & 0x03);
+61     \textcolor{comment}{// buf[0] = JoyX, buf[1] = JoyY}
+62     printf(\textcolor{stringliteral}{"%3d %3d, %d, %d, %4d %4d %4d\(\backslash\)r\(\backslash\)n"}, buf[0], buf[1], (buf[5] >> 1) & 1, buf[5] & 1, x, y, z);
+63 \}    
+\end{DoxyCode}
+\index{Nunchuk.\+c@{Nunchuk.\+c}!nunchuk\+\_\+start@{nunchuk\+\_\+start}}
+\index{nunchuk\+\_\+start@{nunchuk\+\_\+start}!Nunchuk.\+c@{Nunchuk.\+c}}
+\subsubsection[{\texorpdfstring{nunchuk\+\_\+start()}{nunchuk_start()}}]{\setlength{\rightskip}{0pt plus 5cm}void nunchuk\+\_\+start (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{_nunchuk_8c_ad40f6458669d05040ade1f3f96e57dad}{}\label{_nunchuk_8c_ad40f6458669d05040ade1f3f96e57dad}
+
+
+Start Nunchuk. 
+
+
+
+Definition at line 13 of file Nunchuk.\+c.
+
+
+\begin{DoxyCode}
+14 \{
+15     I2C\_Start();
+16 \}
+\end{DoxyCode}

@@ -1,0 +1,109 @@
+\hypertarget{_ambient_8h}{}\section{Ambient.\+h File Reference}
+\label{_ambient_8h}\index{Ambient.\+h@{Ambient.\+h}}
+
+
+Ambient light sensor header file.  
+
+
+{\ttfamily \#include $<$math.\+h$>$}\\*
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_ambient_8h_a8e3a2ba5ea91e3a3850cc1352159a982}{C\+H0\+\_\+L}~0x8C
+\item 
+\#define \hyperlink{_ambient_8h_a8012390ce131b31c1ca581ef3c87a712}{C\+H0\+\_\+H}~0x8D
+\item 
+\#define \hyperlink{_ambient_8h_a81906fe64379e62e8ccbc16cd2679d11}{C\+H1\+\_\+L}~0x8E
+\item 
+\#define \hyperlink{_ambient_8h_aa616856759e1f2264997243f8248cf0d}{C\+H1\+\_\+H}~0x8F
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+double \hyperlink{_ambient_8h_a4f2753f74c2249bf17da11de745e8da4}{get\+Lux} (double C\+H0, double C\+H1)
+\begin{DoxyCompactList}\small\item\em Get lux from raw value. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Ambient light sensor header file. 
+
+If you want to use Ambient light sensor methods, Include \hyperlink{_ambient_8h}{Ambient.\+h} file. 
+
+\subsection{Macro Definition Documentation}
+\index{Ambient.\+h@{Ambient.\+h}!C\+H0\+\_\+H@{C\+H0\+\_\+H}}
+\index{C\+H0\+\_\+H@{C\+H0\+\_\+H}!Ambient.\+h@{Ambient.\+h}}
+\subsubsection[{\texorpdfstring{C\+H0\+\_\+H}{CH0_H}}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+H0\+\_\+H~0x8D}\hypertarget{_ambient_8h_a8012390ce131b31c1ca581ef3c87a712}{}\label{_ambient_8h_a8012390ce131b31c1ca581ef3c87a712}
+
+
+Definition at line 9 of file Ambient.\+h.
+
+\index{Ambient.\+h@{Ambient.\+h}!C\+H0\+\_\+L@{C\+H0\+\_\+L}}
+\index{C\+H0\+\_\+L@{C\+H0\+\_\+L}!Ambient.\+h@{Ambient.\+h}}
+\subsubsection[{\texorpdfstring{C\+H0\+\_\+L}{CH0_L}}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+H0\+\_\+L~0x8C}\hypertarget{_ambient_8h_a8e3a2ba5ea91e3a3850cc1352159a982}{}\label{_ambient_8h_a8e3a2ba5ea91e3a3850cc1352159a982}
+
+
+Definition at line 8 of file Ambient.\+h.
+
+\index{Ambient.\+h@{Ambient.\+h}!C\+H1\+\_\+H@{C\+H1\+\_\+H}}
+\index{C\+H1\+\_\+H@{C\+H1\+\_\+H}!Ambient.\+h@{Ambient.\+h}}
+\subsubsection[{\texorpdfstring{C\+H1\+\_\+H}{CH1_H}}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+H1\+\_\+H~0x8F}\hypertarget{_ambient_8h_aa616856759e1f2264997243f8248cf0d}{}\label{_ambient_8h_aa616856759e1f2264997243f8248cf0d}
+
+
+Definition at line 11 of file Ambient.\+h.
+
+\index{Ambient.\+h@{Ambient.\+h}!C\+H1\+\_\+L@{C\+H1\+\_\+L}}
+\index{C\+H1\+\_\+L@{C\+H1\+\_\+L}!Ambient.\+h@{Ambient.\+h}}
+\subsubsection[{\texorpdfstring{C\+H1\+\_\+L}{CH1_L}}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+H1\+\_\+L~0x8E}\hypertarget{_ambient_8h_a81906fe64379e62e8ccbc16cd2679d11}{}\label{_ambient_8h_a81906fe64379e62e8ccbc16cd2679d11}
+
+
+Definition at line 10 of file Ambient.\+h.
+
+
+
+\subsection{Function Documentation}
+\index{Ambient.\+h@{Ambient.\+h}!get\+Lux@{get\+Lux}}
+\index{get\+Lux@{get\+Lux}!Ambient.\+h@{Ambient.\+h}}
+\subsubsection[{\texorpdfstring{get\+Lux(double C\+H0, double C\+H1)}{getLux(double CH0, double CH1)}}]{\setlength{\rightskip}{0pt plus 5cm}double get\+Lux (
+\begin{DoxyParamCaption}
+\item[{double}]{C\+H0, }
+\item[{double}]{C\+H1}
+\end{DoxyParamCaption}
+)}\hypertarget{_ambient_8h_a4f2753f74c2249bf17da11de745e8da4}{}\label{_ambient_8h_a4f2753f74c2249bf17da11de745e8da4}
+
+
+Get lux from raw value. 
+
+get lux using Channel 0 value and Channel 1 value 
+\begin{DoxyParams}{Parameters}
+{\em double} & Channel 0 \\
+\hline
+{\em double} & Channel 1 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+double return calculated value 
+\end{DoxyReturn}
+
+
+Definition at line 15 of file Ambient.\+c.
+
+
+\begin{DoxyCode}
+16 \{
+17     \textcolor{keywordtype}{double} result = 0;
+18     \textcolor{keywordtype}{double} ChannelRatio = (double)CH1/CH0;
+19     
+20     \textcolor{keywordflow}{if}((0<ChannelRatio) && (ChannelRatio <= 0.5))
+21         result = (0.0304 * CH0) - (0.062 * CH0 * pow(ChannelRatio, 1.4));
+22     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}((0.5<ChannelRatio)&&(ChannelRatio <= 0.61))
+23         result = (0.0224 * CH0) - (0.031 * CH1);
+24     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}((0.61<ChannelRatio)&&(ChannelRatio <= 0.80))
+25         result = (0.0128 * CH0) - (0.0153 * CH1);
+26     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}((0.80<ChannelRatio)&&(ChannelRatio <= 1.30))
+27         result = (0.00146 * CH0) - (0.00112 * CH1);
+28     \textcolor{keywordflow}{else} 
+29         result = 0;
+30 
+31     \textcolor{keywordflow}{return} result;
+32 \}
+\end{DoxyCode}

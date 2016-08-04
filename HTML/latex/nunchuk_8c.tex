@@ -1,0 +1,95 @@
+\hypertarget{nunchuk_8c}{}\section{nunchuk.\+c File Reference}
+\label{nunchuk_8c}\index{nunchuk.\+c@{nunchuk.\+c}}
+{\ttfamily \#include \char`\"{}nunchuk.\+h\char`\"{}}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{nunchuk_8c_ad40f6458669d05040ade1f3f96e57dad}{nunchuk\+\_\+start} ()
+\item 
+void \hyperlink{nunchuk_8c_ac07523ee34275cb4903e46884aad8b73}{nunchuk\+\_\+init} (void)
+\item 
+void \hyperlink{nunchuk_8c_a37e673e108d92c828bde632d8288b0ab}{nunchuk\+\_\+read} (void)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\index{nunchuk.\+c@{nunchuk.\+c}!nunchuk\+\_\+init@{nunchuk\+\_\+init}}
+\index{nunchuk\+\_\+init@{nunchuk\+\_\+init}!nunchuk.\+c@{nunchuk.\+c}}
+\subsubsection[{\texorpdfstring{nunchuk\+\_\+init(void)}{nunchuk_init(void)}}]{\setlength{\rightskip}{0pt plus 5cm}void nunchuk\+\_\+init (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{nunchuk_8c_ac07523ee34275cb4903e46884aad8b73}{}\label{nunchuk_8c_ac07523ee34275cb4903e46884aad8b73}
+
+
+Definition at line 19 of file nunchuk.\+c.
+
+
+\begin{DoxyCode}
+20 \{
+21     uint8\_t buf[2] = \{ 0x40, 0x00 \};
+22     uint8\_t status;
+23     I2C\_MasterClearStatus();
+24     CyDelay(100);
+25     status = I2C\_MasterWriteBuf(0x52, buf, 2, I2C\_MODE\_COMPLETE\_XFER);
+26     \textcolor{keywordflow}{while}(((status = I2C\_MasterStatus()) & I2C\_MSTAT\_WR\_CMPLT) == 0);
+27     CyDelay(100);
+28 \}    
+\end{DoxyCode}
+\index{nunchuk.\+c@{nunchuk.\+c}!nunchuk\+\_\+read@{nunchuk\+\_\+read}}
+\index{nunchuk\+\_\+read@{nunchuk\+\_\+read}!nunchuk.\+c@{nunchuk.\+c}}
+\subsubsection[{\texorpdfstring{nunchuk\+\_\+read(void)}{nunchuk_read(void)}}]{\setlength{\rightskip}{0pt plus 5cm}void nunchuk\+\_\+read (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{nunchuk_8c_a37e673e108d92c828bde632d8288b0ab}{}\label{nunchuk_8c_a37e673e108d92c828bde632d8288b0ab}
+
+
+Definition at line 30 of file nunchuk.\+c.
+
+
+\begin{DoxyCode}
+31 \{
+32     uint8\_t status;
+33     uint8\_t buf[6];
+34     \textcolor{comment}{// send conversion command}
+35     buf[0] = 0x00;
+36     I2C\_MasterClearStatus();
+37     status = I2C\_MasterWriteBuf(0x52, buf, 1, I2C\_MODE\_COMPLETE\_XFER);
+38     \textcolor{keywordflow}{while}(((status = I2C\_MasterStatus()) & I2C\_MSTAT\_WR\_CMPLT) == 0);
+39     \textcolor{comment}{// wait for conversion to complete}
+40     CyDelay(50); \textcolor{comment}{// todo: check if shorter wait would work}
+41     \textcolor{comment}{// read values}
+42     I2C\_MasterClearStatus();
+43     status = I2C\_MasterReadBuf(0x52, buf, 6, I2C\_MODE\_COMPLETE\_XFER);
+44     \textcolor{keywordflow}{while}(((status = I2C\_MasterStatus()) & I2C\_MSTAT\_RD\_CMPLT) == 0);
+45     
+46     \textcolor{keywordtype}{int} \hyperlink{_ultra_8c_a78f7a37dba921e0b0347b960fb40bc51}{i};
+47     \textcolor{comment}{// decrypt data}
+48     \textcolor{keywordflow}{for}(i = 0; i < 6; i++) buf[i] = (buf[i] ^ 0x17) + 0x17;
+49     \textcolor{comment}{// accelerometer values}
+50     \textcolor{keywordtype}{int} x,y,z;
+51     x = (buf[2] << 2) | ((buf[5] >> 2) & 0x03);
+52     y = (buf[3] << 2) | ((buf[5] >> 4) & 0x03);
+53     z = (buf[4] << 2) | ((buf[5] >> 6) & 0x03);
+54     \textcolor{comment}{// buf[0] = JoyX, buf[1] = JoyY}
+55     printf(\textcolor{stringliteral}{"%3d %3d, %d, %d, %4d %4d %4d\(\backslash\)r\(\backslash\)n"}, buf[0], buf[1], (buf[5] >> 1) & 1, buf[5] & 1, x, y, z);
+56 \}    
+\end{DoxyCode}
+\index{nunchuk.\+c@{nunchuk.\+c}!nunchuk\+\_\+start@{nunchuk\+\_\+start}}
+\index{nunchuk\+\_\+start@{nunchuk\+\_\+start}!nunchuk.\+c@{nunchuk.\+c}}
+\subsubsection[{\texorpdfstring{nunchuk\+\_\+start()}{nunchuk_start()}}]{\setlength{\rightskip}{0pt plus 5cm}void nunchuk\+\_\+start (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{nunchuk_8c_ad40f6458669d05040ade1f3f96e57dad}{}\label{nunchuk_8c_ad40f6458669d05040ade1f3f96e57dad}
+
+
+Definition at line 14 of file nunchuk.\+c.
+
+
+\begin{DoxyCode}
+15 \{
+16     I2C\_Start();
+17 \}
+\end{DoxyCode}

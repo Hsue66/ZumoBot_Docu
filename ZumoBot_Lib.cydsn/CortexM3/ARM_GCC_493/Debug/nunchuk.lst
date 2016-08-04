@@ -1,0 +1,1404 @@
+ARM GAS  C:\Users\dufma\AppData\Local\Temp\cceTgH1S.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"Nunchuk.c"
+  15              		.text
+  16              	.Ltext0:
+  17              		.cfi_sections	.debug_frame
+  18              		.section	.text.nunchuk_start,"ax",%progbits
+  19              		.align	2
+  20              		.global	nunchuk_start
+  21              		.thumb
+  22              		.thumb_func
+  23              		.type	nunchuk_start, %function
+  24              	nunchuk_start:
+  25              	.LFB63:
+  26              		.file 1 ".\\Nunchuk.c"
+   1:.\Nunchuk.c   **** /**
+   2:.\Nunchuk.c   ****  * @file    Nunchuk.c
+   3:.\Nunchuk.c   ****  * @brief   Nunchuk method file
+   4:.\Nunchuk.c   ****  * @details 
+   5:.\Nunchuk.c   **** */
+   6:.\Nunchuk.c   **** #include "nunchuk.h"
+   7:.\Nunchuk.c   **** 
+   8:.\Nunchuk.c   **** 
+   9:.\Nunchuk.c   **** /**
+  10:.\Nunchuk.c   **** * @brief    Start Nunchuk
+  11:.\Nunchuk.c   **** * @details
+  12:.\Nunchuk.c   **** */
+  13:.\Nunchuk.c   **** void nunchuk_start()
+  14:.\Nunchuk.c   **** {
+  27              		.loc 1 14 0
+  28              		.cfi_startproc
+  29              		@ args = 0, pretend = 0, frame = 0
+  30              		@ frame_needed = 0, uses_anonymous_args = 0
+  31 0000 08B5     		push	{r3, lr}
+  32              		.cfi_def_cfa_offset 8
+  33              		.cfi_offset 3, -8
+  34              		.cfi_offset 14, -4
+  15:.\Nunchuk.c   ****     I2C_Start();
+  35              		.loc 1 15 0
+  36 0002 FFF7FEFF 		bl	I2C_Start
+  37              	.LVL0:
+  38 0006 08BD     		pop	{r3, pc}
+  39              		.cfi_endproc
+  40              	.LFE63:
+  41              		.size	nunchuk_start, .-nunchuk_start
+  42              		.section	.text.nunchuk_init,"ax",%progbits
+ARM GAS  C:\Users\dufma\AppData\Local\Temp\cceTgH1S.s 			page 2
+
+
+  43              		.align	2
+  44              		.global	nunchuk_init
+  45              		.thumb
+  46              		.thumb_func
+  47              		.type	nunchuk_init, %function
+  48              	nunchuk_init:
+  49              	.LFB64:
+  16:.\Nunchuk.c   **** }
+  17:.\Nunchuk.c   **** 
+  18:.\Nunchuk.c   **** /**
+  19:.\Nunchuk.c   **** * @brief    Initializing Nunchuk
+  20:.\Nunchuk.c   **** * @details  write value(0x00) to register(address - 0x40) to initialize nunchuk
+  21:.\Nunchuk.c   **** */
+  22:.\Nunchuk.c   **** void nunchuk_init()
+  23:.\Nunchuk.c   **** {
+  50              		.loc 1 23 0
+  51              		.cfi_startproc
+  52              		@ args = 0, pretend = 0, frame = 8
+  53              		@ frame_needed = 0, uses_anonymous_args = 0
+  54 0000 10B5     		push	{r4, lr}
+  55              		.cfi_def_cfa_offset 8
+  56              		.cfi_offset 4, -8
+  57              		.cfi_offset 14, -4
+  58 0002 82B0     		sub	sp, sp, #8
+  59              		.cfi_def_cfa_offset 16
+  24:.\Nunchuk.c   ****     uint8_t buf[2] = { 0x40, 0x00 };
+  60              		.loc 1 24 0
+  61 0004 4023     		movs	r3, #64
+  62 0006 8DF80430 		strb	r3, [sp, #4]
+  63 000a 0024     		movs	r4, #0
+  64 000c 8DF80540 		strb	r4, [sp, #5]
+  25:.\Nunchuk.c   ****     uint8_t status;
+  26:.\Nunchuk.c   ****     I2C_MasterClearStatus();
+  65              		.loc 1 26 0
+  66 0010 FFF7FEFF 		bl	I2C_MasterClearStatus
+  67              	.LVL1:
+  27:.\Nunchuk.c   ****     CyDelay(100);
+  68              		.loc 1 27 0
+  69 0014 6420     		movs	r0, #100
+  70 0016 FFF7FEFF 		bl	CyDelay
+  71              	.LVL2:
+  28:.\Nunchuk.c   ****     status = I2C_MasterWriteBuf(0x52, buf, 2, I2C_MODE_COMPLETE_XFER);
+  72              		.loc 1 28 0
+  73 001a 5220     		movs	r0, #82
+  74 001c 01A9     		add	r1, sp, #4
+  75 001e 0222     		movs	r2, #2
+  76 0020 2346     		mov	r3, r4
+  77 0022 FFF7FEFF 		bl	I2C_MasterWriteBuf
+  78              	.LVL3:
+  79              	.L4:
+  29:.\Nunchuk.c   ****     while(((status = I2C_MasterStatus()) & I2C_MSTAT_WR_CMPLT) == 0);
+  80              		.loc 1 29 0 discriminator 1
+  81 0026 FFF7FEFF 		bl	I2C_MasterStatus
+  82              	.LVL4:
+  83 002a 10F0020F 		tst	r0, #2
+  84 002e FAD0     		beq	.L4
+  30:.\Nunchuk.c   ****     CyDelay(100);
+ARM GAS  C:\Users\dufma\AppData\Local\Temp\cceTgH1S.s 			page 3
+
+
+  85              		.loc 1 30 0
+  86 0030 6420     		movs	r0, #100
+  87              	.LVL5:
+  88 0032 FFF7FEFF 		bl	CyDelay
+  89              	.LVL6:
+  31:.\Nunchuk.c   **** }    
+  90              		.loc 1 31 0
+  91 0036 02B0     		add	sp, sp, #8
+  92              		.cfi_def_cfa_offset 8
+  93              		@ sp needed
+  94 0038 10BD     		pop	{r4, pc}
+  95              		.cfi_endproc
+  96              	.LFE64:
+  97              		.size	nunchuk_init, .-nunchuk_init
+  98 003a 00BF     		.section	.text.nunchuk_read,"ax",%progbits
+  99              		.align	2
+ 100              		.global	nunchuk_read
+ 101              		.thumb
+ 102              		.thumb_func
+ 103              		.type	nunchuk_read, %function
+ 104              	nunchuk_read:
+ 105              	.LFB65:
+  32:.\Nunchuk.c   **** 
+  33:.\Nunchuk.c   **** /**
+  34:.\Nunchuk.c   **** * @brief Read Nunchuk value
+  35:.\Nunchuk.c   **** * @details read nunchuk value and get Joystick values and accelerometer values
+  36:.\Nunchuk.c   **** */
+  37:.\Nunchuk.c   **** void nunchuk_read()
+  38:.\Nunchuk.c   **** {
+ 106              		.loc 1 38 0
+ 107              		.cfi_startproc
+ 108              		@ args = 0, pretend = 0, frame = 8
+ 109              		@ frame_needed = 0, uses_anonymous_args = 0
+ 110 0000 70B5     		push	{r4, r5, r6, lr}
+ 111              		.cfi_def_cfa_offset 16
+ 112              		.cfi_offset 4, -16
+ 113              		.cfi_offset 5, -12
+ 114              		.cfi_offset 6, -8
+ 115              		.cfi_offset 14, -4
+ 116 0002 86B0     		sub	sp, sp, #24
+ 117              		.cfi_def_cfa_offset 40
+  39:.\Nunchuk.c   ****     uint8_t status;
+  40:.\Nunchuk.c   ****     uint8_t buf[6];
+  41:.\Nunchuk.c   ****     // send conversion command
+  42:.\Nunchuk.c   ****     buf[0] = 0x00;
+ 118              		.loc 1 42 0
+ 119 0004 0025     		movs	r5, #0
+ 120 0006 06AC     		add	r4, sp, #24
+ 121 0008 04F8085D 		strb	r5, [r4, #-8]!
+  43:.\Nunchuk.c   ****     I2C_MasterClearStatus();
+ 122              		.loc 1 43 0
+ 123 000c FFF7FEFF 		bl	I2C_MasterClearStatus
+ 124              	.LVL7:
+  44:.\Nunchuk.c   ****     status = I2C_MasterWriteBuf(0x52, buf, 1, I2C_MODE_COMPLETE_XFER);
+ 125              		.loc 1 44 0
+ 126 0010 5220     		movs	r0, #82
+ 127 0012 2146     		mov	r1, r4
+ARM GAS  C:\Users\dufma\AppData\Local\Temp\cceTgH1S.s 			page 4
+
+
+ 128 0014 0122     		movs	r2, #1
+ 129 0016 2B46     		mov	r3, r5
+ 130 0018 FFF7FEFF 		bl	I2C_MasterWriteBuf
+ 131              	.LVL8:
+ 132              	.L7:
+  45:.\Nunchuk.c   ****     while(((status = I2C_MasterStatus()) & I2C_MSTAT_WR_CMPLT) == 0);
+ 133              		.loc 1 45 0 discriminator 1
+ 134 001c FFF7FEFF 		bl	I2C_MasterStatus
+ 135              	.LVL9:
+ 136 0020 10F0020F 		tst	r0, #2
+ 137 0024 FAD0     		beq	.L7
+  46:.\Nunchuk.c   ****     // wait for conversion to complete
+  47:.\Nunchuk.c   ****     CyDelay(50); // todo: check if shorter wait would work
+ 138              		.loc 1 47 0
+ 139 0026 3220     		movs	r0, #50
+ 140              	.LVL10:
+ 141 0028 FFF7FEFF 		bl	CyDelay
+ 142              	.LVL11:
+  48:.\Nunchuk.c   ****     // read values
+  49:.\Nunchuk.c   ****     I2C_MasterClearStatus();
+ 143              		.loc 1 49 0
+ 144 002c FFF7FEFF 		bl	I2C_MasterClearStatus
+ 145              	.LVL12:
+  50:.\Nunchuk.c   ****     status = I2C_MasterReadBuf(0x52, buf, 6, I2C_MODE_COMPLETE_XFER);
+ 146              		.loc 1 50 0
+ 147 0030 5220     		movs	r0, #82
+ 148 0032 04A9     		add	r1, sp, #16
+ 149 0034 0622     		movs	r2, #6
+ 150 0036 0023     		movs	r3, #0
+ 151 0038 FFF7FEFF 		bl	I2C_MasterReadBuf
+ 152              	.LVL13:
+ 153              	.L8:
+  51:.\Nunchuk.c   ****     while(((status = I2C_MasterStatus()) & I2C_MSTAT_RD_CMPLT) == 0);
+ 154              		.loc 1 51 0 discriminator 1
+ 155 003c FFF7FEFF 		bl	I2C_MasterStatus
+ 156              	.LVL14:
+ 157 0040 10F0010F 		tst	r0, #1
+ 158 0044 FAD0     		beq	.L8
+ 159 0046 0022     		movs	r2, #0
+ 160 0048 09E0     		b	.L9
+ 161              	.LVL15:
+ 162              	.L10:
+  52:.\Nunchuk.c   ****     
+  53:.\Nunchuk.c   ****     int i;
+  54:.\Nunchuk.c   ****     // decrypt data
+  55:.\Nunchuk.c   ****     for(i = 0; i < 6; i++) buf[i] = (buf[i] ^ 0x17) + 0x17;
+ 163              		.loc 1 55 0 discriminator 3
+ 164 004a 06AB     		add	r3, sp, #24
+ 165 004c 9918     		adds	r1, r3, r2
+ 166 004e 11F8083C 		ldrb	r3, [r1, #-8]	@ zero_extendqisi2
+ 167 0052 83F01703 		eor	r3, r3, #23
+ 168 0056 1733     		adds	r3, r3, #23
+ 169 0058 01F8083C 		strb	r3, [r1, #-8]
+ 170 005c 0132     		adds	r2, r2, #1
+ 171              	.LVL16:
+ 172              	.L9:
+ 173              		.loc 1 55 0 is_stmt 0 discriminator 1
+ARM GAS  C:\Users\dufma\AppData\Local\Temp\cceTgH1S.s 			page 5
+
+
+ 174 005e 052A     		cmp	r2, #5
+ 175 0060 F3DD     		ble	.L10
+  56:.\Nunchuk.c   ****     // accelerometer values
+  57:.\Nunchuk.c   ****     int x,y,z;
+  58:.\Nunchuk.c   ****     x = (buf[2] << 2) | ((buf[5] >> 2) & 0x03);
+ 176              		.loc 1 58 0 is_stmt 1
+ 177 0062 9DF81250 		ldrb	r5, [sp, #18]	@ zero_extendqisi2
+ 178 0066 9DF81530 		ldrb	r3, [sp, #21]	@ zero_extendqisi2
+ 179 006a C3F38102 		ubfx	r2, r3, #2, #2
+ 180              	.LVL17:
+ 181 006e 42EA8505 		orr	r5, r2, r5, lsl #2
+ 182              	.LVL18:
+  59:.\Nunchuk.c   ****     y = (buf[3] << 2) | ((buf[5] >> 4) & 0x03);
+ 183              		.loc 1 59 0
+ 184 0072 9DF81340 		ldrb	r4, [sp, #19]	@ zero_extendqisi2
+ 185 0076 C3F30112 		ubfx	r2, r3, #4, #2
+ 186 007a 42EA8404 		orr	r4, r2, r4, lsl #2
+ 187              	.LVL19:
+  60:.\Nunchuk.c   ****     z = (buf[4] << 2) | ((buf[5] >> 6) & 0x03);
+ 188              		.loc 1 60 0
+ 189 007e 9DF81400 		ldrb	r0, [sp, #20]	@ zero_extendqisi2
+ 190              	.LVL20:
+ 191 0082 9A09     		lsrs	r2, r3, #6
+ 192 0084 42EA8000 		orr	r0, r2, r0, lsl #2
+ 193              	.LVL21:
+  61:.\Nunchuk.c   ****     // buf[0] = JoyX, buf[1] = JoyY
+  62:.\Nunchuk.c   ****     printf("%3d %3d, %d, %d, %4d %4d %4d\r\n", buf[0], buf[1], (buf[5] >> 1) & 1, buf[5] & 1, x, y,
+ 194              		.loc 1 62 0
+ 195 0088 9DF81010 		ldrb	r1, [sp, #16]	@ zero_extendqisi2
+ 196 008c 9DF81120 		ldrb	r2, [sp, #17]	@ zero_extendqisi2
+ 197 0090 03F00106 		and	r6, r3, #1
+ 198 0094 0096     		str	r6, [sp]
+ 199 0096 0195     		str	r5, [sp, #4]
+ 200 0098 0294     		str	r4, [sp, #8]
+ 201 009a 0390     		str	r0, [sp, #12]
+ 202 009c 0348     		ldr	r0, .L12
+ 203              	.LVL22:
+ 204 009e C3F34003 		ubfx	r3, r3, #1, #1
+ 205 00a2 FFF7FEFF 		bl	printf
+ 206              	.LVL23:
+  63:.\Nunchuk.c   **** }    
+ 207              		.loc 1 63 0
+ 208 00a6 06B0     		add	sp, sp, #24
+ 209              		.cfi_def_cfa_offset 16
+ 210              		@ sp needed
+ 211 00a8 70BD     		pop	{r4, r5, r6, pc}
+ 212              	.LVL24:
+ 213              	.L13:
+ 214 00aa 00BF     		.align	2
+ 215              	.L12:
+ 216 00ac 00000000 		.word	.LC0
+ 217              		.cfi_endproc
+ 218              	.LFE65:
+ 219              		.size	nunchuk_read, .-nunchuk_read
+ 220              		.section	.rodata.str1.4,"aMS",%progbits,1
+ 221              		.align	2
+ 222              	.LC0:
+ARM GAS  C:\Users\dufma\AppData\Local\Temp\cceTgH1S.s 			page 6
+
+
+ 223 0000 25336420 		.ascii	"%3d %3d, %d, %d, %4d %4d %4d\015\012\000"
+ 223      2533642C 
+ 223      2025642C 
+ 223      2025642C 
+ 223      20253464 
+ 224 001f 00       		.text
+ 225              	.Letext0:
+ 226              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\3.3\\psoc creator\\import\\gnu\\arm\\4.9.
+ 227              		.file 3 "c:\\program files (x86)\\cypress\\psoc creator\\3.3\\psoc creator\\import\\gnu\\arm\\4.9.
+ 228              		.file 4 "Generated_Source\\PSoC5/cytypes.h"
+ 229              		.file 5 "Generated_Source\\PSoC5/I2C.h"
+ 230              		.file 6 "Generated_Source\\PSoC5/CyLib.h"
+ 231              		.file 7 "c:\\program files (x86)\\cypress\\psoc creator\\3.3\\psoc creator\\import\\gnu\\arm\\4.9.
+ 232              		.file 8 "Generated_Source\\PSoC5/core_cm3.h"
+ 233              		.section	.debug_info,"",%progbits
+ 234              	.Ldebug_info0:
+ 235 0000 50030000 		.4byte	0x350
+ 236 0004 0400     		.2byte	0x4
+ 237 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 238 000a 04       		.byte	0x4
+ 239 000b 01       		.uleb128 0x1
+ 240 000c 12010000 		.4byte	.LASF29
+ 241 0010 01       		.byte	0x1
+ 242 0011 08020000 		.4byte	.LASF30
+ 243 0015 54000000 		.4byte	.LASF31
+ 244 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 245 001d 00000000 		.4byte	0
+ 246 0021 00000000 		.4byte	.Ldebug_line0
+ 247 0025 02       		.uleb128 0x2
+ 248 0026 01       		.byte	0x1
+ 249 0027 06       		.byte	0x6
+ 250 0028 2D020000 		.4byte	.LASF0
+ 251 002c 03       		.uleb128 0x3
+ 252 002d 00000000 		.4byte	.LASF4
+ 253 0031 02       		.byte	0x2
+ 254 0032 1D       		.byte	0x1d
+ 255 0033 37000000 		.4byte	0x37
+ 256 0037 02       		.uleb128 0x2
+ 257 0038 01       		.byte	0x1
+ 258 0039 08       		.byte	0x8
+ 259 003a 9C000000 		.4byte	.LASF1
+ 260 003e 02       		.uleb128 0x2
+ 261 003f 02       		.byte	0x2
+ 262 0040 05       		.byte	0x5
+ 263 0041 14020000 		.4byte	.LASF2
+ 264 0045 02       		.uleb128 0x2
+ 265 0046 02       		.byte	0x2
+ 266 0047 07       		.byte	0x7
+ 267 0048 1A000000 		.4byte	.LASF3
+ 268 004c 03       		.uleb128 0x3
+ 269 004d 10000000 		.4byte	.LASF5
+ 270 0051 02       		.byte	0x2
+ 271 0052 3F       		.byte	0x3f
+ 272 0053 57000000 		.4byte	0x57
+ 273 0057 02       		.uleb128 0x2
+ 274 0058 04       		.byte	0x4
+ 275 0059 05       		.byte	0x5
+ARM GAS  C:\Users\dufma\AppData\Local\Temp\cceTgH1S.s 			page 7
+
+
+ 276 005a 24020000 		.4byte	.LASF6
+ 277 005e 02       		.uleb128 0x2
+ 278 005f 04       		.byte	0x4
+ 279 0060 07       		.byte	0x7
+ 280 0061 CA000000 		.4byte	.LASF7
+ 281 0065 02       		.uleb128 0x2
+ 282 0066 08       		.byte	0x8
+ 283 0067 05       		.byte	0x5
+ 284 0068 DD010000 		.4byte	.LASF8
+ 285 006c 02       		.uleb128 0x2
+ 286 006d 08       		.byte	0x8
+ 287 006e 07       		.byte	0x7
+ 288 006f AD010000 		.4byte	.LASF9
+ 289 0073 04       		.uleb128 0x4
+ 290 0074 04       		.byte	0x4
+ 291 0075 05       		.byte	0x5
+ 292 0076 696E7400 		.ascii	"int\000"
+ 293 007a 02       		.uleb128 0x2
+ 294 007b 04       		.byte	0x4
+ 295 007c 07       		.byte	0x7
+ 296 007d A0010000 		.4byte	.LASF10
+ 297 0081 03       		.uleb128 0x3
+ 298 0082 C4010000 		.4byte	.LASF11
+ 299 0086 03       		.byte	0x3
+ 300 0087 15       		.byte	0x15
+ 301 0088 2C000000 		.4byte	0x2c
+ 302 008c 03       		.uleb128 0x3
+ 303 008d CC010000 		.4byte	.LASF12
+ 304 0091 03       		.byte	0x3
+ 305 0092 2C       		.byte	0x2c
+ 306 0093 4C000000 		.4byte	0x4c
+ 307 0097 05       		.uleb128 0x5
+ 308 0098 1E020000 		.4byte	.LASF13
+ 309 009c 04       		.byte	0x4
+ 310 009d 3801     		.2byte	0x138
+ 311 009f 37000000 		.4byte	0x37
+ 312 00a3 05       		.uleb128 0x5
+ 313 00a4 0B010000 		.4byte	.LASF14
+ 314 00a8 04       		.byte	0x4
+ 315 00a9 3A01     		.2byte	0x13a
+ 316 00ab 5E000000 		.4byte	0x5e
+ 317 00af 02       		.uleb128 0x2
+ 318 00b0 04       		.byte	0x4
+ 319 00b1 04       		.byte	0x4
+ 320 00b2 0A000000 		.4byte	.LASF15
+ 321 00b6 02       		.uleb128 0x2
+ 322 00b7 08       		.byte	0x8
+ 323 00b8 04       		.byte	0x4
+ 324 00b9 F7000000 		.4byte	.LASF16
+ 325 00bd 02       		.uleb128 0x2
+ 326 00be 01       		.byte	0x1
+ 327 00bf 08       		.byte	0x8
+ 328 00c0 EB010000 		.4byte	.LASF17
+ 329 00c4 02       		.uleb128 0x2
+ 330 00c5 04       		.byte	0x4
+ 331 00c6 07       		.byte	0x7
+ 332 00c7 D4010000 		.4byte	.LASF18
+ARM GAS  C:\Users\dufma\AppData\Local\Temp\cceTgH1S.s 			page 8
+
+
+ 333 00cb 06       		.uleb128 0x6
+ 334 00cc 04       		.byte	0x4
+ 335 00cd D1000000 		.4byte	0xd1
+ 336 00d1 07       		.uleb128 0x7
+ 337 00d2 BD000000 		.4byte	0xbd
+ 338 00d6 08       		.uleb128 0x8
+ 339 00d7 E9000000 		.4byte	.LASF19
+ 340 00db 01       		.byte	0x1
+ 341 00dc 0D       		.byte	0xd
+ 342 00dd 00000000 		.4byte	.LFB63
+ 343 00e1 08000000 		.4byte	.LFE63-.LFB63
+ 344 00e5 01       		.uleb128 0x1
+ 345 00e6 9C       		.byte	0x9c
+ 346 00e7 F5000000 		.4byte	0xf5
+ 347 00eb 09       		.uleb128 0x9
+ 348 00ec 06000000 		.4byte	.LVL0
+ 349 00f0 C5020000 		.4byte	0x2c5
+ 350 00f4 00       		.byte	0
+ 351 00f5 08       		.uleb128 0x8
+ 352 00f6 BD000000 		.4byte	.LASF20
+ 353 00fa 01       		.byte	0x1
+ 354 00fb 16       		.byte	0x16
+ 355 00fc 00000000 		.4byte	.LFB64
+ 356 0100 3A000000 		.4byte	.LFE64-.LFB64
+ 357 0104 01       		.uleb128 0x1
+ 358 0105 9C       		.byte	0x9c
+ 359 0106 83010000 		.4byte	0x183
+ 360 010a 0A       		.uleb128 0xa
+ 361 010b 62756600 		.ascii	"buf\000"
+ 362 010f 01       		.byte	0x1
+ 363 0110 18       		.byte	0x18
+ 364 0111 83010000 		.4byte	0x183
+ 365 0115 02       		.uleb128 0x2
+ 366 0116 91       		.byte	0x91
+ 367 0117 74       		.sleb128 -12
+ 368 0118 0B       		.uleb128 0xb
+ 369 0119 43000000 		.4byte	.LASF21
+ 370 011d 01       		.byte	0x1
+ 371 011e 19       		.byte	0x19
+ 372 011f 81000000 		.4byte	0x81
+ 373 0123 00000000 		.4byte	.LLST0
+ 374 0127 09       		.uleb128 0x9
+ 375 0128 14000000 		.4byte	.LVL1
+ 376 012c CC020000 		.4byte	0x2cc
+ 377 0130 0C       		.uleb128 0xc
+ 378 0131 1A000000 		.4byte	.LVL2
+ 379 0135 D7020000 		.4byte	0x2d7
+ 380 0139 44010000 		.4byte	0x144
+ 381 013d 0D       		.uleb128 0xd
+ 382 013e 01       		.uleb128 0x1
+ 383 013f 50       		.byte	0x50
+ 384 0140 02       		.uleb128 0x2
+ 385 0141 08       		.byte	0x8
+ 386 0142 64       		.byte	0x64
+ 387 0143 00       		.byte	0
+ 388 0144 0C       		.uleb128 0xc
+ 389 0145 26000000 		.4byte	.LVL3
+ARM GAS  C:\Users\dufma\AppData\Local\Temp\cceTgH1S.s 			page 9
+
+
+ 390 0149 E8020000 		.4byte	0x2e8
+ 391 014d 69010000 		.4byte	0x169
+ 392 0151 0D       		.uleb128 0xd
+ 393 0152 01       		.uleb128 0x1
+ 394 0153 53       		.byte	0x53
+ 395 0154 02       		.uleb128 0x2
+ 396 0155 74       		.byte	0x74
+ 397 0156 00       		.sleb128 0
+ 398 0157 0D       		.uleb128 0xd
+ 399 0158 01       		.uleb128 0x1
+ 400 0159 52       		.byte	0x52
+ 401 015a 01       		.uleb128 0x1
+ 402 015b 32       		.byte	0x32
+ 403 015c 0D       		.uleb128 0xd
+ 404 015d 01       		.uleb128 0x1
+ 405 015e 51       		.byte	0x51
+ 406 015f 02       		.uleb128 0x2
+ 407 0160 91       		.byte	0x91
+ 408 0161 74       		.sleb128 -12
+ 409 0162 0D       		.uleb128 0xd
+ 410 0163 01       		.uleb128 0x1
+ 411 0164 50       		.byte	0x50
+ 412 0165 02       		.uleb128 0x2
+ 413 0166 08       		.byte	0x8
+ 414 0167 52       		.byte	0x52
+ 415 0168 00       		.byte	0
+ 416 0169 09       		.uleb128 0x9
+ 417 016a 2A000000 		.4byte	.LVL4
+ 418 016e 12030000 		.4byte	0x312
+ 419 0172 0E       		.uleb128 0xe
+ 420 0173 36000000 		.4byte	.LVL6
+ 421 0177 D7020000 		.4byte	0x2d7
+ 422 017b 0D       		.uleb128 0xd
+ 423 017c 01       		.uleb128 0x1
+ 424 017d 50       		.byte	0x50
+ 425 017e 02       		.uleb128 0x2
+ 426 017f 08       		.byte	0x8
+ 427 0180 64       		.byte	0x64
+ 428 0181 00       		.byte	0
+ 429 0182 00       		.byte	0
+ 430 0183 0F       		.uleb128 0xf
+ 431 0184 81000000 		.4byte	0x81
+ 432 0188 93010000 		.4byte	0x193
+ 433 018c 10       		.uleb128 0x10
+ 434 018d C4000000 		.4byte	0xc4
+ 435 0191 01       		.byte	0x1
+ 436 0192 00       		.byte	0
+ 437 0193 08       		.uleb128 0x8
+ 438 0194 FE000000 		.4byte	.LASF22
+ 439 0198 01       		.byte	0x1
+ 440 0199 25       		.byte	0x25
+ 441 019a 00000000 		.4byte	.LFB65
+ 442 019e B0000000 		.4byte	.LFE65-.LFB65
+ 443 01a2 01       		.uleb128 0x1
+ 444 01a3 9C       		.byte	0x9c
+ 445 01a4 A4020000 		.4byte	0x2a4
+ 446 01a8 0B       		.uleb128 0xb
+ARM GAS  C:\Users\dufma\AppData\Local\Temp\cceTgH1S.s 			page 10
+
+
+ 447 01a9 43000000 		.4byte	.LASF21
+ 448 01ad 01       		.byte	0x1
+ 449 01ae 27       		.byte	0x27
+ 450 01af 81000000 		.4byte	0x81
+ 451 01b3 13000000 		.4byte	.LLST1
+ 452 01b7 0A       		.uleb128 0xa
+ 453 01b8 62756600 		.ascii	"buf\000"
+ 454 01bc 01       		.byte	0x1
+ 455 01bd 28       		.byte	0x28
+ 456 01be A4020000 		.4byte	0x2a4
+ 457 01c2 02       		.uleb128 0x2
+ 458 01c3 91       		.byte	0x91
+ 459 01c4 68       		.sleb128 -24
+ 460 01c5 11       		.uleb128 0x11
+ 461 01c6 6900     		.ascii	"i\000"
+ 462 01c8 01       		.byte	0x1
+ 463 01c9 35       		.byte	0x35
+ 464 01ca 73000000 		.4byte	0x73
+ 465 01ce 31000000 		.4byte	.LLST2
+ 466 01d2 11       		.uleb128 0x11
+ 467 01d3 7800     		.ascii	"x\000"
+ 468 01d5 01       		.byte	0x1
+ 469 01d6 39       		.byte	0x39
+ 470 01d7 73000000 		.4byte	0x73
+ 471 01db 44000000 		.4byte	.LLST3
+ 472 01df 11       		.uleb128 0x11
+ 473 01e0 7900     		.ascii	"y\000"
+ 474 01e2 01       		.byte	0x1
+ 475 01e3 39       		.byte	0x39
+ 476 01e4 73000000 		.4byte	0x73
+ 477 01e8 57000000 		.4byte	.LLST4
+ 478 01ec 11       		.uleb128 0x11
+ 479 01ed 7A00     		.ascii	"z\000"
+ 480 01ef 01       		.byte	0x1
+ 481 01f0 39       		.byte	0x39
+ 482 01f1 73000000 		.4byte	0x73
+ 483 01f5 6A000000 		.4byte	.LLST5
+ 484 01f9 09       		.uleb128 0x9
+ 485 01fa 10000000 		.4byte	.LVL7
+ 486 01fe CC020000 		.4byte	0x2cc
+ 487 0202 0C       		.uleb128 0xc
+ 488 0203 1C000000 		.4byte	.LVL8
+ 489 0207 E8020000 		.4byte	0x2e8
+ 490 020b 27020000 		.4byte	0x227
+ 491 020f 0D       		.uleb128 0xd
+ 492 0210 01       		.uleb128 0x1
+ 493 0211 53       		.byte	0x53
+ 494 0212 02       		.uleb128 0x2
+ 495 0213 75       		.byte	0x75
+ 496 0214 00       		.sleb128 0
+ 497 0215 0D       		.uleb128 0xd
+ 498 0216 01       		.uleb128 0x1
+ 499 0217 52       		.byte	0x52
+ 500 0218 01       		.uleb128 0x1
+ 501 0219 31       		.byte	0x31
+ 502 021a 0D       		.uleb128 0xd
+ 503 021b 01       		.uleb128 0x1
+ARM GAS  C:\Users\dufma\AppData\Local\Temp\cceTgH1S.s 			page 11
+
+
+ 504 021c 51       		.byte	0x51
+ 505 021d 02       		.uleb128 0x2
+ 506 021e 74       		.byte	0x74
+ 507 021f 00       		.sleb128 0
+ 508 0220 0D       		.uleb128 0xd
+ 509 0221 01       		.uleb128 0x1
+ 510 0222 50       		.byte	0x50
+ 511 0223 02       		.uleb128 0x2
+ 512 0224 08       		.byte	0x8
+ 513 0225 52       		.byte	0x52
+ 514 0226 00       		.byte	0
+ 515 0227 09       		.uleb128 0x9
+ 516 0228 20000000 		.4byte	.LVL9
+ 517 022c 12030000 		.4byte	0x312
+ 518 0230 0C       		.uleb128 0xc
+ 519 0231 2C000000 		.4byte	.LVL11
+ 520 0235 D7020000 		.4byte	0x2d7
+ 521 0239 44020000 		.4byte	0x244
+ 522 023d 0D       		.uleb128 0xd
+ 523 023e 01       		.uleb128 0x1
+ 524 023f 50       		.byte	0x50
+ 525 0240 02       		.uleb128 0x2
+ 526 0241 08       		.byte	0x8
+ 527 0242 32       		.byte	0x32
+ 528 0243 00       		.byte	0
+ 529 0244 09       		.uleb128 0x9
+ 530 0245 30000000 		.4byte	.LVL12
+ 531 0249 CC020000 		.4byte	0x2cc
+ 532 024d 0C       		.uleb128 0xc
+ 533 024e 3C000000 		.4byte	.LVL13
+ 534 0252 1D030000 		.4byte	0x31d
+ 535 0256 72020000 		.4byte	0x272
+ 536 025a 0D       		.uleb128 0xd
+ 537 025b 01       		.uleb128 0x1
+ 538 025c 53       		.byte	0x53
+ 539 025d 02       		.uleb128 0x2
+ 540 025e 75       		.byte	0x75
+ 541 025f 00       		.sleb128 0
+ 542 0260 0D       		.uleb128 0xd
+ 543 0261 01       		.uleb128 0x1
+ 544 0262 52       		.byte	0x52
+ 545 0263 01       		.uleb128 0x1
+ 546 0264 36       		.byte	0x36
+ 547 0265 0D       		.uleb128 0xd
+ 548 0266 01       		.uleb128 0x1
+ 549 0267 51       		.byte	0x51
+ 550 0268 02       		.uleb128 0x2
+ 551 0269 91       		.byte	0x91
+ 552 026a 68       		.sleb128 -24
+ 553 026b 0D       		.uleb128 0xd
+ 554 026c 01       		.uleb128 0x1
+ 555 026d 50       		.byte	0x50
+ 556 026e 02       		.uleb128 0x2
+ 557 026f 08       		.byte	0x8
+ 558 0270 52       		.byte	0x52
+ 559 0271 00       		.byte	0
+ 560 0272 09       		.uleb128 0x9
+ARM GAS  C:\Users\dufma\AppData\Local\Temp\cceTgH1S.s 			page 12
+
+
+ 561 0273 40000000 		.4byte	.LVL14
+ 562 0277 12030000 		.4byte	0x312
+ 563 027b 0E       		.uleb128 0xe
+ 564 027c A6000000 		.4byte	.LVL23
+ 565 0280 41030000 		.4byte	0x341
+ 566 0284 0D       		.uleb128 0xd
+ 567 0285 01       		.uleb128 0x1
+ 568 0286 50       		.byte	0x50
+ 569 0287 05       		.uleb128 0x5
+ 570 0288 03       		.byte	0x3
+ 571 0289 00000000 		.4byte	.LC0
+ 572 028d 0D       		.uleb128 0xd
+ 573 028e 02       		.uleb128 0x2
+ 574 028f 7D       		.byte	0x7d
+ 575 0290 08       		.sleb128 8
+ 576 0291 02       		.uleb128 0x2
+ 577 0292 74       		.byte	0x74
+ 578 0293 00       		.sleb128 0
+ 579 0294 0D       		.uleb128 0xd
+ 580 0295 02       		.uleb128 0x2
+ 581 0296 7D       		.byte	0x7d
+ 582 0297 04       		.sleb128 4
+ 583 0298 02       		.uleb128 0x2
+ 584 0299 75       		.byte	0x75
+ 585 029a 00       		.sleb128 0
+ 586 029b 0D       		.uleb128 0xd
+ 587 029c 02       		.uleb128 0x2
+ 588 029d 7D       		.byte	0x7d
+ 589 029e 00       		.sleb128 0
+ 590 029f 02       		.uleb128 0x2
+ 591 02a0 76       		.byte	0x76
+ 592 02a1 00       		.sleb128 0
+ 593 02a2 00       		.byte	0
+ 594 02a3 00       		.byte	0
+ 595 02a4 0F       		.uleb128 0xf
+ 596 02a5 81000000 		.4byte	0x81
+ 597 02a9 B4020000 		.4byte	0x2b4
+ 598 02ad 10       		.uleb128 0x10
+ 599 02ae C4000000 		.4byte	0xc4
+ 600 02b2 05       		.byte	0x5
+ 601 02b3 00       		.byte	0
+ 602 02b4 12       		.uleb128 0x12
+ 603 02b5 DC000000 		.4byte	.LASF32
+ 604 02b9 08       		.byte	0x8
+ 605 02ba 5506     		.2byte	0x655
+ 606 02bc C0020000 		.4byte	0x2c0
+ 607 02c0 13       		.uleb128 0x13
+ 608 02c1 8C000000 		.4byte	0x8c
+ 609 02c5 14       		.uleb128 0x14
+ 610 02c6 4A000000 		.4byte	.LASF33
+ 611 02ca 05       		.byte	0x5
+ 612 02cb 93       		.byte	0x93
+ 613 02cc 15       		.uleb128 0x15
+ 614 02cd 2D000000 		.4byte	.LASF23
+ 615 02d1 05       		.byte	0x5
+ 616 02d2 A4       		.byte	0xa4
+ 617 02d3 97000000 		.4byte	0x97
+ARM GAS  C:\Users\dufma\AppData\Local\Temp\cceTgH1S.s 			page 13
+
+
+ 618 02d7 16       		.uleb128 0x16
+ 619 02d8 39020000 		.4byte	.LASF27
+ 620 02dc 06       		.byte	0x6
+ 621 02dd 77       		.byte	0x77
+ 622 02de E8020000 		.4byte	0x2e8
+ 623 02e2 17       		.uleb128 0x17
+ 624 02e3 A3000000 		.4byte	0xa3
+ 625 02e7 00       		.byte	0
+ 626 02e8 18       		.uleb128 0x18
+ 627 02e9 AA000000 		.4byte	.LASF25
+ 628 02ed 05       		.byte	0x5
+ 629 02ee A7       		.byte	0xa7
+ 630 02ef 97000000 		.4byte	0x97
+ 631 02f3 0C030000 		.4byte	0x30c
+ 632 02f7 17       		.uleb128 0x17
+ 633 02f8 97000000 		.4byte	0x97
+ 634 02fc 17       		.uleb128 0x17
+ 635 02fd 0C030000 		.4byte	0x30c
+ 636 0301 17       		.uleb128 0x17
+ 637 0302 97000000 		.4byte	0x97
+ 638 0306 17       		.uleb128 0x17
+ 639 0307 97000000 		.4byte	0x97
+ 640 030b 00       		.byte	0
+ 641 030c 06       		.uleb128 0x6
+ 642 030d 04       		.byte	0x4
+ 643 030e 97000000 		.4byte	0x97
+ 644 0312 15       		.uleb128 0x15
+ 645 0313 F0010000 		.4byte	.LASF24
+ 646 0317 05       		.byte	0x5
+ 647 0318 A3       		.byte	0xa3
+ 648 0319 97000000 		.4byte	0x97
+ 649 031d 18       		.uleb128 0x18
+ 650 031e 8A000000 		.4byte	.LASF26
+ 651 0322 05       		.byte	0x5
+ 652 0323 A9       		.byte	0xa9
+ 653 0324 97000000 		.4byte	0x97
+ 654 0328 41030000 		.4byte	0x341
+ 655 032c 17       		.uleb128 0x17
+ 656 032d 97000000 		.4byte	0x97
+ 657 0331 17       		.uleb128 0x17
+ 658 0332 0C030000 		.4byte	0x30c
+ 659 0336 17       		.uleb128 0x17
+ 660 0337 97000000 		.4byte	0x97
+ 661 033b 17       		.uleb128 0x17
+ 662 033c 97000000 		.4byte	0x97
+ 663 0340 00       		.byte	0
+ 664 0341 19       		.uleb128 0x19
+ 665 0342 01020000 		.4byte	.LASF28
+ 666 0346 07       		.byte	0x7
+ 667 0347 B2       		.byte	0xb2
+ 668 0348 73000000 		.4byte	0x73
+ 669 034c 17       		.uleb128 0x17
+ 670 034d CB000000 		.4byte	0xcb
+ 671 0351 1A       		.uleb128 0x1a
+ 672 0352 00       		.byte	0
+ 673 0353 00       		.byte	0
+ 674              		.section	.debug_abbrev,"",%progbits
+ARM GAS  C:\Users\dufma\AppData\Local\Temp\cceTgH1S.s 			page 14
+
+
+ 675              	.Ldebug_abbrev0:
+ 676 0000 01       		.uleb128 0x1
+ 677 0001 11       		.uleb128 0x11
+ 678 0002 01       		.byte	0x1
+ 679 0003 25       		.uleb128 0x25
+ 680 0004 0E       		.uleb128 0xe
+ 681 0005 13       		.uleb128 0x13
+ 682 0006 0B       		.uleb128 0xb
+ 683 0007 03       		.uleb128 0x3
+ 684 0008 0E       		.uleb128 0xe
+ 685 0009 1B       		.uleb128 0x1b
+ 686 000a 0E       		.uleb128 0xe
+ 687 000b 55       		.uleb128 0x55
+ 688 000c 17       		.uleb128 0x17
+ 689 000d 11       		.uleb128 0x11
+ 690 000e 01       		.uleb128 0x1
+ 691 000f 10       		.uleb128 0x10
+ 692 0010 17       		.uleb128 0x17
+ 693 0011 00       		.byte	0
+ 694 0012 00       		.byte	0
+ 695 0013 02       		.uleb128 0x2
+ 696 0014 24       		.uleb128 0x24
+ 697 0015 00       		.byte	0
+ 698 0016 0B       		.uleb128 0xb
+ 699 0017 0B       		.uleb128 0xb
+ 700 0018 3E       		.uleb128 0x3e
+ 701 0019 0B       		.uleb128 0xb
+ 702 001a 03       		.uleb128 0x3
+ 703 001b 0E       		.uleb128 0xe
+ 704 001c 00       		.byte	0
+ 705 001d 00       		.byte	0
+ 706 001e 03       		.uleb128 0x3
+ 707 001f 16       		.uleb128 0x16
+ 708 0020 00       		.byte	0
+ 709 0021 03       		.uleb128 0x3
+ 710 0022 0E       		.uleb128 0xe
+ 711 0023 3A       		.uleb128 0x3a
+ 712 0024 0B       		.uleb128 0xb
+ 713 0025 3B       		.uleb128 0x3b
+ 714 0026 0B       		.uleb128 0xb
+ 715 0027 49       		.uleb128 0x49
+ 716 0028 13       		.uleb128 0x13
+ 717 0029 00       		.byte	0
+ 718 002a 00       		.byte	0
+ 719 002b 04       		.uleb128 0x4
+ 720 002c 24       		.uleb128 0x24
+ 721 002d 00       		.byte	0
+ 722 002e 0B       		.uleb128 0xb
+ 723 002f 0B       		.uleb128 0xb
+ 724 0030 3E       		.uleb128 0x3e
+ 725 0031 0B       		.uleb128 0xb
+ 726 0032 03       		.uleb128 0x3
+ 727 0033 08       		.uleb128 0x8
+ 728 0034 00       		.byte	0
+ 729 0035 00       		.byte	0
+ 730 0036 05       		.uleb128 0x5
+ 731 0037 16       		.uleb128 0x16
+ARM GAS  C:\Users\dufma\AppData\Local\Temp\cceTgH1S.s 			page 15
+
+
+ 732 0038 00       		.byte	0
+ 733 0039 03       		.uleb128 0x3
+ 734 003a 0E       		.uleb128 0xe
+ 735 003b 3A       		.uleb128 0x3a
+ 736 003c 0B       		.uleb128 0xb
+ 737 003d 3B       		.uleb128 0x3b
+ 738 003e 05       		.uleb128 0x5
+ 739 003f 49       		.uleb128 0x49
+ 740 0040 13       		.uleb128 0x13
+ 741 0041 00       		.byte	0
+ 742 0042 00       		.byte	0
+ 743 0043 06       		.uleb128 0x6
+ 744 0044 0F       		.uleb128 0xf
+ 745 0045 00       		.byte	0
+ 746 0046 0B       		.uleb128 0xb
+ 747 0047 0B       		.uleb128 0xb
+ 748 0048 49       		.uleb128 0x49
+ 749 0049 13       		.uleb128 0x13
+ 750 004a 00       		.byte	0
+ 751 004b 00       		.byte	0
+ 752 004c 07       		.uleb128 0x7
+ 753 004d 26       		.uleb128 0x26
+ 754 004e 00       		.byte	0
+ 755 004f 49       		.uleb128 0x49
+ 756 0050 13       		.uleb128 0x13
+ 757 0051 00       		.byte	0
+ 758 0052 00       		.byte	0
+ 759 0053 08       		.uleb128 0x8
+ 760 0054 2E       		.uleb128 0x2e
+ 761 0055 01       		.byte	0x1
+ 762 0056 3F       		.uleb128 0x3f
+ 763 0057 19       		.uleb128 0x19
+ 764 0058 03       		.uleb128 0x3
+ 765 0059 0E       		.uleb128 0xe
+ 766 005a 3A       		.uleb128 0x3a
+ 767 005b 0B       		.uleb128 0xb
+ 768 005c 3B       		.uleb128 0x3b
+ 769 005d 0B       		.uleb128 0xb
+ 770 005e 11       		.uleb128 0x11
+ 771 005f 01       		.uleb128 0x1
+ 772 0060 12       		.uleb128 0x12
+ 773 0061 06       		.uleb128 0x6
+ 774 0062 40       		.uleb128 0x40
+ 775 0063 18       		.uleb128 0x18
+ 776 0064 9742     		.uleb128 0x2117
+ 777 0066 19       		.uleb128 0x19
+ 778 0067 01       		.uleb128 0x1
+ 779 0068 13       		.uleb128 0x13
+ 780 0069 00       		.byte	0
+ 781 006a 00       		.byte	0
+ 782 006b 09       		.uleb128 0x9
+ 783 006c 898201   		.uleb128 0x4109
+ 784 006f 00       		.byte	0
+ 785 0070 11       		.uleb128 0x11
+ 786 0071 01       		.uleb128 0x1
+ 787 0072 31       		.uleb128 0x31
+ 788 0073 13       		.uleb128 0x13
+ARM GAS  C:\Users\dufma\AppData\Local\Temp\cceTgH1S.s 			page 16
+
+
+ 789 0074 00       		.byte	0
+ 790 0075 00       		.byte	0
+ 791 0076 0A       		.uleb128 0xa
+ 792 0077 34       		.uleb128 0x34
+ 793 0078 00       		.byte	0
+ 794 0079 03       		.uleb128 0x3
+ 795 007a 08       		.uleb128 0x8
+ 796 007b 3A       		.uleb128 0x3a
+ 797 007c 0B       		.uleb128 0xb
+ 798 007d 3B       		.uleb128 0x3b
+ 799 007e 0B       		.uleb128 0xb
+ 800 007f 49       		.uleb128 0x49
+ 801 0080 13       		.uleb128 0x13
+ 802 0081 02       		.uleb128 0x2
+ 803 0082 18       		.uleb128 0x18
+ 804 0083 00       		.byte	0
+ 805 0084 00       		.byte	0
+ 806 0085 0B       		.uleb128 0xb
+ 807 0086 34       		.uleb128 0x34
+ 808 0087 00       		.byte	0
+ 809 0088 03       		.uleb128 0x3
+ 810 0089 0E       		.uleb128 0xe
+ 811 008a 3A       		.uleb128 0x3a
+ 812 008b 0B       		.uleb128 0xb
+ 813 008c 3B       		.uleb128 0x3b
+ 814 008d 0B       		.uleb128 0xb
+ 815 008e 49       		.uleb128 0x49
+ 816 008f 13       		.uleb128 0x13
+ 817 0090 02       		.uleb128 0x2
+ 818 0091 17       		.uleb128 0x17
+ 819 0092 00       		.byte	0
+ 820 0093 00       		.byte	0
+ 821 0094 0C       		.uleb128 0xc
+ 822 0095 898201   		.uleb128 0x4109
+ 823 0098 01       		.byte	0x1
+ 824 0099 11       		.uleb128 0x11
+ 825 009a 01       		.uleb128 0x1
+ 826 009b 31       		.uleb128 0x31
+ 827 009c 13       		.uleb128 0x13
+ 828 009d 01       		.uleb128 0x1
+ 829 009e 13       		.uleb128 0x13
+ 830 009f 00       		.byte	0
+ 831 00a0 00       		.byte	0
+ 832 00a1 0D       		.uleb128 0xd
+ 833 00a2 8A8201   		.uleb128 0x410a
+ 834 00a5 00       		.byte	0
+ 835 00a6 02       		.uleb128 0x2
+ 836 00a7 18       		.uleb128 0x18
+ 837 00a8 9142     		.uleb128 0x2111
+ 838 00aa 18       		.uleb128 0x18
+ 839 00ab 00       		.byte	0
+ 840 00ac 00       		.byte	0
+ 841 00ad 0E       		.uleb128 0xe
+ 842 00ae 898201   		.uleb128 0x4109
+ 843 00b1 01       		.byte	0x1
+ 844 00b2 11       		.uleb128 0x11
+ 845 00b3 01       		.uleb128 0x1
+ARM GAS  C:\Users\dufma\AppData\Local\Temp\cceTgH1S.s 			page 17
+
+
+ 846 00b4 31       		.uleb128 0x31
+ 847 00b5 13       		.uleb128 0x13
+ 848 00b6 00       		.byte	0
+ 849 00b7 00       		.byte	0
+ 850 00b8 0F       		.uleb128 0xf
+ 851 00b9 01       		.uleb128 0x1
+ 852 00ba 01       		.byte	0x1
+ 853 00bb 49       		.uleb128 0x49
+ 854 00bc 13       		.uleb128 0x13
+ 855 00bd 01       		.uleb128 0x1
+ 856 00be 13       		.uleb128 0x13
+ 857 00bf 00       		.byte	0
+ 858 00c0 00       		.byte	0
+ 859 00c1 10       		.uleb128 0x10
+ 860 00c2 21       		.uleb128 0x21
+ 861 00c3 00       		.byte	0
+ 862 00c4 49       		.uleb128 0x49
+ 863 00c5 13       		.uleb128 0x13
+ 864 00c6 2F       		.uleb128 0x2f
+ 865 00c7 0B       		.uleb128 0xb
+ 866 00c8 00       		.byte	0
+ 867 00c9 00       		.byte	0
+ 868 00ca 11       		.uleb128 0x11
+ 869 00cb 34       		.uleb128 0x34
+ 870 00cc 00       		.byte	0
+ 871 00cd 03       		.uleb128 0x3
+ 872 00ce 08       		.uleb128 0x8
+ 873 00cf 3A       		.uleb128 0x3a
+ 874 00d0 0B       		.uleb128 0xb
+ 875 00d1 3B       		.uleb128 0x3b
+ 876 00d2 0B       		.uleb128 0xb
+ 877 00d3 49       		.uleb128 0x49
+ 878 00d4 13       		.uleb128 0x13
+ 879 00d5 02       		.uleb128 0x2
+ 880 00d6 17       		.uleb128 0x17
+ 881 00d7 00       		.byte	0
+ 882 00d8 00       		.byte	0
+ 883 00d9 12       		.uleb128 0x12
+ 884 00da 34       		.uleb128 0x34
+ 885 00db 00       		.byte	0
+ 886 00dc 03       		.uleb128 0x3
+ 887 00dd 0E       		.uleb128 0xe
+ 888 00de 3A       		.uleb128 0x3a
+ 889 00df 0B       		.uleb128 0xb
+ 890 00e0 3B       		.uleb128 0x3b
+ 891 00e1 05       		.uleb128 0x5
+ 892 00e2 49       		.uleb128 0x49
+ 893 00e3 13       		.uleb128 0x13
+ 894 00e4 3F       		.uleb128 0x3f
+ 895 00e5 19       		.uleb128 0x19
+ 896 00e6 3C       		.uleb128 0x3c
+ 897 00e7 19       		.uleb128 0x19
+ 898 00e8 00       		.byte	0
+ 899 00e9 00       		.byte	0
+ 900 00ea 13       		.uleb128 0x13
+ 901 00eb 35       		.uleb128 0x35
+ 902 00ec 00       		.byte	0
+ARM GAS  C:\Users\dufma\AppData\Local\Temp\cceTgH1S.s 			page 18
+
+
+ 903 00ed 49       		.uleb128 0x49
+ 904 00ee 13       		.uleb128 0x13
+ 905 00ef 00       		.byte	0
+ 906 00f0 00       		.byte	0
+ 907 00f1 14       		.uleb128 0x14
+ 908 00f2 2E       		.uleb128 0x2e
+ 909 00f3 00       		.byte	0
+ 910 00f4 3F       		.uleb128 0x3f
+ 911 00f5 19       		.uleb128 0x19
+ 912 00f6 03       		.uleb128 0x3
+ 913 00f7 0E       		.uleb128 0xe
+ 914 00f8 3A       		.uleb128 0x3a
+ 915 00f9 0B       		.uleb128 0xb
+ 916 00fa 3B       		.uleb128 0x3b
+ 917 00fb 0B       		.uleb128 0xb
+ 918 00fc 27       		.uleb128 0x27
+ 919 00fd 19       		.uleb128 0x19
+ 920 00fe 3C       		.uleb128 0x3c
+ 921 00ff 19       		.uleb128 0x19
+ 922 0100 00       		.byte	0
+ 923 0101 00       		.byte	0
+ 924 0102 15       		.uleb128 0x15
+ 925 0103 2E       		.uleb128 0x2e
+ 926 0104 00       		.byte	0
+ 927 0105 3F       		.uleb128 0x3f
+ 928 0106 19       		.uleb128 0x19
+ 929 0107 03       		.uleb128 0x3
+ 930 0108 0E       		.uleb128 0xe
+ 931 0109 3A       		.uleb128 0x3a
+ 932 010a 0B       		.uleb128 0xb
+ 933 010b 3B       		.uleb128 0x3b
+ 934 010c 0B       		.uleb128 0xb
+ 935 010d 27       		.uleb128 0x27
+ 936 010e 19       		.uleb128 0x19
+ 937 010f 49       		.uleb128 0x49
+ 938 0110 13       		.uleb128 0x13
+ 939 0111 3C       		.uleb128 0x3c
+ 940 0112 19       		.uleb128 0x19
+ 941 0113 00       		.byte	0
+ 942 0114 00       		.byte	0
+ 943 0115 16       		.uleb128 0x16
+ 944 0116 2E       		.uleb128 0x2e
+ 945 0117 01       		.byte	0x1
+ 946 0118 3F       		.uleb128 0x3f
+ 947 0119 19       		.uleb128 0x19
+ 948 011a 03       		.uleb128 0x3
+ 949 011b 0E       		.uleb128 0xe
+ 950 011c 3A       		.uleb128 0x3a
+ 951 011d 0B       		.uleb128 0xb
+ 952 011e 3B       		.uleb128 0x3b
+ 953 011f 0B       		.uleb128 0xb
+ 954 0120 27       		.uleb128 0x27
+ 955 0121 19       		.uleb128 0x19
+ 956 0122 3C       		.uleb128 0x3c
+ 957 0123 19       		.uleb128 0x19
+ 958 0124 01       		.uleb128 0x1
+ 959 0125 13       		.uleb128 0x13
+ARM GAS  C:\Users\dufma\AppData\Local\Temp\cceTgH1S.s 			page 19
+
+
+ 960 0126 00       		.byte	0
+ 961 0127 00       		.byte	0
+ 962 0128 17       		.uleb128 0x17
+ 963 0129 05       		.uleb128 0x5
+ 964 012a 00       		.byte	0
+ 965 012b 49       		.uleb128 0x49
+ 966 012c 13       		.uleb128 0x13
+ 967 012d 00       		.byte	0
+ 968 012e 00       		.byte	0
+ 969 012f 18       		.uleb128 0x18
+ 970 0130 2E       		.uleb128 0x2e
+ 971 0131 01       		.byte	0x1
+ 972 0132 3F       		.uleb128 0x3f
+ 973 0133 19       		.uleb128 0x19
+ 974 0134 03       		.uleb128 0x3
+ 975 0135 0E       		.uleb128 0xe
+ 976 0136 3A       		.uleb128 0x3a
+ 977 0137 0B       		.uleb128 0xb
+ 978 0138 3B       		.uleb128 0x3b
+ 979 0139 0B       		.uleb128 0xb
+ 980 013a 27       		.uleb128 0x27
+ 981 013b 19       		.uleb128 0x19
+ 982 013c 49       		.uleb128 0x49
+ 983 013d 13       		.uleb128 0x13
+ 984 013e 3C       		.uleb128 0x3c
+ 985 013f 19       		.uleb128 0x19
+ 986 0140 01       		.uleb128 0x1
+ 987 0141 13       		.uleb128 0x13
+ 988 0142 00       		.byte	0
+ 989 0143 00       		.byte	0
+ 990 0144 19       		.uleb128 0x19
+ 991 0145 2E       		.uleb128 0x2e
+ 992 0146 01       		.byte	0x1
+ 993 0147 3F       		.uleb128 0x3f
+ 994 0148 19       		.uleb128 0x19
+ 995 0149 03       		.uleb128 0x3
+ 996 014a 0E       		.uleb128 0xe
+ 997 014b 3A       		.uleb128 0x3a
+ 998 014c 0B       		.uleb128 0xb
+ 999 014d 3B       		.uleb128 0x3b
+ 1000 014e 0B       		.uleb128 0xb
+ 1001 014f 27       		.uleb128 0x27
+ 1002 0150 19       		.uleb128 0x19
+ 1003 0151 49       		.uleb128 0x49
+ 1004 0152 13       		.uleb128 0x13
+ 1005 0153 3C       		.uleb128 0x3c
+ 1006 0154 19       		.uleb128 0x19
+ 1007 0155 00       		.byte	0
+ 1008 0156 00       		.byte	0
+ 1009 0157 1A       		.uleb128 0x1a
+ 1010 0158 18       		.uleb128 0x18
+ 1011 0159 00       		.byte	0
+ 1012 015a 00       		.byte	0
+ 1013 015b 00       		.byte	0
+ 1014 015c 00       		.byte	0
+ 1015              		.section	.debug_loc,"",%progbits
+ 1016              	.Ldebug_loc0:
+ARM GAS  C:\Users\dufma\AppData\Local\Temp\cceTgH1S.s 			page 20
+
+
+ 1017              	.LLST0:
+ 1018 0000 2A000000 		.4byte	.LVL4
+ 1019 0004 32000000 		.4byte	.LVL5
+ 1020 0008 0100     		.2byte	0x1
+ 1021 000a 50       		.byte	0x50
+ 1022 000b 00000000 		.4byte	0
+ 1023 000f 00000000 		.4byte	0
+ 1024              	.LLST1:
+ 1025 0013 20000000 		.4byte	.LVL9
+ 1026 0017 28000000 		.4byte	.LVL10
+ 1027 001b 0100     		.2byte	0x1
+ 1028 001d 50       		.byte	0x50
+ 1029 001e 40000000 		.4byte	.LVL14
+ 1030 0022 82000000 		.4byte	.LVL20
+ 1031 0026 0100     		.2byte	0x1
+ 1032 0028 50       		.byte	0x50
+ 1033 0029 00000000 		.4byte	0
+ 1034 002d 00000000 		.4byte	0
+ 1035              	.LLST2:
+ 1036 0031 4A000000 		.4byte	.LVL15
+ 1037 0035 6E000000 		.4byte	.LVL17
+ 1038 0039 0100     		.2byte	0x1
+ 1039 003b 52       		.byte	0x52
+ 1040 003c 00000000 		.4byte	0
+ 1041 0040 00000000 		.4byte	0
+ 1042              	.LLST3:
+ 1043 0044 72000000 		.4byte	.LVL18
+ 1044 0048 AA000000 		.4byte	.LVL24
+ 1045 004c 0100     		.2byte	0x1
+ 1046 004e 55       		.byte	0x55
+ 1047 004f 00000000 		.4byte	0
+ 1048 0053 00000000 		.4byte	0
+ 1049              	.LLST4:
+ 1050 0057 7E000000 		.4byte	.LVL19
+ 1051 005b AA000000 		.4byte	.LVL24
+ 1052 005f 0100     		.2byte	0x1
+ 1053 0061 54       		.byte	0x54
+ 1054 0062 00000000 		.4byte	0
+ 1055 0066 00000000 		.4byte	0
+ 1056              	.LLST5:
+ 1057 006a 88000000 		.4byte	.LVL21
+ 1058 006e 9E000000 		.4byte	.LVL22
+ 1059 0072 0100     		.2byte	0x1
+ 1060 0074 50       		.byte	0x50
+ 1061 0075 9E000000 		.4byte	.LVL22
+ 1062 0079 A5000000 		.4byte	.LVL23-1
+ 1063 007d 0200     		.2byte	0x2
+ 1064 007f 91       		.byte	0x91
+ 1065 0080 64       		.sleb128 -28
+ 1066 0081 00000000 		.4byte	0
+ 1067 0085 00000000 		.4byte	0
+ 1068              		.section	.debug_aranges,"",%progbits
+ 1069 0000 2C000000 		.4byte	0x2c
+ 1070 0004 0200     		.2byte	0x2
+ 1071 0006 00000000 		.4byte	.Ldebug_info0
+ 1072 000a 04       		.byte	0x4
+ 1073 000b 00       		.byte	0
+ARM GAS  C:\Users\dufma\AppData\Local\Temp\cceTgH1S.s 			page 21
+
+
+ 1074 000c 0000     		.2byte	0
+ 1075 000e 0000     		.2byte	0
+ 1076 0010 00000000 		.4byte	.LFB63
+ 1077 0014 08000000 		.4byte	.LFE63-.LFB63
+ 1078 0018 00000000 		.4byte	.LFB64
+ 1079 001c 3A000000 		.4byte	.LFE64-.LFB64
+ 1080 0020 00000000 		.4byte	.LFB65
+ 1081 0024 B0000000 		.4byte	.LFE65-.LFB65
+ 1082 0028 00000000 		.4byte	0
+ 1083 002c 00000000 		.4byte	0
+ 1084              		.section	.debug_ranges,"",%progbits
+ 1085              	.Ldebug_ranges0:
+ 1086 0000 00000000 		.4byte	.LFB63
+ 1087 0004 08000000 		.4byte	.LFE63
+ 1088 0008 00000000 		.4byte	.LFB64
+ 1089 000c 3A000000 		.4byte	.LFE64
+ 1090 0010 00000000 		.4byte	.LFB65
+ 1091 0014 B0000000 		.4byte	.LFE65
+ 1092 0018 00000000 		.4byte	0
+ 1093 001c 00000000 		.4byte	0
+ 1094              		.section	.debug_line,"",%progbits
+ 1095              	.Ldebug_line0:
+ 1096 0000 CB010000 		.section	.debug_str,"MS",%progbits,1
+ 1096      02006B01 
+ 1096      00000201 
+ 1096      FB0E0D00 
+ 1096      01010101 
+ 1097              	.LASF4:
+ 1098 0000 5F5F7569 		.ascii	"__uint8_t\000"
+ 1098      6E74385F 
+ 1098      7400
+ 1099              	.LASF15:
+ 1100 000a 666C6F61 		.ascii	"float\000"
+ 1100      7400
+ 1101              	.LASF5:
+ 1102 0010 5F5F696E 		.ascii	"__int32_t\000"
+ 1102      7433325F 
+ 1102      7400
+ 1103              	.LASF3:
+ 1104 001a 73686F72 		.ascii	"short unsigned int\000"
+ 1104      7420756E 
+ 1104      7369676E 
+ 1104      65642069 
+ 1104      6E7400
+ 1105              	.LASF23:
+ 1106 002d 4932435F 		.ascii	"I2C_MasterClearStatus\000"
+ 1106      4D617374 
+ 1106      6572436C 
+ 1106      65617253 
+ 1106      74617475 
+ 1107              	.LASF21:
+ 1108 0043 73746174 		.ascii	"status\000"
+ 1108      757300
+ 1109              	.LASF33:
+ 1110 004a 4932435F 		.ascii	"I2C_Start\000"
+ 1110      53746172 
+ 1110      7400
+ARM GAS  C:\Users\dufma\AppData\Local\Temp\cceTgH1S.s 			page 22
+
+
+ 1111              	.LASF31:
+ 1112 0054 433A5C55 		.ascii	"C:\\Users\\dufma\\Desktop\\Project\\Docu\\ZumoBot_L"
+ 1112      73657273 
+ 1112      5C647566 
+ 1112      6D615C44 
+ 1112      65736B74 
+ 1113 0081 69622E63 		.ascii	"ib.cydsn\000"
+ 1113      7964736E 
+ 1113      00
+ 1114              	.LASF26:
+ 1115 008a 4932435F 		.ascii	"I2C_MasterReadBuf\000"
+ 1115      4D617374 
+ 1115      65725265 
+ 1115      61644275 
+ 1115      6600
+ 1116              	.LASF1:
+ 1117 009c 756E7369 		.ascii	"unsigned char\000"
+ 1117      676E6564 
+ 1117      20636861 
+ 1117      7200
+ 1118              	.LASF25:
+ 1119 00aa 4932435F 		.ascii	"I2C_MasterWriteBuf\000"
+ 1119      4D617374 
+ 1119      65725772 
+ 1119      69746542 
+ 1119      756600
+ 1120              	.LASF20:
+ 1121 00bd 6E756E63 		.ascii	"nunchuk_init\000"
+ 1121      68756B5F 
+ 1121      696E6974 
+ 1121      00
+ 1122              	.LASF7:
+ 1123 00ca 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1123      20756E73 
+ 1123      69676E65 
+ 1123      6420696E 
+ 1123      7400
+ 1124              	.LASF32:
+ 1125 00dc 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 1125      52784275 
+ 1125      66666572 
+ 1125      00
+ 1126              	.LASF19:
+ 1127 00e9 6E756E63 		.ascii	"nunchuk_start\000"
+ 1127      68756B5F 
+ 1127      73746172 
+ 1127      7400
+ 1128              	.LASF16:
+ 1129 00f7 646F7562 		.ascii	"double\000"
+ 1129      6C6500
+ 1130              	.LASF22:
+ 1131 00fe 6E756E63 		.ascii	"nunchuk_read\000"
+ 1131      68756B5F 
+ 1131      72656164 
+ 1131      00
+ 1132              	.LASF14:
+ 1133 010b 75696E74 		.ascii	"uint32\000"
+ARM GAS  C:\Users\dufma\AppData\Local\Temp\cceTgH1S.s 			page 23
+
+
+ 1133      333200
+ 1134              	.LASF29:
+ 1135 0112 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
+ 1135      4320342E 
+ 1135      392E3320 
+ 1135      32303135 
+ 1135      30333033 
+ 1136 0145 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m3 -mthumb -g -O"
+ 1136      20726576 
+ 1136      6973696F 
+ 1136      6E203232 
+ 1136      31323230 
+ 1137 0178 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 1137      66756E63 
+ 1137      74696F6E 
+ 1137      2D736563 
+ 1137      74696F6E 
+ 1138              	.LASF10:
+ 1139 01a0 756E7369 		.ascii	"unsigned int\000"
+ 1139      676E6564 
+ 1139      20696E74 
+ 1139      00
+ 1140              	.LASF9:
+ 1141 01ad 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1141      206C6F6E 
+ 1141      6720756E 
+ 1141      7369676E 
+ 1141      65642069 
+ 1142              	.LASF11:
+ 1143 01c4 75696E74 		.ascii	"uint8_t\000"
+ 1143      385F7400 
+ 1144              	.LASF12:
+ 1145 01cc 696E7433 		.ascii	"int32_t\000"
+ 1145      325F7400 
+ 1146              	.LASF18:
+ 1147 01d4 73697A65 		.ascii	"sizetype\000"
+ 1147      74797065 
+ 1147      00
+ 1148              	.LASF8:
+ 1149 01dd 6C6F6E67 		.ascii	"long long int\000"
+ 1149      206C6F6E 
+ 1149      6720696E 
+ 1149      7400
+ 1150              	.LASF17:
+ 1151 01eb 63686172 		.ascii	"char\000"
+ 1151      00
+ 1152              	.LASF24:
+ 1153 01f0 4932435F 		.ascii	"I2C_MasterStatus\000"
+ 1153      4D617374 
+ 1153      65725374 
+ 1153      61747573 
+ 1153      00
+ 1154              	.LASF28:
+ 1155 0201 7072696E 		.ascii	"printf\000"
+ 1155      746600
+ 1156              	.LASF30:
+ 1157 0208 2E5C4E75 		.ascii	".\\Nunchuk.c\000"
+ARM GAS  C:\Users\dufma\AppData\Local\Temp\cceTgH1S.s 			page 24
+
+
+ 1157      6E636875 
+ 1157      6B2E6300 
+ 1158              	.LASF2:
+ 1159 0214 73686F72 		.ascii	"short int\000"
+ 1159      7420696E 
+ 1159      7400
+ 1160              	.LASF13:
+ 1161 021e 75696E74 		.ascii	"uint8\000"
+ 1161      3800
+ 1162              	.LASF6:
+ 1163 0224 6C6F6E67 		.ascii	"long int\000"
+ 1163      20696E74 
+ 1163      00
+ 1164              	.LASF0:
+ 1165 022d 7369676E 		.ascii	"signed char\000"
+ 1165      65642063 
+ 1165      68617200 
+ 1166              	.LASF27:
+ 1167 0239 43794465 		.ascii	"CyDelay\000"
+ 1167      6C617900 
+ 1168              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br

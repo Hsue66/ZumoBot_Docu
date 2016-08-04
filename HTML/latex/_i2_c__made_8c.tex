@@ -1,0 +1,107 @@
+\hypertarget{_i2_c__made_8c}{}\section{I2\+C\+\_\+made.\+c File Reference}
+\label{_i2_c__made_8c}\index{I2\+C\+\_\+made.\+c@{I2\+C\+\_\+made.\+c}}
+
+
+I2\+C\+\_\+made method file.  
+
+
+{\ttfamily \#include $<$I2\+C\+\_\+made.\+h$>$}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{_i2_c__made_8c_a389e072c17dc9cc66391568ee5d46c89}{I2\+C\+\_\+write} (uint8 device\+\_\+addr, uint8 Reg, uint8 value)
+\begin{DoxyCompactList}\small\item\em Write function of I2C communication. \end{DoxyCompactList}\item 
+uint8 \hyperlink{_i2_c__made_8c_a37612a39111135d189b6ac2c90c2e23f}{I2\+C\+\_\+read} (uint8 device\+\_\+addr, uint8 Reg)
+\begin{DoxyCompactList}\small\item\em Read function of I2C communication. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+I2\+C\+\_\+made method file. 
+
+
+
+\subsection{Function Documentation}
+\index{I2\+C\+\_\+made.\+c@{I2\+C\+\_\+made.\+c}!I2\+C\+\_\+read@{I2\+C\+\_\+read}}
+\index{I2\+C\+\_\+read@{I2\+C\+\_\+read}!I2\+C\+\_\+made.\+c@{I2\+C\+\_\+made.\+c}}
+\subsubsection[{\texorpdfstring{I2\+C\+\_\+read(uint8 device\+\_\+addr, uint8 Reg)}{I2C_read(uint8 device_addr, uint8 Reg)}}]{\setlength{\rightskip}{0pt plus 5cm}uint8 I2\+C\+\_\+read (
+\begin{DoxyParamCaption}
+\item[{uint8}]{device\+\_\+addr, }
+\item[{uint8}]{Reg}
+\end{DoxyParamCaption}
+)}\hypertarget{_i2_c__made_8c_a37612a39111135d189b6ac2c90c2e23f}{}\label{_i2_c__made_8c_a37612a39111135d189b6ac2c90c2e23f}
+
+
+Read function of I2C communication. 
+
+read value from slave register by I2C communication 
+\begin{DoxyParams}{Parameters}
+{\em uint8} & device\+\_\+addr \+: Slave Device address \\
+\hline
+{\em uint8} & Reg \+: register address \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 35 of file I2\+C\+\_\+made.\+c.
+
+
+\begin{DoxyCode}
+36 \{
+37    
+38     uint8 write\_buf[1] = \{\};
+39     write\_buf[0] = Reg;
+40     
+41     uint8 read\_buf[1] = \{\};
+42     
+43     I2C\_MasterClearStatus();
+44     CyDelay(100);
+45     I2C\_MasterWriteBuf(device\_addr, write\_buf, 1, I2C\_MODE\_COMPLETE\_XFER);
+46     \textcolor{keywordflow}{while}((I2C\_MasterStatus() & I2C\_MSTAT\_WR\_CMPLT) == 0);
+47     CyDelay(50);
+48     I2C\_MasterClearStatus();
+49     I2C\_MasterReadBuf(device\_addr, read\_buf, 1, I2C\_MODE\_COMPLETE\_XFER);
+50     \textcolor{keywordflow}{while}((I2C\_MasterStatus() & I2C\_MSTAT\_RD\_CMPLT) == 0);
+51    
+52     \textcolor{keywordflow}{return} read\_buf[0];
+53 \}
+\end{DoxyCode}
+\index{I2\+C\+\_\+made.\+c@{I2\+C\+\_\+made.\+c}!I2\+C\+\_\+write@{I2\+C\+\_\+write}}
+\index{I2\+C\+\_\+write@{I2\+C\+\_\+write}!I2\+C\+\_\+made.\+c@{I2\+C\+\_\+made.\+c}}
+\subsubsection[{\texorpdfstring{I2\+C\+\_\+write(uint8 device\+\_\+addr, uint8 Reg, uint8 value)}{I2C_write(uint8 device_addr, uint8 Reg, uint8 value)}}]{\setlength{\rightskip}{0pt plus 5cm}void I2\+C\+\_\+write (
+\begin{DoxyParamCaption}
+\item[{uint8}]{device\+\_\+addr, }
+\item[{uint8}]{Reg, }
+\item[{uint8}]{value}
+\end{DoxyParamCaption}
+)}\hypertarget{_i2_c__made_8c_a389e072c17dc9cc66391568ee5d46c89}{}\label{_i2_c__made_8c_a389e072c17dc9cc66391568ee5d46c89}
+
+
+Write function of I2C communication. 
+
+write value to slave register by I2C communication 
+\begin{DoxyParams}{Parameters}
+{\em uint8} & device\+\_\+addr \+: Slave Device address \\
+\hline
+{\em uint8} & Reg \+: register address \\
+\hline
+{\em uint8} & value \+: value to write \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 16 of file I2\+C\+\_\+made.\+c.
+
+
+\begin{DoxyCode}
+17 \{
+18     uint8 write\_buf[2] = \{\};
+19     write\_buf[0] = Reg;                \textcolor{comment}{//register address that you want to write}
+20     write\_buf[1] = value;                \textcolor{comment}{//value that you want to write to register}
+21     
+22     I2C\_MasterClearStatus();
+23     I2C\_MasterWriteBuf(device\_addr, write\_buf, 2, I2C\_MODE\_COMPLETE\_XFER);
+24     \textcolor{keywordflow}{while}(((I2C\_MasterStatus()) & I2C\_MSTAT\_WR\_CMPLT) == 0);
+25     
+26     \textcolor{keywordflow}{return};
+27 \}
+\end{DoxyCode}

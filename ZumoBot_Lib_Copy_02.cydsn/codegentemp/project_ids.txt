@@ -1,0 +1,5 @@
+C:\Users\eleadmin.ETY-A0147-GTX1.000\Desktop\ZumoBot_Docu\ZumoBot_Lib_Copy_02.cydsn\ZumoBot_Lib_Copy_02.cyprj|ad5ff84f-0fc4-4ac9-8019-f79991ab3631
+C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|f5ba3f88-38e5-4437-af65-ba5187905874
+C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|73ae113f-e24e-4552-ad67-9f23f5055a50
+C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|54954088-43ee-4b6c-b3fb-1856b0b6b6b4
+C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|11eb241d-8c67-4657-abed-5c451a38253b

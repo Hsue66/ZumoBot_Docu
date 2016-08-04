@@ -1,0 +1,113 @@
+\hypertarget{_ultra_8c}{}\section{Ultra.\+c File Reference}
+\label{_ultra_8c}\index{Ultra.\+c@{Ultra.\+c}}
+
+
+Ultra sonic sensor method file.  
+
+
+{\ttfamily \#include \char`\"{}Ultra.\+h\char`\"{}}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_ultra_8c_afceff2208ec9937f6a53bb1a2734b5e9}{C\+Y\+\_\+\+I\+SR} (ultra\+\_\+isr\+\_\+handler)
+\begin{DoxyCompactList}\small\item\em Ultra Sonic Sensor Interrupt Handler. \end{DoxyCompactList}\item 
+void \hyperlink{_ultra_8c_ad0439af59f4e0ae0b4236343bdad4356}{Ultra\+\_\+\+Start} ()
+\begin{DoxyCompactList}\small\item\em Start Ultra Sonic Sensor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+uint16\+\_\+t \hyperlink{_ultra_8c_a78f7a37dba921e0b0347b960fb40bc51}{i} = 0
+\item 
+float \hyperlink{_ultra_8c_a06f14a9abd47b91465f895d5259cdc1b}{distance} = 0
+\item 
+float \hyperlink{_ultra_8c_ade940a7370c158f9cae4af33aa7b213b}{cent} = 0
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Ultra sonic sensor method file. 
+
+
+
+\subsection{Function Documentation}
+\index{Ultra.\+c@{Ultra.\+c}!C\+Y\+\_\+\+I\+SR@{C\+Y\+\_\+\+I\+SR}}
+\index{C\+Y\+\_\+\+I\+SR@{C\+Y\+\_\+\+I\+SR}!Ultra.\+c@{Ultra.\+c}}
+\subsubsection[{\texorpdfstring{C\+Y\+\_\+\+I\+S\+R(ultra\+\_\+isr\+\_\+handler)}{CY_ISR(ultra_isr_handler)}}]{\setlength{\rightskip}{0pt plus 5cm}C\+Y\+\_\+\+I\+SR (
+\begin{DoxyParamCaption}
+\item[{ultra\+\_\+isr\+\_\+handler}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{_ultra_8c_afceff2208ec9937f6a53bb1a2734b5e9}{}\label{_ultra_8c_afceff2208ec9937f6a53bb1a2734b5e9}
+
+
+Ultra Sonic Sensor Interrupt Handler. 
+
+measure reflecting time to decide distance between Zumobot and obstacle 
+
+Definition at line 17 of file Ultra.\+c.
+
+
+\begin{DoxyCode}
+18 \{
+19     Timer\_Stop();
+20     
+21     Timer\_ReadStatusRegister();
+22     
+23     \textcolor{keywordflow}{if}(!Echo\_Read()) \{
+24         \hyperlink{_ultra_8c_a78f7a37dba921e0b0347b960fb40bc51}{i} = Timer\_ReadCounter();            \textcolor{comment}{// Read counter value of Timer}
+25         \hyperlink{_ultra_8c_a06f14a9abd47b91465f895d5259cdc1b}{distance} = (float)\hyperlink{_ultra_8c_a78f7a37dba921e0b0347b960fb40bc51}{i} / 58;           \textcolor{comment}{// us / 58 = centimeters}
+26         \hyperlink{_ultra_8c_ade940a7370c158f9cae4af33aa7b213b}{cent} = 5 * (\hyperlink{_ultra_8c_a06f14a9abd47b91465f895d5259cdc1b}{distance} - 11) / 3;     \textcolor{comment}{// calibration for this Timer(650 kHz)}
+27         printf(\textcolor{stringliteral}{"i = %6d, distance = %4d                \(\backslash\)r\(\backslash\)n"}, \hyperlink{_ultra_8c_a78f7a37dba921e0b0347b960fb40bc51}{i}, (\textcolor{keywordtype}{int})\hyperlink{_ultra_8c_ade940a7370c158f9cae4af33aa7b213b}{cent});
+28         Timer\_WriteCounter(0xFFFF);         \textcolor{comment}{// Counter initialization}
+29     \}
+30     \textcolor{keywordflow}{else} \{
+31         
+32          Timer\_WriteCounter(0xFFFF);
+33     \}
+34     Timer\_Start();
+35 \}
+\end{DoxyCode}
+\index{Ultra.\+c@{Ultra.\+c}!Ultra\+\_\+\+Start@{Ultra\+\_\+\+Start}}
+\index{Ultra\+\_\+\+Start@{Ultra\+\_\+\+Start}!Ultra.\+c@{Ultra.\+c}}
+\subsubsection[{\texorpdfstring{Ultra\+\_\+\+Start()}{Ultra_Start()}}]{\setlength{\rightskip}{0pt plus 5cm}void Ultra\+\_\+\+Start (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{_ultra_8c_ad0439af59f4e0ae0b4236343bdad4356}{}\label{_ultra_8c_ad0439af59f4e0ae0b4236343bdad4356}
+
+
+Start Ultra Sonic Sensor. 
+
+
+
+Definition at line 41 of file Ultra.\+c.
+
+
+\begin{DoxyCode}
+42 \{
+43     Timer\_Start();
+44 \}
+\end{DoxyCode}
+
+
+\subsection{Variable Documentation}
+\index{Ultra.\+c@{Ultra.\+c}!cent@{cent}}
+\index{cent@{cent}!Ultra.\+c@{Ultra.\+c}}
+\subsubsection[{\texorpdfstring{cent}{cent}}]{\setlength{\rightskip}{0pt plus 5cm}float cent = 0}\hypertarget{_ultra_8c_ade940a7370c158f9cae4af33aa7b213b}{}\label{_ultra_8c_ade940a7370c158f9cae4af33aa7b213b}
+
+
+Definition at line 11 of file Ultra.\+c.
+
+\index{Ultra.\+c@{Ultra.\+c}!distance@{distance}}
+\index{distance@{distance}!Ultra.\+c@{Ultra.\+c}}
+\subsubsection[{\texorpdfstring{distance}{distance}}]{\setlength{\rightskip}{0pt plus 5cm}float distance = 0}\hypertarget{_ultra_8c_a06f14a9abd47b91465f895d5259cdc1b}{}\label{_ultra_8c_a06f14a9abd47b91465f895d5259cdc1b}
+
+
+Definition at line 10 of file Ultra.\+c.
+
+\index{Ultra.\+c@{Ultra.\+c}!i@{i}}
+\index{i@{i}!Ultra.\+c@{Ultra.\+c}}
+\subsubsection[{\texorpdfstring{i}{i}}]{\setlength{\rightskip}{0pt plus 5cm}uint16\+\_\+t i = 0}\hypertarget{_ultra_8c_a78f7a37dba921e0b0347b960fb40bc51}{}\label{_ultra_8c_a78f7a37dba921e0b0347b960fb40bc51}
+
+
+Definition at line 9 of file Ultra.\+c.
+

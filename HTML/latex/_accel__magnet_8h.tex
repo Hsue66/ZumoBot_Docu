@@ -1,0 +1,278 @@
+\hypertarget{_accel__magnet_8h}{}\section{Accel\+\_\+magnet.\+h File Reference}
+\label{_accel__magnet_8h}\index{Accel\+\_\+magnet.\+h@{Accel\+\_\+magnet.\+h}}
+
+
+Accelerometer header file.  
+
+
+{\ttfamily \#include $<$project.\+h$>$}\\*
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_accel__magnet_8h_a7da7ddf0d542d6916b28a707fb2bef2b}{W\+H\+O\+\_\+\+A\+M\+\_\+\+I\+\_\+\+A\+C\+C\+EL}~0x0F
+\item 
+\#define \hyperlink{_accel__magnet_8h_aadedecb8e36e3cfb126f7f6b1592d8b2}{A\+C\+C\+E\+L\+\_\+\+M\+A\+G\+\_\+\+A\+D\+DR}~0x1D
+\item 
+\#define \hyperlink{_accel__magnet_8h_aea1ed9f04c2df9d9840f0c1e99eaa7b3}{A\+C\+C\+E\+L\+\_\+\+C\+T\+R\+L1\+\_\+\+R\+EG}~0x20
+\item 
+\#define \hyperlink{_accel__magnet_8h_abb6c71ce21b8d7472ce7f5b7315b3bce}{A\+C\+C\+E\+L\+\_\+\+C\+T\+R\+L7\+\_\+\+R\+EG}~0x26
+\item 
+\#define \hyperlink{_accel__magnet_8h_abab698c56e01e1fd410398c4e7beaaf3}{O\+U\+T\+\_\+\+X\+\_\+\+L\+\_\+M}~0x08
+\item 
+\#define \hyperlink{_accel__magnet_8h_a2489b398fe6a7418ea8f45c61cce4f9b}{O\+U\+T\+\_\+\+X\+\_\+\+H\+\_\+M}~0x09
+\item 
+\#define \hyperlink{_accel__magnet_8h_ac2a68cdf4dc38a1e6953a131d193aac2}{O\+U\+T\+\_\+\+Y\+\_\+\+L\+\_\+M}~0x0A
+\item 
+\#define \hyperlink{_accel__magnet_8h_a296228caa98301cb5cd765cafc9ee7b6}{O\+U\+T\+\_\+\+Y\+\_\+\+H\+\_\+M}~0x0B
+\item 
+\#define \hyperlink{_accel__magnet_8h_ae30aefcb21f60ce603a214d5678b8f9d}{O\+U\+T\+\_\+\+Z\+\_\+\+L\+\_\+M}~0x0C
+\item 
+\#define \hyperlink{_accel__magnet_8h_abbf1fdc9b183596b72618c113b30718b}{O\+U\+T\+\_\+\+Z\+\_\+\+H\+\_\+M}~0x0D
+\item 
+\#define \hyperlink{_accel__magnet_8h_af07420cc51cd538201554ceb8187eb32}{O\+U\+T\+\_\+\+X\+\_\+\+L\+\_\+A}~0x28
+\item 
+\#define \hyperlink{_accel__magnet_8h_aff0544c632e0f9a08e9e4ed32a6f8a21}{O\+U\+T\+\_\+\+X\+\_\+\+H\+\_\+A}~0x29
+\item 
+\#define \hyperlink{_accel__magnet_8h_a7c057ac2609133a18c32ae2b630daafb}{O\+U\+T\+\_\+\+Y\+\_\+\+L\+\_\+A}~0x2A
+\item 
+\#define \hyperlink{_accel__magnet_8h_affecb4c00ec91d1cb8fd0e2e00dc268f}{O\+U\+T\+\_\+\+Y\+\_\+\+H\+\_\+A}~0x2B
+\item 
+\#define \hyperlink{_accel__magnet_8h_a09387c436745ba77d147288050d7d8c1}{O\+U\+T\+\_\+\+Z\+\_\+\+L\+\_\+A}~0x2C
+\item 
+\#define \hyperlink{_accel__magnet_8h_afd262b693d21cb2585621aa7f8c7d2a1}{O\+U\+T\+\_\+\+Z\+\_\+\+H\+\_\+A}~0x2D
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+uint16 \hyperlink{_accel__magnet_8h_a56fdd21f3684adcbb288666abd444296}{value\+\_\+convert\+\_\+magnet} (uint8 A\+X\+I\+S\+\_\+H, uint8 A\+X\+I\+S\+\_\+L)
+\item 
+void \hyperlink{_accel__magnet_8h_af98fb6190588da170637da1531c2ecbc}{heading} (double X\+\_\+\+A\+X\+IS, double Y\+\_\+\+A\+X\+IS)
+\begin{DoxyCompactList}\small\item\em Heading. \end{DoxyCompactList}\item 
+void \hyperlink{_accel__magnet_8h_a66765f03c5817d1c93c09d519b67f58a}{value\+\_\+convert\+\_\+accel} (uint16 X\+\_\+\+A\+X\+IS, uint16 Y\+\_\+\+A\+X\+IS, uint16 Z\+\_\+\+A\+X\+IS)
+\begin{DoxyCompactList}\small\item\em Convert raw value. \end{DoxyCompactList}\item 
+uint16 \hyperlink{_accel__magnet_8h_a3dffc9c223a30888d7399406408059b8}{convert\+\_\+raw} (uint8 L, uint8 H)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Accelerometer header file. 
+
+If you want to use Accelerometer methods, Include \hyperlink{_accel__magnet_8h}{Accel\+\_\+magnet.\+h} file. 
+
+\subsection{Macro Definition Documentation}
+\index{Accel\+\_\+magnet.\+h@{Accel\+\_\+magnet.\+h}!A\+C\+C\+E\+L\+\_\+\+C\+T\+R\+L1\+\_\+\+R\+EG@{A\+C\+C\+E\+L\+\_\+\+C\+T\+R\+L1\+\_\+\+R\+EG}}
+\index{A\+C\+C\+E\+L\+\_\+\+C\+T\+R\+L1\+\_\+\+R\+EG@{A\+C\+C\+E\+L\+\_\+\+C\+T\+R\+L1\+\_\+\+R\+EG}!Accel\+\_\+magnet.\+h@{Accel\+\_\+magnet.\+h}}
+\subsubsection[{\texorpdfstring{A\+C\+C\+E\+L\+\_\+\+C\+T\+R\+L1\+\_\+\+R\+EG}{ACCEL_CTRL1_REG}}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+C\+C\+E\+L\+\_\+\+C\+T\+R\+L1\+\_\+\+R\+EG~0x20}\hypertarget{_accel__magnet_8h_aea1ed9f04c2df9d9840f0c1e99eaa7b3}{}\label{_accel__magnet_8h_aea1ed9f04c2df9d9840f0c1e99eaa7b3}
+
+
+Definition at line 16 of file Accel\+\_\+magnet.\+h.
+
+\index{Accel\+\_\+magnet.\+h@{Accel\+\_\+magnet.\+h}!A\+C\+C\+E\+L\+\_\+\+C\+T\+R\+L7\+\_\+\+R\+EG@{A\+C\+C\+E\+L\+\_\+\+C\+T\+R\+L7\+\_\+\+R\+EG}}
+\index{A\+C\+C\+E\+L\+\_\+\+C\+T\+R\+L7\+\_\+\+R\+EG@{A\+C\+C\+E\+L\+\_\+\+C\+T\+R\+L7\+\_\+\+R\+EG}!Accel\+\_\+magnet.\+h@{Accel\+\_\+magnet.\+h}}
+\subsubsection[{\texorpdfstring{A\+C\+C\+E\+L\+\_\+\+C\+T\+R\+L7\+\_\+\+R\+EG}{ACCEL_CTRL7_REG}}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+C\+C\+E\+L\+\_\+\+C\+T\+R\+L7\+\_\+\+R\+EG~0x26}\hypertarget{_accel__magnet_8h_abb6c71ce21b8d7472ce7f5b7315b3bce}{}\label{_accel__magnet_8h_abb6c71ce21b8d7472ce7f5b7315b3bce}
+
+
+Definition at line 17 of file Accel\+\_\+magnet.\+h.
+
+\index{Accel\+\_\+magnet.\+h@{Accel\+\_\+magnet.\+h}!A\+C\+C\+E\+L\+\_\+\+M\+A\+G\+\_\+\+A\+D\+DR@{A\+C\+C\+E\+L\+\_\+\+M\+A\+G\+\_\+\+A\+D\+DR}}
+\index{A\+C\+C\+E\+L\+\_\+\+M\+A\+G\+\_\+\+A\+D\+DR@{A\+C\+C\+E\+L\+\_\+\+M\+A\+G\+\_\+\+A\+D\+DR}!Accel\+\_\+magnet.\+h@{Accel\+\_\+magnet.\+h}}
+\subsubsection[{\texorpdfstring{A\+C\+C\+E\+L\+\_\+\+M\+A\+G\+\_\+\+A\+D\+DR}{ACCEL_MAG_ADDR}}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+C\+C\+E\+L\+\_\+\+M\+A\+G\+\_\+\+A\+D\+DR~0x1D}\hypertarget{_accel__magnet_8h_aadedecb8e36e3cfb126f7f6b1592d8b2}{}\label{_accel__magnet_8h_aadedecb8e36e3cfb126f7f6b1592d8b2}
+
+
+Definition at line 15 of file Accel\+\_\+magnet.\+h.
+
+\index{Accel\+\_\+magnet.\+h@{Accel\+\_\+magnet.\+h}!O\+U\+T\+\_\+\+X\+\_\+\+H\+\_\+A@{O\+U\+T\+\_\+\+X\+\_\+\+H\+\_\+A}}
+\index{O\+U\+T\+\_\+\+X\+\_\+\+H\+\_\+A@{O\+U\+T\+\_\+\+X\+\_\+\+H\+\_\+A}!Accel\+\_\+magnet.\+h@{Accel\+\_\+magnet.\+h}}
+\subsubsection[{\texorpdfstring{O\+U\+T\+\_\+\+X\+\_\+\+H\+\_\+A}{OUT_X_H_A}}]{\setlength{\rightskip}{0pt plus 5cm}\#define O\+U\+T\+\_\+\+X\+\_\+\+H\+\_\+A~0x29}\hypertarget{_accel__magnet_8h_aff0544c632e0f9a08e9e4ed32a6f8a21}{}\label{_accel__magnet_8h_aff0544c632e0f9a08e9e4ed32a6f8a21}
+
+
+Definition at line 27 of file Accel\+\_\+magnet.\+h.
+
+\index{Accel\+\_\+magnet.\+h@{Accel\+\_\+magnet.\+h}!O\+U\+T\+\_\+\+X\+\_\+\+H\+\_\+M@{O\+U\+T\+\_\+\+X\+\_\+\+H\+\_\+M}}
+\index{O\+U\+T\+\_\+\+X\+\_\+\+H\+\_\+M@{O\+U\+T\+\_\+\+X\+\_\+\+H\+\_\+M}!Accel\+\_\+magnet.\+h@{Accel\+\_\+magnet.\+h}}
+\subsubsection[{\texorpdfstring{O\+U\+T\+\_\+\+X\+\_\+\+H\+\_\+M}{OUT_X_H_M}}]{\setlength{\rightskip}{0pt plus 5cm}\#define O\+U\+T\+\_\+\+X\+\_\+\+H\+\_\+M~0x09}\hypertarget{_accel__magnet_8h_a2489b398fe6a7418ea8f45c61cce4f9b}{}\label{_accel__magnet_8h_a2489b398fe6a7418ea8f45c61cce4f9b}
+
+
+Definition at line 20 of file Accel\+\_\+magnet.\+h.
+
+\index{Accel\+\_\+magnet.\+h@{Accel\+\_\+magnet.\+h}!O\+U\+T\+\_\+\+X\+\_\+\+L\+\_\+A@{O\+U\+T\+\_\+\+X\+\_\+\+L\+\_\+A}}
+\index{O\+U\+T\+\_\+\+X\+\_\+\+L\+\_\+A@{O\+U\+T\+\_\+\+X\+\_\+\+L\+\_\+A}!Accel\+\_\+magnet.\+h@{Accel\+\_\+magnet.\+h}}
+\subsubsection[{\texorpdfstring{O\+U\+T\+\_\+\+X\+\_\+\+L\+\_\+A}{OUT_X_L_A}}]{\setlength{\rightskip}{0pt plus 5cm}\#define O\+U\+T\+\_\+\+X\+\_\+\+L\+\_\+A~0x28}\hypertarget{_accel__magnet_8h_af07420cc51cd538201554ceb8187eb32}{}\label{_accel__magnet_8h_af07420cc51cd538201554ceb8187eb32}
+
+
+Definition at line 26 of file Accel\+\_\+magnet.\+h.
+
+\index{Accel\+\_\+magnet.\+h@{Accel\+\_\+magnet.\+h}!O\+U\+T\+\_\+\+X\+\_\+\+L\+\_\+M@{O\+U\+T\+\_\+\+X\+\_\+\+L\+\_\+M}}
+\index{O\+U\+T\+\_\+\+X\+\_\+\+L\+\_\+M@{O\+U\+T\+\_\+\+X\+\_\+\+L\+\_\+M}!Accel\+\_\+magnet.\+h@{Accel\+\_\+magnet.\+h}}
+\subsubsection[{\texorpdfstring{O\+U\+T\+\_\+\+X\+\_\+\+L\+\_\+M}{OUT_X_L_M}}]{\setlength{\rightskip}{0pt plus 5cm}\#define O\+U\+T\+\_\+\+X\+\_\+\+L\+\_\+M~0x08}\hypertarget{_accel__magnet_8h_abab698c56e01e1fd410398c4e7beaaf3}{}\label{_accel__magnet_8h_abab698c56e01e1fd410398c4e7beaaf3}
+
+
+Definition at line 19 of file Accel\+\_\+magnet.\+h.
+
+\index{Accel\+\_\+magnet.\+h@{Accel\+\_\+magnet.\+h}!O\+U\+T\+\_\+\+Y\+\_\+\+H\+\_\+A@{O\+U\+T\+\_\+\+Y\+\_\+\+H\+\_\+A}}
+\index{O\+U\+T\+\_\+\+Y\+\_\+\+H\+\_\+A@{O\+U\+T\+\_\+\+Y\+\_\+\+H\+\_\+A}!Accel\+\_\+magnet.\+h@{Accel\+\_\+magnet.\+h}}
+\subsubsection[{\texorpdfstring{O\+U\+T\+\_\+\+Y\+\_\+\+H\+\_\+A}{OUT_Y_H_A}}]{\setlength{\rightskip}{0pt plus 5cm}\#define O\+U\+T\+\_\+\+Y\+\_\+\+H\+\_\+A~0x2B}\hypertarget{_accel__magnet_8h_affecb4c00ec91d1cb8fd0e2e00dc268f}{}\label{_accel__magnet_8h_affecb4c00ec91d1cb8fd0e2e00dc268f}
+
+
+Definition at line 29 of file Accel\+\_\+magnet.\+h.
+
+\index{Accel\+\_\+magnet.\+h@{Accel\+\_\+magnet.\+h}!O\+U\+T\+\_\+\+Y\+\_\+\+H\+\_\+M@{O\+U\+T\+\_\+\+Y\+\_\+\+H\+\_\+M}}
+\index{O\+U\+T\+\_\+\+Y\+\_\+\+H\+\_\+M@{O\+U\+T\+\_\+\+Y\+\_\+\+H\+\_\+M}!Accel\+\_\+magnet.\+h@{Accel\+\_\+magnet.\+h}}
+\subsubsection[{\texorpdfstring{O\+U\+T\+\_\+\+Y\+\_\+\+H\+\_\+M}{OUT_Y_H_M}}]{\setlength{\rightskip}{0pt plus 5cm}\#define O\+U\+T\+\_\+\+Y\+\_\+\+H\+\_\+M~0x0B}\hypertarget{_accel__magnet_8h_a296228caa98301cb5cd765cafc9ee7b6}{}\label{_accel__magnet_8h_a296228caa98301cb5cd765cafc9ee7b6}
+
+
+Definition at line 22 of file Accel\+\_\+magnet.\+h.
+
+\index{Accel\+\_\+magnet.\+h@{Accel\+\_\+magnet.\+h}!O\+U\+T\+\_\+\+Y\+\_\+\+L\+\_\+A@{O\+U\+T\+\_\+\+Y\+\_\+\+L\+\_\+A}}
+\index{O\+U\+T\+\_\+\+Y\+\_\+\+L\+\_\+A@{O\+U\+T\+\_\+\+Y\+\_\+\+L\+\_\+A}!Accel\+\_\+magnet.\+h@{Accel\+\_\+magnet.\+h}}
+\subsubsection[{\texorpdfstring{O\+U\+T\+\_\+\+Y\+\_\+\+L\+\_\+A}{OUT_Y_L_A}}]{\setlength{\rightskip}{0pt plus 5cm}\#define O\+U\+T\+\_\+\+Y\+\_\+\+L\+\_\+A~0x2A}\hypertarget{_accel__magnet_8h_a7c057ac2609133a18c32ae2b630daafb}{}\label{_accel__magnet_8h_a7c057ac2609133a18c32ae2b630daafb}
+
+
+Definition at line 28 of file Accel\+\_\+magnet.\+h.
+
+\index{Accel\+\_\+magnet.\+h@{Accel\+\_\+magnet.\+h}!O\+U\+T\+\_\+\+Y\+\_\+\+L\+\_\+M@{O\+U\+T\+\_\+\+Y\+\_\+\+L\+\_\+M}}
+\index{O\+U\+T\+\_\+\+Y\+\_\+\+L\+\_\+M@{O\+U\+T\+\_\+\+Y\+\_\+\+L\+\_\+M}!Accel\+\_\+magnet.\+h@{Accel\+\_\+magnet.\+h}}
+\subsubsection[{\texorpdfstring{O\+U\+T\+\_\+\+Y\+\_\+\+L\+\_\+M}{OUT_Y_L_M}}]{\setlength{\rightskip}{0pt plus 5cm}\#define O\+U\+T\+\_\+\+Y\+\_\+\+L\+\_\+M~0x0A}\hypertarget{_accel__magnet_8h_ac2a68cdf4dc38a1e6953a131d193aac2}{}\label{_accel__magnet_8h_ac2a68cdf4dc38a1e6953a131d193aac2}
+
+
+Definition at line 21 of file Accel\+\_\+magnet.\+h.
+
+\index{Accel\+\_\+magnet.\+h@{Accel\+\_\+magnet.\+h}!O\+U\+T\+\_\+\+Z\+\_\+\+H\+\_\+A@{O\+U\+T\+\_\+\+Z\+\_\+\+H\+\_\+A}}
+\index{O\+U\+T\+\_\+\+Z\+\_\+\+H\+\_\+A@{O\+U\+T\+\_\+\+Z\+\_\+\+H\+\_\+A}!Accel\+\_\+magnet.\+h@{Accel\+\_\+magnet.\+h}}
+\subsubsection[{\texorpdfstring{O\+U\+T\+\_\+\+Z\+\_\+\+H\+\_\+A}{OUT_Z_H_A}}]{\setlength{\rightskip}{0pt plus 5cm}\#define O\+U\+T\+\_\+\+Z\+\_\+\+H\+\_\+A~0x2D}\hypertarget{_accel__magnet_8h_afd262b693d21cb2585621aa7f8c7d2a1}{}\label{_accel__magnet_8h_afd262b693d21cb2585621aa7f8c7d2a1}
+
+
+Definition at line 31 of file Accel\+\_\+magnet.\+h.
+
+\index{Accel\+\_\+magnet.\+h@{Accel\+\_\+magnet.\+h}!O\+U\+T\+\_\+\+Z\+\_\+\+H\+\_\+M@{O\+U\+T\+\_\+\+Z\+\_\+\+H\+\_\+M}}
+\index{O\+U\+T\+\_\+\+Z\+\_\+\+H\+\_\+M@{O\+U\+T\+\_\+\+Z\+\_\+\+H\+\_\+M}!Accel\+\_\+magnet.\+h@{Accel\+\_\+magnet.\+h}}
+\subsubsection[{\texorpdfstring{O\+U\+T\+\_\+\+Z\+\_\+\+H\+\_\+M}{OUT_Z_H_M}}]{\setlength{\rightskip}{0pt plus 5cm}\#define O\+U\+T\+\_\+\+Z\+\_\+\+H\+\_\+M~0x0D}\hypertarget{_accel__magnet_8h_abbf1fdc9b183596b72618c113b30718b}{}\label{_accel__magnet_8h_abbf1fdc9b183596b72618c113b30718b}
+
+
+Definition at line 24 of file Accel\+\_\+magnet.\+h.
+
+\index{Accel\+\_\+magnet.\+h@{Accel\+\_\+magnet.\+h}!O\+U\+T\+\_\+\+Z\+\_\+\+L\+\_\+A@{O\+U\+T\+\_\+\+Z\+\_\+\+L\+\_\+A}}
+\index{O\+U\+T\+\_\+\+Z\+\_\+\+L\+\_\+A@{O\+U\+T\+\_\+\+Z\+\_\+\+L\+\_\+A}!Accel\+\_\+magnet.\+h@{Accel\+\_\+magnet.\+h}}
+\subsubsection[{\texorpdfstring{O\+U\+T\+\_\+\+Z\+\_\+\+L\+\_\+A}{OUT_Z_L_A}}]{\setlength{\rightskip}{0pt plus 5cm}\#define O\+U\+T\+\_\+\+Z\+\_\+\+L\+\_\+A~0x2C}\hypertarget{_accel__magnet_8h_a09387c436745ba77d147288050d7d8c1}{}\label{_accel__magnet_8h_a09387c436745ba77d147288050d7d8c1}
+
+
+Definition at line 30 of file Accel\+\_\+magnet.\+h.
+
+\index{Accel\+\_\+magnet.\+h@{Accel\+\_\+magnet.\+h}!O\+U\+T\+\_\+\+Z\+\_\+\+L\+\_\+M@{O\+U\+T\+\_\+\+Z\+\_\+\+L\+\_\+M}}
+\index{O\+U\+T\+\_\+\+Z\+\_\+\+L\+\_\+M@{O\+U\+T\+\_\+\+Z\+\_\+\+L\+\_\+M}!Accel\+\_\+magnet.\+h@{Accel\+\_\+magnet.\+h}}
+\subsubsection[{\texorpdfstring{O\+U\+T\+\_\+\+Z\+\_\+\+L\+\_\+M}{OUT_Z_L_M}}]{\setlength{\rightskip}{0pt plus 5cm}\#define O\+U\+T\+\_\+\+Z\+\_\+\+L\+\_\+M~0x0C}\hypertarget{_accel__magnet_8h_ae30aefcb21f60ce603a214d5678b8f9d}{}\label{_accel__magnet_8h_ae30aefcb21f60ce603a214d5678b8f9d}
+
+
+Definition at line 23 of file Accel\+\_\+magnet.\+h.
+
+\index{Accel\+\_\+magnet.\+h@{Accel\+\_\+magnet.\+h}!W\+H\+O\+\_\+\+A\+M\+\_\+\+I\+\_\+\+A\+C\+C\+EL@{W\+H\+O\+\_\+\+A\+M\+\_\+\+I\+\_\+\+A\+C\+C\+EL}}
+\index{W\+H\+O\+\_\+\+A\+M\+\_\+\+I\+\_\+\+A\+C\+C\+EL@{W\+H\+O\+\_\+\+A\+M\+\_\+\+I\+\_\+\+A\+C\+C\+EL}!Accel\+\_\+magnet.\+h@{Accel\+\_\+magnet.\+h}}
+\subsubsection[{\texorpdfstring{W\+H\+O\+\_\+\+A\+M\+\_\+\+I\+\_\+\+A\+C\+C\+EL}{WHO_AM_I_ACCEL}}]{\setlength{\rightskip}{0pt plus 5cm}\#define W\+H\+O\+\_\+\+A\+M\+\_\+\+I\+\_\+\+A\+C\+C\+EL~0x0F}\hypertarget{_accel__magnet_8h_a7da7ddf0d542d6916b28a707fb2bef2b}{}\label{_accel__magnet_8h_a7da7ddf0d542d6916b28a707fb2bef2b}
+
+
+Definition at line 14 of file Accel\+\_\+magnet.\+h.
+
+
+
+\subsection{Function Documentation}
+\index{Accel\+\_\+magnet.\+h@{Accel\+\_\+magnet.\+h}!convert\+\_\+raw@{convert\+\_\+raw}}
+\index{convert\+\_\+raw@{convert\+\_\+raw}!Accel\+\_\+magnet.\+h@{Accel\+\_\+magnet.\+h}}
+\subsubsection[{\texorpdfstring{convert\+\_\+raw(uint8 L, uint8 H)}{convert_raw(uint8 L, uint8 H)}}]{\setlength{\rightskip}{0pt plus 5cm}uint16 convert\+\_\+raw (
+\begin{DoxyParamCaption}
+\item[{uint8}]{L, }
+\item[{uint8}]{H}
+\end{DoxyParamCaption}
+)}\hypertarget{_accel__magnet_8h_a3dffc9c223a30888d7399406408059b8}{}\label{_accel__magnet_8h_a3dffc9c223a30888d7399406408059b8}
+
+
+Definition at line 262 of file main.\+c.
+
+
+\begin{DoxyCode}
+263 \{
+264     uint16 raw;
+265     raw = (int16)(L | H << 8);
+266     
+267     \textcolor{keywordflow}{return} raw;
+268 \}
+\end{DoxyCode}
+\index{Accel\+\_\+magnet.\+h@{Accel\+\_\+magnet.\+h}!heading@{heading}}
+\index{heading@{heading}!Accel\+\_\+magnet.\+h@{Accel\+\_\+magnet.\+h}}
+\subsubsection[{\texorpdfstring{heading(double X\+\_\+\+A\+X\+I\+S, double Y\+\_\+\+A\+X\+I\+S)}{heading(double X_AXIS, double Y_AXIS)}}]{\setlength{\rightskip}{0pt plus 5cm}void heading (
+\begin{DoxyParamCaption}
+\item[{double}]{X\+\_\+\+A\+X\+IS, }
+\item[{double}]{Y\+\_\+\+A\+X\+IS}
+\end{DoxyParamCaption}
+)}\hypertarget{_accel__magnet_8h_af98fb6190588da170637da1531c2ecbc}{}\label{_accel__magnet_8h_af98fb6190588da170637da1531c2ecbc}
+
+
+Heading. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em double} & X\+\_\+\+A\+X\+IS \+: X axis value \\
+\hline
+{\em double} & Y\+\_\+\+A\+X\+IS \+: Y axis value \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 19 of file Magnet.\+c.
+
+
+\begin{DoxyCode}
+20 \{
+21     \textcolor{keywordtype}{double} \hyperlink{_magnet_8c_af98fb6190588da170637da1531c2ecbc}{heading};
+22     heading = 180 * atan2 (X\_AXIS, Y\_AXIS) / M\_PI;
+23     
+24     \textcolor{keywordflow}{if}(heading < 0)
+25         heading += 360;
+26     printf(\textcolor{stringliteral}{"heading: %7.3f \(\backslash\)r\(\backslash\)n"}, heading);
+27     CyDelay(250);
+28 \}
+\end{DoxyCode}
+\index{Accel\+\_\+magnet.\+h@{Accel\+\_\+magnet.\+h}!value\+\_\+convert\+\_\+accel@{value\+\_\+convert\+\_\+accel}}
+\index{value\+\_\+convert\+\_\+accel@{value\+\_\+convert\+\_\+accel}!Accel\+\_\+magnet.\+h@{Accel\+\_\+magnet.\+h}}
+\subsubsection[{\texorpdfstring{value\+\_\+convert\+\_\+accel(uint16 X\+\_\+\+A\+X\+I\+S, uint16 Y\+\_\+\+A\+X\+I\+S, uint16 Z\+\_\+\+A\+X\+I\+S)}{value_convert_accel(uint16 X_AXIS, uint16 Y_AXIS, uint16 Z_AXIS)}}]{\setlength{\rightskip}{0pt plus 5cm}void value\+\_\+convert\+\_\+accel (
+\begin{DoxyParamCaption}
+\item[{uint16}]{X\+\_\+\+A\+X\+IS, }
+\item[{uint16}]{Y\+\_\+\+A\+X\+IS, }
+\item[{uint16}]{Z\+\_\+\+A\+X\+IS}
+\end{DoxyParamCaption}
+)}\hypertarget{_accel__magnet_8h_a66765f03c5817d1c93c09d519b67f58a}{}\label{_accel__magnet_8h_a66765f03c5817d1c93c09d519b67f58a}
+
+
+Convert raw value. 
+
+convert raw value to real value 
+\begin{DoxyParams}{Parameters}
+{\em uint16} & X\+\_\+\+A\+X\+IS \+: X axis value \\
+\hline
+{\em uint16} & Y\+\_\+\+A\+X\+IS \+: Y axis value \\
+\hline
+{\em uint16} & Z\+\_\+\+A\+X\+IS \+: Z axis value \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 19 of file Accel.\+c.
+
+
+\begin{DoxyCode}
+20 \{
+21     \textcolor{keywordtype}{double} AccXangle, AccYangle;
+22    
+23     AccXangle = (float) (atan2(Y\_AXIS, Z\_AXIS)+M\_PI) *180 / M\_PI;
+24     AccYangle = (float) (atan2(Z\_AXIS, X\_AXIS)+M\_PI) *180 / M\_PI;
+25     
+26     printf(\textcolor{stringliteral}{"%7.3f %7.3f \(\backslash\)r\(\backslash\)n"}, AccXangle, AccYangle);
+27 \}
+\end{DoxyCode}
+\index{Accel\+\_\+magnet.\+h@{Accel\+\_\+magnet.\+h}!value\+\_\+convert\+\_\+magnet@{value\+\_\+convert\+\_\+magnet}}
+\index{value\+\_\+convert\+\_\+magnet@{value\+\_\+convert\+\_\+magnet}!Accel\+\_\+magnet.\+h@{Accel\+\_\+magnet.\+h}}
+\subsubsection[{\texorpdfstring{value\+\_\+convert\+\_\+magnet(uint8 A\+X\+I\+S\+\_\+\+H, uint8 A\+X\+I\+S\+\_\+\+L)}{value_convert_magnet(uint8 AXIS_H, uint8 AXIS_L)}}]{\setlength{\rightskip}{0pt plus 5cm}uint16 value\+\_\+convert\+\_\+magnet (
+\begin{DoxyParamCaption}
+\item[{uint8}]{A\+X\+I\+S\+\_\+H, }
+\item[{uint8}]{A\+X\+I\+S\+\_\+L}
+\end{DoxyParamCaption}
+)}\hypertarget{_accel__magnet_8h_a56fdd21f3684adcbb288666abd444296}{}\label{_accel__magnet_8h_a56fdd21f3684adcbb288666abd444296}

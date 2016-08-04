@@ -1,0 +1,59 @@
+\hypertarget{_magnet_8c}{}\section{Magnet.\+c File Reference}
+\label{_magnet_8c}\index{Magnet.\+c@{Magnet.\+c}}
+
+
+Magnetometer method file.  
+
+
+{\ttfamily \#include $<$project.\+h$>$}\\*
+{\ttfamily \#include $<$math.\+h$>$}\\*
+{\ttfamily \#include $<$stdio.\+h$>$}\\*
+{\ttfamily \#include $<$accel\+\_\+magnet.\+h$>$}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{_magnet_8c_af98fb6190588da170637da1531c2ecbc}{heading} (double X\+\_\+\+A\+X\+IS, double Y\+\_\+\+A\+X\+IS)
+\begin{DoxyCompactList}\small\item\em Heading. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Magnetometer method file. 
+
+
+
+\subsection{Function Documentation}
+\index{Magnet.\+c@{Magnet.\+c}!heading@{heading}}
+\index{heading@{heading}!Magnet.\+c@{Magnet.\+c}}
+\subsubsection[{\texorpdfstring{heading(double X\+\_\+\+A\+X\+I\+S, double Y\+\_\+\+A\+X\+I\+S)}{heading(double X_AXIS, double Y_AXIS)}}]{\setlength{\rightskip}{0pt plus 5cm}void heading (
+\begin{DoxyParamCaption}
+\item[{double}]{X\+\_\+\+A\+X\+IS, }
+\item[{double}]{Y\+\_\+\+A\+X\+IS}
+\end{DoxyParamCaption}
+)}\hypertarget{_magnet_8c_af98fb6190588da170637da1531c2ecbc}{}\label{_magnet_8c_af98fb6190588da170637da1531c2ecbc}
+
+
+Heading. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em double} & X\+\_\+\+A\+X\+IS \+: X axis value \\
+\hline
+{\em double} & Y\+\_\+\+A\+X\+IS \+: Y axis value \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 19 of file Magnet.\+c.
+
+
+\begin{DoxyCode}
+20 \{
+21     \textcolor{keywordtype}{double} \hyperlink{_magnet_8c_af98fb6190588da170637da1531c2ecbc}{heading};
+22     heading = 180 * atan2 (X\_AXIS, Y\_AXIS) / M\_PI;
+23     
+24     \textcolor{keywordflow}{if}(heading < 0)
+25         heading += 360;
+26     printf(\textcolor{stringliteral}{"heading: %7.3f \(\backslash\)r\(\backslash\)n"}, heading);
+27     CyDelay(250);
+28 \}
+\end{DoxyCode}

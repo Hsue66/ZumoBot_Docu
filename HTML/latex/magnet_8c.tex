@@ -1,0 +1,38 @@
+\hypertarget{magnet_8c}{}\section{magnet.\+c File Reference}
+\label{magnet_8c}\index{magnet.\+c@{magnet.\+c}}
+{\ttfamily \#include $<$project.\+h$>$}\\*
+{\ttfamily \#include $<$math.\+h$>$}\\*
+{\ttfamily \#include $<$stdio.\+h$>$}\\*
+{\ttfamily \#include $<$accel\+\_\+magnet.\+h$>$}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{magnet_8c_af98fb6190588da170637da1531c2ecbc}{heading} (double X\+\_\+\+A\+X\+IS, double Y\+\_\+\+A\+X\+IS)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\index{magnet.\+c@{magnet.\+c}!heading@{heading}}
+\index{heading@{heading}!magnet.\+c@{magnet.\+c}}
+\subsubsection[{\texorpdfstring{heading(double X\+\_\+\+A\+X\+I\+S, double Y\+\_\+\+A\+X\+I\+S)}{heading(double X_AXIS, double Y_AXIS)}}]{\setlength{\rightskip}{0pt plus 5cm}void heading (
+\begin{DoxyParamCaption}
+\item[{double}]{X\+\_\+\+A\+X\+IS, }
+\item[{double}]{Y\+\_\+\+A\+X\+IS}
+\end{DoxyParamCaption}
+)}\hypertarget{magnet_8c_af98fb6190588da170637da1531c2ecbc}{}\label{magnet_8c_af98fb6190588da170637da1531c2ecbc}
+
+
+Definition at line 20 of file magnet.\+c.
+
+
+\begin{DoxyCode}
+21 \{
+22     \textcolor{keywordtype}{double} \hyperlink{magnet_8c_af98fb6190588da170637da1531c2ecbc}{heading};
+23     heading = 180 * atan2 (X\_AXIS, Y\_AXIS) / M\_PI;
+24     
+25     \textcolor{keywordflow}{if}(heading < 0)
+26         heading += 360;
+27     printf(\textcolor{stringliteral}{"heading: %7.3f \(\backslash\)r\(\backslash\)n"}, heading);
+28     CyDelay(250);
+29 \}
+\end{DoxyCode}

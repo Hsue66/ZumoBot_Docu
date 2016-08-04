@@ -1,0 +1,5 @@
+var _i2_c__made_8c =
+[
+    [ "I2C_read", "_i2_c__made_8c.html#a37612a39111135d189b6ac2c90c2e23f", null ],
+    [ "I2C_write", "_i2_c__made_8c.html#a389e072c17dc9cc66391568ee5d46c89", null ]
+];
