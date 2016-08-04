@@ -128,20 +128,11 @@ int main()
     }
     ///---------------------------------------------------------- */
      
-     /* //ultra//
-    ----------------------------------------------------
-    ultra_isr_StartEx(ultra_isr_handler);   // Ultra Sonic Interrupt
-    Ultra_Start();                          // Ultra Sonic Start function
    
-    for(;;)
-    {       
-        CyDelay(100); 
-        Trig_Write(1);           // Trigger High
-        CyDelayUs(10);              // 10 micro seconds for trigger input signals
-        Trig_Write(0);           // Trigger Low
-    }
+     /* //ultra//
+    ----------------------------------------------------    
+    Ultra_Start();                          // Ultra Sonic Start function
     //----------------------------------------------------*/
-    
     
     
     /* //reflectance//
