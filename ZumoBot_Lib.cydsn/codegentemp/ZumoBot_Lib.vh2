@@ -2,7 +2,7 @@
 --	Conversion of ZumoBot_Lib.v to vh2:
 --
 --	Cypress Semiconductor - WARP Version 6.3 IR 41
---	Thu Jul 28 10:37:07 2016
+--	Thu Aug 04 15:12:34 2016
 --
 
 USE cypress.cypress.all;
@@ -2785,7 +2785,7 @@ timer_clock_4:cy_clock_v1_0
 		id=>"b00ae229-3bf1-41a8-9ac1-7d1def5f7dae",
 		source_clock_id=>"",
 		divisor=>0,
-		period=>"1538461538.46154",
+		period=>"1250000000",
 		is_direct=>'0',
 		is_digital=>'1')
 	PORT MAP(clock_out=>Net_3907,

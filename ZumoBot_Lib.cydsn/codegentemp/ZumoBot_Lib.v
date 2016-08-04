@@ -1,6 +1,6 @@
 // ======================================================================
 // ZumoBot_Lib.v generated from TopDesign.cysch
-// 07/28/2016 at 10:37
+// 08/04/2016 at 15:12
 // This file is auto generated. ANY EDITS YOU MAKE MAY BE LOST WHEN THIS FILE IS REGENERATED!!!
 // ======================================================================
 
@@ -2165,7 +2165,7 @@ module top ;
 		#(.id("b00ae229-3bf1-41a8-9ac1-7d1def5f7dae"),
 		  .source_clock_id(""),
 		  .divisor(0),
-		  .period("1538461538.46154"),
+		  .period("1250000000"),
 		  .is_direct(0),
 		  .is_digital(1))
 		timer_clock_4
