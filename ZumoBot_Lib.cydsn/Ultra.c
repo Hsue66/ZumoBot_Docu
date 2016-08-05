@@ -1,7 +1,7 @@
 /**
  * @file    Ultra.c
- * @brief   Ultra sonic sensor method file
- * @details Timer period : 23320 | timer_clock: 800kHz
+ * @brief   Basic methods for operating ultrasonic sensor
+ * @details part number: HC-SR04
 */
 
 #include "Ultra.h"
@@ -12,7 +12,7 @@ float cent = 0;
 
 /**
 * @brief    Systick Interrupt Handler
-* @details  count system ticks to occur trigger
+* @details  Counting system ticks to occur trigger
 */
 int cnt=0;
 CY_ISR(SYS_ISR)
@@ -30,7 +30,7 @@ CY_ISR(SYS_ISR)
 
 /**
 * @brief    Ultra Sonic Sensor Interrupt Handler
-* @details  measure reflecting time to decide distance between Zumobot and obstacle
+* @details  Measuring reflecting time to decide distance between Zumobot and obstacle
 */
 CY_ISR(ultra_isr_handler)
 {
@@ -54,15 +54,19 @@ CY_ISR(ultra_isr_handler)
 
 
 /**
-* @brief    Start Ultra Sonic Sensor
+* @brief    Starting Ultra Sonic Sensor
 * @details  
 */
 void Ultra_Start()
 {
     CyIntSetSysVector((SysTick_IRQn + 16), SYS_ISR);    // Map systick ISR to SYS_ISR
-	SysTick_Config(NUMBER_OF_TICKS);                    // Enable Systick Timer
+SysTick_Config(NUMBER_OF_TICKS);                    // Enable Systick Timer
     ultra_isr_StartEx(ultra_isr_handler);               // Start ultra sonic interrupt
     Timer_Start();                                      // Start Timer
 }
 
-/* [] END OF FILE */
+
+
+
+
+

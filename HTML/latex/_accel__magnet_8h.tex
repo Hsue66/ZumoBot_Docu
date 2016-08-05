@@ -49,15 +49,15 @@ uint16 \hyperlink{_accel__magnet_8h_a56fdd21f3684adcbb288666abd444296}{value\+\_
 void \hyperlink{_accel__magnet_8h_af98fb6190588da170637da1531c2ecbc}{heading} (double X\+\_\+\+A\+X\+IS, double Y\+\_\+\+A\+X\+IS)
 \begin{DoxyCompactList}\small\item\em Heading. \end{DoxyCompactList}\item 
 void \hyperlink{_accel__magnet_8h_a66765f03c5817d1c93c09d519b67f58a}{value\+\_\+convert\+\_\+accel} (uint16 X\+\_\+\+A\+X\+IS, uint16 Y\+\_\+\+A\+X\+IS, uint16 Z\+\_\+\+A\+X\+IS)
-\begin{DoxyCompactList}\small\item\em Convert raw value. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Converting raw value. \end{DoxyCompactList}\item 
 uint16 \hyperlink{_accel__magnet_8h_a3dffc9c223a30888d7399406408059b8}{convert\+\_\+raw} (uint8 L, uint8 H)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Combining 8 bits of low and high outputs to 16 bits used for sensor value. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
 Accelerometer header file. 
 
-If you want to use Accelerometer methods, Include \hyperlink{_accel__magnet_8h}{Accel\+\_\+magnet.\+h} file. 
+If you want to use Accelerometer methods, you need to include \hyperlink{_accel__magnet_8h}{Accel\+\_\+magnet.\+h} file. Defining register address for basic setting up and reading sensor output values. 
 
 \subsection{Macro Definition Documentation}
 \index{Accel\+\_\+magnet.\+h@{Accel\+\_\+magnet.\+h}!A\+C\+C\+E\+L\+\_\+\+C\+T\+R\+L1\+\_\+\+R\+EG@{A\+C\+C\+E\+L\+\_\+\+C\+T\+R\+L1\+\_\+\+R\+EG}}
@@ -185,16 +185,27 @@ Definition at line 14 of file Accel\+\_\+magnet.\+h.
 )}\hypertarget{_accel__magnet_8h_a3dffc9c223a30888d7399406408059b8}{}\label{_accel__magnet_8h_a3dffc9c223a30888d7399406408059b8}
 
 
-Definition at line 262 of file main.\+c.
+Combining 8 bits of low and high outputs to 16 bits used for sensor value. 
+
+writing value to slave register by I2C communication 
+\begin{DoxyParams}{Parameters}
+{\em uint8} & L \+: lower 8bits out of 16 bits output \\
+\hline
+{\em uint8} & H \+: higher 8bits out of 16 bits output \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 62 of file I2\+C\+\_\+made.\+c.
 
 
 \begin{DoxyCode}
-263 \{
-264     uint16 raw;
-265     raw = (int16)(L | H << 8);
-266     
-267     \textcolor{keywordflow}{return} raw;
-268 \}
+63 \{
+64     uint16 raw;
+65     raw = (int16)(L | H << 8);
+66     
+67     \textcolor{keywordflow}{return} raw;
+68 \}
 \end{DoxyCode}
 \index{Accel\+\_\+magnet.\+h@{Accel\+\_\+magnet.\+h}!heading@{heading}}
 \index{heading@{heading}!Accel\+\_\+magnet.\+h@{Accel\+\_\+magnet.\+h}}
@@ -242,9 +253,9 @@ Definition at line 19 of file Magnet.\+c.
 )}\hypertarget{_accel__magnet_8h_a66765f03c5817d1c93c09d519b67f58a}{}\label{_accel__magnet_8h_a66765f03c5817d1c93c09d519b67f58a}
 
 
-Convert raw value. 
+Converting raw value. 
 
-convert raw value to real value 
+Converting raw value 
 \begin{DoxyParams}{Parameters}
 {\em uint16} & X\+\_\+\+A\+X\+IS \+: X axis value \\
 \hline

@@ -53,11 +53,11 @@ Definition at line 35 of file I\+R.\+c.
 
 \begin{DoxyCode}
 36 \{
-37     \textcolor{keywordtype}{int} cnt =0;
+37     \textcolor{keywordtype}{int} \hyperlink{_ultra_8c_a9cfbb269728dc4185236d28be58d9eab}{cnt} =0;
 38     \textcolor{keywordflow}{while}(!IR\_receiver\_Read()==1)
 39         cnt++;
 40     
-41     \textcolor{keywordflow}{return} cnt;
+41     \textcolor{keywordflow}{return} \hyperlink{_ultra_8c_a9cfbb269728dc4185236d28be58d9eab}{cnt};
 42 \}
 \end{DoxyCode}
 \index{I\+R.\+h@{I\+R.\+h}!count\+\_\+uptime@{count\+\_\+uptime}}
@@ -84,11 +84,11 @@ Definition at line 51 of file I\+R.\+c.
 
 \begin{DoxyCode}
 52 \{
-53     \textcolor{keywordtype}{int} cnt =0;
+53     \textcolor{keywordtype}{int} \hyperlink{_ultra_8c_a9cfbb269728dc4185236d28be58d9eab}{cnt} =0;
 54     \textcolor{keywordflow}{while}(IR\_receiver\_Read()==1)
 55         cnt++;
 56     
-57     \textcolor{keywordflow}{return} cnt;
+57     \textcolor{keywordflow}{return} \hyperlink{_ultra_8c_a9cfbb269728dc4185236d28be58d9eab}{cnt};
 58 \}
 \end{DoxyCode}
 \index{I\+R.\+h@{I\+R.\+h}!get\+\_\+\+IR@{get\+\_\+\+IR}}
@@ -117,7 +117,7 @@ Definition at line 67 of file I\+R.\+c.
 68 \{
 69     uint8 bit[33]=\{0\};
 70     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} val=0;
-71     uint t1, t2, \hyperlink{_ultra_8c_a78f7a37dba921e0b0347b960fb40bc51}{i}, j;
+71     uint t1, t2, i, j;
 72     
 73     \hyperlink{_i_r_8c_affb2f19051323c79470bd3ca700a4880}{wait\_going\_down}();
 74     printf(\textcolor{stringliteral}{"START \(\backslash\)r\(\backslash\)n"});
@@ -133,9 +133,9 @@ Definition at line 67 of file I\+R.\+c.
 84         
 85         \textcolor{comment}{// If up time is longer than down time, value of the bit becomes 1}
 86         \textcolor{keywordflow}{if}(t2 > t1)
-87             bit[\hyperlink{_ultra_8c_a78f7a37dba921e0b0347b960fb40bc51}{i}]=1;
+87             bit[i]=1;
 88         \textcolor{keywordflow}{else}
-89             bit[\hyperlink{_ultra_8c_a78f7a37dba921e0b0347b960fb40bc51}{i}]=0; 
+89             bit[i]=0; 
 90     \} 
 91    
 92     \textcolor{comment}{/* // If you want to see binary value}

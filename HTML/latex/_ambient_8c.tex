@@ -2,7 +2,7 @@
 \label{_ambient_8c}\index{Ambient.\+c@{Ambient.\+c}}
 
 
-Ambient light sensor method file.  
+basic methods of operating ambient light sensor  
 
 
 {\ttfamily \#include \char`\"{}Ambient.\+h\char`\"{}}\\*
@@ -14,9 +14,9 @@ double \hyperlink{_ambient_8c_a4f2753f74c2249bf17da11de745e8da4}{get\+Lux} (doub
 
 
 \subsection{Detailed Description}
-Ambient light sensor method file. 
+basic methods of operating ambient light sensor 
 
-
+part number\+: A\+P\+D\+S-\/9301 
 
 \subsection{Function Documentation}
 \index{Ambient.\+c@{Ambient.\+c}!get\+Lux@{get\+Lux}}
@@ -31,7 +31,7 @@ Ambient light sensor method file.
 
 Get lux from raw value. 
 
-get lux using Channel 0 value and Channel 1 value 
+get lux using values of Channel 0 and Channel 1 
 \begin{DoxyParams}{Parameters}
 {\em double} & Channel 0 \\
 \hline
@@ -48,7 +48,7 @@ Definition at line 15 of file Ambient.\+c.
 
 \begin{DoxyCode}
 16 \{
-17     \textcolor{keywordtype}{double} result = 0;
+17 \textcolor{keywordtype}{double} result = 0;
 18     \textcolor{keywordtype}{double} ChannelRatio = (double)CH1/CH0;
 19     
 20     \textcolor{keywordflow}{if}((0<ChannelRatio) && (ChannelRatio <= 0.5))

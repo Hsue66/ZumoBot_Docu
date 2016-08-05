@@ -1,6 +1,6 @@
 /**
  * @file    I2C_made.c
- * @brief   I2C_made method file
+ * @brief   Basic methods for I2C communication
  * @details 
 */
 
@@ -52,4 +52,18 @@ uint8 I2C_read(uint8 device_addr, uint8 Reg)
     return read_buf[0];
 }
 
-/* [] END OF FILE */
+
+/**
+* @brief    Combining 8 bits of low and high outputs to 16 bits used for sensor value
+* @details  writing value to slave register by I2C communication
+* @param    uint8 L : lower 8bits out of 16 bits output
+* @param    uint8 H : higher 8bits out of 16 bits output
+*/
+uint16 convert_raw(uint8 L, uint8 H)
+{
+    uint16 raw;
+    raw = (int16)(L | H << 8);
+    
+    return raw;
+}
+
