@@ -665,16 +665,15 @@
 <Unloaded />
 <OpenDocs>
 <name v=".\main.c" />
-<name v=".\TopDesign\TopDesign.cysch" />
-<name v=".\Ambient.c" />
-<name v=".\Ambient.h" />
-<name v=".\I2C_made.h" />
-<name v=".\IR.h" />
-<name v=".\IR.c" />
+<name v=".\Accel.c" />
 <name v=".\Ultra.c" />
-<name v=".\Ultra.h" />
-<name v=".\Gyro.c" />
-<name v=".\Gyro.h" />
+<name v=".\Ambient.c" />
+<name v=".\I2C_made.c" />
+<name v=".\IR.c" />
+<name v=".\Magnet.c" />
+<name v=".\Motor.c" />
+<name v=".\Nunchuk.c" />
+<name v=".\Reflectance.c" />
 </OpenDocs>
 <config v="" />
 <AutoUpdate v="true" />
