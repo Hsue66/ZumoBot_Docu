@@ -1,7 +1,25 @@
 /**
 * @mainpage ZumoBot Project
-* @breif You can make your own ZumoBot with various sensors.
-* @details This library has basic methods of Accelerometer, Ambient Light Sensor, Gyroscope, IR receiver, Magnetometer, Motors, Wii nunchuck, Reflectance Sensor, Ultra Sonic Sensor and I2C communication.
+* @breif    You can make your own ZumoBot with various sensors.
+* @details  <br>
+    <B>General</B><br>
+    You will use Pololu Zumo Shields for your robot project with CY8CKIT-059(PSoC 5LP) from Cypress semiconductor.This 
+    library has basic methods of various sensors and communications so that you can make what you want with them.
+
+    <B>Sensors</B><br>
+    Included:
+    <pre>    LSM303D: Accelerometer & Magnetometer
+             L3GD20H: Gyroscope
+             Reflectance sensor
+             Motors</pre>
+    Wii nunchuck<br>
+    TSOP-2236: IR Receiver<br>
+    HC-SR04: Ultrasonic sensor<br>
+    APDS-9301: Ambient light sensor<br>
+    IR LED<br>
+
+    <B>Communication</B><br>
+    I2C, UART, Serial<br>
 */
 
 #include <project.h>
@@ -18,33 +36,60 @@
 
 int rread(void);
 
+
+int main()
+{
+    
+}
+
+
+/*//ultra sonic sensor//
 int main()
 {
     CyGlobalIntEnable; 
     UART_Start();
-    printf("Start\r\n");
-    
-     /* //ultra//
-    ----------------------------------------------------*/    
     Ultra_Start();                          // Ultra Sonic Start function
-    //----------------------------------------------------*/
+ }   
+//*/
+
+/*//nunchuk//
+int main()
+{
+    CyGlobalIntEnable; 
+    UART_Start();
+  
+    nunchuk_start();
+    nunchuk_init();
     
+    for(;;)
+    {    
+        nunchuk_read();
+    }
+}   
+//*/
+
+/*//IR receiver//
+int main()
+{
+    CyGlobalIntEnable; 
+    UART_Start();
     
-     /*  //IR receiver//
-    ----------------------------------------------------
     unsigned int IR_val; 
     
     for(;;)
     {
        IR_val = get_IR();
        printf("%x\r\n\n",IR_val);
-    }
+    }    
+ }   
+//*/
+
+/*//Ambient light sensor//
+int main()
+{
+    CyGlobalIntEnable; 
+    UART_Start();
     
-    ///---------------------------------------------------------- */
-    
-    
-      /*  //Ambient//
-    ----------------------------------------------------
     I2C_Start();
     
     uint16 value =0;
@@ -84,23 +129,18 @@ int main()
         double data = 0;
         data = getLux(Ch0,Ch1);
         printf("%lf\r\n",data);    
-    }
-    ///---------------------------------------------------------- */
-    
-    
-       /*  //nunchuk//
-    ----------------------------------------------------
-    nunchuk_start();
-    nunchuk_init();
-    
-    for(;;)
-    {    
-        nunchuk_read();
-    }
-    //----------------------------------------------------*/
-    
-    /* //accelerometer//
-    //--------------------------------------------------------------
+    }    
+ }   
+*/
+
+
+
+/*//accelerometer//
+int main()
+{
+    CyGlobalIntEnable; 
+    UART_Start();
+  
     I2C_Start();
   
     uint8 X_L_A, X_H_A, Y_L_A, Y_H_A, Z_L_A, Z_H_A;
@@ -131,13 +171,16 @@ int main()
         
         CyDelay(50);
     }
-    ///---------------------------------------------------------- */
-     
-   
-    
-    
-    /* //reflectance//
-    ----------------------------------------------------
+}   
+//*/
+
+
+/*//reflectance//
+int main()
+{
+    CyGlobalIntEnable; 
+    UART_Start();
+  
     sensor_isr_StartEx(sensor_isr_handler);
     
     Refelctance_Start();
@@ -150,11 +193,15 @@ int main()
         
         CyDelay(500);
     }
-    ///----------------------------------------------------*/
-   
-    
-     /* //motor//
-    ----------------------------------------------------
+}   
+*/
+
+ /* //motor//
+int main()
+{
+    CyGlobalIntEnable; 
+    UART_Start();
+
     motor_Start();              // motor start
 
     motor_forward(50,2000);     // moving forward
@@ -168,11 +215,15 @@ int main()
     {
 
     }
-    ///----------------------------------------------------*/
+}
+//*/
     
-    
-   /* //gyroscope//
-     //-----------------------------------------------------
+/*//gyroscope//
+int main()
+{
+    CyGlobalIntEnable; 
+    UART_Start();
+  
     I2C_Start();
   
     uint8 X_AXIS_L, X_AXIS_H, Y_AXIS_L, Y_AXIS_H, Z_AXIS_L, Z_AXIS_H;
@@ -199,24 +250,23 @@ int main()
         Z_AXIS_L = I2C_read(GYRO_ADDR, OUT_Z_AXIS_L);
         Z_AXIS_H = I2C_read(GYRO_ADDR, OUT_Z_AXIS_H);
         Z_AXIS = convert_raw(Z_AXIS_H, Z_AXIS_L);
-        
-        
-        //printf("X_AXIS_L: %d, X_AXIS_H: %d, average: %d \r\n", X_AXIS_L, X_AXIS_H, (X_AXIS_H+X_AXIS_L)/2);
-        //printf("Y_AXIS_L: %d, Y_AXIS_H: %d, average: %d \r\n", Y_AXIS_L, Y_AXIS_H, (Y_AXIS_H+Y_AXIS_L)/2);
-        //printf("Z_AXIS_L: %d, Z_AXIS_H: %d, average: %d \r\n", Z_AXIS_L, Z_AXIS_H, (Z_AXIS_H+Z_AXIS_L)/2);
-        
+     
         printf("H L : %d %d %d %d %d %d \r\n", X_AXIS_L, X_AXIS_H, Y_AXIS_L, Y_AXIS_H, Z_AXIS_L, Z_AXIS_H);
         printf("%d %d %d \r\n", X_AXIS, Y_AXIS, Z_AXIS);
         //printf("%d %d %d \r\n", value_convert_gyro(X_AXIS), value_convert_gyro(Y_AXIS), value_convert_gyro(Z_AXIS));
         
        CyDelay(50);
     }
-    ///-----------------------------------------------------------------*/ 
-   
   
-    
-    /* //magnetometer//
-     //--------------------------------------------------------------
+}   
+//*/
+
+/*//magnetometer//
+int main()
+{
+    CyGlobalIntEnable; 
+    UART_Start();
+  
     I2C_Start();
    
     uint8 X_L_M, X_H_M, Y_L_M, Y_H_M, Z_L_M, Z_H_M;
@@ -245,19 +295,11 @@ int main()
         heading(X_AXIS, Y_AXIS);
         printf("MAGNET: %d %d %d %d %d %d \r\n", X_L_M, X_H_M, Y_L_M, Y_H_M, Z_L_M, Z_H_M);
         printf("%d %d %d \r\n", X_AXIS,Y_AXIS, Z_AXIS);
-        CyDelay(50);
-          
+        CyDelay(50);      
     }
-    ///----------------------------------------------------------*/
-}
+}   
+//*/
 
-uint16 convert_raw(uint8 L, uint8 H)            // concatenation
-{
-    uint16 raw;
-    raw = (int16)(L | H << 8);
-    
-    return raw;
-}
 
 
 #if 0

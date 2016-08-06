@@ -27,7 +27,7 @@ double \hyperlink{_ambient_8h_a4f2753f74c2249bf17da11de745e8da4}{get\+Lux} (doub
 \subsection{Detailed Description}
 Ambient light sensor header file. 
 
-If you want to use Ambient light sensor methods, Include \hyperlink{_ambient_8h}{Ambient.\+h} file. 
+If you want to use Ambient light sensor methods, you need to include \hyperlink{_ambient_8h}{Ambient.\+h} file. Defining register address for reading channel values. 
 
 \subsection{Macro Definition Documentation}
 \index{Ambient.\+h@{Ambient.\+h}!C\+H0\+\_\+H@{C\+H0\+\_\+H}}
@@ -73,7 +73,7 @@ Definition at line 10 of file Ambient.\+h.
 
 Get lux from raw value. 
 
-get lux using Channel 0 value and Channel 1 value 
+get lux using values of Channel 0 and Channel 1 
 \begin{DoxyParams}{Parameters}
 {\em double} & Channel 0 \\
 \hline
@@ -90,7 +90,7 @@ Definition at line 15 of file Ambient.\+c.
 
 \begin{DoxyCode}
 16 \{
-17     \textcolor{keywordtype}{double} result = 0;
+17 \textcolor{keywordtype}{double} result = 0;
 18     \textcolor{keywordtype}{double} ChannelRatio = (double)CH1/CH0;
 19     
 20     \textcolor{keywordflow}{if}((0<ChannelRatio) && (ChannelRatio <= 0.5))

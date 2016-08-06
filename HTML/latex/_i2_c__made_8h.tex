@@ -15,7 +15,9 @@ int \hyperlink{_i2_c__made_8h_add2a642dc87a0be4d7d2f9ba4e447a23}{rread} (void)
 uint8 \hyperlink{_i2_c__made_8h_a37612a39111135d189b6ac2c90c2e23f}{I2\+C\+\_\+read} (uint8 device\+\_\+addr, uint8 Reg)
 \begin{DoxyCompactList}\small\item\em Read function of I2C communication. \end{DoxyCompactList}\item 
 void \hyperlink{_i2_c__made_8h_a389e072c17dc9cc66391568ee5d46c89}{I2\+C\+\_\+write} (uint8 device\+\_\+addr, uint8 Reg, uint8 value)
-\begin{DoxyCompactList}\small\item\em Write function of I2C communication. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Write function of I2C communication. \end{DoxyCompactList}\item 
+uint16 \hyperlink{_i2_c__made_8h_a3dffc9c223a30888d7399406408059b8}{convert\+\_\+raw} (uint8 L, uint8 H)
+\begin{DoxyCompactList}\small\item\em Combining 8 bits of low and high outputs to 16 bits used for sensor value. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -24,6 +26,38 @@ I2C header file.
 If you want to use I2C methods, Include \hyperlink{_i2_c__made_8h}{I2\+C\+\_\+made.\+h} file. 
 
 \subsection{Function Documentation}
+\index{I2\+C\+\_\+made.\+h@{I2\+C\+\_\+made.\+h}!convert\+\_\+raw@{convert\+\_\+raw}}
+\index{convert\+\_\+raw@{convert\+\_\+raw}!I2\+C\+\_\+made.\+h@{I2\+C\+\_\+made.\+h}}
+\subsubsection[{\texorpdfstring{convert\+\_\+raw(uint8 L, uint8 H)}{convert_raw(uint8 L, uint8 H)}}]{\setlength{\rightskip}{0pt plus 5cm}uint16 convert\+\_\+raw (
+\begin{DoxyParamCaption}
+\item[{uint8}]{L, }
+\item[{uint8}]{H}
+\end{DoxyParamCaption}
+)}\hypertarget{_i2_c__made_8h_a3dffc9c223a30888d7399406408059b8}{}\label{_i2_c__made_8h_a3dffc9c223a30888d7399406408059b8}
+
+
+Combining 8 bits of low and high outputs to 16 bits used for sensor value. 
+
+writing value to slave register by I2C communication 
+\begin{DoxyParams}{Parameters}
+{\em uint8} & L \+: lower 8bits out of 16 bits output \\
+\hline
+{\em uint8} & H \+: higher 8bits out of 16 bits output \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 62 of file I2\+C\+\_\+made.\+c.
+
+
+\begin{DoxyCode}
+63 \{
+64     uint16 raw;
+65     raw = (int16)(L | H << 8);
+66     
+67     \textcolor{keywordflow}{return} raw;
+68 \}
+\end{DoxyCode}
 \index{I2\+C\+\_\+made.\+h@{I2\+C\+\_\+made.\+h}!I2\+C\+\_\+read@{I2\+C\+\_\+read}}
 \index{I2\+C\+\_\+read@{I2\+C\+\_\+read}!I2\+C\+\_\+made.\+h@{I2\+C\+\_\+made.\+h}}
 \subsubsection[{\texorpdfstring{I2\+C\+\_\+read(uint8 device\+\_\+addr, uint8 Reg)}{I2C_read(uint8 device_addr, uint8 Reg)}}]{\setlength{\rightskip}{0pt plus 5cm}uint8 I2\+C\+\_\+read (
@@ -81,7 +115,7 @@ Definition at line 35 of file I2\+C\+\_\+made.\+c.
 
 Write function of I2C communication. 
 
-write value to slave register by I2C communication 
+writing value to slave register by I2C communication 
 \begin{DoxyParams}{Parameters}
 {\em uint8} & device\+\_\+addr \+: Slave Device address \\
 \hline

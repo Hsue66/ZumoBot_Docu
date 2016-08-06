@@ -1,6 +1,6 @@
 /**
  * @file    Nunchuk.c
- * @brief   Nunchuk method file
+ * @brief   Basic methods for operating wii nunchuck
  * @details 
 */
 #include "nunchuk.h"
@@ -31,8 +31,8 @@ void nunchuk_init()
 }    
 
 /**
-* @brief Read Nunchuk value
-* @details read nunchuk value and get Joystick values and accelerometer values
+* @brief Reading Nunchuk value
+* @details Reading nunchuk value and getting joystick and accelerometer values
 */
 void nunchuk_read()
 {
@@ -60,5 +60,4 @@ void nunchuk_read()
     z = (buf[4] << 2) | ((buf[5] >> 6) & 0x03);
     // buf[0] = JoyX, buf[1] = JoyY
     printf("%3d %3d, %d, %d, %4d %4d %4d\r\n", buf[0], buf[1], (buf[5] >> 1) & 1, buf[5] & 1, x, y, z);
-}    
-/* [] END OF FILE */
+} 

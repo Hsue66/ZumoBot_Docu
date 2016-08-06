@@ -83,7 +83,7 @@ Definition at line 37 of file Nunchuk.\+c.
 50     status = I2C\_MasterReadBuf(0x52, buf, 6, I2C\_MODE\_COMPLETE\_XFER);
 51     \textcolor{keywordflow}{while}(((status = I2C\_MasterStatus()) & I2C\_MSTAT\_RD\_CMPLT) == 0);
 52     
-53     \textcolor{keywordtype}{int} \hyperlink{_ultra_8c_a78f7a37dba921e0b0347b960fb40bc51}{i};
+53     \textcolor{keywordtype}{int} i;
 54     \textcolor{comment}{// decrypt data}
 55     \textcolor{keywordflow}{for}(i = 0; i < 6; i++) buf[i] = (buf[i] ^ 0x17) + 0x17;
 56     \textcolor{comment}{// accelerometer values}

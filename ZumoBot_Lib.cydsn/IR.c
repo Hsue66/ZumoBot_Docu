@@ -1,13 +1,13 @@
 /**
  * @file IR.c
- * @brief IR receiver method file
- * @details 
+ * @brief Basic methods for operating IR receiver
+ * @details part number: TSOP-2236
 */
 #include "IR.h"
 
 
 /**
-* @brief wait until signal goes up
+* @brief Waiting until signal goes up
 * @details continue looping before IR_receiver value becomes 1
 */
 void wait_going_up()
@@ -17,7 +17,7 @@ void wait_going_up()
 
 
 /**
-* @brief wait until signal goes down
+* @brief Waiting until signal goes down
 * @details continue looping before IR_receiver value becomes 0
 */
 void wait_going_down()
@@ -27,8 +27,8 @@ void wait_going_down()
 
 
 /**
-* @brief count signal down time
-* @details count time until IR_receiver value goes up
+* @brief Counting to signal down
+* @details Measuring the time until IR_receiver value goes up
 * @return int
 *   - returns count time
 */
@@ -43,8 +43,8 @@ int count_downtime()
 
 
 /**
-* @brief    count signal up time
-* @details  count time until IR_receiver value goes down
+* @brief    Counting to signal up 
+* @details  Measuring the time until IR_receiver value goes down
 * @return   int
 *   - returns count time
 */
@@ -59,8 +59,8 @@ int count_uptime()
 
 
 /**
-* @brief    get Remote Controller Value
-* @details  get each of the value sended by Remote Controller
+* @brief    Getting remote controller value
+* @details  Getting each of the value sended by remote controller
 * @return   int
     - returns hex value
 */
@@ -104,5 +104,3 @@ int get_IR()
     
     return val;
 }
-
-/* [] END OF FILE */

@@ -1,7 +1,7 @@
 /**
  * @file    Magnet.c
- * @brief   Magnetometer method file
- * @details 
+ * @brief   Basic methods for operating magnetometer
+ * @details part number: LSM303D (simultaneously used with accelerometer and included in Zumo shield)
 */
 
 
@@ -29,6 +29,3 @@ void heading(double X_AXIS, double Y_AXIS)          // defined as the angle betw
 
 
 //uint16 value_convert_magnet(uint8 AXIS_H, uint8 AXIS_L)
-
-
-/* [] END OF FILE */

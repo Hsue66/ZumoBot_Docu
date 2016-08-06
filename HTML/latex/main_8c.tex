@@ -18,8 +18,6 @@ int \hyperlink{main_8c_add2a642dc87a0be4d7d2f9ba4e447a23}{rread} (void)
 \item 
 int \hyperlink{main_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}{main} ()
 \item 
-uint16 \hyperlink{main_8c_a3dffc9c223a30888d7399406408059b8}{convert\+\_\+raw} (uint8 L, uint8 H)
-\item 
 int \hyperlink{main_8c_aa025a12d45f60c7d0eae249e61f0c7f9}{\+\_\+write} (int file, char $\ast$ptr, int len)
 \end{DoxyCompactItemize}
 
@@ -36,39 +34,18 @@ int \hyperlink{main_8c_aa025a12d45f60c7d0eae249e61f0c7f9}{\+\_\+write} (int file
 )}\hypertarget{main_8c_aa025a12d45f60c7d0eae249e61f0c7f9}{}\label{main_8c_aa025a12d45f60c7d0eae249e61f0c7f9}
 
 
-Definition at line 292 of file main.\+c.
+Definition at line 326 of file main.\+c.
 
 
 \begin{DoxyCode}
-293 \{
-294     (void) file;
-295     \textcolor{keywordtype}{int} n;
-296     \textcolor{keywordflow}{for}(n = 0; n < len; n++) \{
-297         UART\_PutChar(*ptr++);
-298     \}
-299     \textcolor{keywordflow}{return} len;
-300 \}
-\end{DoxyCode}
-\index{main.\+c@{main.\+c}!convert\+\_\+raw@{convert\+\_\+raw}}
-\index{convert\+\_\+raw@{convert\+\_\+raw}!main.\+c@{main.\+c}}
-\subsubsection[{\texorpdfstring{convert\+\_\+raw(uint8 L, uint8 H)}{convert_raw(uint8 L, uint8 H)}}]{\setlength{\rightskip}{0pt plus 5cm}uint16 convert\+\_\+raw (
-\begin{DoxyParamCaption}
-\item[{uint8}]{L, }
-\item[{uint8}]{H}
-\end{DoxyParamCaption}
-)}\hypertarget{main_8c_a3dffc9c223a30888d7399406408059b8}{}\label{main_8c_a3dffc9c223a30888d7399406408059b8}
-
-
-Definition at line 262 of file main.\+c.
-
-
-\begin{DoxyCode}
-263 \{
-264     uint16 raw;
-265     raw = (int16)(L | H << 8);
-266     
-267     \textcolor{keywordflow}{return} raw;
-268 \}
+327 \{
+328     (void) file;
+329     \textcolor{keywordtype}{int} n;
+330     \textcolor{keywordflow}{for}(n = 0; n < len; n++) \{
+331         UART\_PutChar(*ptr++);
+332     \}
+333     \textcolor{keywordflow}{return} len;
+334 \}
 \end{DoxyCode}
 \index{main.\+c@{main.\+c}!main@{main}}
 \index{main@{main}!main.\+c@{main.\+c}}
@@ -77,250 +54,15 @@ Definition at line 262 of file main.\+c.
 {}
 \end{DoxyParamCaption}
 )}\hypertarget{main_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}{}\label{main_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}
--\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/--- $\ast$/ 
 
-Definition at line 21 of file main.\+c.
+
+Definition at line 40 of file main.\+c.
 
 
 \begin{DoxyCode}
-22 \{
-23     CyGlobalIntEnable; 
-24     UART\_Start();
-25     printf(\textcolor{stringliteral}{"Start\(\backslash\)r\(\backslash\)n"});
-26     
-27     
-28      \textcolor{comment}{/*  //IR receiver//}
-29 \textcolor{comment}{    ----------------------------------------------------}
-30 \textcolor{comment}{    unsigned int IR\_val; }
-31 \textcolor{comment}{    }
-32 \textcolor{comment}{    for(;;)}
-33 \textcolor{comment}{    \{}
-34 \textcolor{comment}{       IR\_val = get\_IR();}
-35 \textcolor{comment}{       printf("%x\(\backslash\)r\(\backslash\)n\(\backslash\)n",IR\_val);}
-36 \textcolor{comment}{    \}}
-37 \textcolor{comment}{    }
-39 \textcolor{comment}{    }
-40 \textcolor{comment}{    }
-41 \textcolor{comment}{      /*  //Ambient//}
-42 \textcolor{comment}{    ----------------------------------------------------*/}
-43     I2C\_Start();
-44     
-45     uint16 value =0;
-46     
-47     \hyperlink{_i2_c__made_8c_a389e072c17dc9cc66391568ee5d46c89}{I2C\_write}(0x29,0x80,0x00);
-48     
-49     value = \hyperlink{_i2_c__made_8c_a37612a39111135d189b6ac2c90c2e23f}{I2C\_read}(0x29,0x80);
-50     printf(\textcolor{stringliteral}{"%x "},value);
-51     
-52     \hyperlink{_i2_c__made_8c_a389e072c17dc9cc66391568ee5d46c89}{I2C\_write}(0x29,0x80,0x03);
-53     value = \hyperlink{_i2_c__made_8c_a37612a39111135d189b6ac2c90c2e23f}{I2C\_read}(0x29,0x80);
-54     printf(\textcolor{stringliteral}{"%x\(\backslash\)r\(\backslash\)n"},value);
-55         
-56     value = \hyperlink{_i2_c__made_8c_a37612a39111135d189b6ac2c90c2e23f}{I2C\_read}(0x29,0x81);
-57     printf(\textcolor{stringliteral}{"%x\(\backslash\)r\(\backslash\)n"},value);
-58     \textcolor{keywordflow}{for}(;;)
-59     \{
-60         
-61         uint8 Data0Low,Data0High,Data1Low,Data1High;
-62         Data0Low = \hyperlink{_i2_c__made_8c_a37612a39111135d189b6ac2c90c2e23f}{I2C\_read}(0x29,\hyperlink{_ambient_8h_a8e3a2ba5ea91e3a3850cc1352159a982}{CH0\_L});
-63         Data0High = \hyperlink{_i2_c__made_8c_a37612a39111135d189b6ac2c90c2e23f}{I2C\_read}(0x29,\hyperlink{_ambient_8h_a8012390ce131b31c1ca581ef3c87a712}{CH0\_H});
-64         Data1Low = \hyperlink{_i2_c__made_8c_a37612a39111135d189b6ac2c90c2e23f}{I2C\_read}(0x29,\hyperlink{_ambient_8h_a81906fe64379e62e8ccbc16cd2679d11}{CH1\_L});
-65         Data1High = \hyperlink{_i2_c__made_8c_a37612a39111135d189b6ac2c90c2e23f}{I2C\_read}(0x29,\hyperlink{_ambient_8h_aa616856759e1f2264997243f8248cf0d}{CH1\_H});
-66         
-67         uint8 CH0, CH1;
-68         CH0 = \hyperlink{main_8c_a3dffc9c223a30888d7399406408059b8}{convert\_raw}(Data0Low,Data0High);
-69         CH1 = \hyperlink{main_8c_a3dffc9c223a30888d7399406408059b8}{convert\_raw}(Data1Low,Data1High);
-70 
-71    \textcolor{comment}{//     printf("%d %d %d %d\(\backslash\)r\(\backslash\)n",Data0Low,Data0High, Data1Low,Data1High);}
-72    \textcolor{comment}{//     printf("%d %d\(\backslash\)r\(\backslash\)n",CH0,CH1);}
-73    \textcolor{comment}{//        printf("%f\(\backslash\)r\(\backslash\)n",(float)CH1/CH0);}
-74         
-75    
-76         \textcolor{keywordtype}{double} Ch0 = CH0;
-77         \textcolor{keywordtype}{double} Ch1 = CH1;
-78         
-79         \textcolor{keywordtype}{double} data = 0;
-80         data = \hyperlink{_ambient_8c_a4f2753f74c2249bf17da11de745e8da4}{getLux}(Ch0,Ch1);
-81         printf(\textcolor{stringliteral}{"%lf\(\backslash\)r\(\backslash\)n"},data);    
-82     \}
-84     
-85     
-86        \textcolor{comment}{/*  //nunchuk//}
-87 \textcolor{comment}{    ----------------------------------------------------}
-88 \textcolor{comment}{    nunchuk\_start();}
-89 \textcolor{comment}{    nunchuk\_init();}
-90 \textcolor{comment}{    }
-91 \textcolor{comment}{    for(;;)}
-92 \textcolor{comment}{    \{    }
-93 \textcolor{comment}{        nunchuk\_read();}
-94 \textcolor{comment}{    \}}
-95 \textcolor{comment}{    //----------------------------------------------------*/}
-96     
-97     \textcolor{comment}{/* //accelerometer//}
-98 \textcolor{comment}{    //--------------------------------------------------------------}
-99 \textcolor{comment}{    I2C\_Start();}
-100 \textcolor{comment}{  }
-101 \textcolor{comment}{    uint8 X\_L\_A, X\_H\_A, Y\_L\_A, Y\_H\_A, Z\_L\_A, Z\_H\_A;}
-102 \textcolor{comment}{    int16 X\_AXIS, Y\_AXIS, Z\_AXIS;}
-103 \textcolor{comment}{    }
-104 \textcolor{comment}{    I2C\_write(ACCEL\_MAG\_ADDR, ACCEL\_CTRL1\_REG, 0x37);           // set accelerometer & magnetometer into
-       active mode}
-105 \textcolor{comment}{    I2C\_write(ACCEL\_MAG\_ADDR, ACCEL\_CTRL7\_REG, 0x22);}
-106 \textcolor{comment}{    }
-107 \textcolor{comment}{    }
-108 \textcolor{comment}{    for(;;)}
-109 \textcolor{comment}{    \{}
-110 \textcolor{comment}{        //print out accelerometer output}
-111 \textcolor{comment}{        X\_L\_A = I2C\_read(ACCEL\_MAG\_ADDR, OUT\_X\_L\_A);}
-112 \textcolor{comment}{        X\_H\_A = I2C\_read(ACCEL\_MAG\_ADDR, OUT\_X\_H\_A);}
-113 \textcolor{comment}{        X\_AXIS = convert\_raw(X\_L\_A, X\_H\_A);}
-114 \textcolor{comment}{        }
-115 \textcolor{comment}{        Y\_L\_A = I2C\_read(ACCEL\_MAG\_ADDR, OUT\_Y\_L\_A);}
-116 \textcolor{comment}{        Y\_H\_A = I2C\_read(ACCEL\_MAG\_ADDR, OUT\_Y\_H\_A);}
-117 \textcolor{comment}{        Y\_AXIS = convert\_raw(Y\_L\_A, Y\_H\_A);}
-118 \textcolor{comment}{        }
-119 \textcolor{comment}{        Z\_L\_A = I2C\_read(ACCEL\_MAG\_ADDR, OUT\_Z\_L\_A);}
-120 \textcolor{comment}{        Z\_H\_A = I2C\_read(ACCEL\_MAG\_ADDR, OUT\_Z\_H\_A);}
-121 \textcolor{comment}{        Z\_AXIS = convert\_raw(Z\_L\_A, Z\_H\_A);}
-122 \textcolor{comment}{        }
-123 \textcolor{comment}{        printf("ACCEL: %d %d %d %d %d %d \(\backslash\)r\(\backslash\)n", X\_L\_A, X\_H\_A, Y\_L\_A, Y\_H\_A, Z\_L\_A, Z\_H\_A);}
-124 \textcolor{comment}{        value\_convert\_accel(X\_AXIS, Y\_AXIS, Z\_AXIS);}
-125 \textcolor{comment}{        printf("\(\backslash\)n");}
-126 \textcolor{comment}{        }
-127 \textcolor{comment}{        CyDelay(50);}
-128 \textcolor{comment}{    \}}
-130 \textcolor{comment}{     }
-131 \textcolor{comment}{     /* //ultra//}
-132 \textcolor{comment}{    ----------------------------------------------------}
-133 \textcolor{comment}{    ultra\_isr\_StartEx(ultra\_isr\_handler);   // Ultra Sonic Interrupt}
-134 \textcolor{comment}{    Ultra\_Start();                          // Ultra Sonic Start function}
-135 \textcolor{comment}{   }
-136 \textcolor{comment}{    for(;;)}
-137 \textcolor{comment}{    \{       }
-138 \textcolor{comment}{        CyDelay(100); }
-139 \textcolor{comment}{        Trig\_Write(1);           // Trigger High}
-140 \textcolor{comment}{        CyDelayUs(10);              // 10 micro seconds for trigger input signals}
-141 \textcolor{comment}{        Trig\_Write(0);           // Trigger Low}
-142 \textcolor{comment}{    \}}
-143 \textcolor{comment}{    //----------------------------------------------------*/}
-144     
-145     
-146     
-147     \textcolor{comment}{/* //reflectance//}
-148 \textcolor{comment}{    ----------------------------------------------------}
-149 \textcolor{comment}{    sensor\_isr\_StartEx(sensor\_isr\_handler);}
-150 \textcolor{comment}{    }
-151 \textcolor{comment}{    Refelctance\_Start();}
-152 \textcolor{comment}{}
-153 \textcolor{comment}{    IR\_led\_Write(1);}
-154 \textcolor{comment}{    for(;;)}
-155 \textcolor{comment}{    \{}
-156 \textcolor{comment}{        reflectance\_period();      //print out each period of reflectance sensors}
-157 \textcolor{comment}{        reflectance\_digital();      //print out 0 or 1 according to results of reflectance period}
-158 \textcolor{comment}{        }
-159 \textcolor{comment}{        CyDelay(500);}
-160 \textcolor{comment}{    \}}
-162 \textcolor{comment}{   }
-163 \textcolor{comment}{    }
-164 \textcolor{comment}{     /* //motor//}
-165 \textcolor{comment}{    ----------------------------------------------------}
-166 \textcolor{comment}{    motor\_Start();              // motor start}
-167 \textcolor{comment}{}
-168 \textcolor{comment}{    motor\_forward(50,2000);     // moving forward}
-169 \textcolor{comment}{    motor\_turn(10,50,2000);     // turn}
-170 \textcolor{comment}{    motor\_turn(50,10,2000);     // turn}
-171 \textcolor{comment}{    motor\_backward(50,2000);    // movinb backward}
-172 \textcolor{comment}{       }
-173 \textcolor{comment}{    motor\_Stop();               // motor stop}
-174 \textcolor{comment}{    }
-175 \textcolor{comment}{    for(;;)}
-176 \textcolor{comment}{    \{}
-177 \textcolor{comment}{}
-178 \textcolor{comment}{    \}}
-180 \textcolor{comment}{    }
-181 \textcolor{comment}{    }
-182 \textcolor{comment}{   /* //gyroscope//}
-183 \textcolor{comment}{     //-----------------------------------------------------}
-184 \textcolor{comment}{    I2C\_Start();}
-185 \textcolor{comment}{  }
-186 \textcolor{comment}{    uint8 X\_AXIS\_L, X\_AXIS\_H, Y\_AXIS\_L, Y\_AXIS\_H, Z\_AXIS\_L, Z\_AXIS\_H;}
-187 \textcolor{comment}{    //uint8 X\_L\_M, X\_H\_M, Y\_L\_M, Y\_H\_M, Z\_L\_M, Z\_H\_M;}
-188 \textcolor{comment}{    //uint8 X\_L\_A, X\_H\_A, Y\_L\_A, Y\_H\_A, Z\_L\_A, Z\_H\_A;}
-189 \textcolor{comment}{    int16 X\_AXIS, Y\_AXIS, Z\_AXIS;}
-190 \textcolor{comment}{    }
-191 \textcolor{comment}{    I2C\_write(GYRO\_ADDR, GYRO\_CTRL1\_REG, 0x0F);             // set gyroscope into active mode}
-192 \textcolor{comment}{    I2C\_write(GYRO\_ADDR, GYRO\_CTRL4\_REG, 0x30);             // set full scale selection to 2000dps    }
-193 \textcolor{comment}{    }
-194 \textcolor{comment}{    for(;;)}
-195 \textcolor{comment}{    \{}
-196 \textcolor{comment}{        //print out gyroscope output}
-197 \textcolor{comment}{        X\_AXIS\_L = I2C\_read(GYRO\_ADDR, OUT\_X\_AXIS\_L);}
-198 \textcolor{comment}{        X\_AXIS\_H = I2C\_read(GYRO\_ADDR, OUT\_X\_AXIS\_H);}
-199 \textcolor{comment}{        X\_AXIS = convert\_raw(X\_AXIS\_H, X\_AXIS\_L);}
-200 \textcolor{comment}{        }
-201 \textcolor{comment}{        }
-202 \textcolor{comment}{        Y\_AXIS\_L = I2C\_read(GYRO\_ADDR, OUT\_Y\_AXIS\_L);}
-203 \textcolor{comment}{        Y\_AXIS\_H = I2C\_read(GYRO\_ADDR, OUT\_Y\_AXIS\_H);}
-204 \textcolor{comment}{        Y\_AXIS = convert\_raw(Y\_AXIS\_H, Y\_AXIS\_L);}
-205 \textcolor{comment}{        }
-206 \textcolor{comment}{        }
-207 \textcolor{comment}{        Z\_AXIS\_L = I2C\_read(GYRO\_ADDR, OUT\_Z\_AXIS\_L);}
-208 \textcolor{comment}{        Z\_AXIS\_H = I2C\_read(GYRO\_ADDR, OUT\_Z\_AXIS\_H);}
-209 \textcolor{comment}{        Z\_AXIS = convert\_raw(Z\_AXIS\_H, Z\_AXIS\_L);}
-210 \textcolor{comment}{        }
-211 \textcolor{comment}{        }
-212 \textcolor{comment}{        //printf("X\_AXIS\_L: %d, X\_AXIS\_H: %d, average: %d \(\backslash\)r\(\backslash\)n", X\_AXIS\_L, X\_AXIS\_H, (X\_AXIS\_H+X\_AXIS\_L)/
-      2);}
-213 \textcolor{comment}{        //printf("Y\_AXIS\_L: %d, Y\_AXIS\_H: %d, average: %d \(\backslash\)r\(\backslash\)n", Y\_AXIS\_L, Y\_AXIS\_H, (Y\_AXIS\_H+Y\_AXIS\_L)/
-      2);}
-214 \textcolor{comment}{        //printf("Z\_AXIS\_L: %d, Z\_AXIS\_H: %d, average: %d \(\backslash\)r\(\backslash\)n", Z\_AXIS\_L, Z\_AXIS\_H, (Z\_AXIS\_H+Z\_AXIS\_L)/
-      2);}
-215 \textcolor{comment}{        }
-216 \textcolor{comment}{        printf("H L : %d %d %d %d %d %d \(\backslash\)r\(\backslash\)n", X\_AXIS\_L, X\_AXIS\_H, Y\_AXIS\_L, Y\_AXIS\_H, Z\_AXIS\_L, Z\_AXIS\_H);}
-217 \textcolor{comment}{        printf("%d %d %d \(\backslash\)r\(\backslash\)n", X\_AXIS, Y\_AXIS, Z\_AXIS);}
-218 \textcolor{comment}{        //printf("%d %d %d \(\backslash\)r\(\backslash\)n", value\_convert\_gyro(X\_AXIS), value\_convert\_gyro(Y\_AXIS),
-       value\_convert\_gyro(Z\_AXIS));}
-219 \textcolor{comment}{        }
-220 \textcolor{comment}{       CyDelay(50);}
-221 \textcolor{comment}{    \}}
-223 \textcolor{comment}{   }
-224 \textcolor{comment}{  }
-225 \textcolor{comment}{    }
-226 \textcolor{comment}{    /* //magnetometer//}
-227 \textcolor{comment}{     //--------------------------------------------------------------}
-228 \textcolor{comment}{    I2C\_Start();}
-229 \textcolor{comment}{   }
-230 \textcolor{comment}{    uint8 X\_L\_M, X\_H\_M, Y\_L\_M, Y\_H\_M, Z\_L\_M, Z\_H\_M;}
-231 \textcolor{comment}{    int16 X\_AXIS, Y\_AXIS, Z\_AXIS;}
-232 \textcolor{comment}{    }
-233 \textcolor{comment}{    I2C\_write(GYRO\_ADDR, GYRO\_CTRL1\_REG, 0x0F);             // set gyroscope into active mode}
-234 \textcolor{comment}{    I2C\_write(GYRO\_ADDR, GYRO\_CTRL4\_REG, 0x30);             // set full scale selection to 2000dps}
-235 \textcolor{comment}{    I2C\_write(ACCEL\_MAG\_ADDR, ACCEL\_CTRL1\_REG, 0x37);           // set accelerometer & magnetometer into
-       active mode}
-236 \textcolor{comment}{    I2C\_write(ACCEL\_MAG\_ADDR, ACCEL\_CTRL7\_REG, 0x22);}
-237 \textcolor{comment}{    }
-238 \textcolor{comment}{    }
-239 \textcolor{comment}{    for(;;)}
-240 \textcolor{comment}{    \{}
-241 \textcolor{comment}{        X\_L\_M = I2C\_read(ACCEL\_MAG\_ADDR, OUT\_X\_L\_M);}
-242 \textcolor{comment}{        X\_H\_M = I2C\_read(ACCEL\_MAG\_ADDR, OUT\_X\_H\_M);}
-243 \textcolor{comment}{        X\_AXIS = convert\_raw(X\_L\_M, X\_H\_M);}
-244 \textcolor{comment}{        }
-245 \textcolor{comment}{        Y\_L\_M = I2C\_read(ACCEL\_MAG\_ADDR, OUT\_Y\_L\_M);}
-246 \textcolor{comment}{        Y\_H\_M = I2C\_read(ACCEL\_MAG\_ADDR, OUT\_Y\_H\_M);}
-247 \textcolor{comment}{        Y\_AXIS = convert\_raw(Y\_L\_M, Y\_H\_M);}
-248 \textcolor{comment}{        }
-249 \textcolor{comment}{        Z\_L\_M = I2C\_read(ACCEL\_MAG\_ADDR, OUT\_Z\_L\_M);}
-250 \textcolor{comment}{        Z\_H\_M = I2C\_read(ACCEL\_MAG\_ADDR, OUT\_Z\_H\_M);}
-251 \textcolor{comment}{        Z\_AXIS = convert\_raw(Z\_L\_M, Z\_H\_M);}
-252 \textcolor{comment}{        }
-253 \textcolor{comment}{        heading(X\_AXIS, Y\_AXIS);}
-254 \textcolor{comment}{        printf("MAGNET: %d %d %d %d %d %d \(\backslash\)r\(\backslash\)n", X\_L\_M, X\_H\_M, Y\_L\_M, Y\_H\_M, Z\_L\_M, Z\_H\_M);}
-255 \textcolor{comment}{        printf("%d %d %d \(\backslash\)r\(\backslash\)n", X\_AXIS,Y\_AXIS, Z\_AXIS);}
-256 \textcolor{comment}{        CyDelay(50);}
-257 \textcolor{comment}{          }
-258 \textcolor{comment}{    \}}
-260 \textcolor{comment}{\}}
+41 \{
+42     
+43 \}
 \end{DoxyCode}
 \index{main.\+c@{main.\+c}!rread@{rread}}
 \index{rread@{rread}!main.\+c@{main.\+c}}

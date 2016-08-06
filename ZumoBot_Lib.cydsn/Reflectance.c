@@ -1,14 +1,14 @@
 /**
  * @file    Reflectance.c
- * @brief   Reflectance sensor method file
- * @details 
+ * @brief   Basic methods for operating reflectance sensor
+ * @details included in Zumo shield
 */
 
 #include "Reflectance.h"
 
 /**
 * @brief    Reflectance Sensor Interrupt Handler
-* @details  measure each sensors time to decide white or black
+* @details  Measuring each sensors' time to recognition of white or black
 */
 CY_ISR(sensor_isr_handler)
 {
@@ -62,7 +62,7 @@ CY_ISR(sensor_isr_handler)
 }
 
 /**
-* @brief    Start Reflectance Sensor
+* @brief    Starting Reflectance Sensor
 * @details 
 */
 void Refelctance_Start()
@@ -74,7 +74,7 @@ void Refelctance_Start()
 }
 
 /**
-* @brief    Print Reflectance Sensor's period value
+* @brief    Printing Reflectance Sensor's period value
 * @details
 */
 void reflectance_period()
@@ -83,7 +83,7 @@ void reflectance_period()
 }
 
 /**
-* @brief    Make Reflectance Sensor's period to diigtal
+* @brief    Making Reflectance Sensor's period to digital
 * @details
 */
 void reflectance_digital()
@@ -110,5 +110,3 @@ void reflectance_digital()
    printf("%d %d %d %d \r\n", digital_sensor_value.ll, digital_sensor_value.lr, digital_sensor_value.rl, digital_sensor_value.rr);  
 }
 
-
-/* [] END OF FILE */
