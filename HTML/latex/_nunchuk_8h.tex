@@ -15,7 +15,7 @@ void \hyperlink{_nunchuk_8h_ad40f6458669d05040ade1f3f96e57dad}{nunchuk\+\_\+star
 void \hyperlink{_nunchuk_8h_a51b63a0b8182292380da4823f7757fb9}{nunchuk\+\_\+init} ()
 \begin{DoxyCompactList}\small\item\em Initializing Nunchuk. \end{DoxyCompactList}\item 
 void \hyperlink{_nunchuk_8h_ad16ed7544dc4b29ae079905b35b1b318}{nunchuk\+\_\+read} ()
-\begin{DoxyCompactList}\small\item\em Read Nunchuk value. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Reading Nunchuk value. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -60,9 +60,9 @@ Definition at line 22 of file Nunchuk.\+c.
 )}\hypertarget{_nunchuk_8h_ad16ed7544dc4b29ae079905b35b1b318}{}\label{_nunchuk_8h_ad16ed7544dc4b29ae079905b35b1b318}
 
 
-Read Nunchuk value. 
+Reading Nunchuk value. 
 
-read nunchuk value and get Joystick values and accelerometer values 
+Reading nunchuk value and getting joystick and accelerometer values 
 
 Definition at line 37 of file Nunchuk.\+c.
 
@@ -93,8 +93,7 @@ Definition at line 37 of file Nunchuk.\+c.
 60     z = (buf[4] << 2) | ((buf[5] >> 6) & 0x03);
 61     \textcolor{comment}{// buf[0] = JoyX, buf[1] = JoyY}
 62     printf(\textcolor{stringliteral}{"%3d %3d, %d, %d, %4d %4d %4d\(\backslash\)r\(\backslash\)n"}, buf[0], buf[1], (buf[5] >> 1) & 1, buf[5] & 1, x, y, z);
-63 \}    
-\end{DoxyCode}
+63 \}\end{DoxyCode}
 \index{Nunchuk.\+h@{Nunchuk.\+h}!nunchuk\+\_\+start@{nunchuk\+\_\+start}}
 \index{nunchuk\+\_\+start@{nunchuk\+\_\+start}!Nunchuk.\+h@{Nunchuk.\+h}}
 \subsubsection[{\texorpdfstring{nunchuk\+\_\+start()}{nunchuk_start()}}]{\setlength{\rightskip}{0pt plus 5cm}void nunchuk\+\_\+start (
