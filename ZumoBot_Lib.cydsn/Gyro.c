@@ -1,14 +1,9 @@
 /**
  * @file    Gyro.c
- * @brief   Gyroscope method file
- * @details 
+ * @brief   Gyroscope method file. For more details, please refer to Gyro.h file. 
+ * @details part number: L3GD20H (included in Zumo shield)
 */
-
-
-#include <project.h>
-#include <math.h>
-#include <stdio.h>
-#include <gyro.h>
+#include "gyro.h"
 
 /*
 uint16 value_convert_gyro(uint16 raw)            // ****THING TO DO : converting to angle!!!****
@@ -24,6 +19,4 @@ uint16 value_convert_gyro(uint16 raw)            // ****THING TO DO : converting
     return rate_result;
 }
 */
-
-/* [] END OF FILE */
 

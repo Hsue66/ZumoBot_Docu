@@ -110,9 +110,9 @@ $(document).ready(function(){initNavTree('_i2_c__made_8c.html','');});
 </div><!--header-->
 <div class="contents">
 
-<p>Basic methods for I2C communication.  
+<p>Basic methods for I2C communication. For more details, please refer to <a class="el" href="_i2_c__made_8h.html" title="I2C header file. ">I2C_made.h</a> file.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &lt;<a class="el" href="_i2_c__made_8h_source.html">I2C_made.h</a>&gt;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="_i2_c__made_8h_source.html">I2C_made.h</a>&quot;</code><br />
 </div>
 <p><a href="_i2_c__made_8c_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -129,7 +129,7 @@ Functions</h2></td></tr>
 <tr class="separator:a3dffc9c223a30888d7399406408059b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Basic methods for I2C communication. </p>
+<div class="textblock"><p>Basic methods for I2C communication. For more details, please refer to <a class="el" href="_i2_c__made_8h.html" title="I2C header file. ">I2C_made.h</a> file. </p>
 
 <p>Definition in file <a class="el" href="_i2_c__made_8c_source.html">I2C_made.c</a>.</p>
 </div><h2 class="groupheader">Function Documentation</h2>
@@ -166,8 +166,8 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_i2_c__made_8c_source.html#l00062">62</a> of file <a class="el" href="_i2_c__made_8c_source.html">I2C_made.c</a>.</p>
-<div class="fragment"><div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;{</div><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    uint16 raw;</div><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    raw = (int16)(L | H &lt;&lt; 8);</div><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    </div><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keywordflow">return</span> raw;</div><div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;}</div></div><!-- fragment -->
+<p>Definition at line <a class="el" href="_i2_c__made_8c_source.html#l00063">63</a> of file <a class="el" href="_i2_c__made_8c_source.html">I2C_made.c</a>.</p>
+<div class="fragment"><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;{</div><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    uint16 raw;</div><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    raw = (int16)(L | H &lt;&lt; 8);      <span class="comment">//shift High bits and combine with Low bits to make 16 bits value.</span></div><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    </div><div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordflow">return</span> raw;</div><div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;}</div></div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a37612a39111135d189b6ac2c90c2e23f"></a>
@@ -203,8 +203,8 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_i2_c__made_8c_source.html#l00035">35</a> of file <a class="el" href="_i2_c__made_8c_source.html">I2C_made.c</a>.</p>
-<div class="fragment"><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;{</div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;   </div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    uint8 write_buf[1] = {};</div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    write_buf[0] = Reg;</div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    </div><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    uint8 read_buf[1] = {};</div><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    </div><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    I2C_MasterClearStatus();</div><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    CyDelay(100);</div><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    I2C_MasterWriteBuf(device_addr, write_buf, 1, I2C_MODE_COMPLETE_XFER);</div><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordflow">while</span>((I2C_MasterStatus() &amp; I2C_MSTAT_WR_CMPLT) == 0);</div><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    CyDelay(50);</div><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    I2C_MasterClearStatus();</div><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    I2C_MasterReadBuf(device_addr, read_buf, 1, I2C_MODE_COMPLETE_XFER);</div><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordflow">while</span>((I2C_MasterStatus() &amp; I2C_MSTAT_RD_CMPLT) == 0);</div><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;   </div><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordflow">return</span> read_buf[0];</div><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;}</div></div><!-- fragment -->
+<p>Definition at line <a class="el" href="_i2_c__made_8c_source.html#l00036">36</a> of file <a class="el" href="_i2_c__made_8c_source.html">I2C_made.c</a>.</p>
+<div class="fragment"><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;{</div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;   </div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    uint8 write_buf[1] = {};</div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    write_buf[0] = Reg;</div><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    </div><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    uint8 read_buf[1] = {};</div><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    </div><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    I2C_MasterClearStatus();</div><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    CyDelay(100);</div><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    I2C_MasterWriteBuf(device_addr, write_buf, 1, I2C_MODE_COMPLETE_XFER);</div><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordflow">while</span>((I2C_MasterStatus() &amp; I2C_MSTAT_WR_CMPLT) == 0);</div><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    CyDelay(50);</div><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    I2C_MasterClearStatus();</div><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    I2C_MasterReadBuf(device_addr, read_buf, 1, I2C_MODE_COMPLETE_XFER);</div><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordflow">while</span>((I2C_MasterStatus() &amp; I2C_MSTAT_RD_CMPLT) == 0);</div><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;   </div><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keywordflow">return</span> read_buf[0];</div><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;}</div></div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a389e072c17dc9cc66391568ee5d46c89"></a>

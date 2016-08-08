@@ -1,6 +1,6 @@
 /**
  * @file IR.c
- * @brief Basic methods for operating IR receiver
+ * @brief Basic methods for operating IR receiver. For more details, please refer to IR.h file. 
  * @details part number: TSOP-2236
 */
 #include "IR.h"
@@ -60,7 +60,7 @@ int count_uptime()
 
 /**
 * @brief    Getting remote controller value
-* @details  Getting each of the value sended by remote controller
+* @details  Getting each of the value sent by remote controller
 * @return   int
     - returns hex value
 */
@@ -71,7 +71,6 @@ int get_IR()
     uint t1, t2, i, j;
     
     wait_going_down();
-    printf("START \r\n");
     
     for(i = 0; i < 33; i++)     // loop 33times ( 1bit - Start bit, 32bits - Databit)
     {
@@ -92,9 +91,7 @@ int get_IR()
     /* // If you want to see binary value
     int cnt;
     for(cnt=0; cnt<33; cnt++)
-    {
         printf("%d ",bit[cnt]);
-    }
     printf("\r\n\n");
     */
    

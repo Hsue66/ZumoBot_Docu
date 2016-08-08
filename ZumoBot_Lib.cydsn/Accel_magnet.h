@@ -1,15 +1,17 @@
 /**
  * @file    Accel_magnet.h
- * @brief   Accelerometer header file.
+ * @brief   Accelerometer and Magnetometer header file.
  * @details If you want to use Accelerometer methods, you need to include Accel_magnet.h file. Defining register address for basic setting up and reading sensor output values.
 */
-
 #include <project.h>
+#include <stdio.h>
+#include <math.h>
+
 
 uint16 value_convert_magnet(uint8 AXIS_H, uint8 AXIS_L);
 void heading(double X_AXIS, double Y_AXIS);
 void value_convert_accel(uint16 X_AXIS, uint16 Y_AXIS, uint16 Z_AXIS);
-uint16 convert_raw(uint8 L, uint8 H);
+
 
 #define WHO_AM_I_ACCEL      0x0F
 #define ACCEL_MAG_ADDR      0x1D
@@ -31,4 +33,3 @@ uint16 convert_raw(uint8 L, uint8 H);
 #define OUT_Z_H_A           0x2D
 
 
-/* [] END OF FILE */

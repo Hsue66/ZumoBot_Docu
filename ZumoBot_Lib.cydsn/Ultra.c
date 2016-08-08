@@ -1,20 +1,21 @@
 /**
  * @file    Ultra.c
- * @brief   Basic methods for operating ultrasonic sensor
+ * @brief   Basic methods for operating ultrasonic sensor. For more details, please refer to Ultra.h file. 
  * @details part number: HC-SR04
 */
-
 #include "Ultra.h"
+
 
 uint16_t time = 0;
 float distance = 0;
 float cent = 0;
+int cnt=0;
+
 
 /**
 * @brief    Systick Interrupt Handler
 * @details  Counting system ticks to occur trigger
 */
-int cnt=0;
 CY_ISR(SYS_ISR)
 {
     cnt++;
@@ -43,7 +44,10 @@ CY_ISR(ultra_isr_handler)
         
         distance = (float)time / 58;            // us / 58 = centimeters
         cent = 5 * (distance - 16) / 4;         // calibration for this Timer(800 kHz)
-        printf("i = %6d, distance = %4d                \r\n", time, (int)cent);
+        
+        //If you want to print out the value  
+        //printf("i = %6d, distance = %4d                \r\n", time, (int)cent);
+        
         Timer_WriteCounter(0xFFFF);             // Counter initialization
     }
     else {
@@ -60,7 +64,7 @@ CY_ISR(ultra_isr_handler)
 void Ultra_Start()
 {
     CyIntSetSysVector((SysTick_IRQn + 16), SYS_ISR);    // Map systick ISR to SYS_ISR
-SysTick_Config(NUMBER_OF_TICKS);                    // Enable Systick Timer
+    SysTick_Config(NUMBER_OF_TICKS);                    // Enable Systick Timer
     ultra_isr_StartEx(ultra_isr_handler);               // Start ultra sonic interrupt
     Timer_Start();                                      // Start Timer
 }

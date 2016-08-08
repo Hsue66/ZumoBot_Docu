@@ -1,9 +1,10 @@
 /**
  * @file Ambient.c
- * @brief basic methods of operating ambient light sensor 
+ * @brief basic methods of operating ambient light sensor. For more details, please refer to Ambient.h file. 
  * @details part number: APDS-9301
 */
 #include "Ambient.h"
+
 
 /**
 * @brief    Get lux from raw value
@@ -14,7 +15,7 @@
 */
 double getLux(double CH0, double CH1)
 {
-double result = 0;
+    double result = 0;
     double ChannelRatio = (double)CH1/CH0;
     
     if((0<ChannelRatio) && (ChannelRatio <= 0.5))

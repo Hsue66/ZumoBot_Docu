@@ -1,14 +1,10 @@
 /**
  * @file    Magnet.c
- * @brief   Basic methods for operating magnetometer
+ * @brief   Basic methods for operating magnetometer. For more details, please refer to Accel_magnet.h file. 
  * @details part number: LSM303D (simultaneously used with accelerometer and included in Zumo shield)
 */
+#include "accel_magnet.h"
 
-
-#include <project.h>
-#include <math.h>
-#include <stdio.h>
-#include <accel_magnet.h>
 
 /**
 * @brief    Heading
@@ -23,9 +19,8 @@ void heading(double X_AXIS, double Y_AXIS)          // defined as the angle betw
     
     if(heading < 0)
         heading += 360;
-    printf("heading: %7.3f \r\n", heading);
+    
+    //If you want to print out the value  
+    //printf("heading: %7.3f \r\n", heading);
     CyDelay(250);
 }
-
-
-//uint16 value_convert_magnet(uint8 AXIS_H, uint8 AXIS_L)

@@ -2,13 +2,10 @@
 \label{_magnet_8c}\index{Magnet.\+c@{Magnet.\+c}}
 
 
-Basic methods for operating magnetometer.  
+Basic methods for operating magnetometer. For more details, please refer to \hyperlink{_accel__magnet_8h}{Accel\+\_\+magnet.\+h} file.  
 
 
-{\ttfamily \#include $<$project.\+h$>$}\\*
-{\ttfamily \#include $<$math.\+h$>$}\\*
-{\ttfamily \#include $<$stdio.\+h$>$}\\*
-{\ttfamily \#include $<$accel\+\_\+magnet.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}accel\+\_\+magnet.\+h\char`\"{}}\\*
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -17,7 +14,7 @@ void \hyperlink{_magnet_8c_af98fb6190588da170637da1531c2ecbc}{heading} (double X
 
 
 \subsection{Detailed Description}
-Basic methods for operating magnetometer. 
+Basic methods for operating magnetometer. For more details, please refer to \hyperlink{_accel__magnet_8h}{Accel\+\_\+magnet.\+h} file. 
 
 part number\+: L\+S\+M303D (simultaneously used with accelerometer and included in Zumo shield) 
 
@@ -43,17 +40,19 @@ Heading.
 \end{DoxyParams}
 
 
-Definition at line 19 of file Magnet.\+c.
+Definition at line 15 of file Magnet.\+c.
 
 
 \begin{DoxyCode}
-20 \{
-21     \textcolor{keywordtype}{double} \hyperlink{_magnet_8c_af98fb6190588da170637da1531c2ecbc}{heading};
-22     heading = 180 * atan2 (X\_AXIS, Y\_AXIS) / M\_PI;
-23     
-24     \textcolor{keywordflow}{if}(heading < 0)
-25         heading += 360;
-26     printf(\textcolor{stringliteral}{"heading: %7.3f \(\backslash\)r\(\backslash\)n"}, heading);
-27     CyDelay(250);
-28 \}
+16 \{
+17     \textcolor{keywordtype}{double} \hyperlink{_magnet_8c_af98fb6190588da170637da1531c2ecbc}{heading};
+18     heading = 180 * atan2 (X\_AXIS, Y\_AXIS) / M\_PI;
+19     
+20     \textcolor{keywordflow}{if}(heading < 0)
+21         heading += 360;
+22     
+23     \textcolor{comment}{//If you want to print out the value  }
+24     \textcolor{comment}{//printf("heading: %7.3f \(\backslash\)r\(\backslash\)n", heading);}
+25     CyDelay(250);
+26 \}
 \end{DoxyCode}

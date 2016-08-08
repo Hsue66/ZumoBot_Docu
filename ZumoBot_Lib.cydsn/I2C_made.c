@@ -1,10 +1,10 @@
 /**
  * @file    I2C_made.c
- * @brief   Basic methods for I2C communication
+ * @brief   Basic methods for I2C communication. For more details, please refer to I2C_made.h file. 
  * @details 
 */
+#include "I2C_made.h"
 
-#include <I2C_made.h>
 
 /**
 * @brief    Write function of I2C communication
@@ -25,6 +25,7 @@ void I2C_write(uint8 device_addr, uint8 Reg, uint8 value)             // Gyrosco
     
     return;
 }
+
 
 /**
 * @brief    Read function of I2C communication
@@ -62,7 +63,7 @@ uint8 I2C_read(uint8 device_addr, uint8 Reg)
 uint16 convert_raw(uint8 L, uint8 H)
 {
     uint16 raw;
-    raw = (int16)(L | H << 8);
+    raw = (int16)(L | H << 8);      //shift High bits and combine with Low bits to make 16 bits value.
     
     return raw;
 }

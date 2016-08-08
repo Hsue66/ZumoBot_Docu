@@ -1,10 +1,10 @@
 /**
  * @file    Reflectance.c
- * @brief   Basic methods for operating reflectance sensor
+ * @brief   Basic methods for operating reflectance sensor. For more details, please refer to Reflectance.h file. 
  * @details included in Zumo shield
 */
-
 #include "Reflectance.h"
+
 
 /**
 * @brief    Reflectance Sensor Interrupt Handler
@@ -61,6 +61,7 @@ CY_ISR(sensor_isr_handler)
         
 }
 
+
 /**
 * @brief    Starting Reflectance Sensor
 * @details 
@@ -73,6 +74,7 @@ void Refelctance_Start()
     Timer_LR_Start();
 }
 
+
 /**
 * @brief    Printing Reflectance Sensor's period value
 * @details
@@ -81,6 +83,7 @@ void reflectance_period()
 {
      printf("%d %d %d %d \r\n", sensors.ll, sensors.lr, sensors.rl, sensors.rr); 
 }
+
 
 /**
 * @brief    Making Reflectance Sensor's period to digital
@@ -106,7 +109,7 @@ void reflectance_digital()
     else
         digital_sensor_value.rr  = 1;
         
-   //print out the results
-   printf("%d %d %d %d \r\n", digital_sensor_value.ll, digital_sensor_value.lr, digital_sensor_value.rl, digital_sensor_value.rr);  
+   //If you want to print out the value  
+   //printf("%d %d %d %d \r\n", digital_sensor_value.ll, digital_sensor_value.lr, digital_sensor_value.rl, digital_sensor_value.rr);  
 }
 

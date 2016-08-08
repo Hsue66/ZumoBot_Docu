@@ -11,4 +11,3 @@
 #define CH1_H           0x8F
 
 double getLux(double CH0, double CH1);
-/* [] END OF FILE */

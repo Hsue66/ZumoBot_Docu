@@ -9,5 +9,3 @@
 void nunchuk_start();
 void nunchuk_init();
 void nunchuk_read();
-
-/* [] END OF FILE */

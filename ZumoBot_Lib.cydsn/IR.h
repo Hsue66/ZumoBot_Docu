@@ -3,7 +3,6 @@
  * @brief   IR receiver header file
  * @details If you want to use IR methods, Include IR.h file.
 */
-
 #include <project.h>
 #include <stdio.h>
 #include <math.h>
@@ -16,4 +15,3 @@ int count_downtime();
 
 int get_IR();
 
-/* [] END OF FILE */

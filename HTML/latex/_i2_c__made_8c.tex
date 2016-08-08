@@ -2,10 +2,10 @@
 \label{_i2_c__made_8c}\index{I2\+C\+\_\+made.\+c@{I2\+C\+\_\+made.\+c}}
 
 
-Basic methods for I2C communication.  
+Basic methods for I2C communication. For more details, please refer to \hyperlink{_i2_c__made_8h}{I2\+C\+\_\+made.\+h} file.  
 
 
-{\ttfamily \#include $<$I2\+C\+\_\+made.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}I2\+C\+\_\+made.\+h\char`\"{}}\\*
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -18,7 +18,7 @@ uint16 \hyperlink{_i2_c__made_8c_a3dffc9c223a30888d7399406408059b8}{convert\+\_\
 
 
 \subsection{Detailed Description}
-Basic methods for I2C communication. 
+Basic methods for I2C communication. For more details, please refer to \hyperlink{_i2_c__made_8h}{I2\+C\+\_\+made.\+h} file. 
 
 
 
@@ -44,16 +44,16 @@ writing value to slave register by I2C communication
 \end{DoxyParams}
 
 
-Definition at line 62 of file I2\+C\+\_\+made.\+c.
+Definition at line 63 of file I2\+C\+\_\+made.\+c.
 
 
 \begin{DoxyCode}
-63 \{
-64     uint16 raw;
-65     raw = (int16)(L | H << 8);
-66     
-67     \textcolor{keywordflow}{return} raw;
-68 \}
+64 \{
+65     uint16 raw;
+66     raw = (int16)(L | H << 8);      \textcolor{comment}{//shift High bits and combine with Low bits to make 16 bits value.}
+67     
+68     \textcolor{keywordflow}{return} raw;
+69 \}
 \end{DoxyCode}
 \index{I2\+C\+\_\+made.\+c@{I2\+C\+\_\+made.\+c}!I2\+C\+\_\+read@{I2\+C\+\_\+read}}
 \index{I2\+C\+\_\+read@{I2\+C\+\_\+read}!I2\+C\+\_\+made.\+c@{I2\+C\+\_\+made.\+c}}
@@ -76,28 +76,28 @@ read value from slave register by I2C communication
 \end{DoxyParams}
 
 
-Definition at line 35 of file I2\+C\+\_\+made.\+c.
+Definition at line 36 of file I2\+C\+\_\+made.\+c.
 
 
 \begin{DoxyCode}
-36 \{
-37    
-38     uint8 write\_buf[1] = \{\};
-39     write\_buf[0] = Reg;
-40     
-41     uint8 read\_buf[1] = \{\};
-42     
-43     I2C\_MasterClearStatus();
-44     CyDelay(100);
-45     I2C\_MasterWriteBuf(device\_addr, write\_buf, 1, I2C\_MODE\_COMPLETE\_XFER);
-46     \textcolor{keywordflow}{while}((I2C\_MasterStatus() & I2C\_MSTAT\_WR\_CMPLT) == 0);
-47     CyDelay(50);
-48     I2C\_MasterClearStatus();
-49     I2C\_MasterReadBuf(device\_addr, read\_buf, 1, I2C\_MODE\_COMPLETE\_XFER);
-50     \textcolor{keywordflow}{while}((I2C\_MasterStatus() & I2C\_MSTAT\_RD\_CMPLT) == 0);
-51    
-52     \textcolor{keywordflow}{return} read\_buf[0];
-53 \}
+37 \{
+38    
+39     uint8 write\_buf[1] = \{\};
+40     write\_buf[0] = Reg;
+41     
+42     uint8 read\_buf[1] = \{\};
+43     
+44     I2C\_MasterClearStatus();
+45     CyDelay(100);
+46     I2C\_MasterWriteBuf(device\_addr, write\_buf, 1, I2C\_MODE\_COMPLETE\_XFER);
+47     \textcolor{keywordflow}{while}((I2C\_MasterStatus() & I2C\_MSTAT\_WR\_CMPLT) == 0);
+48     CyDelay(50);
+49     I2C\_MasterClearStatus();
+50     I2C\_MasterReadBuf(device\_addr, read\_buf, 1, I2C\_MODE\_COMPLETE\_XFER);
+51     \textcolor{keywordflow}{while}((I2C\_MasterStatus() & I2C\_MSTAT\_RD\_CMPLT) == 0);
+52    
+53     \textcolor{keywordflow}{return} read\_buf[0];
+54 \}
 \end{DoxyCode}
 \index{I2\+C\+\_\+made.\+c@{I2\+C\+\_\+made.\+c}!I2\+C\+\_\+write@{I2\+C\+\_\+write}}
 \index{I2\+C\+\_\+write@{I2\+C\+\_\+write}!I2\+C\+\_\+made.\+c@{I2\+C\+\_\+made.\+c}}
