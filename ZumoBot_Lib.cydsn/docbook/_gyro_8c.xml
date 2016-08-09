@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_gyro_8c">
+    <title>Gyro.c File Reference</title>
+    <programlisting>#include &quot;gyro.h&quot;</programlisting>
+    <simplesect>
+        <title>Detailed Description</title>
+
+<para>Gyroscope method file. For more details, please refer to <link linkend="_gyro_8h">Gyro.h</link> file. </para>
+
+<para>part number: L3GD20H (included in Zumo shield) </para>
+    <para>Definition in file C:/Users/dufma/Desktop/Project/ZumoBot_Docu/ZumoBot_Lib.cydsn/Gyro.c</para>
+    </simplesect>
+</section>

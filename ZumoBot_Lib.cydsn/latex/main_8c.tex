@@ -1,0 +1,70 @@
+\hypertarget{main_8c}{}\section{main.\+c File Reference}
+\label{main_8c}\index{main.\+c@{main.\+c}}
+{\ttfamily \#include $<$project.\+h$>$}\\*
+{\ttfamily \#include $<$stdio.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}Motor.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Ultra.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Nunchuk.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Reflectance.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}I2\+C\+\_\+made.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Gyro.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Accel\+\_\+magnet.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}I\+R.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Ambient.\+h\char`\"{}}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{main_8c_add2a642dc87a0be4d7d2f9ba4e447a23}{rread} (void)
+\item 
+int \hyperlink{main_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}{main} ()
+\item 
+int \hyperlink{main_8c_aa025a12d45f60c7d0eae249e61f0c7f9}{\+\_\+write} (int file, char $\ast$ptr, int len)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+$\ast$$\ast$ You should enable global interrupt for operating properly. $\ast$$\ast$~\newline
+~~~Cy\+Global\+Int\+Enable;~\newline
+ 
+
+\subsection{Function Documentation}
+\index{main.\+c@{main.\+c}!\+\_\+write@{\+\_\+write}}
+\index{\+\_\+write@{\+\_\+write}!main.\+c@{main.\+c}}
+\subsubsection[{\texorpdfstring{\+\_\+write(int file, char $\ast$ptr, int len)}{_write(int file, char *ptr, int len)}}]{\setlength{\rightskip}{0pt plus 5cm}int \+\_\+write (
+\begin{DoxyParamCaption}
+\item[{int}]{file, }
+\item[{char $\ast$}]{ptr, }
+\item[{int}]{len}
+\end{DoxyParamCaption}
+)}\hypertarget{main_8c_aa025a12d45f60c7d0eae249e61f0c7f9}{}\label{main_8c_aa025a12d45f60c7d0eae249e61f0c7f9}
+
+\begin{DoxyCode}
+336 \{
+337     (void) file;
+338     \textcolor{keywordtype}{int} n;
+339     \textcolor{keywordflow}{for}(n = 0; n < len; n++) \{
+340         UART\_PutChar(*ptr++);
+341     \}
+342     \textcolor{keywordflow}{return} len;
+343 \}
+\end{DoxyCode}
+\index{main.\+c@{main.\+c}!main@{main}}
+\index{main@{main}!main.\+c@{main.\+c}}
+\subsubsection[{\texorpdfstring{main()}{main()}}]{\setlength{\rightskip}{0pt plus 5cm}int main (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{main_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}{}\label{main_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}
+
+\begin{DoxyCode}
+52 \{
+53     
+54 \}
+\end{DoxyCode}
+\index{main.\+c@{main.\+c}!rread@{rread}}
+\index{rread@{rread}!main.\+c@{main.\+c}}
+\subsubsection[{\texorpdfstring{rread(void)}{rread(void)}}]{\setlength{\rightskip}{0pt plus 5cm}int rread (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{main_8c_add2a642dc87a0be4d7d2f9ba4e447a23}{}\label{main_8c_add2a642dc87a0be4d7d2f9ba4e447a23}

@@ -1,0 +1,166 @@
+\hypertarget{_reflectance_8c}{}\section{Reflectance.\+c File Reference}
+\label{_reflectance_8c}\index{Reflectance.\+c@{Reflectance.\+c}}
+
+
+Basic methods for operating reflectance sensor. For more details, please refer to \hyperlink{_reflectance_8h}{Reflectance.\+h} file.  
+
+
+{\ttfamily \#include \char`\"{}Reflectance.\+h\char`\"{}}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_reflectance_8c_a74954281d092771a6de5e48cbebf037a}{C\+Y\+\_\+\+I\+SR} (sensor\+\_\+isr\+\_\+handler)
+\begin{DoxyCompactList}\small\item\em Reflectance Sensor Interrupt Handler. \end{DoxyCompactList}\item 
+void \hyperlink{_reflectance_8c_a80815e2f882ae5f24a2662e8c167f6e4}{Refelctance\+\_\+\+Start} ()
+\begin{DoxyCompactList}\small\item\em Starting Reflectance Sensor. \end{DoxyCompactList}\item 
+void \hyperlink{_reflectance_8c_a415cb8dda2f872df0c0026440091e528}{reflectance\+\_\+period} ()
+\begin{DoxyCompactList}\small\item\em Printing Reflectance Sensor\textquotesingle{}s period value. \end{DoxyCompactList}\item 
+void \hyperlink{_reflectance_8c_a79f7a001a95eb296822cb1fc40e4e6ec}{reflectance\+\_\+digital} ()
+\begin{DoxyCompactList}\small\item\em Making Reflectance Sensor\textquotesingle{}s period to digital. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Basic methods for operating reflectance sensor. For more details, please refer to \hyperlink{_reflectance_8h}{Reflectance.\+h} file. 
+
+included in Zumo shield 
+
+\subsection{Function Documentation}
+\index{Reflectance.\+c@{Reflectance.\+c}!C\+Y\+\_\+\+I\+SR@{C\+Y\+\_\+\+I\+SR}}
+\index{C\+Y\+\_\+\+I\+SR@{C\+Y\+\_\+\+I\+SR}!Reflectance.\+c@{Reflectance.\+c}}
+\subsubsection[{\texorpdfstring{C\+Y\+\_\+\+I\+S\+R(sensor\+\_\+isr\+\_\+handler)}{CY_ISR(sensor_isr_handler)}}]{\setlength{\rightskip}{0pt plus 5cm}C\+Y\+\_\+\+I\+SR (
+\begin{DoxyParamCaption}
+\item[{sensor\+\_\+isr\+\_\+handler}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{_reflectance_8c_a74954281d092771a6de5e48cbebf037a}{}\label{_reflectance_8c_a74954281d092771a6de5e48cbebf037a}
+
+
+Reflectance Sensor Interrupt Handler. 
+
+Measuring each sensors\textquotesingle{} time to recognition of white or black 
+\begin{DoxyCode}
+14 \{
+15     uint32\_t statusRL = Timer\_RL\_ReadStatusRegister();
+16     uint32\_t statusRR = Timer\_RR\_ReadStatusRegister();
+17     uint32\_t statusLL = Timer\_LL\_ReadStatusRegister();
+18     uint32\_t statusLR = Timer\_LR\_ReadStatusRegister();
+19 
+20     \textcolor{keywordflow}{if}(statusRL & Timer\_RL\_STATUS\_CAPTURE) \{
+21         \hyperlink{_reflectance_8h_a7d62aca71349c236b262b32088618ed6}{sensors}.\hyperlink{structsensors___a55f8b53aee5b41e8af88a816fab2b70b}{rl} = Timer\_RL\_ReadPeriod() - Timer\_RL\_ReadCapture();
+22     \}
+23     \textcolor{keywordflow}{else} \{
+24         \hyperlink{_reflectance_8h_a7d62aca71349c236b262b32088618ed6}{sensors}.\hyperlink{structsensors___a55f8b53aee5b41e8af88a816fab2b70b}{rl} = Timer\_RL\_ReadPeriod();
+25     \}
+26     
+27     \textcolor{keywordflow}{if}(statusRR & Timer\_RR\_STATUS\_CAPTURE) \{
+28         \hyperlink{_reflectance_8h_a7d62aca71349c236b262b32088618ed6}{sensors}.\hyperlink{structsensors___a6988d1a89f109b3f8d0e06547a5362f6}{rr} = Timer\_RR\_ReadPeriod() - Timer\_RR\_ReadCapture();
+29     \}
+30     \textcolor{keywordflow}{else} \{
+31         \hyperlink{_reflectance_8h_a7d62aca71349c236b262b32088618ed6}{sensors}.\hyperlink{structsensors___a6988d1a89f109b3f8d0e06547a5362f6}{rr} = Timer\_RR\_ReadPeriod();
+32     \}
+33     
+34     \textcolor{keywordflow}{if}(statusLL & Timer\_LL\_STATUS\_CAPTURE) \{
+35         \hyperlink{_reflectance_8h_a7d62aca71349c236b262b32088618ed6}{sensors}.\hyperlink{structsensors___ae59d16ddcc59d6f6633ff99307ff7190}{ll} = Timer\_LL\_ReadPeriod() - Timer\_LL\_ReadCapture();
+36     \}
+37     \textcolor{keywordflow}{else} \{
+38         \hyperlink{_reflectance_8h_a7d62aca71349c236b262b32088618ed6}{sensors}.\hyperlink{structsensors___ae59d16ddcc59d6f6633ff99307ff7190}{ll} = Timer\_LL\_ReadPeriod();
+39     \}
+40     
+41     \textcolor{keywordflow}{if}(statusLR & Timer\_LR\_STATUS\_CAPTURE) \{
+42         \hyperlink{_reflectance_8h_a7d62aca71349c236b262b32088618ed6}{sensors}.\hyperlink{structsensors___af650f74b54fbe6d55c96161d2a7098ea}{lr} = Timer\_LR\_ReadPeriod() - Timer\_LR\_ReadCapture();
+43     \}
+44     \textcolor{keywordflow}{else} \{
+45         \hyperlink{_reflectance_8h_a7d62aca71349c236b262b32088618ed6}{sensors}.\hyperlink{structsensors___af650f74b54fbe6d55c96161d2a7098ea}{lr} = Timer\_LR\_ReadPeriod();
+46     \}
+47     
+48     RL\_SetDriveMode(PIN\_DM\_STRONG);
+49     RL\_Write(1);
+50     RR\_SetDriveMode(PIN\_DM\_STRONG);
+51     RR\_Write(1);
+52     LL\_SetDriveMode(PIN\_DM\_STRONG);
+53     LL\_Write(1);
+54     LR\_SetDriveMode(PIN\_DM\_STRONG);
+55     LR\_Write(1);
+56     CyDelayUs(10);
+57     RL\_SetDriveMode(PIN\_DM\_DIG\_HIZ);
+58     RR\_SetDriveMode(PIN\_DM\_DIG\_HIZ);
+59     LL\_SetDriveMode(PIN\_DM\_DIG\_HIZ);
+60     LR\_SetDriveMode(PIN\_DM\_DIG\_HIZ);
+61         
+62 \}
+\end{DoxyCode}
+\index{Reflectance.\+c@{Reflectance.\+c}!Refelctance\+\_\+\+Start@{Refelctance\+\_\+\+Start}}
+\index{Refelctance\+\_\+\+Start@{Refelctance\+\_\+\+Start}!Reflectance.\+c@{Reflectance.\+c}}
+\subsubsection[{\texorpdfstring{Refelctance\+\_\+\+Start()}{Refelctance_Start()}}]{\setlength{\rightskip}{0pt plus 5cm}void Refelctance\+\_\+\+Start (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{_reflectance_8c_a80815e2f882ae5f24a2662e8c167f6e4}{}\label{_reflectance_8c_a80815e2f882ae5f24a2662e8c167f6e4}
+
+
+Starting Reflectance Sensor. 
+
+
+\begin{DoxyCode}
+70 \{
+71     Timer\_RL\_Start();
+72     Timer\_RR\_Start();
+73     Timer\_LL\_Start();
+74     Timer\_LR\_Start();
+75 \}
+\end{DoxyCode}
+\index{Reflectance.\+c@{Reflectance.\+c}!reflectance\+\_\+digital@{reflectance\+\_\+digital}}
+\index{reflectance\+\_\+digital@{reflectance\+\_\+digital}!Reflectance.\+c@{Reflectance.\+c}}
+\subsubsection[{\texorpdfstring{reflectance\+\_\+digital()}{reflectance_digital()}}]{\setlength{\rightskip}{0pt plus 5cm}void reflectance\+\_\+digital (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{_reflectance_8c_a79f7a001a95eb296822cb1fc40e4e6ec}{}\label{_reflectance_8c_a79f7a001a95eb296822cb1fc40e4e6ec}
+
+
+Making Reflectance Sensor\textquotesingle{}s period to digital. 
+
+
+\begin{DoxyCode}
+93 \{
+94     \textcolor{comment}{//if the results of reflectance\_period function is over 10000, set digital\_sensor\_value to 0, which
+       means it's black}
+95     \textcolor{keywordflow}{if}(\hyperlink{_reflectance_8h_a7d62aca71349c236b262b32088618ed6}{sensors}.\hyperlink{structsensors___ae59d16ddcc59d6f6633ff99307ff7190}{ll} > 10000)
+96         \hyperlink{_reflectance_8h_aef6b5888f1a360d1c977ca4cc18ad2e3}{digital\_sensor\_value}.\hyperlink{structdigital__sensor__value___ae59d16ddcc59d6f6633ff99307ff7190}{ll}  = 0;
+97     \textcolor{keywordflow}{else}
+98         \hyperlink{_reflectance_8h_aef6b5888f1a360d1c977ca4cc18ad2e3}{digital\_sensor\_value}.\hyperlink{structdigital__sensor__value___ae59d16ddcc59d6f6633ff99307ff7190}{ll}  = 1;
+99     \textcolor{keywordflow}{if}(\hyperlink{_reflectance_8h_a7d62aca71349c236b262b32088618ed6}{sensors}.\hyperlink{structsensors___af650f74b54fbe6d55c96161d2a7098ea}{lr} > 10000)
+100         \hyperlink{_reflectance_8h_aef6b5888f1a360d1c977ca4cc18ad2e3}{digital\_sensor\_value}.\hyperlink{structdigital__sensor__value___af650f74b54fbe6d55c96161d2a7098ea}{lr}  = 0;
+101     \textcolor{keywordflow}{else}
+102         \hyperlink{_reflectance_8h_aef6b5888f1a360d1c977ca4cc18ad2e3}{digital\_sensor\_value}.\hyperlink{structdigital__sensor__value___af650f74b54fbe6d55c96161d2a7098ea}{lr}  = 1;
+103     \textcolor{keywordflow}{if}(\hyperlink{_reflectance_8h_a7d62aca71349c236b262b32088618ed6}{sensors}.\hyperlink{structsensors___a55f8b53aee5b41e8af88a816fab2b70b}{rl} > 10000)
+104         \hyperlink{_reflectance_8h_aef6b5888f1a360d1c977ca4cc18ad2e3}{digital\_sensor\_value}.\hyperlink{structdigital__sensor__value___a55f8b53aee5b41e8af88a816fab2b70b}{rl}  = 0;
+105     \textcolor{keywordflow}{else}
+106         \hyperlink{_reflectance_8h_aef6b5888f1a360d1c977ca4cc18ad2e3}{digital\_sensor\_value}.\hyperlink{structdigital__sensor__value___a55f8b53aee5b41e8af88a816fab2b70b}{rl}  = 1;
+107     \textcolor{keywordflow}{if}(\hyperlink{_reflectance_8h_a7d62aca71349c236b262b32088618ed6}{sensors}.\hyperlink{structsensors___a6988d1a89f109b3f8d0e06547a5362f6}{rr} > 10000)
+108         \hyperlink{_reflectance_8h_aef6b5888f1a360d1c977ca4cc18ad2e3}{digital\_sensor\_value}.\hyperlink{structdigital__sensor__value___a6988d1a89f109b3f8d0e06547a5362f6}{rr}  = 0;
+109     \textcolor{keywordflow}{else}
+110         \hyperlink{_reflectance_8h_aef6b5888f1a360d1c977ca4cc18ad2e3}{digital\_sensor\_value}.\hyperlink{structdigital__sensor__value___a6988d1a89f109b3f8d0e06547a5362f6}{rr}  = 1;
+111         
+112    \textcolor{comment}{//If you want to print out the value  }
+113    \textcolor{comment}{//printf("%d %d %d %d \(\backslash\)r\(\backslash\)n", digital\_sensor\_value.ll, digital\_sensor\_value.lr, digital\_sensor\_value.rl,
+       digital\_sensor\_value.rr);  }
+114 \}
+\end{DoxyCode}
+\index{Reflectance.\+c@{Reflectance.\+c}!reflectance\+\_\+period@{reflectance\+\_\+period}}
+\index{reflectance\+\_\+period@{reflectance\+\_\+period}!Reflectance.\+c@{Reflectance.\+c}}
+\subsubsection[{\texorpdfstring{reflectance\+\_\+period()}{reflectance_period()}}]{\setlength{\rightskip}{0pt plus 5cm}void reflectance\+\_\+period (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{_reflectance_8c_a415cb8dda2f872df0c0026440091e528}{}\label{_reflectance_8c_a415cb8dda2f872df0c0026440091e528}
+
+
+Printing Reflectance Sensor\textquotesingle{}s period value. 
+
+
+\begin{DoxyCode}
+83 \{
+84      printf(\textcolor{stringliteral}{"%d %d %d %d \(\backslash\)r\(\backslash\)n"}, \hyperlink{_reflectance_8h_a7d62aca71349c236b262b32088618ed6}{sensors}.\hyperlink{structsensors___ae59d16ddcc59d6f6633ff99307ff7190}{ll}, \hyperlink{_reflectance_8h_a7d62aca71349c236b262b32088618ed6}{sensors}.\hyperlink{structsensors___af650f74b54fbe6d55c96161d2a7098ea}{lr}, 
+      \hyperlink{_reflectance_8h_a7d62aca71349c236b262b32088618ed6}{sensors}.\hyperlink{structsensors___a55f8b53aee5b41e8af88a816fab2b70b}{rl}, \hyperlink{_reflectance_8h_a7d62aca71349c236b262b32088618ed6}{sensors}.\hyperlink{structsensors___a6988d1a89f109b3f8d0e06547a5362f6}{rr}); 
+85 \}
+\end{DoxyCode}

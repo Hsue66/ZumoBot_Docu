@@ -1,0 +1,88 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_reflectance_8h">
+    <title>Reflectance.h File Reference</title>
+    <programlisting>#include &lt;stdio.h&gt;</programlisting>
+    <programlisting>#include &lt;project.h&gt;</programlisting>
+        <section>
+            <title> Data Structures </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="structsensors__">sensors_</link></para>
+<para><emphasis>Reflectance Sensor raw values.</emphasis></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="structdigital__sensor__value__">digital_sensor_value_</link></para>
+<para><emphasis>Reflectance Sensor converted values.</emphasis></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Variables</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>volatile struct <link linkend="structsensors__">sensors_</link> <link linkend="_reflectance_8h_1a7d62aca71349c236b262b32088618ed6">sensors</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>volatile struct <link linkend="structdigital__sensor__value__">digital_sensor_value_</link> <link linkend="_reflectance_8h_1aef6b5888f1a360d1c977ca4cc18ad2e3">digital_sensor_value</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Functions</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="_reflectance_8h_1a07cf23fe80e76a9c469b740a9fc61144">CY_ISR_PROTO</link> (
+sensor_isr_handler )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="_reflectance_8h_1a80815e2f882ae5f24a2662e8c167f6e4">Refelctance_Start</link> (
+)<para><emphasis>Starting Reflectance Sensor.</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="_reflectance_8h_1a415cb8dda2f872df0c0026440091e528">reflectance_period</link> (
+)<para><emphasis>Printing Reflectance Sensor&apos;s period value.</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="_reflectance_8h_1a79f7a001a95eb296822cb1fc40e4e6ec">reflectance_digital</link> (
+)<para><emphasis>Making Reflectance Sensor&apos;s period to digital.</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+        <title>Detailed Description</title>
+
+<para>Reflectance sensor header file. </para>
+
+<para>If you want to use Reflectance sensor methods, you need to include <link linkend="_reflectance_8h">Reflectance.h</link> file. </para>
+    <para>Definition in file C:/Users/dufma/Desktop/Project/ZumoBot_Docu/ZumoBot_Lib.cydsn/Reflectance.h</para>
+    </simplesect>
+</section>

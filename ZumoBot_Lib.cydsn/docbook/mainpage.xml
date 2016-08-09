@@ -1,0 +1,70 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<chapter xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>ZumoBot Project</title>
+
+<para>You can make your own ZumoBot with various sensors. 
+<literallayout>
+</literallayout>
+ </para>
+
+<para><emphasis role="bold">General</emphasis>
+<literallayout>
+</literallayout>
+ You will use Pololu Zumo Shields for your robot project with CY8CKIT-059(PSoC 5LP) from Cypress semiconductor.This library has basic methods of various sensors and communications so that you can make what you want with them. 
+<literallayout>
+</literallayout>
+
+<literallayout>
+</literallayout>
+
+<literallayout>
+</literallayout>
+ </para>
+
+<para><emphasis role="bold">Sensors</emphasis>
+<literallayout>
+</literallayout>
+ &#160;Included: 
+<literallayout>
+</literallayout>
+ &#160;&#160;&#160;&#160;LSM303D: Accelerometer &amp; Magnetometer
+<literallayout>
+</literallayout>
+ &#160;&#160;&#160;&#160;L3GD20H: Gyroscope
+<literallayout>
+</literallayout>
+ &#160;&#160;&#160;&#160;Reflectance sensor
+<literallayout>
+</literallayout>
+ &#160;&#160;&#160;&#160;Motors &#160;Wii nunchuck
+<literallayout>
+</literallayout>
+ &#160;TSOP-2236: IR Receiver
+<literallayout>
+</literallayout>
+ &#160;HC-SR04: Ultrasonic sensor
+<literallayout>
+</literallayout>
+ &#160;APDS-9301: Ambient light sensor
+<literallayout>
+</literallayout>
+ &#160;IR LED 
+<literallayout>
+</literallayout>
+
+<literallayout>
+</literallayout>
+
+<literallayout>
+</literallayout>
+ </para>
+
+<para><emphasis role="bold">Communication</emphasis>
+<literallayout>
+</literallayout>
+ I2C, UART, Serial
+<literallayout>
+</literallayout>
+ </para>
+
+</chapter>

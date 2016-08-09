@@ -1,0 +1,74 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_ultra_8c">
+    <title>Ultra.c File Reference</title>
+    <programlisting>#include &quot;Ultra.h&quot;</programlisting>
+        <section>
+            <title>Variables</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint16_t <link linkend="_ultra_8c_1a93658cf9f03a3303cdb292e655c657e7">time</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>float <link linkend="_ultra_8c_1a06f14a9abd47b91465f895d5259cdc1b">distance</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>float <link linkend="_ultra_8c_1ade940a7370c158f9cae4af33aa7b213b">cent</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="_ultra_8c_1a9cfbb269728dc4185236d28be58d9eab">cnt</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Functions</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="_ultra_8c_1a6deea480085144db0e9344d8bc4d30ec">CY_ISR</link> (
+SYS_ISR )<para><emphasis>Systick Interrupt Handler.</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="_ultra_8c_1afceff2208ec9937f6a53bb1a2734b5e9">CY_ISR</link> (
+ultra_isr_handler )<para><emphasis>Ultra Sonic Sensor Interrupt Handler.</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="_ultra_8c_1ad0439af59f4e0ae0b4236343bdad4356">Ultra_Start</link> (
+)<para><emphasis>Starting Ultra Sonic Sensor.</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+        <title>Detailed Description</title>
+
+<para>Basic methods for operating ultrasonic sensor. For more details, please refer to <link linkend="_ultra_8h">Ultra.h</link> file. </para>
+
+<para>part number: HC-SR04 </para>
+    <para>Definition in file C:/Users/dufma/Desktop/Project/ZumoBot_Docu/ZumoBot_Lib.cydsn/Ultra.c</para>
+    </simplesect>
+</section>

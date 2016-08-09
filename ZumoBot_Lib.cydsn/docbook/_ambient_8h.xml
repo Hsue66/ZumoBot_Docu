@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_ambient_8h">
+    <title>Ambient.h File Reference</title>
+    <programlisting>#include &lt;math.h&gt;</programlisting>
+        <section>
+            <title>Macros</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="_ambient_8h_1a8e3a2ba5ea91e3a3850cc1352159a982">CH0_L</link> 0x8C</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="_ambient_8h_1a8012390ce131b31c1ca581ef3c87a712">CH0_H</link> 0x8D</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="_ambient_8h_1a81906fe64379e62e8ccbc16cd2679d11">CH1_L</link> 0x8E</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="_ambient_8h_1aa616856759e1f2264997243f8248cf0d">CH1_H</link> 0x8F</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Functions</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>double <link linkend="_ambient_8h_1a4f2753f74c2249bf17da11de745e8da4">getLux</link> (
+double CH0, double CH1)<para><emphasis>Get lux from raw value.</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+        <title>Detailed Description</title>
+
+<para>Ambient light sensor header file. </para>
+
+<para>If you want to use Ambient light sensor methods, you need to include <link linkend="_ambient_8h">Ambient.h</link> file. Defining register address for reading channel values. </para>
+    <para>Definition in file C:/Users/dufma/Desktop/Project/ZumoBot_Docu/ZumoBot_Lib.cydsn/Ambient.h</para>
+    </simplesect>
+</section>

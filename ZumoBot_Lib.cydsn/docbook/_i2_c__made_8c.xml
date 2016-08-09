@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_i2_c__made_8c">
+    <title>I2C_made.c File Reference</title>
+    <programlisting>#include &quot;I2C_made.h&quot;</programlisting>
+        <section>
+            <title>Functions</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="_i2_c__made_8c_1a389e072c17dc9cc66391568ee5d46c89">I2C_write</link> (
+uint8 device_addr, uint8 Reg, uint8 value)<para><emphasis>Write function of I2C communication.</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint8 <link linkend="_i2_c__made_8c_1a37612a39111135d189b6ac2c90c2e23f">I2C_read</link> (
+uint8 device_addr, uint8 Reg)<para><emphasis>Read function of I2C communication.</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint16 <link linkend="_i2_c__made_8c_1a3dffc9c223a30888d7399406408059b8">convert_raw</link> (
+uint8 L, uint8 H)<para><emphasis>Combining 8 bits of low and high outputs to 16 bits used for sensor value.</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+        <title>Detailed Description</title>
+
+<para>Basic methods for I2C communication. For more details, please refer to <link linkend="_i2_c__made_8h">I2C_made.h</link> file. </para>
+    <para>Definition in file C:/Users/dufma/Desktop/Project/ZumoBot_Docu/ZumoBot_Lib.cydsn/I2C_made.c</para>
+    </simplesect>
+</section>

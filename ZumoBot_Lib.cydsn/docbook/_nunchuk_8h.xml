@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_nunchuk_8h">
+    <title>Nunchuk.h File Reference</title>
+    <programlisting>#include &lt;project.h&gt;</programlisting>
+    <programlisting>#include &lt;stdio.h&gt;</programlisting>
+        <section>
+            <title>Functions</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="_nunchuk_8h_1ad40f6458669d05040ade1f3f96e57dad">nunchuk_start</link> (
+)<para><emphasis>Start Nunchuk.</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="_nunchuk_8h_1a51b63a0b8182292380da4823f7757fb9">nunchuk_init</link> (
+)<para><emphasis>Initializing Nunchuk.</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="_nunchuk_8h_1ad16ed7544dc4b29ae079905b35b1b318">nunchuk_read</link> (
+)<para><emphasis>Reading Nunchuk value.</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+        <title>Detailed Description</title>
+
+<para>Nunchuk header file. </para>
+
+<para>If you want to use Nunchuk methods, Include <link linkend="_nunchuk_8h">Nunchuk.h</link> file. </para>
+    <para>Definition in file C:/Users/dufma/Desktop/Project/ZumoBot_Docu/ZumoBot_Lib.cydsn/Nunchuk.h</para>
+    </simplesect>
+</section>

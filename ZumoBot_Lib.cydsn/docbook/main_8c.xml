@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="main_8c">
+    <title>main.c File Reference</title>
+    <programlisting>#include &lt;project.h&gt;</programlisting>
+    <programlisting>#include &lt;stdio.h&gt;</programlisting>
+    <programlisting>#include &quot;Motor.h&quot;</programlisting>
+    <programlisting>#include &quot;Ultra.h&quot;</programlisting>
+    <programlisting>#include &quot;Nunchuk.h&quot;</programlisting>
+    <programlisting>#include &quot;Reflectance.h&quot;</programlisting>
+    <programlisting>#include &quot;I2C_made.h&quot;</programlisting>
+    <programlisting>#include &quot;Gyro.h&quot;</programlisting>
+    <programlisting>#include &quot;Accel_magnet.h&quot;</programlisting>
+    <programlisting>#include &quot;IR.h&quot;</programlisting>
+    <programlisting>#include &quot;Ambient.h&quot;</programlisting>
+        <section>
+            <title>Functions</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="main_8c_1add2a642dc87a0be4d7d2f9ba4e447a23">rread</link> (
+void )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="main_8c_1ae66f6b31b5ad750f1fe042a706a4e3d4">main</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="main_8c_1aa025a12d45f60c7d0eae249e61f0c7f9">_write</link> (
+int file, char * ptr, int len)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+        <title>Detailed Description</title>
+
+<para>** You should enable global interrupt for operating properly. **
+<literallayout>
+</literallayout>
+&#160;&#160;&#160;CyGlobalIntEnable;
+<literallayout>
+</literallayout>
+ </para>
+    <para>Definition in file C:/Users/dufma/Desktop/Project/ZumoBot_Docu/ZumoBot_Lib.cydsn/main.c</para>
+    </simplesect>
+</section>

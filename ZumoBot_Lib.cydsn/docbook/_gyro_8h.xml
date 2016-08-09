@@ -1,0 +1,97 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_gyro_8h">
+    <title>Gyro.h File Reference</title>
+    <programlisting>#include &lt;project.h&gt;</programlisting>
+        <section>
+            <title>Macros</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="_gyro_8h_1adda709eeb042fd3a856b39b1dfc232c9">WHO_AM_I_GYRO</link> 0x0F</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="_gyro_8h_1a9e1864ec9f14b2c457cffefc9f0d9ca8">GYRO_ADDR</link> 0x6B</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="_gyro_8h_1a8efc24059e7dac2d575b5b54005388d3">GYRO_CTRL1_REG</link> 0x20</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="_gyro_8h_1ae70372174e1de17fdaa4a7a7a2c5c146">GYRO_CTRL4_REG</link> 0x23</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="_gyro_8h_1abfc8da9aa8ea073bf9a1e2c02e0a0a0d">OUT_X_AXIS_L</link> 0x28</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="_gyro_8h_1adc1febc97842c92355c1ab2d5650cd25">OUT_X_AXIS_H</link> 0x29</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="_gyro_8h_1a213feb576cba937f28e28a194a39135b">OUT_Y_AXIS_L</link> 0x2A</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="_gyro_8h_1a4a1cd83b037f0ee956123ceb11604746">OUT_Y_AXIS_H</link> 0x2B</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="_gyro_8h_1a047a3489b49e2cd7569568bc7d2d56c0">OUT_Z_AXIS_L</link> 0x2C</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="_gyro_8h_1a5ea2d355404c748359fe86963116f97d">OUT_Z_AXIS_H</link> 0x2D</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Functions</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint16 <link linkend="_gyro_8h_1a949323433b868fa7df876b710d24f9f0">value_convert_gyro</link> (
+uint16 raw)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+        <title>Detailed Description</title>
+
+<para>Gyroscope header file. </para>
+
+<para>If you want to use Gyroscope methods, you need to include <link linkend="_gyro_8h">Gyro.h</link> file. Defining register address for reading gyroscope output values. </para>
+    <para>Definition in file C:/Users/dufma/Desktop/Project/ZumoBot_Docu/ZumoBot_Lib.cydsn/Gyro.h</para>
+    </simplesect>
+</section>

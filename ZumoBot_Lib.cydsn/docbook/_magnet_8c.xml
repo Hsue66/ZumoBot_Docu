@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_magnet_8c">
+    <title>Magnet.c File Reference</title>
+    <programlisting>#include &quot;accel_magnet.h&quot;</programlisting>
+        <section>
+            <title>Functions</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="_magnet_8c_1af98fb6190588da170637da1531c2ecbc">heading</link> (
+double X_AXIS, double Y_AXIS)<para><emphasis>Heading.</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+        <title>Detailed Description</title>
+
+<para>Basic methods for operating magnetometer. For more details, please refer to <link linkend="_accel__magnet_8h">Accel_magnet.h</link> file. </para>
+
+<para>part number: LSM303D (simultaneously used with accelerometer and included in Zumo shield) </para>
+    <para>Definition in file C:/Users/dufma/Desktop/Project/ZumoBot_Docu/ZumoBot_Lib.cydsn/Magnet.c</para>
+    </simplesect>
+</section>

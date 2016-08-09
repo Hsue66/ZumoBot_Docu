@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_reflectance_8c">
+    <title>Reflectance.c File Reference</title>
+    <programlisting>#include &quot;Reflectance.h&quot;</programlisting>
+        <section>
+            <title>Functions</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="_reflectance_8c_1a74954281d092771a6de5e48cbebf037a">CY_ISR</link> (
+sensor_isr_handler )<para><emphasis>Reflectance Sensor Interrupt Handler.</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="_reflectance_8c_1a80815e2f882ae5f24a2662e8c167f6e4">Refelctance_Start</link> (
+)<para><emphasis>Starting Reflectance Sensor.</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="_reflectance_8c_1a415cb8dda2f872df0c0026440091e528">reflectance_period</link> (
+)<para><emphasis>Printing Reflectance Sensor&apos;s period value.</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="_reflectance_8c_1a79f7a001a95eb296822cb1fc40e4e6ec">reflectance_digital</link> (
+)<para><emphasis>Making Reflectance Sensor&apos;s period to digital.</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+        <title>Detailed Description</title>
+
+<para>Basic methods for operating reflectance sensor. For more details, please refer to <link linkend="_reflectance_8h">Reflectance.h</link> file. </para>
+
+<para>included in Zumo shield </para>
+    <para>Definition in file C:/Users/dufma/Desktop/Project/ZumoBot_Docu/ZumoBot_Lib.cydsn/Reflectance.c</para>
+    </simplesect>
+</section>

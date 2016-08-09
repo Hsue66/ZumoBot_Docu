@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_ambient_8c">
+    <title>Ambient.c File Reference</title>
+    <programlisting>#include &quot;Ambient.h&quot;</programlisting>
+        <section>
+            <title>Functions</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>double <link linkend="_ambient_8c_1a4f2753f74c2249bf17da11de745e8da4">getLux</link> (
+double CH0, double CH1)<para><emphasis>Get lux from raw value.</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+        <title>Detailed Description</title>
+
+<para>basic methods of operating ambient light sensor. For more details, please refer to <link linkend="_ambient_8h">Ambient.h</link> file. </para>
+
+<para>part number: APDS-9301 </para>
+    <para>Definition in file C:/Users/dufma/Desktop/Project/ZumoBot_Docu/ZumoBot_Lib.cydsn/Ambient.c</para>
+    </simplesect>
+</section>

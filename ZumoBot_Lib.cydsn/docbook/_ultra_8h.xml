@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_ultra_8h">
+    <title>Ultra.h File Reference</title>
+    <programlisting>#include &lt;project.h&gt;</programlisting>
+    <programlisting>#include &lt;stdio.h&gt;</programlisting>
+    <programlisting>#include &lt;Timer.h&gt;</programlisting>
+        <section>
+            <title>Macros</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="_ultra_8h_1a61399708f7c3e062c2a53c480dfbc7e0">NUMBER_OF_TICKS</link> 2400</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Functions</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="_ultra_8h_1a0ea09ca55ee84be052f0d049a58af2a5">CY_ISR_PROTO</link> (
+ultra_isr_handler )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="_ultra_8h_1a3dab88e36bb7ad9813ea43f215e98f93">CY_ISR_PROTO</link> (
+SYS_ISR )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="_ultra_8h_1ad0439af59f4e0ae0b4236343bdad4356">Ultra_Start</link> (
+)<para><emphasis>Starting Ultra Sonic Sensor.</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+        <title>Detailed Description</title>
+
+<para>Ultra sonic sensor header file. </para>
+
+<para>If you want to use Ultra sonic sensor methods, you need to include <link linkend="_ultra_8h">Ultra.h</link> file. Declaring sensor interrupt for measuring ultra sonic outputs. </para>
+    <para>Definition in file C:/Users/dufma/Desktop/Project/ZumoBot_Docu/ZumoBot_Lib.cydsn/Ultra.h</para>
+    </simplesect>
+</section>

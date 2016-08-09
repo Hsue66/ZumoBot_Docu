@@ -1,0 +1,130 @@
+\hypertarget{_ultra_8c}{}\section{Ultra.\+c File Reference}
+\label{_ultra_8c}\index{Ultra.\+c@{Ultra.\+c}}
+
+
+Basic methods for operating ultrasonic sensor. For more details, please refer to \hyperlink{_ultra_8h}{Ultra.\+h} file.  
+
+
+{\ttfamily \#include \char`\"{}Ultra.\+h\char`\"{}}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_ultra_8c_a6deea480085144db0e9344d8bc4d30ec}{C\+Y\+\_\+\+I\+SR} (S\+Y\+S\+\_\+\+I\+SR)
+\begin{DoxyCompactList}\small\item\em Systick Interrupt Handler. \end{DoxyCompactList}\item 
+\hyperlink{_ultra_8c_afceff2208ec9937f6a53bb1a2734b5e9}{C\+Y\+\_\+\+I\+SR} (ultra\+\_\+isr\+\_\+handler)
+\begin{DoxyCompactList}\small\item\em Ultra Sonic Sensor Interrupt Handler. \end{DoxyCompactList}\item 
+void \hyperlink{_ultra_8c_ad0439af59f4e0ae0b4236343bdad4356}{Ultra\+\_\+\+Start} ()
+\begin{DoxyCompactList}\small\item\em Starting Ultra Sonic Sensor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+uint16\+\_\+t \hyperlink{_ultra_8c_a93658cf9f03a3303cdb292e655c657e7}{time} = 0
+\item 
+float \hyperlink{_ultra_8c_a06f14a9abd47b91465f895d5259cdc1b}{distance} = 0
+\item 
+float \hyperlink{_ultra_8c_ade940a7370c158f9cae4af33aa7b213b}{cent} = 0
+\item 
+int \hyperlink{_ultra_8c_a9cfbb269728dc4185236d28be58d9eab}{cnt} =0
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Basic methods for operating ultrasonic sensor. For more details, please refer to \hyperlink{_ultra_8h}{Ultra.\+h} file. 
+
+part number\+: H\+C-\/\+S\+R04 
+
+\subsection{Function Documentation}
+\index{Ultra.\+c@{Ultra.\+c}!C\+Y\+\_\+\+I\+SR@{C\+Y\+\_\+\+I\+SR}}
+\index{C\+Y\+\_\+\+I\+SR@{C\+Y\+\_\+\+I\+SR}!Ultra.\+c@{Ultra.\+c}}
+\subsubsection[{\texorpdfstring{C\+Y\+\_\+\+I\+S\+R(\+S\+Y\+S\+\_\+\+I\+S\+R)}{CY_ISR(SYS_ISR)}}]{\setlength{\rightskip}{0pt plus 5cm}C\+Y\+\_\+\+I\+SR (
+\begin{DoxyParamCaption}
+\item[{S\+Y\+S\+\_\+\+I\+SR}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{_ultra_8c_a6deea480085144db0e9344d8bc4d30ec}{}\label{_ultra_8c_a6deea480085144db0e9344d8bc4d30ec}
+
+
+Systick Interrupt Handler. 
+
+Counting system ticks to occur trigger 
+\begin{DoxyCode}
+20 \{
+21     \hyperlink{_ultra_8c_a9cfbb269728dc4185236d28be58d9eab}{cnt}++;
+22   
+23     \textcolor{keywordflow}{if}(\hyperlink{_ultra_8c_a9cfbb269728dc4185236d28be58d9eab}{cnt}==1)
+24        Trig\_Write(1);           \textcolor{comment}{// Trigger High}
+25     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(\hyperlink{_ultra_8c_a9cfbb269728dc4185236d28be58d9eab}{cnt}==100)
+26         Trig\_Write(0);           \textcolor{comment}{// Trigger Low}
+27     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(\hyperlink{_ultra_8c_a9cfbb269728dc4185236d28be58d9eab}{cnt}==1100)
+28         \hyperlink{_ultra_8c_a9cfbb269728dc4185236d28be58d9eab}{cnt}=0;  
+29 \}
+\end{DoxyCode}
+\index{Ultra.\+c@{Ultra.\+c}!C\+Y\+\_\+\+I\+SR@{C\+Y\+\_\+\+I\+SR}}
+\index{C\+Y\+\_\+\+I\+SR@{C\+Y\+\_\+\+I\+SR}!Ultra.\+c@{Ultra.\+c}}
+\subsubsection[{\texorpdfstring{C\+Y\+\_\+\+I\+S\+R(ultra\+\_\+isr\+\_\+handler)}{CY_ISR(ultra_isr_handler)}}]{\setlength{\rightskip}{0pt plus 5cm}C\+Y\+\_\+\+I\+SR (
+\begin{DoxyParamCaption}
+\item[{ultra\+\_\+isr\+\_\+handler}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{_ultra_8c_afceff2208ec9937f6a53bb1a2734b5e9}{}\label{_ultra_8c_afceff2208ec9937f6a53bb1a2734b5e9}
+
+
+Ultra Sonic Sensor Interrupt Handler. 
+
+Measuring reflecting time to decide distance between Zumobot and obstacle 
+\begin{DoxyCode}
+37 \{
+38     Timer\_Stop();
+39     
+40     Timer\_ReadStatusRegister();
+41     
+42     \textcolor{keywordflow}{if}(!Echo\_Read()) \{
+43         \hyperlink{_ultra_8c_a93658cf9f03a3303cdb292e655c657e7}{time} = Timer\_ReadCounter();             \textcolor{comment}{// Read counter value of Timer}
+44         
+45         \hyperlink{_ultra_8c_a06f14a9abd47b91465f895d5259cdc1b}{distance} = (float)\hyperlink{_ultra_8c_a93658cf9f03a3303cdb292e655c657e7}{time} / 58;            \textcolor{comment}{// us / 58 = centimeters}
+46         \hyperlink{_ultra_8c_ade940a7370c158f9cae4af33aa7b213b}{cent} = 5 * (\hyperlink{_ultra_8c_a06f14a9abd47b91465f895d5259cdc1b}{distance} - 16) / 4;         \textcolor{comment}{// calibration for this Timer(800 kHz)}
+47         
+48         \textcolor{comment}{//If you want to print out the value  }
+49         \textcolor{comment}{//printf("i = %6d, distance = %4d                \(\backslash\)r\(\backslash\)n", time, (int)cent);}
+50         
+51         Timer\_WriteCounter(0xFFFF);             \textcolor{comment}{// Counter initialization}
+52     \}
+53     \textcolor{keywordflow}{else} \{
+54          Timer\_WriteCounter(0xFFFF);            \textcolor{comment}{// Counter initialization}
+55     \}
+56     Timer\_Start();
+57 \}
+\end{DoxyCode}
+\index{Ultra.\+c@{Ultra.\+c}!Ultra\+\_\+\+Start@{Ultra\+\_\+\+Start}}
+\index{Ultra\+\_\+\+Start@{Ultra\+\_\+\+Start}!Ultra.\+c@{Ultra.\+c}}
+\subsubsection[{\texorpdfstring{Ultra\+\_\+\+Start()}{Ultra_Start()}}]{\setlength{\rightskip}{0pt plus 5cm}void Ultra\+\_\+\+Start (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{_ultra_8c_ad0439af59f4e0ae0b4236343bdad4356}{}\label{_ultra_8c_ad0439af59f4e0ae0b4236343bdad4356}
+
+
+Starting Ultra Sonic Sensor. 
+
+
+\begin{DoxyCode}
+65 \{
+66     CyIntSetSysVector((SysTick\_IRQn + 16), SYS\_ISR);    \textcolor{comment}{// Map systick ISR to SYS\_ISR}
+67     SysTick\_Config(\hyperlink{_ultra_8h_a61399708f7c3e062c2a53c480dfbc7e0}{NUMBER\_OF\_TICKS});                    \textcolor{comment}{// Enable Systick Timer}
+68     ultra\_isr\_StartEx(ultra\_isr\_handler);               \textcolor{comment}{// Start ultra sonic interrupt}
+69     Timer\_Start();                                      \textcolor{comment}{// Start Timer}
+70 \}
+\end{DoxyCode}
+
+
+\subsection{Variable Documentation}
+\index{Ultra.\+c@{Ultra.\+c}!cent@{cent}}
+\index{cent@{cent}!Ultra.\+c@{Ultra.\+c}}
+\subsubsection[{\texorpdfstring{cent}{cent}}]{\setlength{\rightskip}{0pt plus 5cm}float cent = 0}\hypertarget{_ultra_8c_ade940a7370c158f9cae4af33aa7b213b}{}\label{_ultra_8c_ade940a7370c158f9cae4af33aa7b213b}
+\index{Ultra.\+c@{Ultra.\+c}!cnt@{cnt}}
+\index{cnt@{cnt}!Ultra.\+c@{Ultra.\+c}}
+\subsubsection[{\texorpdfstring{cnt}{cnt}}]{\setlength{\rightskip}{0pt plus 5cm}int cnt =0}\hypertarget{_ultra_8c_a9cfbb269728dc4185236d28be58d9eab}{}\label{_ultra_8c_a9cfbb269728dc4185236d28be58d9eab}
+\index{Ultra.\+c@{Ultra.\+c}!distance@{distance}}
+\index{distance@{distance}!Ultra.\+c@{Ultra.\+c}}
+\subsubsection[{\texorpdfstring{distance}{distance}}]{\setlength{\rightskip}{0pt plus 5cm}float distance = 0}\hypertarget{_ultra_8c_a06f14a9abd47b91465f895d5259cdc1b}{}\label{_ultra_8c_a06f14a9abd47b91465f895d5259cdc1b}
+\index{Ultra.\+c@{Ultra.\+c}!time@{time}}
+\index{time@{time}!Ultra.\+c@{Ultra.\+c}}
+\subsubsection[{\texorpdfstring{time}{time}}]{\setlength{\rightskip}{0pt plus 5cm}uint16\+\_\+t time = 0}\hypertarget{_ultra_8c_a93658cf9f03a3303cdb292e655c657e7}{}\label{_ultra_8c_a93658cf9f03a3303cdb292e655c657e7}
