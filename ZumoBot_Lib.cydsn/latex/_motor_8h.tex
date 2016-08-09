@@ -1,0 +1,150 @@
+\hypertarget{_motor_8h}{}\section{Motor.\+h File Reference}
+\label{_motor_8h}\index{Motor.\+h@{Motor.\+h}}
+
+
+Motor header file.  
+
+
+{\ttfamily \#include $<$project.\+h$>$}\\*
+{\ttfamily \#include $<$stdio.\+h$>$}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{_motor_8h_aedf963a3955689230a4bb0e19371ee95}{motor\+\_\+\+Start} ()
+\begin{DoxyCompactList}\small\item\em Starting motor sensors. \end{DoxyCompactList}\item 
+void \hyperlink{_motor_8h_a9144ccef0dec115cf85ae9d550c95e46}{motor\+\_\+\+Stop} ()
+\begin{DoxyCompactList}\small\item\em Stopping motor sensors. \end{DoxyCompactList}\item 
+void \hyperlink{_motor_8h_aaf015971e5702cbe18ed2a2088fb9d2a}{motor\+\_\+forward} (uint8 speed, uint32 delay)
+\begin{DoxyCompactList}\small\item\em Moving motors forward. \end{DoxyCompactList}\item 
+void \hyperlink{_motor_8h_ac16f56d80c09356333cdb6e0d33ce666}{motor\+\_\+turn} (uint8 l\+\_\+speed, uint8 r\+\_\+speed, uint32 delay)
+\begin{DoxyCompactList}\small\item\em Moving motors to make a turn. \end{DoxyCompactList}\item 
+void \hyperlink{_motor_8h_a6ac85cf3283ee73db31cf60e946ce7f4}{motor\+\_\+backward} (uint8 speed, uint32 delay)
+\begin{DoxyCompactList}\small\item\em Moving motors backward. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Motor header file. 
+
+If you want to use Motor methods, Include \hyperlink{_motor_8h}{Motor.\+h} file. 
+
+\subsection{Function Documentation}
+\index{Motor.\+h@{Motor.\+h}!motor\+\_\+backward@{motor\+\_\+backward}}
+\index{motor\+\_\+backward@{motor\+\_\+backward}!Motor.\+h@{Motor.\+h}}
+\subsubsection[{\texorpdfstring{motor\+\_\+backward(uint8 speed, uint32 delay)}{motor_backward(uint8 speed, uint32 delay)}}]{\setlength{\rightskip}{0pt plus 5cm}void motor\+\_\+backward (
+\begin{DoxyParamCaption}
+\item[{uint8}]{speed, }
+\item[{uint32}]{delay}
+\end{DoxyParamCaption}
+)}\hypertarget{_motor_8h_a6ac85cf3283ee73db31cf60e946ce7f4}{}\label{_motor_8h_a6ac85cf3283ee73db31cf60e946ce7f4}
+
+
+Moving motors backward. 
+
+setting backward mode to each motors and gives same speed to each side of P\+WM 
+\begin{DoxyParams}{Parameters}
+{\em uint8} & speed \+: speed value \\
+\hline
+{\em uint32} & delay \+: delay time \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+65 \{
+66     MotorDirLeft\_Write(1);      \textcolor{comment}{// set LeftMotor backward mode}
+67     MotorDirRight\_Write(1);     \textcolor{comment}{// set RightMotor backward mode}
+68     PWM\_WriteCompare1(speed); 
+69     PWM\_WriteCompare2(speed); 
+70     CyDelay(delay);
+71 \}
+\end{DoxyCode}
+\index{Motor.\+h@{Motor.\+h}!motor\+\_\+forward@{motor\+\_\+forward}}
+\index{motor\+\_\+forward@{motor\+\_\+forward}!Motor.\+h@{Motor.\+h}}
+\subsubsection[{\texorpdfstring{motor\+\_\+forward(uint8 speed, uint32 delay)}{motor_forward(uint8 speed, uint32 delay)}}]{\setlength{\rightskip}{0pt plus 5cm}void motor\+\_\+forward (
+\begin{DoxyParamCaption}
+\item[{uint8}]{speed, }
+\item[{uint32}]{delay}
+\end{DoxyParamCaption}
+)}\hypertarget{_motor_8h_aaf015971e5702cbe18ed2a2088fb9d2a}{}\label{_motor_8h_aaf015971e5702cbe18ed2a2088fb9d2a}
+
+
+Moving motors forward. 
+
+giveing same speed to each side of P\+WM to make motors go forward 
+\begin{DoxyParams}{Parameters}
+{\em uint8} & speed \+: speed value \\
+\hline
+{\em uint32} & delay \+: delay time \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+36 \{
+37     PWM\_WriteCompare1(speed); 
+38     PWM\_WriteCompare2(speed); 
+39     CyDelay(delay);
+40 \}
+\end{DoxyCode}
+\index{Motor.\+h@{Motor.\+h}!motor\+\_\+\+Start@{motor\+\_\+\+Start}}
+\index{motor\+\_\+\+Start@{motor\+\_\+\+Start}!Motor.\+h@{Motor.\+h}}
+\subsubsection[{\texorpdfstring{motor\+\_\+\+Start()}{motor_Start()}}]{\setlength{\rightskip}{0pt plus 5cm}void motor\+\_\+\+Start (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{_motor_8h_aedf963a3955689230a4bb0e19371ee95}{}\label{_motor_8h_aedf963a3955689230a4bb0e19371ee95}
+
+
+Starting motor sensors. 
+
+
+\begin{DoxyCode}
+14 \{
+15     PWM\_Start();
+16 \}
+\end{DoxyCode}
+\index{Motor.\+h@{Motor.\+h}!motor\+\_\+\+Stop@{motor\+\_\+\+Stop}}
+\index{motor\+\_\+\+Stop@{motor\+\_\+\+Stop}!Motor.\+h@{Motor.\+h}}
+\subsubsection[{\texorpdfstring{motor\+\_\+\+Stop()}{motor_Stop()}}]{\setlength{\rightskip}{0pt plus 5cm}void motor\+\_\+\+Stop (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{_motor_8h_a9144ccef0dec115cf85ae9d550c95e46}{}\label{_motor_8h_a9144ccef0dec115cf85ae9d550c95e46}
+
+
+Stopping motor sensors. 
+
+
+\begin{DoxyCode}
+24 \{
+25     PWM\_Stop();
+26 \}
+\end{DoxyCode}
+\index{Motor.\+h@{Motor.\+h}!motor\+\_\+turn@{motor\+\_\+turn}}
+\index{motor\+\_\+turn@{motor\+\_\+turn}!Motor.\+h@{Motor.\+h}}
+\subsubsection[{\texorpdfstring{motor\+\_\+turn(uint8 l\+\_\+speed, uint8 r\+\_\+speed, uint32 delay)}{motor_turn(uint8 l_speed, uint8 r_speed, uint32 delay)}}]{\setlength{\rightskip}{0pt plus 5cm}void motor\+\_\+turn (
+\begin{DoxyParamCaption}
+\item[{uint8}]{l\+\_\+speed, }
+\item[{uint8}]{r\+\_\+speed, }
+\item[{uint32}]{delay}
+\end{DoxyParamCaption}
+)}\hypertarget{_motor_8h_ac16f56d80c09356333cdb6e0d33ce666}{}\label{_motor_8h_ac16f56d80c09356333cdb6e0d33ce666}
+
+
+Moving motors to make a turn. 
+
+moving left when l\+\_\+speed $<$ r\+\_\+speed or moving right when l\+\_\+speed $>$ r\+\_\+speed 
+\begin{DoxyParams}{Parameters}
+{\em uint8} & l\+\_\+speed \+: left motor speed value \\
+\hline
+{\em uint8} & r\+\_\+speed \+: right motor speed value \\
+\hline
+{\em uint32} & delay \+: delay time \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+51 \{
+52     PWM\_WriteCompare1(l\_speed); 
+53     PWM\_WriteCompare2(r\_speed); 
+54     CyDelay(delay);
+55 \}
+\end{DoxyCode}

@@ -1,0 +1,172 @@
+\hypertarget{_i_r_8c}{}\section{I\+R.\+c File Reference}
+\label{_i_r_8c}\index{I\+R.\+c@{I\+R.\+c}}
+
+
+Basic methods for operating IR receiver. For more details, please refer to \hyperlink{_i_r_8h}{I\+R.\+h} file.  
+
+
+{\ttfamily \#include \char`\"{}I\+R.\+h\char`\"{}}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{_i_r_8c_a558e269c84b558ab447661ba13b0a22b}{wait\+\_\+going\+\_\+up} ()
+\begin{DoxyCompactList}\small\item\em Waiting until signal goes up. \end{DoxyCompactList}\item 
+void \hyperlink{_i_r_8c_affb2f19051323c79470bd3ca700a4880}{wait\+\_\+going\+\_\+down} ()
+\begin{DoxyCompactList}\small\item\em Waiting until signal goes down. \end{DoxyCompactList}\item 
+int \hyperlink{_i_r_8c_ab344cb8ffdc34d44479c6e7334025b65}{count\+\_\+downtime} ()
+\begin{DoxyCompactList}\small\item\em Counting to signal down. \end{DoxyCompactList}\item 
+int \hyperlink{_i_r_8c_aef3a68bbc905c6a1bd897dc60cc31c6d}{count\+\_\+uptime} ()
+\begin{DoxyCompactList}\small\item\em Counting to signal up. \end{DoxyCompactList}\item 
+int \hyperlink{_i_r_8c_abf2f1e240944d4062d5195881de279f2}{get\+\_\+\+IR} ()
+\begin{DoxyCompactList}\small\item\em Getting remote controller value. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Basic methods for operating IR receiver. For more details, please refer to \hyperlink{_i_r_8h}{I\+R.\+h} file. 
+
+part number\+: T\+S\+O\+P-\/2236 
+
+\subsection{Function Documentation}
+\index{I\+R.\+c@{I\+R.\+c}!count\+\_\+downtime@{count\+\_\+downtime}}
+\index{count\+\_\+downtime@{count\+\_\+downtime}!I\+R.\+c@{I\+R.\+c}}
+\subsubsection[{\texorpdfstring{count\+\_\+downtime()}{count_downtime()}}]{\setlength{\rightskip}{0pt plus 5cm}int count\+\_\+downtime (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{_i_r_8c_ab344cb8ffdc34d44479c6e7334025b65}{}\label{_i_r_8c_ab344cb8ffdc34d44479c6e7334025b65}
+
+
+Counting to signal down. 
+
+Measuring the time until I\+R\+\_\+receiver value goes up \begin{DoxyReturn}{Returns}
+int
+\begin{DoxyItemize}
+\item returns count time 
+\end{DoxyItemize}
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+36 \{
+37     \textcolor{keywordtype}{int} \hyperlink{_ultra_8c_a9cfbb269728dc4185236d28be58d9eab}{cnt} =0;
+38     \textcolor{keywordflow}{while}(!IR\_receiver\_Read()==1)
+39         cnt++;
+40     
+41     \textcolor{keywordflow}{return} \hyperlink{_ultra_8c_a9cfbb269728dc4185236d28be58d9eab}{cnt};
+42 \}
+\end{DoxyCode}
+\index{I\+R.\+c@{I\+R.\+c}!count\+\_\+uptime@{count\+\_\+uptime}}
+\index{count\+\_\+uptime@{count\+\_\+uptime}!I\+R.\+c@{I\+R.\+c}}
+\subsubsection[{\texorpdfstring{count\+\_\+uptime()}{count_uptime()}}]{\setlength{\rightskip}{0pt plus 5cm}int count\+\_\+uptime (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{_i_r_8c_aef3a68bbc905c6a1bd897dc60cc31c6d}{}\label{_i_r_8c_aef3a68bbc905c6a1bd897dc60cc31c6d}
+
+
+Counting to signal up. 
+
+Measuring the time until I\+R\+\_\+receiver value goes down \begin{DoxyReturn}{Returns}
+int
+\begin{DoxyItemize}
+\item returns count time 
+\end{DoxyItemize}
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+52 \{
+53     \textcolor{keywordtype}{int} \hyperlink{_ultra_8c_a9cfbb269728dc4185236d28be58d9eab}{cnt} =0;
+54     \textcolor{keywordflow}{while}(IR\_receiver\_Read()==1)
+55         cnt++;
+56     
+57     \textcolor{keywordflow}{return} \hyperlink{_ultra_8c_a9cfbb269728dc4185236d28be58d9eab}{cnt};
+58 \}
+\end{DoxyCode}
+\index{I\+R.\+c@{I\+R.\+c}!get\+\_\+\+IR@{get\+\_\+\+IR}}
+\index{get\+\_\+\+IR@{get\+\_\+\+IR}!I\+R.\+c@{I\+R.\+c}}
+\subsubsection[{\texorpdfstring{get\+\_\+\+I\+R()}{get_IR()}}]{\setlength{\rightskip}{0pt plus 5cm}int get\+\_\+\+IR (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{_i_r_8c_abf2f1e240944d4062d5195881de279f2}{}\label{_i_r_8c_abf2f1e240944d4062d5195881de279f2}
+
+
+Getting remote controller value. 
+
+Getting each of the value sent by remote controller \begin{DoxyReturn}{Returns}
+int
+\begin{DoxyItemize}
+\item returns hex value 
+\end{DoxyItemize}
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+68 \{
+69     uint8 bit[33]=\{0\};
+70     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} val=0;
+71     uint t1, t2, i, j;
+72     
+73     \hyperlink{_i_r_8c_affb2f19051323c79470bd3ca700a4880}{wait\_going\_down}();
+74     
+75     \textcolor{keywordflow}{for}(i = 0; i < 33; i++)     \textcolor{comment}{// loop 33times ( 1bit - Start bit, 32bits - Databit)}
+76     \{
+77         \textcolor{keywordtype}{int} t1, t2;
+78         t1 = 0;
+79         t2 = 0;
+80         
+81         t1 = \hyperlink{_i_r_8c_ab344cb8ffdc34d44479c6e7334025b65}{count\_downtime}();
+82         t2 = \hyperlink{_i_r_8c_aef3a68bbc905c6a1bd897dc60cc31c6d}{count\_uptime}();
+83         
+84         \textcolor{comment}{// If up time is longer than down time, value of the bit becomes 1}
+85         \textcolor{keywordflow}{if}(t2 > t1)
+86             bit[i]=1;
+87         \textcolor{keywordflow}{else}
+88             bit[i]=0; 
+89     \} 
+90    
+91     \textcolor{comment}{/* // If you want to see binary value}
+92 \textcolor{comment}{    int cnt;}
+93 \textcolor{comment}{    for(cnt=0; cnt<33; cnt++)}
+94 \textcolor{comment}{        printf("%d ",bit[cnt]);}
+95 \textcolor{comment}{    printf("\(\backslash\)r\(\backslash\)n\(\backslash\)n");}
+96 \textcolor{comment}{    */}
+97    
+98     \textcolor{comment}{// make binary value to hex value}
+99     \textcolor{keywordflow}{for}( i=0; i<32; i++)
+100         val += bit[i+1]*pow(2,i);
+101     
+102     \textcolor{keywordflow}{return} val;
+103 \}\end{DoxyCode}
+\index{I\+R.\+c@{I\+R.\+c}!wait\+\_\+going\+\_\+down@{wait\+\_\+going\+\_\+down}}
+\index{wait\+\_\+going\+\_\+down@{wait\+\_\+going\+\_\+down}!I\+R.\+c@{I\+R.\+c}}
+\subsubsection[{\texorpdfstring{wait\+\_\+going\+\_\+down()}{wait_going_down()}}]{\setlength{\rightskip}{0pt plus 5cm}void wait\+\_\+going\+\_\+down (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{_i_r_8c_affb2f19051323c79470bd3ca700a4880}{}\label{_i_r_8c_affb2f19051323c79470bd3ca700a4880}
+
+
+Waiting until signal goes down. 
+
+continue looping before I\+R\+\_\+receiver value becomes 0 
+\begin{DoxyCode}
+24 \{
+25     \textcolor{keywordflow}{while}(IR\_receiver\_Read()==1);
+26 \}
+\end{DoxyCode}
+\index{I\+R.\+c@{I\+R.\+c}!wait\+\_\+going\+\_\+up@{wait\+\_\+going\+\_\+up}}
+\index{wait\+\_\+going\+\_\+up@{wait\+\_\+going\+\_\+up}!I\+R.\+c@{I\+R.\+c}}
+\subsubsection[{\texorpdfstring{wait\+\_\+going\+\_\+up()}{wait_going_up()}}]{\setlength{\rightskip}{0pt plus 5cm}void wait\+\_\+going\+\_\+up (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{_i_r_8c_a558e269c84b558ab447661ba13b0a22b}{}\label{_i_r_8c_a558e269c84b558ab447661ba13b0a22b}
+
+
+Waiting until signal goes up. 
+
+continue looping before I\+R\+\_\+receiver value becomes 1 
+\begin{DoxyCode}
+14 \{
+15     \textcolor{keywordflow}{while}(!IR\_receiver\_Read()==1);
+16 \}    
+\end{DoxyCode}

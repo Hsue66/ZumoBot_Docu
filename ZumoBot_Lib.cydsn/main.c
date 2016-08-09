@@ -1,6 +1,6 @@
 /**
 * @mainpage ZumoBot Project
-* @breif    You can make your own ZumoBot with various sensors.
+* @brief    You can make your own ZumoBot with various sensors.
 * @details  <br>
     <p>
     <B>General</B><br>
@@ -43,7 +43,11 @@
 
 int rread(void);
 
-
+/**
+ * @file    main.c
+ * @brief   
+ * @details  ** You should enable global interrupt for operating properly. **<br>&nbsp;&nbsp;&nbsp;CyGlobalIntEnable;<br>
+*/
 int main()
 {
     

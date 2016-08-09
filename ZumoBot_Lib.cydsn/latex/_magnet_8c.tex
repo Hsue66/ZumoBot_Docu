@@ -1,0 +1,54 @@
+\hypertarget{_magnet_8c}{}\section{Magnet.\+c File Reference}
+\label{_magnet_8c}\index{Magnet.\+c@{Magnet.\+c}}
+
+
+Basic methods for operating magnetometer. For more details, please refer to \hyperlink{_accel__magnet_8h}{Accel\+\_\+magnet.\+h} file.  
+
+
+{\ttfamily \#include \char`\"{}accel\+\_\+magnet.\+h\char`\"{}}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{_magnet_8c_af98fb6190588da170637da1531c2ecbc}{heading} (double X\+\_\+\+A\+X\+IS, double Y\+\_\+\+A\+X\+IS)
+\begin{DoxyCompactList}\small\item\em Heading. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Basic methods for operating magnetometer. For more details, please refer to \hyperlink{_accel__magnet_8h}{Accel\+\_\+magnet.\+h} file. 
+
+part number\+: L\+S\+M303D (simultaneously used with accelerometer and included in Zumo shield) 
+
+\subsection{Function Documentation}
+\index{Magnet.\+c@{Magnet.\+c}!heading@{heading}}
+\index{heading@{heading}!Magnet.\+c@{Magnet.\+c}}
+\subsubsection[{\texorpdfstring{heading(double X\+\_\+\+A\+X\+I\+S, double Y\+\_\+\+A\+X\+I\+S)}{heading(double X_AXIS, double Y_AXIS)}}]{\setlength{\rightskip}{0pt plus 5cm}void heading (
+\begin{DoxyParamCaption}
+\item[{double}]{X\+\_\+\+A\+X\+IS, }
+\item[{double}]{Y\+\_\+\+A\+X\+IS}
+\end{DoxyParamCaption}
+)}\hypertarget{_magnet_8c_af98fb6190588da170637da1531c2ecbc}{}\label{_magnet_8c_af98fb6190588da170637da1531c2ecbc}
+
+
+Heading. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em double} & X\+\_\+\+A\+X\+IS \+: X axis value \\
+\hline
+{\em double} & Y\+\_\+\+A\+X\+IS \+: Y axis value \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+16 \{
+17     \textcolor{keywordtype}{double} \hyperlink{_magnet_8c_af98fb6190588da170637da1531c2ecbc}{heading};
+18     heading = 180 * atan2 (X\_AXIS, Y\_AXIS) / M\_PI;
+19     
+20     \textcolor{keywordflow}{if}(heading < 0)
+21         heading += 360;
+22     
+23     \textcolor{comment}{//If you want to print out the value  }
+24     \textcolor{comment}{//printf("heading: %7.3f \(\backslash\)r\(\backslash\)n", heading);}
+25     CyDelay(250);
+26 \}
+\end{DoxyCode}

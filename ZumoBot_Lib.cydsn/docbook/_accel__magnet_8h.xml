@@ -1,0 +1,159 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_accel__magnet_8h">
+    <title>Accel_magnet.h File Reference</title>
+    <programlisting>#include &lt;project.h&gt;</programlisting>
+    <programlisting>#include &lt;stdio.h&gt;</programlisting>
+    <programlisting>#include &lt;math.h&gt;</programlisting>
+        <section>
+            <title>Macros</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="_accel__magnet_8h_1a7da7ddf0d542d6916b28a707fb2bef2b">WHO_AM_I_ACCEL</link> 0x0F</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="_accel__magnet_8h_1aadedecb8e36e3cfb126f7f6b1592d8b2">ACCEL_MAG_ADDR</link> 0x1D</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="_accel__magnet_8h_1aea1ed9f04c2df9d9840f0c1e99eaa7b3">ACCEL_CTRL1_REG</link> 0x20</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="_accel__magnet_8h_1abb6c71ce21b8d7472ce7f5b7315b3bce">ACCEL_CTRL7_REG</link> 0x26</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="_accel__magnet_8h_1abab698c56e01e1fd410398c4e7beaaf3">OUT_X_L_M</link> 0x08</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="_accel__magnet_8h_1a2489b398fe6a7418ea8f45c61cce4f9b">OUT_X_H_M</link> 0x09</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="_accel__magnet_8h_1ac2a68cdf4dc38a1e6953a131d193aac2">OUT_Y_L_M</link> 0x0A</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="_accel__magnet_8h_1a296228caa98301cb5cd765cafc9ee7b6">OUT_Y_H_M</link> 0x0B</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="_accel__magnet_8h_1ae30aefcb21f60ce603a214d5678b8f9d">OUT_Z_L_M</link> 0x0C</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="_accel__magnet_8h_1abbf1fdc9b183596b72618c113b30718b">OUT_Z_H_M</link> 0x0D</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="_accel__magnet_8h_1af07420cc51cd538201554ceb8187eb32">OUT_X_L_A</link> 0x28</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="_accel__magnet_8h_1aff0544c632e0f9a08e9e4ed32a6f8a21">OUT_X_H_A</link> 0x29</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="_accel__magnet_8h_1a7c057ac2609133a18c32ae2b630daafb">OUT_Y_L_A</link> 0x2A</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="_accel__magnet_8h_1affecb4c00ec91d1cb8fd0e2e00dc268f">OUT_Y_H_A</link> 0x2B</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="_accel__magnet_8h_1a09387c436745ba77d147288050d7d8c1">OUT_Z_L_A</link> 0x2C</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="_accel__magnet_8h_1afd262b693d21cb2585621aa7f8c7d2a1">OUT_Z_H_A</link> 0x2D</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Functions</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint16 <link linkend="_accel__magnet_8h_1a56fdd21f3684adcbb288666abd444296">value_convert_magnet</link> (
+uint8 AXIS_H, uint8 AXIS_L)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="_accel__magnet_8h_1af98fb6190588da170637da1531c2ecbc">heading</link> (
+double X_AXIS, double Y_AXIS)<para><emphasis>Heading.</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="_accel__magnet_8h_1a66765f03c5817d1c93c09d519b67f58a">value_convert_accel</link> (
+uint16 X_AXIS, uint16 Y_AXIS, uint16 Z_AXIS)<para><emphasis>Converting raw value.</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+        <title>Detailed Description</title>
+
+<para>Accelerometer and Magnetometer header file. </para>
+
+<para>If you want to use Accelerometer methods, you need to include <link linkend="_accel__magnet_8h">Accel_magnet.h</link> file. Defining register address for basic setting up and reading sensor output values. </para>
+    <para>Definition in file C:/Users/dufma/Desktop/Project/ZumoBot_Docu/ZumoBot_Lib.cydsn/Accel_magnet.h</para>
+    </simplesect>
+</section>

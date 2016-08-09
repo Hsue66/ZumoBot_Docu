@@ -7,6 +7,10 @@
 #include <project.h>
 
 
+/**
+* @brief    Reflectance Sensor raw values
+* @details  raw value of Reflectance Sensor
+*/
 volatile struct sensors_ {
     uint16_t ll;
     //uint16_t lc; // not used at the moment
@@ -17,6 +21,10 @@ volatile struct sensors_ {
 } sensors;
 
 
+/**
+* @brief    Reflectance Sensor converted values
+* @details  converted value (1 or 0) of Reflectance Sensor
+*/
 volatile struct digital_sensor_value_ {         //digital value for recognizing black or white
     uint16_t ll;
     //uint16_t lc; // not used at the moment

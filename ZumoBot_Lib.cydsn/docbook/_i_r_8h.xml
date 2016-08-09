@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_i_r_8h">
+    <title>IR.h File Reference</title>
+    <programlisting>#include &lt;project.h&gt;</programlisting>
+    <programlisting>#include &lt;stdio.h&gt;</programlisting>
+    <programlisting>#include &lt;math.h&gt;</programlisting>
+        <section>
+            <title>Functions</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="_i_r_8h_1a558e269c84b558ab447661ba13b0a22b">wait_going_up</link> (
+)<para><emphasis>Waiting until signal goes up.</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="_i_r_8h_1affb2f19051323c79470bd3ca700a4880">wait_going_down</link> (
+)<para><emphasis>Waiting until signal goes down.</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="_i_r_8h_1aef3a68bbc905c6a1bd897dc60cc31c6d">count_uptime</link> (
+)<para><emphasis>Counting to signal up.</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="_i_r_8h_1ab344cb8ffdc34d44479c6e7334025b65">count_downtime</link> (
+)<para><emphasis>Counting to signal down.</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="_i_r_8h_1abf2f1e240944d4062d5195881de279f2">get_IR</link> (
+)<para><emphasis>Getting remote controller value.</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+        <title>Detailed Description</title>
+
+<para>IR receiver header file. </para>
+
+<para>If you want to use IR methods, Include <link linkend="_i_r_8h">IR.h</link> file. </para>
+    <para>Definition in file C:/Users/dufma/Desktop/Project/ZumoBot_Docu/ZumoBot_Lib.cydsn/IR.h</para>
+    </simplesect>
+</section>
