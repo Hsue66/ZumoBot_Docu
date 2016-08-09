@@ -166,10 +166,16 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Moving motors backward. </p>
-<p>setting backward mode to each motors and gives same speed to each side of PWM </p>
+<p>setting backward mode to each motors and gives same speed to each side of PWM </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">uint8</td><td>speed : speed value </td></tr>
+    <tr><td class="paramname">uint32</td><td>delay : delay time </td></tr>
+  </table>
+  </dd>
+</dl>
 
-<p>Definition at line <a class="el" href="_motor_8c_source.html#l00055">55</a> of file <a class="el" href="_motor_8c_source.html">Motor.c</a>.</p>
-<div class="fragment"><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;{</div><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    MotorDirLeft_Write(1);      <span class="comment">// set LeftMotor backward mode</span></div><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    MotorDirRight_Write(1);     <span class="comment">// set RightMotor backward mode</span></div><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    PWM_WriteCompare1(speed); </div><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    PWM_WriteCompare2(speed); </div><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    CyDelay(delay);</div><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;}</div></div><!-- fragment -->
+<p>Definition at line <a class="el" href="_motor_8c_source.html#l00064">64</a> of file <a class="el" href="_motor_8c_source.html">Motor.c</a>.</p>
+<div class="fragment"><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;{</div><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    MotorDirLeft_Write(1);      <span class="comment">// set LeftMotor backward mode</span></div><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    MotorDirRight_Write(1);     <span class="comment">// set RightMotor backward mode</span></div><div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    PWM_WriteCompare1(speed); </div><div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    PWM_WriteCompare2(speed); </div><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    CyDelay(delay);</div><div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;}</div></div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="aaf015971e5702cbe18ed2a2088fb9d2a"></a>
@@ -197,10 +203,16 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Moving motors forward. </p>
-<p>giveing same speed to each side of PWM to make motors go forward </p>
+<p>giveing same speed to each side of PWM to make motors go forward </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">uint8</td><td>speed : speed value </td></tr>
+    <tr><td class="paramname">uint32</td><td>delay : delay time </td></tr>
+  </table>
+  </dd>
+</dl>
 
-<p>Definition at line <a class="el" href="_motor_8c_source.html#l00032">32</a> of file <a class="el" href="_motor_8c_source.html">Motor.c</a>.</p>
-<div class="fragment"><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;{</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    PWM_WriteCompare1(speed); </div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    PWM_WriteCompare2(speed); </div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    CyDelay(delay);</div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;}</div></div><!-- fragment -->
+<p>Definition at line <a class="el" href="_motor_8c_source.html#l00035">35</a> of file <a class="el" href="_motor_8c_source.html">Motor.c</a>.</p>
+<div class="fragment"><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;{</div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    PWM_WriteCompare1(speed); </div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    PWM_WriteCompare2(speed); </div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    CyDelay(delay);</div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;}</div></div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="aedf963a3955689230a4bb0e19371ee95"></a>
@@ -272,10 +284,17 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Moving motors to make a turn. </p>
-<p>moving left when l_speed &lt; r_speed or moving right when l_speed &gt; r_speed </p>
+<p>moving left when l_speed &lt; r_speed or moving right when l_speed &gt; r_speed </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">uint8</td><td>l_speed : left motor speed value </td></tr>
+    <tr><td class="paramname">uint8</td><td>r_speed : right motor speed value </td></tr>
+    <tr><td class="paramname">uint32</td><td>delay : delay time </td></tr>
+  </table>
+  </dd>
+</dl>
 
-<p>Definition at line <a class="el" href="_motor_8c_source.html#l00043">43</a> of file <a class="el" href="_motor_8c_source.html">Motor.c</a>.</p>
-<div class="fragment"><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;{</div><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    PWM_WriteCompare1(l_speed); </div><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    PWM_WriteCompare2(r_speed); </div><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    CyDelay(delay);</div><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;}</div></div><!-- fragment -->
+<p>Definition at line <a class="el" href="_motor_8c_source.html#l00050">50</a> of file <a class="el" href="_motor_8c_source.html">Motor.c</a>.</p>
+<div class="fragment"><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;{</div><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    PWM_WriteCompare1(l_speed); </div><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    PWM_WriteCompare2(r_speed); </div><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    CyDelay(delay);</div><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;}</div></div><!-- fragment -->
 </div>
 </div>
 </div><!-- contents -->

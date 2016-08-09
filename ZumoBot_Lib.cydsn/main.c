@@ -2,24 +2,31 @@
 * @mainpage ZumoBot Project
 * @breif    You can make your own ZumoBot with various sensors.
 * @details  <br>
+    <p>
     <B>General</B><br>
     You will use Pololu Zumo Shields for your robot project with CY8CKIT-059(PSoC 5LP) from Cypress semiconductor.This 
     library has basic methods of various sensors and communications so that you can make what you want with them.
-
+    <br><br><br>
+    </p>
+    
+    <p>
     <B>Sensors</B><br>
-    Included:
-    <pre>    LSM303D: Accelerometer & Magnetometer
-             L3GD20H: Gyroscope
-             Reflectance sensor
-             Motors</pre>
-    Wii nunchuck<br>
-    TSOP-2236: IR Receiver<br>
-    HC-SR04: Ultrasonic sensor<br>
-    APDS-9301: Ambient light sensor<br>
-    IR LED<br>
-
+    &nbsp;Included: <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;LSM303D: Accelerometer & Magnetometer<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;L3GD20H: Gyroscope<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;Reflectance sensor<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;Motors
+    &nbsp;Wii nunchuck<br>
+    &nbsp;TSOP-2236: IR Receiver<br>
+    &nbsp;HC-SR04: Ultrasonic sensor<br>
+    &nbsp;APDS-9301: Ambient light sensor<br>
+    &nbsp;IR LED <br><br><br>
+    </p>
+    
+    <p>
     <B>Communication</B><br>
     I2C, UART, Serial<br>
+    </p>
 */
 
 #include <project.h>
@@ -144,7 +151,7 @@ int main()
     I2C_Start();
   
     uint8 X_L_A, X_H_A, Y_L_A, Y_H_A, Z_L_A, Z_H_A;
-    int16 X_AXIS, Y_AXIS, Z_AXIS;
+    int16 X_AXIS_A, Y_AXIS_A, Z_AXIS_A;
     
     I2C_write(ACCEL_MAG_ADDR, ACCEL_CTRL1_REG, 0x37);           // set accelerometer & magnetometer into active mode
     I2C_write(ACCEL_MAG_ADDR, ACCEL_CTRL7_REG, 0x22);
@@ -155,18 +162,18 @@ int main()
         //print out accelerometer output
         X_L_A = I2C_read(ACCEL_MAG_ADDR, OUT_X_L_A);
         X_H_A = I2C_read(ACCEL_MAG_ADDR, OUT_X_H_A);
-        X_AXIS = convert_raw(X_L_A, X_H_A);
+        X_AXIS_A = convert_raw(X_L_A, X_H_A);
         
         Y_L_A = I2C_read(ACCEL_MAG_ADDR, OUT_Y_L_A);
         Y_H_A = I2C_read(ACCEL_MAG_ADDR, OUT_Y_H_A);
-        Y_AXIS = convert_raw(Y_L_A, Y_H_A);
+        Y_AXIS_A = convert_raw(Y_L_A, Y_H_A);
         
         Z_L_A = I2C_read(ACCEL_MAG_ADDR, OUT_Z_L_A);
         Z_H_A = I2C_read(ACCEL_MAG_ADDR, OUT_Z_H_A);
-        Z_AXIS = convert_raw(Z_L_A, Z_H_A);
+        Z_AXIS_A = convert_raw(Z_L_A, Z_H_A);
         
         printf("ACCEL: %d %d %d %d %d %d \r\n", X_L_A, X_H_A, Y_L_A, Y_H_A, Z_L_A, Z_H_A);
-        value_convert_accel(X_AXIS, Y_AXIS, Z_AXIS);
+        value_convert_accel(X_AXIS_A, Y_AXIS_A, Z_AXIS_A);
         printf("\n");
         
         CyDelay(50);
@@ -226,10 +233,8 @@ int main()
   
     I2C_Start();
   
-    uint8 X_AXIS_L, X_AXIS_H, Y_AXIS_L, Y_AXIS_H, Z_AXIS_L, Z_AXIS_H;
-    //uint8 X_L_M, X_H_M, Y_L_M, Y_H_M, Z_L_M, Z_H_M;
-    //uint8 X_L_A, X_H_A, Y_L_A, Y_H_A, Z_L_A, Z_H_A;
-    int16 X_AXIS, Y_AXIS, Z_AXIS;
+    uint8 X_L_G, X_H_G, Y_L_G, Y_H_G, Z_L_G, Z_H_G;
+    int16 X_AXIS_G, Y_AXIS_G, Z_AXIS_G;
     
     I2C_write(GYRO_ADDR, GYRO_CTRL1_REG, 0x0F);             // set gyroscope into active mode
     I2C_write(GYRO_ADDR, GYRO_CTRL4_REG, 0x30);             // set full scale selection to 2000dps    
@@ -237,23 +242,23 @@ int main()
     for(;;)
     {
         //print out gyroscope output
-        X_AXIS_L = I2C_read(GYRO_ADDR, OUT_X_AXIS_L);
-        X_AXIS_H = I2C_read(GYRO_ADDR, OUT_X_AXIS_H);
-        X_AXIS = convert_raw(X_AXIS_H, X_AXIS_L);
+        X_L_G = I2C_read(GYRO_ADDR, OUT_X_AXIS_L);
+        X_H_G = I2C_read(GYRO_ADDR, OUT_X_AXIS_H);
+        X_AXIS_G = convert_raw(X_H_G, X_L_G);
         
         
-        Y_AXIS_L = I2C_read(GYRO_ADDR, OUT_Y_AXIS_L);
-        Y_AXIS_H = I2C_read(GYRO_ADDR, OUT_Y_AXIS_H);
-        Y_AXIS = convert_raw(Y_AXIS_H, Y_AXIS_L);
+        Y_L_G = I2C_read(GYRO_ADDR, OUT_Y_AXIS_L);
+        Y_H_G = I2C_read(GYRO_ADDR, OUT_Y_AXIS_H);
+        Y_AXIS_G = convert_raw(Y_H_G, Y_L_G);
         
         
-        Z_AXIS_L = I2C_read(GYRO_ADDR, OUT_Z_AXIS_L);
-        Z_AXIS_H = I2C_read(GYRO_ADDR, OUT_Z_AXIS_H);
-        Z_AXIS = convert_raw(Z_AXIS_H, Z_AXIS_L);
+        Z_L_G = I2C_read(GYRO_ADDR, OUT_Z_AXIS_L);
+        Z_H_G = I2C_read(GYRO_ADDR, OUT_Z_AXIS_H);
+        Z_AXIS_G = convert_raw(Z_H_G, Z_L_G);
      
-        printf("H L : %d %d %d %d %d %d \r\n", X_AXIS_L, X_AXIS_H, Y_AXIS_L, Y_AXIS_H, Z_AXIS_L, Z_AXIS_H);
-        printf("%d %d %d \r\n", X_AXIS, Y_AXIS, Z_AXIS);
-        //printf("%d %d %d \r\n", value_convert_gyro(X_AXIS), value_convert_gyro(Y_AXIS), value_convert_gyro(Z_AXIS));
+        printf("H L : %d %d %d %d %d %d \r\n", X_L_G, X_H_G, Y_L_G, Y_H_G, Z_L_G, Z_H_G);
+        printf("%d %d %d \r\n", X_AXIS_G, Y_AXIS_G, Z_AXIS_G);
+        //printf("%d %d %d \r\n", value_convert_gyro(X_AXIS_G), value_convert_gyro(Y_AXIS_G), value_convert_gyro(Z_AXIS_G));
         
        CyDelay(50);
     }

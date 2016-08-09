@@ -111,9 +111,11 @@ $(document).ready(function(){initNavTree('_accel__magnet_8h.html','');});
 </div><!--header-->
 <div class="contents">
 
-<p>Accelerometer header file.  
+<p>Accelerometer and Magnetometer header file.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;project.h&gt;</code><br />
+<code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;math.h&gt;</code><br />
 </div>
 <p><a href="_accel__magnet_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -162,13 +164,10 @@ Functions</h2></td></tr>
 <tr class="memitem:a66765f03c5817d1c93c09d519b67f58a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_accel__magnet_8h.html#a66765f03c5817d1c93c09d519b67f58a">value_convert_accel</a> (uint16 X_AXIS, uint16 Y_AXIS, uint16 Z_AXIS)</td></tr>
 <tr class="memdesc:a66765f03c5817d1c93c09d519b67f58a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converting raw value.  <a href="#a66765f03c5817d1c93c09d519b67f58a">More...</a><br /></td></tr>
 <tr class="separator:a66765f03c5817d1c93c09d519b67f58a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3dffc9c223a30888d7399406408059b8"><td class="memItemLeft" align="right" valign="top">uint16&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_accel__magnet_8h.html#a3dffc9c223a30888d7399406408059b8">convert_raw</a> (uint8 L, uint8 H)</td></tr>
-<tr class="memdesc:a3dffc9c223a30888d7399406408059b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Combining 8 bits of low and high outputs to 16 bits used for sensor value.  <a href="#a3dffc9c223a30888d7399406408059b8">More...</a><br /></td></tr>
-<tr class="separator:a3dffc9c223a30888d7399406408059b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Accelerometer header file. </p>
-<p>If you want to use Accelerometer methods, you need to include <a class="el" href="_accel__magnet_8h.html" title="Accelerometer header file. ">Accel_magnet.h</a> file. Defining register address for basic setting up and reading sensor output values. </p>
+<div class="textblock"><p>Accelerometer and Magnetometer header file. </p>
+<p>If you want to use Accelerometer methods, you need to include <a class="el" href="_accel__magnet_8h.html" title="Accelerometer and Magnetometer header file. ">Accel_magnet.h</a> file. Defining register address for basic setting up and reading sensor output values. </p>
 
 <p>Definition in file <a class="el" href="_accel__magnet_8h_source.html">Accel_magnet.h</a>.</p>
 </div><h2 class="groupheader">Macro Definition Documentation</h2>
@@ -182,7 +181,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_accel__magnet_8h_source.html#l00016">16</a> of file <a class="el" href="_accel__magnet_8h_source.html">Accel_magnet.h</a>.</p>
+<p>Definition at line <a class="el" href="_accel__magnet_8h_source.html#l00018">18</a> of file <a class="el" href="_accel__magnet_8h_source.html">Accel_magnet.h</a>.</p>
 
 </div>
 </div>
@@ -196,7 +195,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_accel__magnet_8h_source.html#l00017">17</a> of file <a class="el" href="_accel__magnet_8h_source.html">Accel_magnet.h</a>.</p>
+<p>Definition at line <a class="el" href="_accel__magnet_8h_source.html#l00019">19</a> of file <a class="el" href="_accel__magnet_8h_source.html">Accel_magnet.h</a>.</p>
 
 </div>
 </div>
@@ -210,7 +209,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_accel__magnet_8h_source.html#l00015">15</a> of file <a class="el" href="_accel__magnet_8h_source.html">Accel_magnet.h</a>.</p>
+<p>Definition at line <a class="el" href="_accel__magnet_8h_source.html#l00017">17</a> of file <a class="el" href="_accel__magnet_8h_source.html">Accel_magnet.h</a>.</p>
 
 </div>
 </div>
@@ -224,7 +223,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_accel__magnet_8h_source.html#l00027">27</a> of file <a class="el" href="_accel__magnet_8h_source.html">Accel_magnet.h</a>.</p>
+<p>Definition at line <a class="el" href="_accel__magnet_8h_source.html#l00029">29</a> of file <a class="el" href="_accel__magnet_8h_source.html">Accel_magnet.h</a>.</p>
 
 </div>
 </div>
@@ -238,7 +237,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_accel__magnet_8h_source.html#l00020">20</a> of file <a class="el" href="_accel__magnet_8h_source.html">Accel_magnet.h</a>.</p>
+<p>Definition at line <a class="el" href="_accel__magnet_8h_source.html#l00022">22</a> of file <a class="el" href="_accel__magnet_8h_source.html">Accel_magnet.h</a>.</p>
 
 </div>
 </div>
@@ -252,7 +251,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_accel__magnet_8h_source.html#l00026">26</a> of file <a class="el" href="_accel__magnet_8h_source.html">Accel_magnet.h</a>.</p>
+<p>Definition at line <a class="el" href="_accel__magnet_8h_source.html#l00028">28</a> of file <a class="el" href="_accel__magnet_8h_source.html">Accel_magnet.h</a>.</p>
 
 </div>
 </div>
@@ -266,7 +265,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_accel__magnet_8h_source.html#l00019">19</a> of file <a class="el" href="_accel__magnet_8h_source.html">Accel_magnet.h</a>.</p>
+<p>Definition at line <a class="el" href="_accel__magnet_8h_source.html#l00021">21</a> of file <a class="el" href="_accel__magnet_8h_source.html">Accel_magnet.h</a>.</p>
 
 </div>
 </div>
@@ -280,7 +279,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_accel__magnet_8h_source.html#l00029">29</a> of file <a class="el" href="_accel__magnet_8h_source.html">Accel_magnet.h</a>.</p>
+<p>Definition at line <a class="el" href="_accel__magnet_8h_source.html#l00031">31</a> of file <a class="el" href="_accel__magnet_8h_source.html">Accel_magnet.h</a>.</p>
 
 </div>
 </div>
@@ -294,7 +293,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_accel__magnet_8h_source.html#l00022">22</a> of file <a class="el" href="_accel__magnet_8h_source.html">Accel_magnet.h</a>.</p>
+<p>Definition at line <a class="el" href="_accel__magnet_8h_source.html#l00024">24</a> of file <a class="el" href="_accel__magnet_8h_source.html">Accel_magnet.h</a>.</p>
 
 </div>
 </div>
@@ -308,7 +307,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_accel__magnet_8h_source.html#l00028">28</a> of file <a class="el" href="_accel__magnet_8h_source.html">Accel_magnet.h</a>.</p>
+<p>Definition at line <a class="el" href="_accel__magnet_8h_source.html#l00030">30</a> of file <a class="el" href="_accel__magnet_8h_source.html">Accel_magnet.h</a>.</p>
 
 </div>
 </div>
@@ -322,7 +321,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_accel__magnet_8h_source.html#l00021">21</a> of file <a class="el" href="_accel__magnet_8h_source.html">Accel_magnet.h</a>.</p>
+<p>Definition at line <a class="el" href="_accel__magnet_8h_source.html#l00023">23</a> of file <a class="el" href="_accel__magnet_8h_source.html">Accel_magnet.h</a>.</p>
 
 </div>
 </div>
@@ -336,7 +335,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_accel__magnet_8h_source.html#l00031">31</a> of file <a class="el" href="_accel__magnet_8h_source.html">Accel_magnet.h</a>.</p>
+<p>Definition at line <a class="el" href="_accel__magnet_8h_source.html#l00033">33</a> of file <a class="el" href="_accel__magnet_8h_source.html">Accel_magnet.h</a>.</p>
 
 </div>
 </div>
@@ -350,7 +349,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_accel__magnet_8h_source.html#l00024">24</a> of file <a class="el" href="_accel__magnet_8h_source.html">Accel_magnet.h</a>.</p>
+<p>Definition at line <a class="el" href="_accel__magnet_8h_source.html#l00026">26</a> of file <a class="el" href="_accel__magnet_8h_source.html">Accel_magnet.h</a>.</p>
 
 </div>
 </div>
@@ -364,7 +363,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_accel__magnet_8h_source.html#l00030">30</a> of file <a class="el" href="_accel__magnet_8h_source.html">Accel_magnet.h</a>.</p>
+<p>Definition at line <a class="el" href="_accel__magnet_8h_source.html#l00032">32</a> of file <a class="el" href="_accel__magnet_8h_source.html">Accel_magnet.h</a>.</p>
 
 </div>
 </div>
@@ -378,7 +377,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_accel__magnet_8h_source.html#l00023">23</a> of file <a class="el" href="_accel__magnet_8h_source.html">Accel_magnet.h</a>.</p>
+<p>Definition at line <a class="el" href="_accel__magnet_8h_source.html#l00025">25</a> of file <a class="el" href="_accel__magnet_8h_source.html">Accel_magnet.h</a>.</p>
 
 </div>
 </div>
@@ -392,48 +391,11 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_accel__magnet_8h_source.html#l00014">14</a> of file <a class="el" href="_accel__magnet_8h_source.html">Accel_magnet.h</a>.</p>
+<p>Definition at line <a class="el" href="_accel__magnet_8h_source.html#l00016">16</a> of file <a class="el" href="_accel__magnet_8h_source.html">Accel_magnet.h</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
-<a class="anchor" id="a3dffc9c223a30888d7399406408059b8"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint16 convert_raw </td>
-          <td>(</td>
-          <td class="paramtype">uint8&#160;</td>
-          <td class="paramname"><em>L</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint8&#160;</td>
-          <td class="paramname"><em>H</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Combining 8 bits of low and high outputs to 16 bits used for sensor value. </p>
-<p>writing value to slave register by I2C communication </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">uint8</td><td>L : lower 8bits out of 16 bits output </td></tr>
-    <tr><td class="paramname">uint8</td><td>H : higher 8bits out of 16 bits output </td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p>Definition at line <a class="el" href="_i2_c__made_8c_source.html#l00062">62</a> of file <a class="el" href="_i2_c__made_8c_source.html">I2C_made.c</a>.</p>
-<div class="fragment"><div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;{</div><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    uint16 raw;</div><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    raw = (int16)(L | H &lt;&lt; 8);</div><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    </div><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keywordflow">return</span> raw;</div><div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;}</div></div><!-- fragment -->
-</div>
-</div>
 <a class="anchor" id="af98fb6190588da170637da1531c2ecbc"></a>
 <div class="memitem">
 <div class="memproto">
@@ -467,8 +429,8 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_magnet_8c_source.html#l00019">19</a> of file <a class="el" href="_magnet_8c_source.html">Magnet.c</a>.</p>
-<div class="fragment"><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;{</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordtype">double</span> <a class="code" href="_magnet_8c.html#af98fb6190588da170637da1531c2ecbc">heading</a>;</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    heading = 180 * atan2 (X_AXIS, Y_AXIS) / M_PI;</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    </div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordflow">if</span>(heading &lt; 0)</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        heading += 360;</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    printf(<span class="stringliteral">&quot;heading: %7.3f \r\n&quot;</span>, heading);</div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    CyDelay(250);</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;}</div><div class="ttc" id="_magnet_8c_html_af98fb6190588da170637da1531c2ecbc"><div class="ttname"><a href="_magnet_8c.html#af98fb6190588da170637da1531c2ecbc">heading</a></div><div class="ttdeci">void heading(double X_AXIS, double Y_AXIS)</div><div class="ttdoc">Heading. </div><div class="ttdef"><b>Definition:</b> <a href="_magnet_8c_source.html#l00019">Magnet.c:19</a></div></div>
+<p>Definition at line <a class="el" href="_magnet_8c_source.html#l00015">15</a> of file <a class="el" href="_magnet_8c_source.html">Magnet.c</a>.</p>
+<div class="fragment"><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;{</div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keywordtype">double</span> <a class="code" href="_magnet_8c.html#af98fb6190588da170637da1531c2ecbc">heading</a>;</div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    heading = 180 * atan2 (X_AXIS, Y_AXIS) / M_PI;</div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    </div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keywordflow">if</span>(heading &lt; 0)</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        heading += 360;</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    </div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="comment">//If you want to print out the value  </span></div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="comment">//printf(&quot;heading: %7.3f \r\n&quot;, heading);</span></div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    CyDelay(250);</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;}</div><div class="ttc" id="_magnet_8c_html_af98fb6190588da170637da1531c2ecbc"><div class="ttname"><a href="_magnet_8c.html#af98fb6190588da170637da1531c2ecbc">heading</a></div><div class="ttdeci">void heading(double X_AXIS, double Y_AXIS)</div><div class="ttdoc">Heading. </div><div class="ttdef"><b>Definition:</b> <a href="_magnet_8c_source.html#l00015">Magnet.c:15</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -512,8 +474,8 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_accel_8c_source.html#l00019">19</a> of file <a class="el" href="_accel_8c_source.html">Accel.c</a>.</p>
-<div class="fragment"><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;{</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordtype">double</span> AccXangle, AccYangle;</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;   </div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    AccXangle = (float) (atan2(Y_AXIS, Z_AXIS)+M_PI) *180 / M_PI;</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    AccYangle = (float) (atan2(Z_AXIS, X_AXIS)+M_PI) *180 / M_PI;</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    </div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    printf(<span class="stringliteral">&quot;%7.3f %7.3f \r\n&quot;</span>, AccXangle, AccYangle);</div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;}</div></div><!-- fragment -->
+<p>Definition at line <a class="el" href="_accel_8c_source.html#l00015">15</a> of file <a class="el" href="_accel_8c_source.html">Accel.c</a>.</p>
+<div class="fragment"><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;{</div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keywordtype">double</span> AccXangle, AccYangle;</div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;   </div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    AccXangle = (float) (atan2(Y_AXIS, Z_AXIS)+M_PI) *180 / M_PI;</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    AccYangle = (float) (atan2(Z_AXIS, X_AXIS)+M_PI) *180 / M_PI;</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    </div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  <span class="comment">//If you want to print out the value  </span></div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  <span class="comment">//printf(&quot;%7.3f %7.3f \r\n&quot;, AccXangle, AccYangle);</span></div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;}</div></div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a56fdd21f3684adcbb288666abd444296"></a>

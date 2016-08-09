@@ -16,7 +16,6 @@ var _accel__magnet_8h =
     [ "OUT_Z_L_A", "_accel__magnet_8h.html#a09387c436745ba77d147288050d7d8c1", null ],
     [ "OUT_Z_L_M", "_accel__magnet_8h.html#ae30aefcb21f60ce603a214d5678b8f9d", null ],
     [ "WHO_AM_I_ACCEL", "_accel__magnet_8h.html#a7da7ddf0d542d6916b28a707fb2bef2b", null ],
-    [ "convert_raw", "_accel__magnet_8h.html#a3dffc9c223a30888d7399406408059b8", null ],
     [ "heading", "_accel__magnet_8h.html#af98fb6190588da170637da1531c2ecbc", null ],
     [ "value_convert_accel", "_accel__magnet_8h.html#a66765f03c5817d1c93c09d519b67f58a", null ],
     [ "value_convert_magnet", "_accel__magnet_8h.html#a56fdd21f3684adcbb288666abd444296", null ]

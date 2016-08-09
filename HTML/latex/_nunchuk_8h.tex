@@ -37,19 +37,19 @@ Initializing Nunchuk.
 
 write value(0x00) to register(address -\/ 0x40) to initialize nunchuk 
 
-Definition at line 22 of file Nunchuk.\+c.
+Definition at line 23 of file Nunchuk.\+c.
 
 
 \begin{DoxyCode}
-23 \{
-24     uint8\_t buf[2] = \{ 0x40, 0x00 \};
-25     uint8\_t status;
-26     I2C\_MasterClearStatus();
-27     CyDelay(100);
-28     status = I2C\_MasterWriteBuf(0x52, buf, 2, I2C\_MODE\_COMPLETE\_XFER);
-29     \textcolor{keywordflow}{while}(((status = I2C\_MasterStatus()) & I2C\_MSTAT\_WR\_CMPLT) == 0);
-30     CyDelay(100);
-31 \}    
+24 \{
+25     uint8\_t buf[2] = \{ 0x40, 0x00 \};
+26     uint8\_t status;
+27     I2C\_MasterClearStatus();
+28     CyDelay(100);
+29     status = I2C\_MasterWriteBuf(0x52, buf, 2, I2C\_MODE\_COMPLETE\_XFER);
+30     \textcolor{keywordflow}{while}(((status = I2C\_MasterStatus()) & I2C\_MSTAT\_WR\_CMPLT) == 0);
+31     CyDelay(100);
+32 \}    
 \end{DoxyCode}
 \index{Nunchuk.\+h@{Nunchuk.\+h}!nunchuk\+\_\+read@{nunchuk\+\_\+read}}
 \index{nunchuk\+\_\+read@{nunchuk\+\_\+read}!Nunchuk.\+h@{Nunchuk.\+h}}
@@ -64,36 +64,40 @@ Reading Nunchuk value.
 
 Reading nunchuk value and getting joystick and accelerometer values 
 
-Definition at line 37 of file Nunchuk.\+c.
+Definition at line 39 of file Nunchuk.\+c.
 
 
 \begin{DoxyCode}
-38 \{
-39     uint8\_t status;
-40     uint8\_t buf[6];
-41     \textcolor{comment}{// send conversion command}
-42     buf[0] = 0x00;
-43     I2C\_MasterClearStatus();
-44     status = I2C\_MasterWriteBuf(0x52, buf, 1, I2C\_MODE\_COMPLETE\_XFER);
-45     \textcolor{keywordflow}{while}(((status = I2C\_MasterStatus()) & I2C\_MSTAT\_WR\_CMPLT) == 0);
-46     \textcolor{comment}{// wait for conversion to complete}
-47     CyDelay(50); \textcolor{comment}{// todo: check if shorter wait would work}
-48     \textcolor{comment}{// read values}
-49     I2C\_MasterClearStatus();
-50     status = I2C\_MasterReadBuf(0x52, buf, 6, I2C\_MODE\_COMPLETE\_XFER);
-51     \textcolor{keywordflow}{while}(((status = I2C\_MasterStatus()) & I2C\_MSTAT\_RD\_CMPLT) == 0);
-52     
-53     \textcolor{keywordtype}{int} i;
-54     \textcolor{comment}{// decrypt data}
-55     \textcolor{keywordflow}{for}(i = 0; i < 6; i++) buf[i] = (buf[i] ^ 0x17) + 0x17;
-56     \textcolor{comment}{// accelerometer values}
-57     \textcolor{keywordtype}{int} x,y,z;
-58     x = (buf[2] << 2) | ((buf[5] >> 2) & 0x03);
-59     y = (buf[3] << 2) | ((buf[5] >> 4) & 0x03);
-60     z = (buf[4] << 2) | ((buf[5] >> 6) & 0x03);
-61     \textcolor{comment}{// buf[0] = JoyX, buf[1] = JoyY}
-62     printf(\textcolor{stringliteral}{"%3d %3d, %d, %d, %4d %4d %4d\(\backslash\)r\(\backslash\)n"}, buf[0], buf[1], (buf[5] >> 1) & 1, buf[5] & 1, x, y, z);
-63 \}\end{DoxyCode}
+40 \{
+41     uint8\_t status;
+42     uint8\_t buf[6];
+43     
+44     \textcolor{comment}{// send conversion command}
+45     buf[0] = 0x00;
+46     I2C\_MasterClearStatus();
+47     status = I2C\_MasterWriteBuf(0x52, buf, 1, I2C\_MODE\_COMPLETE\_XFER);
+48     \textcolor{keywordflow}{while}(((status = I2C\_MasterStatus()) & I2C\_MSTAT\_WR\_CMPLT) == 0);
+49     
+50     \textcolor{comment}{// wait for conversion to complete}
+51     CyDelay(50); \textcolor{comment}{// todo: check if shorter wait would work}
+52    
+53     \textcolor{comment}{// read values}
+54     I2C\_MasterClearStatus();
+55     status = I2C\_MasterReadBuf(0x52, buf, 6, I2C\_MODE\_COMPLETE\_XFER);
+56     \textcolor{keywordflow}{while}(((status = I2C\_MasterStatus()) & I2C\_MSTAT\_RD\_CMPLT) == 0);
+57     
+58     \textcolor{keywordtype}{int} i;
+59     \textcolor{comment}{// decrypt data}
+60     \textcolor{keywordflow}{for}(i = 0; i < 6; i++) buf[i] = (buf[i] ^ 0x17) + 0x17;
+61     \textcolor{comment}{// accelerometer values}
+62     \textcolor{keywordtype}{int} x,y,z;
+63     x = (buf[2] << 2) | ((buf[5] >> 2) & 0x03);
+64     y = (buf[3] << 2) | ((buf[5] >> 4) & 0x03);
+65     z = (buf[4] << 2) | ((buf[5] >> 6) & 0x03);
+66     
+67     \textcolor{comment}{//If you want to print out the value  }
+68     \textcolor{comment}{//printf("%3d %3d, %d, %d, %4d %4d %4d\(\backslash\)r\(\backslash\)n", buf[0], buf[1], (buf[5] >> 1) & 1, buf[5] & 1, x, y, z);}
+69 \}\end{DoxyCode}
 \index{Nunchuk.\+h@{Nunchuk.\+h}!nunchuk\+\_\+start@{nunchuk\+\_\+start}}
 \index{nunchuk\+\_\+start@{nunchuk\+\_\+start}!Nunchuk.\+h@{Nunchuk.\+h}}
 \subsubsection[{\texorpdfstring{nunchuk\+\_\+start()}{nunchuk_start()}}]{\setlength{\rightskip}{0pt plus 5cm}void nunchuk\+\_\+start (

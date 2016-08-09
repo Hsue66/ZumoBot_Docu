@@ -110,12 +110,9 @@ $(document).ready(function(){initNavTree('_accel_8c.html','');});
 </div><!--header-->
 <div class="contents">
 
-<p>Basic methods for operating accelerometer.  
+<p>Basic methods for operating accelerometer. For more details, please refer to <a class="el" href="_accel__magnet_8h.html" title="Accelerometer and Magnetometer header file. ">Accel_magnet.h</a> file.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &lt;project.h&gt;</code><br />
-<code>#include &lt;math.h&gt;</code><br />
-<code>#include &lt;<a class="el" href="_accel__magnet_8h_source.html">accel_magnet.h</a>&gt;</code><br />
-<code>#include &lt;stdio.h&gt;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="_accel__magnet_8h_source.html">accel_magnet.h</a>&quot;</code><br />
 </div>
 <p><a href="_accel_8c_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -126,7 +123,7 @@ Functions</h2></td></tr>
 <tr class="separator:a66765f03c5817d1c93c09d519b67f58a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Basic methods for operating accelerometer. </p>
+<div class="textblock"><p>Basic methods for operating accelerometer. For more details, please refer to <a class="el" href="_accel__magnet_8h.html" title="Accelerometer and Magnetometer header file. ">Accel_magnet.h</a> file. </p>
 <p>part number: LSM303D (simultaneously used with magnetometer and included in Zumo shield) </p>
 
 <p>Definition in file <a class="el" href="_accel_8c_source.html">Accel.c</a>.</p>
@@ -171,8 +168,8 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_accel_8c_source.html#l00019">19</a> of file <a class="el" href="_accel_8c_source.html">Accel.c</a>.</p>
-<div class="fragment"><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;{</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordtype">double</span> AccXangle, AccYangle;</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;   </div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    AccXangle = (float) (atan2(Y_AXIS, Z_AXIS)+M_PI) *180 / M_PI;</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    AccYangle = (float) (atan2(Z_AXIS, X_AXIS)+M_PI) *180 / M_PI;</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    </div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    printf(<span class="stringliteral">&quot;%7.3f %7.3f \r\n&quot;</span>, AccXangle, AccYangle);</div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;}</div></div><!-- fragment -->
+<p>Definition at line <a class="el" href="_accel_8c_source.html#l00015">15</a> of file <a class="el" href="_accel_8c_source.html">Accel.c</a>.</p>
+<div class="fragment"><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;{</div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keywordtype">double</span> AccXangle, AccYangle;</div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;   </div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    AccXangle = (float) (atan2(Y_AXIS, Z_AXIS)+M_PI) *180 / M_PI;</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    AccYangle = (float) (atan2(Z_AXIS, X_AXIS)+M_PI) *180 / M_PI;</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    </div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  <span class="comment">//If you want to print out the value  </span></div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  <span class="comment">//printf(&quot;%7.3f %7.3f \r\n&quot;, AccXangle, AccYangle);</span></div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;}</div></div><!-- fragment -->
 </div>
 </div>
 </div><!-- contents -->

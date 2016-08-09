@@ -2,7 +2,7 @@
 \label{_reflectance_8c}\index{Reflectance.\+c@{Reflectance.\+c}}
 
 
-Basic methods for operating reflectance sensor.  
+Basic methods for operating reflectance sensor. For more details, please refer to \hyperlink{_reflectance_8h}{Reflectance.\+h} file.  
 
 
 {\ttfamily \#include \char`\"{}Reflectance.\+h\char`\"{}}\\*
@@ -20,7 +20,7 @@ void \hyperlink{_reflectance_8c_a79f7a001a95eb296822cb1fc40e4e6ec}{reflectance\+
 
 
 \subsection{Detailed Description}
-Basic methods for operating reflectance sensor. 
+Basic methods for operating reflectance sensor. For more details, please refer to \hyperlink{_reflectance_8h}{Reflectance.\+h} file. 
 
 included in Zumo shield 
 
@@ -105,16 +105,16 @@ Starting Reflectance Sensor.
 
 
 
-Definition at line 68 of file Reflectance.\+c.
+Definition at line 69 of file Reflectance.\+c.
 
 
 \begin{DoxyCode}
-69 \{
-70     Timer\_RL\_Start();
-71     Timer\_RR\_Start();
-72     Timer\_LL\_Start();
-73     Timer\_LR\_Start();
-74 \}
+70 \{
+71     Timer\_RL\_Start();
+72     Timer\_RR\_Start();
+73     Timer\_LL\_Start();
+74     Timer\_LR\_Start();
+75 \}
 \end{DoxyCode}
 \index{Reflectance.\+c@{Reflectance.\+c}!reflectance\+\_\+digital@{reflectance\+\_\+digital}}
 \index{reflectance\+\_\+digital@{reflectance\+\_\+digital}!Reflectance.\+c@{Reflectance.\+c}}
@@ -129,35 +129,34 @@ Making Reflectance Sensor\textquotesingle{}s period to digital.
 
 
 
-Definition at line 89 of file Reflectance.\+c.
+Definition at line 92 of file Reflectance.\+c.
 
 
 \begin{DoxyCode}
-90 \{
-91     \textcolor{comment}{//if the results of reflectance\_period function is over 10000, set digital\_sensor\_value to 0, which
+93 \{
+94     \textcolor{comment}{//if the results of reflectance\_period function is over 10000, set digital\_sensor\_value to 0, which
        means it's black}
-92     \textcolor{keywordflow}{if}(\hyperlink{_reflectance_8h_a7d62aca71349c236b262b32088618ed6}{sensors}.\hyperlink{structsensors___ae59d16ddcc59d6f6633ff99307ff7190}{ll} > 10000)
-93         \hyperlink{_reflectance_8h_aef6b5888f1a360d1c977ca4cc18ad2e3}{digital\_sensor\_value}.\hyperlink{structdigital__sensor__value___ae59d16ddcc59d6f6633ff99307ff7190}{ll}  = 0;
-94     \textcolor{keywordflow}{else}
-95         \hyperlink{_reflectance_8h_aef6b5888f1a360d1c977ca4cc18ad2e3}{digital\_sensor\_value}.\hyperlink{structdigital__sensor__value___ae59d16ddcc59d6f6633ff99307ff7190}{ll}  = 1;
-96     \textcolor{keywordflow}{if}(\hyperlink{_reflectance_8h_a7d62aca71349c236b262b32088618ed6}{sensors}.\hyperlink{structsensors___af650f74b54fbe6d55c96161d2a7098ea}{lr} > 10000)
-97         \hyperlink{_reflectance_8h_aef6b5888f1a360d1c977ca4cc18ad2e3}{digital\_sensor\_value}.\hyperlink{structdigital__sensor__value___af650f74b54fbe6d55c96161d2a7098ea}{lr}  = 0;
-98     \textcolor{keywordflow}{else}
-99         \hyperlink{_reflectance_8h_aef6b5888f1a360d1c977ca4cc18ad2e3}{digital\_sensor\_value}.\hyperlink{structdigital__sensor__value___af650f74b54fbe6d55c96161d2a7098ea}{lr}  = 1;
-100     \textcolor{keywordflow}{if}(\hyperlink{_reflectance_8h_a7d62aca71349c236b262b32088618ed6}{sensors}.\hyperlink{structsensors___a55f8b53aee5b41e8af88a816fab2b70b}{rl} > 10000)
-101         \hyperlink{_reflectance_8h_aef6b5888f1a360d1c977ca4cc18ad2e3}{digital\_sensor\_value}.\hyperlink{structdigital__sensor__value___a55f8b53aee5b41e8af88a816fab2b70b}{rl}  = 0;
-102     \textcolor{keywordflow}{else}
-103         \hyperlink{_reflectance_8h_aef6b5888f1a360d1c977ca4cc18ad2e3}{digital\_sensor\_value}.\hyperlink{structdigital__sensor__value___a55f8b53aee5b41e8af88a816fab2b70b}{rl}  = 1;
-104     \textcolor{keywordflow}{if}(\hyperlink{_reflectance_8h_a7d62aca71349c236b262b32088618ed6}{sensors}.\hyperlink{structsensors___a6988d1a89f109b3f8d0e06547a5362f6}{rr} > 10000)
-105         \hyperlink{_reflectance_8h_aef6b5888f1a360d1c977ca4cc18ad2e3}{digital\_sensor\_value}.\hyperlink{structdigital__sensor__value___a6988d1a89f109b3f8d0e06547a5362f6}{rr}  = 0;
-106     \textcolor{keywordflow}{else}
-107         \hyperlink{_reflectance_8h_aef6b5888f1a360d1c977ca4cc18ad2e3}{digital\_sensor\_value}.\hyperlink{structdigital__sensor__value___a6988d1a89f109b3f8d0e06547a5362f6}{rr}  = 1;
-108         
-109    \textcolor{comment}{//print out the results}
-110    printf(\textcolor{stringliteral}{"%d %d %d %d \(\backslash\)r\(\backslash\)n"}, \hyperlink{_reflectance_8h_aef6b5888f1a360d1c977ca4cc18ad2e3}{digital\_sensor\_value}.\hyperlink{structdigital__sensor__value___ae59d16ddcc59d6f6633ff99307ff7190}{ll}, 
-      \hyperlink{_reflectance_8h_aef6b5888f1a360d1c977ca4cc18ad2e3}{digital\_sensor\_value}.\hyperlink{structdigital__sensor__value___af650f74b54fbe6d55c96161d2a7098ea}{lr}, \hyperlink{_reflectance_8h_aef6b5888f1a360d1c977ca4cc18ad2e3}{digital\_sensor\_value}.
-      \hyperlink{structdigital__sensor__value___a55f8b53aee5b41e8af88a816fab2b70b}{rl}, \hyperlink{_reflectance_8h_aef6b5888f1a360d1c977ca4cc18ad2e3}{digital\_sensor\_value}.\hyperlink{structdigital__sensor__value___a6988d1a89f109b3f8d0e06547a5362f6}{rr});  
-111 \}
+95     \textcolor{keywordflow}{if}(\hyperlink{_reflectance_8h_a7d62aca71349c236b262b32088618ed6}{sensors}.\hyperlink{structsensors___ae59d16ddcc59d6f6633ff99307ff7190}{ll} > 10000)
+96         \hyperlink{_reflectance_8h_aef6b5888f1a360d1c977ca4cc18ad2e3}{digital\_sensor\_value}.\hyperlink{structdigital__sensor__value___ae59d16ddcc59d6f6633ff99307ff7190}{ll}  = 0;
+97     \textcolor{keywordflow}{else}
+98         \hyperlink{_reflectance_8h_aef6b5888f1a360d1c977ca4cc18ad2e3}{digital\_sensor\_value}.\hyperlink{structdigital__sensor__value___ae59d16ddcc59d6f6633ff99307ff7190}{ll}  = 1;
+99     \textcolor{keywordflow}{if}(\hyperlink{_reflectance_8h_a7d62aca71349c236b262b32088618ed6}{sensors}.\hyperlink{structsensors___af650f74b54fbe6d55c96161d2a7098ea}{lr} > 10000)
+100         \hyperlink{_reflectance_8h_aef6b5888f1a360d1c977ca4cc18ad2e3}{digital\_sensor\_value}.\hyperlink{structdigital__sensor__value___af650f74b54fbe6d55c96161d2a7098ea}{lr}  = 0;
+101     \textcolor{keywordflow}{else}
+102         \hyperlink{_reflectance_8h_aef6b5888f1a360d1c977ca4cc18ad2e3}{digital\_sensor\_value}.\hyperlink{structdigital__sensor__value___af650f74b54fbe6d55c96161d2a7098ea}{lr}  = 1;
+103     \textcolor{keywordflow}{if}(\hyperlink{_reflectance_8h_a7d62aca71349c236b262b32088618ed6}{sensors}.\hyperlink{structsensors___a55f8b53aee5b41e8af88a816fab2b70b}{rl} > 10000)
+104         \hyperlink{_reflectance_8h_aef6b5888f1a360d1c977ca4cc18ad2e3}{digital\_sensor\_value}.\hyperlink{structdigital__sensor__value___a55f8b53aee5b41e8af88a816fab2b70b}{rl}  = 0;
+105     \textcolor{keywordflow}{else}
+106         \hyperlink{_reflectance_8h_aef6b5888f1a360d1c977ca4cc18ad2e3}{digital\_sensor\_value}.\hyperlink{structdigital__sensor__value___a55f8b53aee5b41e8af88a816fab2b70b}{rl}  = 1;
+107     \textcolor{keywordflow}{if}(\hyperlink{_reflectance_8h_a7d62aca71349c236b262b32088618ed6}{sensors}.\hyperlink{structsensors___a6988d1a89f109b3f8d0e06547a5362f6}{rr} > 10000)
+108         \hyperlink{_reflectance_8h_aef6b5888f1a360d1c977ca4cc18ad2e3}{digital\_sensor\_value}.\hyperlink{structdigital__sensor__value___a6988d1a89f109b3f8d0e06547a5362f6}{rr}  = 0;
+109     \textcolor{keywordflow}{else}
+110         \hyperlink{_reflectance_8h_aef6b5888f1a360d1c977ca4cc18ad2e3}{digital\_sensor\_value}.\hyperlink{structdigital__sensor__value___a6988d1a89f109b3f8d0e06547a5362f6}{rr}  = 1;
+111         
+112    \textcolor{comment}{//If you want to print out the value  }
+113    \textcolor{comment}{//printf("%d %d %d %d \(\backslash\)r\(\backslash\)n", digital\_sensor\_value.ll, digital\_sensor\_value.lr, digital\_sensor\_value.rl,
+       digital\_sensor\_value.rr);  }
+114 \}
 \end{DoxyCode}
 \index{Reflectance.\+c@{Reflectance.\+c}!reflectance\+\_\+period@{reflectance\+\_\+period}}
 \index{reflectance\+\_\+period@{reflectance\+\_\+period}!Reflectance.\+c@{Reflectance.\+c}}
@@ -172,12 +171,12 @@ Printing Reflectance Sensor\textquotesingle{}s period value.
 
 
 
-Definition at line 80 of file Reflectance.\+c.
+Definition at line 82 of file Reflectance.\+c.
 
 
 \begin{DoxyCode}
-81 \{
-82      printf(\textcolor{stringliteral}{"%d %d %d %d \(\backslash\)r\(\backslash\)n"}, \hyperlink{_reflectance_8h_a7d62aca71349c236b262b32088618ed6}{sensors}.\hyperlink{structsensors___ae59d16ddcc59d6f6633ff99307ff7190}{ll}, \hyperlink{_reflectance_8h_a7d62aca71349c236b262b32088618ed6}{sensors}.\hyperlink{structsensors___af650f74b54fbe6d55c96161d2a7098ea}{lr}, 
+83 \{
+84      printf(\textcolor{stringliteral}{"%d %d %d %d \(\backslash\)r\(\backslash\)n"}, \hyperlink{_reflectance_8h_a7d62aca71349c236b262b32088618ed6}{sensors}.\hyperlink{structsensors___ae59d16ddcc59d6f6633ff99307ff7190}{ll}, \hyperlink{_reflectance_8h_a7d62aca71349c236b262b32088618ed6}{sensors}.\hyperlink{structsensors___af650f74b54fbe6d55c96161d2a7098ea}{lr}, 
       \hyperlink{_reflectance_8h_a7d62aca71349c236b262b32088618ed6}{sensors}.\hyperlink{structsensors___a55f8b53aee5b41e8af88a816fab2b70b}{rl}, \hyperlink{_reflectance_8h_a7d62aca71349c236b262b32088618ed6}{sensors}.\hyperlink{structsensors___a6988d1a89f109b3f8d0e06547a5362f6}{rr}); 
-83 \}
+85 \}
 \end{DoxyCode}

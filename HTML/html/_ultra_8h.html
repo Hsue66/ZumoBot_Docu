@@ -111,7 +111,7 @@ $(document).ready(function(){initNavTree('_ultra_8h.html','');});
 </div><!--header-->
 <div class="contents">
 
-<p>Ultra header file.  
+<p>Ultra sonic sensor header file.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;project.h&gt;</code><br />
 <code>#include &lt;stdio.h&gt;</code><br />
@@ -135,8 +135,8 @@ Functions</h2></td></tr>
 <tr class="separator:ad0439af59f4e0ae0b4236343bdad4356"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Ultra header file. </p>
-<p>If you want to use Ultra sonic sensor methods, you need to include <a class="el" href="_ultra_8h.html" title="Ultra header file. ">Ultra.h</a> file. Declaring sensor interrupt for measuring ultra sonic outputs. </p>
+<div class="textblock"><p>Ultra sonic sensor header file. </p>
+<p>If you want to use Ultra sonic sensor methods, you need to include <a class="el" href="_ultra_8h.html" title="Ultra sonic sensor header file. ">Ultra.h</a> file. Declaring sensor interrupt for measuring ultra sonic outputs. </p>
 
 <p>Definition in file <a class="el" href="_ultra_8h_source.html">Ultra.h</a>.</p>
 </div><h2 class="groupheader">Macro Definition Documentation</h2>
@@ -150,7 +150,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_ultra_8h_source.html#l00011">11</a> of file <a class="el" href="_ultra_8h_source.html">Ultra.h</a>.</p>
+<p>Definition at line <a class="el" href="_ultra_8h_source.html#l00010">10</a> of file <a class="el" href="_ultra_8h_source.html">Ultra.h</a>.</p>
 
 </div>
 </div>
@@ -202,8 +202,8 @@ Functions</h2></td></tr>
 
 <p>Starting Ultra Sonic Sensor. </p>
 
-<p>Definition at line <a class="el" href="_ultra_8c_source.html#l00060">60</a> of file <a class="el" href="_ultra_8c_source.html">Ultra.c</a>.</p>
-<div class="fragment"><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;{</div><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    CyIntSetSysVector((SysTick_IRQn + 16), SYS_ISR);    <span class="comment">// Map systick ISR to SYS_ISR</span></div><div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;SysTick_Config(<a class="code" href="_ultra_8h.html#a61399708f7c3e062c2a53c480dfbc7e0">NUMBER_OF_TICKS</a>);                    <span class="comment">// Enable Systick Timer</span></div><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    ultra_isr_StartEx(ultra_isr_handler);               <span class="comment">// Start ultra sonic interrupt</span></div><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    Timer_Start();                                      <span class="comment">// Start Timer</span></div><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;}</div><div class="ttc" id="_ultra_8h_html_a61399708f7c3e062c2a53c480dfbc7e0"><div class="ttname"><a href="_ultra_8h.html#a61399708f7c3e062c2a53c480dfbc7e0">NUMBER_OF_TICKS</a></div><div class="ttdeci">#define NUMBER_OF_TICKS</div><div class="ttdef"><b>Definition:</b> <a href="_ultra_8h_source.html#l00011">Ultra.h:11</a></div></div>
+<p>Definition at line <a class="el" href="_ultra_8c_source.html#l00064">64</a> of file <a class="el" href="_ultra_8c_source.html">Ultra.c</a>.</p>
+<div class="fragment"><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;{</div><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    CyIntSetSysVector((SysTick_IRQn + 16), SYS_ISR);    <span class="comment">// Map systick ISR to SYS_ISR</span></div><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    SysTick_Config(<a class="code" href="_ultra_8h.html#a61399708f7c3e062c2a53c480dfbc7e0">NUMBER_OF_TICKS</a>);                    <span class="comment">// Enable Systick Timer</span></div><div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    ultra_isr_StartEx(ultra_isr_handler);               <span class="comment">// Start ultra sonic interrupt</span></div><div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    Timer_Start();                                      <span class="comment">// Start Timer</span></div><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;}</div><div class="ttc" id="_ultra_8h_html_a61399708f7c3e062c2a53c480dfbc7e0"><div class="ttname"><a href="_ultra_8h.html#a61399708f7c3e062c2a53c480dfbc7e0">NUMBER_OF_TICKS</a></div><div class="ttdeci">#define NUMBER_OF_TICKS</div><div class="ttdef"><b>Definition:</b> <a href="_ultra_8h_source.html#l00010">Ultra.h:10</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
