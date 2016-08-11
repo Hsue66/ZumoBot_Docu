@@ -5,7 +5,8 @@
     <p>
     <B>General</B><br>
     You will use Pololu Zumo Shields for your robot project with CY8CKIT-059(PSoC 5LP) from Cypress semiconductor.This 
-    library has basic methods of various sensors and communications so that you can make what you want with them.
+    library has basic methods of various sensors and communications so that you can make what you want with them. <br> 
+    ************************To be modified later*******************
     <br><br><br>
     </p>
     

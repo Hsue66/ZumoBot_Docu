@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccqc2q5g.s 			page 1
+ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccVW56CR.s 			page 1
 
 
    1              		.syntax unified
@@ -29,11 +29,11 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccqc2q5g.s 			page 1
   26              		.file 1 ".\\I2C_made.c"
    1:.\I2C_made.c  **** /**
    2:.\I2C_made.c  ****  * @file    I2C_made.c
-   3:.\I2C_made.c  ****  * @brief   I2C_made method file
+   3:.\I2C_made.c  ****  * @brief   Basic methods for I2C communication. For more details, please refer to I2C_made.h file.
    4:.\I2C_made.c  ****  * @details 
    5:.\I2C_made.c  **** */
-   6:.\I2C_made.c  **** 
-   7:.\I2C_made.c  **** #include <I2C_made.h>
+   6:.\I2C_made.c  **** #include "I2C_made.h"
+   7:.\I2C_made.c  **** 
    8:.\I2C_made.c  **** 
    9:.\I2C_made.c  **** /**
   10:.\I2C_made.c  **** * @brief    Write function of I2C communication
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccqc2q5g.s 			page 1
   38 0004 0446     		mov	r4, r0
   18:.\I2C_made.c  ****     uint8 write_buf[2] = {};
   19:.\I2C_made.c  ****     write_buf[0] = Reg;                //register address that you want to write
-ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccqc2q5g.s 			page 2
+ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccVW56CR.s 			page 2
 
 
   39              		.loc 1 19 0
@@ -106,21 +106,22 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccqc2q5g.s 			page 1
   73              	I2C_read:
   74              	.LFB64:
   28:.\I2C_made.c  **** 
-  29:.\I2C_made.c  **** /**
-  30:.\I2C_made.c  **** * @brief    Read function of I2C communication
-  31:.\I2C_made.c  **** * @details  read value from slave register by I2C communication
-  32:.\I2C_made.c  **** * @param    uint8 device_addr : Slave Device address
-  33:.\I2C_made.c  **** * @param    uint8 Reg : register address
-  34:.\I2C_made.c  **** */
-  35:.\I2C_made.c  **** uint8 I2C_read(uint8 device_addr, uint8 Reg) 
-  36:.\I2C_made.c  **** {
-  75              		.loc 1 36 0
+  29:.\I2C_made.c  **** 
+  30:.\I2C_made.c  **** /**
+  31:.\I2C_made.c  **** * @brief    Read function of I2C communication
+  32:.\I2C_made.c  **** * @details  read value from slave register by I2C communication
+  33:.\I2C_made.c  **** * @param    uint8 device_addr : Slave Device address
+  34:.\I2C_made.c  **** * @param    uint8 Reg : register address
+  35:.\I2C_made.c  **** */
+  36:.\I2C_made.c  **** uint8 I2C_read(uint8 device_addr, uint8 Reg) 
+  37:.\I2C_made.c  **** {
+  75              		.loc 1 37 0
   76              		.cfi_startproc
   77              		@ args = 0, pretend = 0, frame = 8
+ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccVW56CR.s 			page 3
+
+
   78              		@ frame_needed = 0, uses_anonymous_args = 0
-ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccqc2q5g.s 			page 3
-
-
   79              	.LVL4:
   80 0000 30B5     		push	{r4, r5, lr}
   81              		.cfi_def_cfa_offset 12
@@ -130,29 +131,29 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccqc2q5g.s 			page 1
   85 0002 83B0     		sub	sp, sp, #12
   86              		.cfi_def_cfa_offset 24
   87 0004 0446     		mov	r4, r0
-  37:.\I2C_made.c  ****    
-  38:.\I2C_made.c  ****     uint8 write_buf[1] = {};
-  88              		.loc 1 38 0
+  38:.\I2C_made.c  ****    
+  39:.\I2C_made.c  ****     uint8 write_buf[1] = {};
+  88              		.loc 1 39 0
   89 0006 0025     		movs	r5, #0
-  39:.\I2C_made.c  ****     write_buf[0] = Reg;
-  90              		.loc 1 39 0
+  40:.\I2C_made.c  ****     write_buf[0] = Reg;
+  90              		.loc 1 40 0
   91 0008 8DF80410 		strb	r1, [sp, #4]
-  40:.\I2C_made.c  ****     
-  41:.\I2C_made.c  ****     uint8 read_buf[1] = {};
-  92              		.loc 1 41 0
+  41:.\I2C_made.c  ****     
+  42:.\I2C_made.c  ****     uint8 read_buf[1] = {};
+  92              		.loc 1 42 0
   93 000c 8DF80050 		strb	r5, [sp]
-  42:.\I2C_made.c  ****     
-  43:.\I2C_made.c  ****     I2C_MasterClearStatus();
-  94              		.loc 1 43 0
+  43:.\I2C_made.c  ****     
+  44:.\I2C_made.c  ****     I2C_MasterClearStatus();
+  94              		.loc 1 44 0
   95 0010 FFF7FEFF 		bl	I2C_MasterClearStatus
   96              	.LVL5:
-  44:.\I2C_made.c  ****     CyDelay(100);
-  97              		.loc 1 44 0
+  45:.\I2C_made.c  ****     CyDelay(100);
+  97              		.loc 1 45 0
   98 0014 6420     		movs	r0, #100
   99 0016 FFF7FEFF 		bl	CyDelay
  100              	.LVL6:
-  45:.\I2C_made.c  ****     I2C_MasterWriteBuf(device_addr, write_buf, 1, I2C_MODE_COMPLETE_XFER);
- 101              		.loc 1 45 0
+  46:.\I2C_made.c  ****     I2C_MasterWriteBuf(device_addr, write_buf, 1, I2C_MODE_COMPLETE_XFER);
+ 101              		.loc 1 46 0
  102 001a 2046     		mov	r0, r4
  103 001c 01A9     		add	r1, sp, #4
  104 001e 0122     		movs	r2, #1
@@ -160,43 +161,43 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccqc2q5g.s 			page 1
  106 0022 FFF7FEFF 		bl	I2C_MasterWriteBuf
  107              	.LVL7:
  108              	.L5:
-  46:.\I2C_made.c  ****     while((I2C_MasterStatus() & I2C_MSTAT_WR_CMPLT) == 0);
- 109              		.loc 1 46 0 discriminator 1
+  47:.\I2C_made.c  ****     while((I2C_MasterStatus() & I2C_MSTAT_WR_CMPLT) == 0);
+ 109              		.loc 1 47 0 discriminator 1
  110 0026 FFF7FEFF 		bl	I2C_MasterStatus
  111              	.LVL8:
  112 002a 10F0020F 		tst	r0, #2
  113 002e FAD0     		beq	.L5
-  47:.\I2C_made.c  ****     CyDelay(50);
- 114              		.loc 1 47 0
+  48:.\I2C_made.c  ****     CyDelay(50);
+ 114              		.loc 1 48 0
  115 0030 3220     		movs	r0, #50
  116 0032 FFF7FEFF 		bl	CyDelay
  117              	.LVL9:
-  48:.\I2C_made.c  ****     I2C_MasterClearStatus();
- 118              		.loc 1 48 0
+  49:.\I2C_made.c  ****     I2C_MasterClearStatus();
+ 118              		.loc 1 49 0
  119 0036 FFF7FEFF 		bl	I2C_MasterClearStatus
  120              	.LVL10:
-  49:.\I2C_made.c  ****     I2C_MasterReadBuf(device_addr, read_buf, 1, I2C_MODE_COMPLETE_XFER);
- 121              		.loc 1 49 0
+  50:.\I2C_made.c  ****     I2C_MasterReadBuf(device_addr, read_buf, 1, I2C_MODE_COMPLETE_XFER);
+ 121              		.loc 1 50 0
+ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccVW56CR.s 			page 4
+
+
  122 003a 2046     		mov	r0, r4
-ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccqc2q5g.s 			page 4
-
-
  123 003c 6946     		mov	r1, sp
  124 003e 0122     		movs	r2, #1
  125 0040 0023     		movs	r3, #0
  126 0042 FFF7FEFF 		bl	I2C_MasterReadBuf
  127              	.LVL11:
  128              	.L6:
-  50:.\I2C_made.c  ****     while((I2C_MasterStatus() & I2C_MSTAT_RD_CMPLT) == 0);
- 129              		.loc 1 50 0 discriminator 1
+  51:.\I2C_made.c  ****     while((I2C_MasterStatus() & I2C_MSTAT_RD_CMPLT) == 0);
+ 129              		.loc 1 51 0 discriminator 1
  130 0046 FFF7FEFF 		bl	I2C_MasterStatus
  131              	.LVL12:
  132 004a 10F0010F 		tst	r0, #1
  133 004e FAD0     		beq	.L6
-  51:.\I2C_made.c  ****    
-  52:.\I2C_made.c  ****     return read_buf[0];
-  53:.\I2C_made.c  **** }
- 134              		.loc 1 53 0
+  52:.\I2C_made.c  ****    
+  53:.\I2C_made.c  ****     return read_buf[0];
+  54:.\I2C_made.c  **** }
+ 134              		.loc 1 54 0
  135 0050 9DF80000 		ldrb	r0, [sp]	@ zero_extendqisi2
  136 0054 03B0     		add	sp, sp, #12
  137              		.cfi_def_cfa_offset 12
@@ -213,34 +214,35 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccqc2q5g.s 			page 1
  148              		.type	convert_raw, %function
  149              	convert_raw:
  150              	.LFB65:
-  54:.\I2C_made.c  **** 
-  55:.\I2C_made.c  **** /**
-  56:.\I2C_made.c  **** * @brief    Combining 8 bits of low and high outputs to 16 bits used for sensor value
-  57:.\I2C_made.c  **** * @details  writing value to slave register by I2C communication
-  58:.\I2C_made.c  **** * @param    uint8 L : lower 8bits out of 16 bits output
-  59:.\I2C_made.c  **** * @param    uint8 H : higher 8bits out of 16 bits output
-  60:.\I2C_made.c  **** */
-  61:.\I2C_made.c  **** uint16 convert_raw(uint8 L, uint8 H)
-  62:.\I2C_made.c  **** {
- 151              		.loc 1 62 0
+  55:.\I2C_made.c  **** 
+  56:.\I2C_made.c  **** 
+  57:.\I2C_made.c  **** /**
+  58:.\I2C_made.c  **** * @brief    Combining 8 bits of low and high outputs to 16 bits used for sensor value
+  59:.\I2C_made.c  **** * @details  writing value to slave register by I2C communication
+  60:.\I2C_made.c  **** * @param    uint8 L : lower 8bits out of 16 bits output
+  61:.\I2C_made.c  **** * @param    uint8 H : higher 8bits out of 16 bits output
+  62:.\I2C_made.c  **** */
+  63:.\I2C_made.c  **** uint16 convert_raw(uint8 L, uint8 H)
+  64:.\I2C_made.c  **** {
+ 151              		.loc 1 64 0
  152              		.cfi_startproc
  153              		@ args = 0, pretend = 0, frame = 0
  154              		@ frame_needed = 0, uses_anonymous_args = 0
  155              		@ link register save eliminated.
  156              	.LVL13:
-  63:.\I2C_made.c  ****     uint16 raw;
-  64:.\I2C_made.c  ****     raw = (int16)(L | H << 8);
-  65:.\I2C_made.c  ****     
-  66:.\I2C_made.c  ****     return raw;
-  67:.\I2C_made.c  **** }
- 157              		.loc 1 67 0
+  65:.\I2C_made.c  ****     uint16 raw;
+  66:.\I2C_made.c  ****     raw = (int16)(L | H << 8);      //shift High bits and combine with Low bits to make 16 bits val
+  67:.\I2C_made.c  ****     
+  68:.\I2C_made.c  ****     return raw;
+  69:.\I2C_made.c  **** }
+ 157              		.loc 1 69 0
  158 0000 40EA0120 		orr	r0, r0, r1, lsl #8
  159              	.LVL14:
+ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccVW56CR.s 			page 5
+
+
  160 0004 7047     		bx	lr
  161              		.cfi_endproc
-ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccqc2q5g.s 			page 5
-
-
  162              	.LFE65:
  163              		.size	convert_raw, .-convert_raw
  164 0006 00BF     		.text
@@ -296,11 +298,11 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccqc2q5g.s 			page 1
  214 0056 87000000 		.4byte	.LASF5
  215 005a 02       		.uleb128 0x2
  216 005b 08       		.byte	0x8
+ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccVW56CR.s 			page 6
+
+
  217 005c 05       		.byte	0x5
  218 005d F9010000 		.4byte	.LASF6
-ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccqc2q5g.s 			page 6
-
-
  219 0061 02       		.uleb128 0x2
  220 0062 08       		.byte	0x8
  221 0063 07       		.byte	0x7
@@ -356,11 +358,11 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccqc2q5g.s 			page 1
  271 00c9 F0010000 		.4byte	.LASF18
  272 00cd 06       		.uleb128 0x6
  273 00ce 1C000000 		.4byte	.LASF32
+ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccVW56CR.s 			page 7
+
+
  274 00d2 01       		.byte	0x1
  275 00d3 10       		.byte	0x10
-ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccqc2q5g.s 			page 7
-
-
  276 00d4 00000000 		.4byte	.LFB63
  277 00d8 2C000000 		.4byte	.LFE63-.LFB63
  278 00dc 01       		.uleb128 0x1
@@ -416,11 +418,11 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccqc2q5g.s 			page 1
  328 0141 91       		.byte	0x91
  329 0142 74       		.sleb128 -12
  330 0143 0C       		.uleb128 0xc
+ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccVW56CR.s 			page 8
+
+
  331 0144 01       		.uleb128 0x1
  332 0145 50       		.byte	0x50
-ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccqc2q5g.s 			page 8
-
-
  333 0146 02       		.uleb128 0x2
  334 0147 74       		.byte	0x74
  335 0148 00       		.sleb128 0
@@ -439,7 +441,7 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccqc2q5g.s 			page 1
  348 0164 0F       		.uleb128 0xf
  349 0165 1D020000 		.4byte	.LASF23
  350 0169 01       		.byte	0x1
- 351 016a 23       		.byte	0x23
+ 351 016a 24       		.byte	0x24
  352 016b 81000000 		.4byte	0x81
  353 016f 00000000 		.4byte	.LFB64
  354 0173 58000000 		.4byte	.LFE64-.LFB64
@@ -449,19 +451,19 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccqc2q5g.s 			page 1
  358 017d 07       		.uleb128 0x7
  359 017e 00000000 		.4byte	.LASF19
  360 0182 01       		.byte	0x1
- 361 0183 23       		.byte	0x23
+ 361 0183 24       		.byte	0x24
  362 0184 81000000 		.4byte	0x81
  363 0188 63000000 		.4byte	.LLST3
  364 018c 08       		.uleb128 0x8
  365 018d 52656700 		.ascii	"Reg\000"
  366 0191 01       		.byte	0x1
- 367 0192 23       		.byte	0x23
+ 367 0192 24       		.byte	0x24
  368 0193 81000000 		.4byte	0x81
  369 0197 84000000 		.4byte	.LLST4
  370 019b 09       		.uleb128 0x9
  371 019c D1000000 		.4byte	.LASF21
  372 01a0 01       		.byte	0x1
- 373 01a1 26       		.byte	0x26
+ 373 01a1 27       		.byte	0x27
  374 01a2 4E020000 		.4byte	0x24e
  375 01a6 02       		.uleb128 0x2
  376 01a7 91       		.byte	0x91
@@ -469,18 +471,18 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccqc2q5g.s 			page 1
  378 01a9 09       		.uleb128 0x9
  379 01aa 94010000 		.4byte	.LASF22
  380 01ae 01       		.byte	0x1
- 381 01af 29       		.byte	0x29
+ 381 01af 2A       		.byte	0x2a
  382 01b0 4E020000 		.4byte	0x24e
  383 01b4 02       		.uleb128 0x2
  384 01b5 91       		.byte	0x91
  385 01b6 68       		.sleb128 -24
  386 01b7 0A       		.uleb128 0xa
  387 01b8 14000000 		.4byte	.LVL5
+ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccVW56CR.s 			page 9
+
+
  388 01bc B0020000 		.4byte	0x2b0
  389 01c0 0B       		.uleb128 0xb
-ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccqc2q5g.s 			page 9
-
-
  390 01c1 1A000000 		.4byte	.LVL6
  391 01c5 F0020000 		.4byte	0x2f0
  392 01c9 D4010000 		.4byte	0x1d4
@@ -536,11 +538,11 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccqc2q5g.s 			page 1
  442 0216 0A       		.uleb128 0xa
  443 0217 3A000000 		.4byte	.LVL10
  444 021b B0020000 		.4byte	0x2b0
+ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccVW56CR.s 			page 10
+
+
  445 021f 0B       		.uleb128 0xb
  446 0220 46000000 		.4byte	.LVL11
-ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccqc2q5g.s 			page 10
-
-
  447 0224 01030000 		.4byte	0x301
  448 0228 44020000 		.4byte	0x244
  449 022c 0C       		.uleb128 0xc
@@ -581,7 +583,7 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccqc2q5g.s 			page 1
  484 025e 0F       		.uleb128 0xf
  485 025f 54000000 		.4byte	.LASF24
  486 0263 01       		.byte	0x1
- 487 0264 3D       		.byte	0x3d
+ 487 0264 3F       		.byte	0x3f
  488 0265 8D000000 		.4byte	0x8d
  489 0269 00000000 		.4byte	.LFB65
  490 026d 06000000 		.4byte	.LFE65-.LFB65
@@ -591,23 +593,23 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccqc2q5g.s 			page 1
  494 0277 08       		.uleb128 0x8
  495 0278 4C00     		.ascii	"L\000"
  496 027a 01       		.byte	0x1
- 497 027b 3D       		.byte	0x3d
+ 497 027b 3F       		.byte	0x3f
  498 027c 81000000 		.4byte	0x81
  499 0280 A5000000 		.4byte	.LLST5
  500 0284 10       		.uleb128 0x10
  501 0285 4800     		.ascii	"H\000"
+ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccVW56CR.s 			page 11
+
+
  502 0287 01       		.byte	0x1
- 503 0288 3D       		.byte	0x3d
-ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccqc2q5g.s 			page 11
-
-
+ 503 0288 3F       		.byte	0x3f
  504 0289 81000000 		.4byte	0x81
  505 028d 01       		.uleb128 0x1
  506 028e 51       		.byte	0x51
  507 028f 11       		.uleb128 0x11
  508 0290 72617700 		.ascii	"raw\000"
  509 0294 01       		.byte	0x1
- 510 0295 3F       		.byte	0x3f
+ 510 0295 41       		.byte	0x41
  511 0296 8D000000 		.4byte	0x8d
  512 029a C6000000 		.4byte	.LLST6
  513 029e 00       		.byte	0
@@ -656,11 +658,11 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccqc2q5g.s 			page 1
  556 0300 00       		.byte	0
  557 0301 19       		.uleb128 0x19
  558 0302 3C000000 		.4byte	.LASF28
+ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccVW56CR.s 			page 12
+
+
  559 0306 05       		.byte	0x5
  560 0307 A9       		.byte	0xa9
-ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccqc2q5g.s 			page 12
-
-
  561 0308 81000000 		.4byte	0x81
  562 030c 16       		.uleb128 0x16
  563 030d 81000000 		.4byte	0x81
@@ -716,11 +718,11 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccqc2q5g.s 			page 1
  613 0027 49       		.uleb128 0x49
  614 0028 13       		.uleb128 0x13
  615 0029 00       		.byte	0
+ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccVW56CR.s 			page 13
+
+
  616 002a 00       		.byte	0
  617 002b 04       		.uleb128 0x4
-ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccqc2q5g.s 			page 13
-
-
  618 002c 24       		.uleb128 0x24
  619 002d 00       		.byte	0
  620 002e 0B       		.uleb128 0xb
@@ -776,11 +778,11 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccqc2q5g.s 			page 1
  670 0061 0E       		.uleb128 0xe
  671 0062 3A       		.uleb128 0x3a
  672 0063 0B       		.uleb128 0xb
+ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccVW56CR.s 			page 14
+
+
  673 0064 3B       		.uleb128 0x3b
  674 0065 0B       		.uleb128 0xb
-ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccqc2q5g.s 			page 14
-
-
  675 0066 49       		.uleb128 0x49
  676 0067 13       		.uleb128 0x13
  677 0068 02       		.uleb128 0x2
@@ -836,11 +838,11 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccqc2q5g.s 			page 1
  727 009e 01       		.uleb128 0x1
  728 009f 13       		.uleb128 0x13
  729 00a0 00       		.byte	0
+ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccVW56CR.s 			page 15
+
+
  730 00a1 00       		.byte	0
  731 00a2 0C       		.uleb128 0xc
-ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccqc2q5g.s 			page 15
-
-
  732 00a3 8A8201   		.uleb128 0x410a
  733 00a6 00       		.byte	0
  734 00a7 02       		.uleb128 0x2
@@ -896,11 +898,11 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccqc2q5g.s 			page 1
  784 00db 00       		.byte	0
  785 00dc 10       		.uleb128 0x10
  786 00dd 05       		.uleb128 0x5
+ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccVW56CR.s 			page 16
+
+
  787 00de 00       		.byte	0
  788 00df 03       		.uleb128 0x3
-ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccqc2q5g.s 			page 16
-
-
  789 00e0 08       		.uleb128 0x8
  790 00e1 3A       		.uleb128 0x3a
  791 00e2 0B       		.uleb128 0xb
@@ -956,11 +958,11 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccqc2q5g.s 			page 1
  841 0114 00       		.byte	0
  842 0115 3F       		.uleb128 0x3f
  843 0116 19       		.uleb128 0x19
+ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccVW56CR.s 			page 17
+
+
  844 0117 03       		.uleb128 0x3
  845 0118 0E       		.uleb128 0xe
-ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccqc2q5g.s 			page 17
-
-
  846 0119 3A       		.uleb128 0x3a
  847 011a 0B       		.uleb128 0xb
  848 011b 3B       		.uleb128 0x3b
@@ -1016,11 +1018,11 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccqc2q5g.s 			page 1
  898 014d 3F       		.uleb128 0x3f
  899 014e 19       		.uleb128 0x19
  900 014f 03       		.uleb128 0x3
+ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccVW56CR.s 			page 18
+
+
  901 0150 0E       		.uleb128 0xe
  902 0151 3A       		.uleb128 0x3a
-ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccqc2q5g.s 			page 18
-
-
  903 0152 0B       		.uleb128 0xb
  904 0153 3B       		.uleb128 0x3b
  905 0154 0B       		.uleb128 0xb
@@ -1076,11 +1078,11 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccqc2q5g.s 			page 1
  955 002c 11000000 		.4byte	.LVL1-1
  956 0030 2C000000 		.4byte	.LFE63
  957 0034 0400     		.2byte	0x4
+ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccVW56CR.s 			page 19
+
+
  958 0036 F3       		.byte	0xf3
  959 0037 01       		.uleb128 0x1
-ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccqc2q5g.s 			page 19
-
-
  960 0038 51       		.byte	0x51
  961 0039 9F       		.byte	0x9f
  962 003a 00000000 		.4byte	0
@@ -1136,11 +1138,11 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccqc2q5g.s 			page 1
  1012 00b4 06000000 		.4byte	.LFE65
  1013 00b8 0400     		.2byte	0x4
  1014 00ba F3       		.byte	0xf3
+ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccVW56CR.s 			page 20
+
+
  1015 00bb 01       		.uleb128 0x1
  1016 00bc 50       		.byte	0x50
-ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccqc2q5g.s 			page 20
-
-
  1017 00bd 9F       		.byte	0x9f
  1018 00be 00000000 		.4byte	0
  1019 00c2 00000000 		.4byte	0
@@ -1196,11 +1198,11 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccqc2q5g.s 			page 1
  1064      63655F61 
  1064      64647200 
  1065              	.LASF20:
+ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccVW56CR.s 			page 21
+
+
  1066 000c 76616C75 		.ascii	"value\000"
  1066      6500
-ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccqc2q5g.s 			page 21
-
-
  1067              	.LASF9:
  1068 0012 5F5F696E 		.ascii	"__int32_t\000"
  1068      7433325F 
@@ -1256,11 +1258,11 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccqc2q5g.s 			page 1
  1088      6E7400
  1089              	.LASF33:
  1090 00ac 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccVW56CR.s 			page 22
+
+
  1090      52784275 
  1090      66666572 
-ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccqc2q5g.s 			page 22
-
-
  1090      00
  1091              	.LASF16:
  1092 00b9 646F7562 		.ascii	"double\000"
@@ -1316,11 +1318,11 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccqc2q5g.s 			page 1
  1112      5C647566 
  1112      6D615C44 
  1112      65736B74 
+ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccVW56CR.s 			page 23
+
+
  1113 01ca 756D6F42 		.ascii	"umoBot_Lib.cydsn\000"
  1113      6F745F4C 
-ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccqc2q5g.s 			page 23
-
-
  1113      69622E63 
  1113      7964736E 
  1113      00

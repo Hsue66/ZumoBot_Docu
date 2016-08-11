@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\dufma\AppData\Local\Temp\cckQZnrn.s 			page 1
+ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccQkwjN8.s 			page 1
 
 
    1              		.syntax unified
@@ -29,56 +29,67 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\cckQZnrn.s 			page 1
   26              		.file 1 ".\\main.c"
    1:.\main.c      **** /**
    2:.\main.c      **** * @mainpage ZumoBot Project
-   3:.\main.c      **** * @breif    You can make your own ZumoBot with various sensors.
+   3:.\main.c      **** * @brief    You can make your own ZumoBot with various sensors.
    4:.\main.c      **** * @details  <br>
-   5:.\main.c      ****     <B>General</B><br>
-   6:.\main.c      ****     You will use Pololu Zumo Shields for your robot project with CY8CKIT-059(PSoC 5LP) from Cypress
-   7:.\main.c      ****     library has basic methods of various sensors and communications so that you can make what you w
-   8:.\main.c      **** 
-   9:.\main.c      ****     <B>Sensors</B><br>
-  10:.\main.c      ****     Included:<br>
-  11:.\main.c      ****         <&ensp>LSM303D: Accelerometer & Magnetometer<br>
-  12:.\main.c      ****         L3GD20H: Gyroscope<br>
-  13:.\main.c      ****         Reflectance sensor<br>
-  14:.\main.c      ****         Motors<br>
-  15:.\main.c      ****     Wii nunchuck<br>
-  16:.\main.c      ****     TSOP-2236: IR Receiver<br>
-  17:.\main.c      ****     HC-SR04: Ultrasonic sensor<br>
-  18:.\main.c      ****     APDS-9301: Ambient light sensor<br>
-  19:.\main.c      ****     IR LED<br>
-  20:.\main.c      **** 
-  21:.\main.c      ****     <B>Communication</B><br>
-  22:.\main.c      ****     I2C, UART, Serial<br>
-  23:.\main.c      **** */
-  24:.\main.c      **** 
-  25:.\main.c      **** #include <project.h>
-  26:.\main.c      **** #include <stdio.h>
-  27:.\main.c      **** #include "Motor.h"
-  28:.\main.c      **** #include "Ultra.h"
-  29:.\main.c      **** #include "Nunchuk.h"
-  30:.\main.c      **** #include "Reflectance.h"
-  31:.\main.c      **** #include "I2C_made.h"
-ARM GAS  C:\Users\dufma\AppData\Local\Temp\cckQZnrn.s 			page 2
+   5:.\main.c      ****     <p>
+   6:.\main.c      ****     <B>General</B><br>
+   7:.\main.c      ****     You will use Pololu Zumo Shields for your robot project with CY8CKIT-059(PSoC 5LP) from Cypress
+   8:.\main.c      ****     library has basic methods of various sensors and communications so that you can make what you w
+   9:.\main.c      ****     <br><br><br>
+  10:.\main.c      ****     </p>
+  11:.\main.c      ****     
+  12:.\main.c      ****     <p>
+  13:.\main.c      ****     <B>Sensors</B><br>
+  14:.\main.c      ****     &nbsp;Included: <br>
+  15:.\main.c      ****         &nbsp;&nbsp;&nbsp;&nbsp;LSM303D: Accelerometer & Magnetometer<br>
+  16:.\main.c      ****         &nbsp;&nbsp;&nbsp;&nbsp;L3GD20H: Gyroscope<br>
+  17:.\main.c      ****         &nbsp;&nbsp;&nbsp;&nbsp;Reflectance sensor<br>
+  18:.\main.c      ****         &nbsp;&nbsp;&nbsp;&nbsp;Motors
+  19:.\main.c      ****     &nbsp;Wii nunchuck<br>
+  20:.\main.c      ****     &nbsp;TSOP-2236: IR Receiver<br>
+  21:.\main.c      ****     &nbsp;HC-SR04: Ultrasonic sensor<br>
+  22:.\main.c      ****     &nbsp;APDS-9301: Ambient light sensor<br>
+  23:.\main.c      ****     &nbsp;IR LED <br><br><br>
+  24:.\main.c      ****     </p>
+  25:.\main.c      ****     
+  26:.\main.c      ****     <p>
+  27:.\main.c      ****     <B>Communication</B><br>
+  28:.\main.c      ****     I2C, UART, Serial<br>
+  29:.\main.c      ****     </p>
+  30:.\main.c      **** */
+  31:.\main.c      **** 
+ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccQkwjN8.s 			page 2
 
 
-  32:.\main.c      **** #include "Gyro.h"
-  33:.\main.c      **** #include "Accel_magnet.h"
-  34:.\main.c      **** #include "IR.h"
-  35:.\main.c      **** #include "Ambient.h"
-  36:.\main.c      **** 
-  37:.\main.c      **** int rread(void);
-  38:.\main.c      **** 
-  39:.\main.c      **** 
-  40:.\main.c      **** int main()
-  41:.\main.c      **** {
-  27              		.loc 1 41 0
+  32:.\main.c      **** #include <project.h>
+  33:.\main.c      **** #include <stdio.h>
+  34:.\main.c      **** #include "Motor.h"
+  35:.\main.c      **** #include "Ultra.h"
+  36:.\main.c      **** #include "Nunchuk.h"
+  37:.\main.c      **** #include "Reflectance.h"
+  38:.\main.c      **** #include "I2C_made.h"
+  39:.\main.c      **** #include "Gyro.h"
+  40:.\main.c      **** #include "Accel_magnet.h"
+  41:.\main.c      **** #include "IR.h"
+  42:.\main.c      **** #include "Ambient.h"
+  43:.\main.c      **** 
+  44:.\main.c      **** int rread(void);
+  45:.\main.c      **** 
+  46:.\main.c      **** /**
+  47:.\main.c      ****  * @file    main.c
+  48:.\main.c      ****  * @brief   
+  49:.\main.c      ****  * @details  ** You should enable global interrupt for operating properly. **<br>&nbsp;&nbsp;&nbsp;
+  50:.\main.c      **** */
+  51:.\main.c      **** int main()
+  52:.\main.c      **** {
+  27              		.loc 1 52 0
   28              		.cfi_startproc
   29              		@ args = 0, pretend = 0, frame = 0
   30              		@ frame_needed = 0, uses_anonymous_args = 0
   31              		@ link register save eliminated.
-  42:.\main.c      ****     
-  43:.\main.c      **** }
-  32              		.loc 1 43 0
+  53:.\main.c      ****     
+  54:.\main.c      **** }
+  32              		.loc 1 54 0
   33 0000 7047     		bx	lr
   34              		.cfi_endproc
   35              	.LFE63:
@@ -91,309 +102,304 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\cckQZnrn.s 			page 1
   42              		.type	_write, %function
   43              	_write:
   44              	.LFB64:
-  44:.\main.c      **** 
-  45:.\main.c      **** 
-  46:.\main.c      **** 
-  47:.\main.c      **** 
-  48:.\main.c      **** /*//ultra sonic sensor//
-  49:.\main.c      **** int main()
-  50:.\main.c      **** {
-  51:.\main.c      ****     CyGlobalIntEnable; 
-  52:.\main.c      ****     UART_Start();
-  53:.\main.c      ****     Ultra_Start();                          // Ultra Sonic Start function
-  54:.\main.c      ****  }   
-  55:.\main.c      **** //*/
+  55:.\main.c      **** 
   56:.\main.c      **** 
-  57:.\main.c      **** /*//nunchuk//
+  57:.\main.c      **** /*//ultra sonic sensor//
   58:.\main.c      **** int main()
   59:.\main.c      **** {
   60:.\main.c      ****     CyGlobalIntEnable; 
   61:.\main.c      ****     UART_Start();
-  62:.\main.c      ****   
-  63:.\main.c      ****     nunchuk_start();
-  64:.\main.c      ****     nunchuk_init();
-  65:.\main.c      ****     
-  66:.\main.c      ****     for(;;)
-  67:.\main.c      ****     {    
-  68:.\main.c      ****         nunchuk_read();
-  69:.\main.c      ****     }
-  70:.\main.c      **** }   
-ARM GAS  C:\Users\dufma\AppData\Local\Temp\cckQZnrn.s 			page 3
+  62:.\main.c      ****     Ultra_Start();                          // Ultra Sonic Start function
+  63:.\main.c      ****  }   
+  64:.\main.c      **** //*/
+  65:.\main.c      **** 
+  66:.\main.c      **** /*//nunchuk//
+  67:.\main.c      **** int main()
+  68:.\main.c      **** {
+  69:.\main.c      ****     CyGlobalIntEnable; 
+  70:.\main.c      ****     UART_Start();
+ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccQkwjN8.s 			page 3
 
 
-  71:.\main.c      **** //*/
-  72:.\main.c      **** 
-  73:.\main.c      **** /*//IR receiver//
-  74:.\main.c      **** int main()
-  75:.\main.c      **** {
-  76:.\main.c      ****     CyGlobalIntEnable; 
-  77:.\main.c      ****     UART_Start();
-  78:.\main.c      ****     
-  79:.\main.c      ****     unsigned int IR_val; 
-  80:.\main.c      ****     
-  81:.\main.c      ****     for(;;)
-  82:.\main.c      ****     {
-  83:.\main.c      ****        IR_val = get_IR();
-  84:.\main.c      ****        printf("%x\r\n\n",IR_val);
-  85:.\main.c      ****     }
-  86:.\main.c      ****     
-  87:.\main.c      ****  }   
-  88:.\main.c      **** //*/
-  89:.\main.c      **** 
-  90:.\main.c      **** /*//Ambient light sensor//
-  91:.\main.c      **** int main()
-  92:.\main.c      **** {
-  93:.\main.c      ****     CyGlobalIntEnable; 
-  94:.\main.c      ****     UART_Start();
-  95:.\main.c      ****     
-  96:.\main.c      ****     I2C_Start();
-  97:.\main.c      ****     
-  98:.\main.c      ****     uint16 value =0;
-  99:.\main.c      ****     
- 100:.\main.c      ****     I2C_write(0x29,0x80,0x00);
- 101:.\main.c      ****     
- 102:.\main.c      ****     value = I2C_read(0x29,0x80);
- 103:.\main.c      ****     printf("%x ",value);
- 104:.\main.c      ****     
- 105:.\main.c      ****     I2C_write(0x29,0x80,0x03);
- 106:.\main.c      ****     value = I2C_read(0x29,0x80);
- 107:.\main.c      ****     printf("%x\r\n",value);
- 108:.\main.c      ****         
- 109:.\main.c      ****     value = I2C_read(0x29,0x81);
- 110:.\main.c      ****     printf("%x\r\n",value);
- 111:.\main.c      ****     for(;;)
- 112:.\main.c      ****     {
- 113:.\main.c      ****         
- 114:.\main.c      ****         uint8 Data0Low,Data0High,Data1Low,Data1High;
- 115:.\main.c      ****         Data0Low = I2C_read(0x29,CH0_L);
- 116:.\main.c      ****         Data0High = I2C_read(0x29,CH0_H);
- 117:.\main.c      ****         Data1Low = I2C_read(0x29,CH1_L);
- 118:.\main.c      ****         Data1High = I2C_read(0x29,CH1_H);
- 119:.\main.c      ****         
- 120:.\main.c      ****         uint8 CH0, CH1;
- 121:.\main.c      ****         CH0 = convert_raw(Data0Low,Data0High);
- 122:.\main.c      ****         CH1 = convert_raw(Data1Low,Data1High);
- 123:.\main.c      **** 
- 124:.\main.c      ****    //     printf("%d %d %d %d\r\n",Data0Low,Data0High, Data1Low,Data1High);
- 125:.\main.c      ****    //     printf("%d %d\r\n",CH0,CH1);
- 126:.\main.c      ****    //        printf("%f\r\n",(float)CH1/CH0);
+  71:.\main.c      ****   
+  72:.\main.c      ****     nunchuk_start();
+  73:.\main.c      ****     nunchuk_init();
+  74:.\main.c      ****     
+  75:.\main.c      ****     for(;;)
+  76:.\main.c      ****     {    
+  77:.\main.c      ****         nunchuk_read();
+  78:.\main.c      ****     }
+  79:.\main.c      **** }   
+  80:.\main.c      **** //*/
+  81:.\main.c      **** 
+  82:.\main.c      **** /*//IR receiver//
+  83:.\main.c      **** int main()
+  84:.\main.c      **** {
+  85:.\main.c      ****     CyGlobalIntEnable; 
+  86:.\main.c      ****     UART_Start();
+  87:.\main.c      ****     
+  88:.\main.c      ****     unsigned int IR_val; 
+  89:.\main.c      ****     
+  90:.\main.c      ****     for(;;)
+  91:.\main.c      ****     {
+  92:.\main.c      ****        IR_val = get_IR();
+  93:.\main.c      ****        printf("%x\r\n\n",IR_val);
+  94:.\main.c      ****     }    
+  95:.\main.c      ****  }   
+  96:.\main.c      **** //*/
+  97:.\main.c      **** 
+  98:.\main.c      **** /*//Ambient light sensor//
+  99:.\main.c      **** int main()
+ 100:.\main.c      **** {
+ 101:.\main.c      ****     CyGlobalIntEnable; 
+ 102:.\main.c      ****     UART_Start();
+ 103:.\main.c      ****     
+ 104:.\main.c      ****     I2C_Start();
+ 105:.\main.c      ****     
+ 106:.\main.c      ****     uint16 value =0;
+ 107:.\main.c      ****     
+ 108:.\main.c      ****     I2C_write(0x29,0x80,0x00);
+ 109:.\main.c      ****     
+ 110:.\main.c      ****     value = I2C_read(0x29,0x80);
+ 111:.\main.c      ****     printf("%x ",value);
+ 112:.\main.c      ****     
+ 113:.\main.c      ****     I2C_write(0x29,0x80,0x03);
+ 114:.\main.c      ****     value = I2C_read(0x29,0x80);
+ 115:.\main.c      ****     printf("%x\r\n",value);
+ 116:.\main.c      ****         
+ 117:.\main.c      ****     value = I2C_read(0x29,0x81);
+ 118:.\main.c      ****     printf("%x\r\n",value);
+ 119:.\main.c      ****     for(;;)
+ 120:.\main.c      ****     {
+ 121:.\main.c      ****         
+ 122:.\main.c      ****         uint8 Data0Low,Data0High,Data1Low,Data1High;
+ 123:.\main.c      ****         Data0Low = I2C_read(0x29,CH0_L);
+ 124:.\main.c      ****         Data0High = I2C_read(0x29,CH0_H);
+ 125:.\main.c      ****         Data1Low = I2C_read(0x29,CH1_L);
+ 126:.\main.c      ****         Data1High = I2C_read(0x29,CH1_H);
  127:.\main.c      ****         
-ARM GAS  C:\Users\dufma\AppData\Local\Temp\cckQZnrn.s 			page 4
+ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccQkwjN8.s 			page 4
 
 
- 128:.\main.c      ****    
- 129:.\main.c      ****         double Ch0 = CH0;
- 130:.\main.c      ****         double Ch1 = CH1;
- 131:.\main.c      ****         
- 132:.\main.c      ****         double data = 0;
- 133:.\main.c      ****         data = getLux(Ch0,Ch1);
- 134:.\main.c      ****         printf("%lf\r\n",data);    
- 135:.\main.c      ****     }    
- 136:.\main.c      ****  }   
- 137:.\main.c      **** */
- 138:.\main.c      **** 
- 139:.\main.c      **** 
- 140:.\main.c      **** 
- 141:.\main.c      **** /*//accelerometer//
- 142:.\main.c      **** int main()
- 143:.\main.c      **** {
- 144:.\main.c      ****     CyGlobalIntEnable; 
- 145:.\main.c      ****     UART_Start();
- 146:.\main.c      ****   
- 147:.\main.c      ****     I2C_Start();
- 148:.\main.c      ****   
- 149:.\main.c      ****     uint8 X_L_A, X_H_A, Y_L_A, Y_H_A, Z_L_A, Z_H_A;
- 150:.\main.c      ****     int16 X_AXIS, Y_AXIS, Z_AXIS;
- 151:.\main.c      ****     
- 152:.\main.c      ****     I2C_write(ACCEL_MAG_ADDR, ACCEL_CTRL1_REG, 0x37);           // set accelerometer & magnetometer
- 153:.\main.c      ****     I2C_write(ACCEL_MAG_ADDR, ACCEL_CTRL7_REG, 0x22);
- 154:.\main.c      ****     
- 155:.\main.c      ****     
- 156:.\main.c      ****     for(;;)
- 157:.\main.c      ****     {
- 158:.\main.c      ****         //print out accelerometer output
- 159:.\main.c      ****         X_L_A = I2C_read(ACCEL_MAG_ADDR, OUT_X_L_A);
- 160:.\main.c      ****         X_H_A = I2C_read(ACCEL_MAG_ADDR, OUT_X_H_A);
- 161:.\main.c      ****         X_AXIS = convert_raw(X_L_A, X_H_A);
- 162:.\main.c      ****         
- 163:.\main.c      ****         Y_L_A = I2C_read(ACCEL_MAG_ADDR, OUT_Y_L_A);
- 164:.\main.c      ****         Y_H_A = I2C_read(ACCEL_MAG_ADDR, OUT_Y_H_A);
- 165:.\main.c      ****         Y_AXIS = convert_raw(Y_L_A, Y_H_A);
- 166:.\main.c      ****         
- 167:.\main.c      ****         Z_L_A = I2C_read(ACCEL_MAG_ADDR, OUT_Z_L_A);
- 168:.\main.c      ****         Z_H_A = I2C_read(ACCEL_MAG_ADDR, OUT_Z_H_A);
- 169:.\main.c      ****         Z_AXIS = convert_raw(Z_L_A, Z_H_A);
+ 128:.\main.c      ****         uint8 CH0, CH1;
+ 129:.\main.c      ****         CH0 = convert_raw(Data0Low,Data0High);
+ 130:.\main.c      ****         CH1 = convert_raw(Data1Low,Data1High);
+ 131:.\main.c      **** 
+ 132:.\main.c      ****    //     printf("%d %d %d %d\r\n",Data0Low,Data0High, Data1Low,Data1High);
+ 133:.\main.c      ****    //     printf("%d %d\r\n",CH0,CH1);
+ 134:.\main.c      ****    //        printf("%f\r\n",(float)CH1/CH0);
+ 135:.\main.c      ****         
+ 136:.\main.c      ****    
+ 137:.\main.c      ****         double Ch0 = CH0;
+ 138:.\main.c      ****         double Ch1 = CH1;
+ 139:.\main.c      ****         
+ 140:.\main.c      ****         double data = 0;
+ 141:.\main.c      ****         data = getLux(Ch0,Ch1);
+ 142:.\main.c      ****         printf("%lf\r\n",data);    
+ 143:.\main.c      ****     }    
+ 144:.\main.c      ****  }   
+ 145:.\main.c      **** */
+ 146:.\main.c      **** 
+ 147:.\main.c      **** 
+ 148:.\main.c      **** 
+ 149:.\main.c      **** /*//accelerometer//
+ 150:.\main.c      **** int main()
+ 151:.\main.c      **** {
+ 152:.\main.c      ****     CyGlobalIntEnable; 
+ 153:.\main.c      ****     UART_Start();
+ 154:.\main.c      ****   
+ 155:.\main.c      ****     I2C_Start();
+ 156:.\main.c      ****   
+ 157:.\main.c      ****     uint8 X_L_A, X_H_A, Y_L_A, Y_H_A, Z_L_A, Z_H_A;
+ 158:.\main.c      ****     int16 X_AXIS_A, Y_AXIS_A, Z_AXIS_A;
+ 159:.\main.c      ****     
+ 160:.\main.c      ****     I2C_write(ACCEL_MAG_ADDR, ACCEL_CTRL1_REG, 0x37);           // set accelerometer & magnetometer
+ 161:.\main.c      ****     I2C_write(ACCEL_MAG_ADDR, ACCEL_CTRL7_REG, 0x22);
+ 162:.\main.c      ****     
+ 163:.\main.c      ****     
+ 164:.\main.c      ****     for(;;)
+ 165:.\main.c      ****     {
+ 166:.\main.c      ****         //print out accelerometer output
+ 167:.\main.c      ****         X_L_A = I2C_read(ACCEL_MAG_ADDR, OUT_X_L_A);
+ 168:.\main.c      ****         X_H_A = I2C_read(ACCEL_MAG_ADDR, OUT_X_H_A);
+ 169:.\main.c      ****         X_AXIS_A = convert_raw(X_L_A, X_H_A);
  170:.\main.c      ****         
- 171:.\main.c      ****         printf("ACCEL: %d %d %d %d %d %d \r\n", X_L_A, X_H_A, Y_L_A, Y_H_A, Z_L_A, Z_H_A);
- 172:.\main.c      ****         value_convert_accel(X_AXIS, Y_AXIS, Z_AXIS);
- 173:.\main.c      ****         printf("\n");
+ 171:.\main.c      ****         Y_L_A = I2C_read(ACCEL_MAG_ADDR, OUT_Y_L_A);
+ 172:.\main.c      ****         Y_H_A = I2C_read(ACCEL_MAG_ADDR, OUT_Y_H_A);
+ 173:.\main.c      ****         Y_AXIS_A = convert_raw(Y_L_A, Y_H_A);
  174:.\main.c      ****         
- 175:.\main.c      ****         CyDelay(50);
- 176:.\main.c      ****     }
- 177:.\main.c      **** }   
- 178:.\main.c      **** //*/
- 179:.\main.c      **** 
- 180:.\main.c      **** 
- 181:.\main.c      **** /*//reflectance//
- 182:.\main.c      **** int main()
- 183:.\main.c      **** {
- 184:.\main.c      ****     CyGlobalIntEnable; 
-ARM GAS  C:\Users\dufma\AppData\Local\Temp\cckQZnrn.s 			page 5
+ 175:.\main.c      ****         Z_L_A = I2C_read(ACCEL_MAG_ADDR, OUT_Z_L_A);
+ 176:.\main.c      ****         Z_H_A = I2C_read(ACCEL_MAG_ADDR, OUT_Z_H_A);
+ 177:.\main.c      ****         Z_AXIS_A = convert_raw(Z_L_A, Z_H_A);
+ 178:.\main.c      ****         
+ 179:.\main.c      ****         printf("ACCEL: %d %d %d %d %d %d \r\n", X_L_A, X_H_A, Y_L_A, Y_H_A, Z_L_A, Z_H_A);
+ 180:.\main.c      ****         value_convert_accel(X_AXIS_A, Y_AXIS_A, Z_AXIS_A);
+ 181:.\main.c      ****         printf("\n");
+ 182:.\main.c      ****         
+ 183:.\main.c      ****         CyDelay(50);
+ 184:.\main.c      ****     }
+ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccQkwjN8.s 			page 5
 
 
- 185:.\main.c      ****     UART_Start();
- 186:.\main.c      ****   
- 187:.\main.c      ****     sensor_isr_StartEx(sensor_isr_handler);
- 188:.\main.c      ****     
- 189:.\main.c      ****     Refelctance_Start();
- 190:.\main.c      **** 
- 191:.\main.c      ****     IR_led_Write(1);
- 192:.\main.c      ****     for(;;)
- 193:.\main.c      ****     {
- 194:.\main.c      ****         reflectance_period();      //print out each period of reflectance sensors
- 195:.\main.c      ****         reflectance_digital();      //print out 0 or 1 according to results of reflectance period
- 196:.\main.c      ****         
- 197:.\main.c      ****         CyDelay(500);
- 198:.\main.c      ****     }
- 199:.\main.c      **** }   
- 200:.\main.c      **** */
- 201:.\main.c      **** 
- 202:.\main.c      ****  /* //motor//
- 203:.\main.c      **** int main()
- 204:.\main.c      **** {
- 205:.\main.c      ****     CyGlobalIntEnable; 
- 206:.\main.c      ****     UART_Start();
- 207:.\main.c      **** 
- 208:.\main.c      ****     motor_Start();              // motor start
+ 185:.\main.c      **** }   
+ 186:.\main.c      **** //*/
+ 187:.\main.c      **** 
+ 188:.\main.c      **** 
+ 189:.\main.c      **** /*//reflectance//
+ 190:.\main.c      **** int main()
+ 191:.\main.c      **** {
+ 192:.\main.c      ****     CyGlobalIntEnable; 
+ 193:.\main.c      ****     UART_Start();
+ 194:.\main.c      ****   
+ 195:.\main.c      ****     sensor_isr_StartEx(sensor_isr_handler);
+ 196:.\main.c      ****     
+ 197:.\main.c      ****     Refelctance_Start();
+ 198:.\main.c      **** 
+ 199:.\main.c      ****     IR_led_Write(1);
+ 200:.\main.c      ****     for(;;)
+ 201:.\main.c      ****     {
+ 202:.\main.c      ****         reflectance_period();      //print out each period of reflectance sensors
+ 203:.\main.c      ****         reflectance_digital();      //print out 0 or 1 according to results of reflectance period
+ 204:.\main.c      ****         
+ 205:.\main.c      ****         CyDelay(500);
+ 206:.\main.c      ****     }
+ 207:.\main.c      **** }   
+ 208:.\main.c      **** */
  209:.\main.c      **** 
- 210:.\main.c      ****     motor_forward(50,2000);     // moving forward
- 211:.\main.c      ****     motor_turn(10,50,2000);     // turn
- 212:.\main.c      ****     motor_turn(50,10,2000);     // turn
- 213:.\main.c      ****     motor_backward(50,2000);    // movinb backward
- 214:.\main.c      ****        
- 215:.\main.c      ****     motor_Stop();               // motor stop
- 216:.\main.c      ****     
- 217:.\main.c      ****     for(;;)
- 218:.\main.c      ****     {
- 219:.\main.c      **** 
- 220:.\main.c      ****     }
- 221:.\main.c      **** }
- 222:.\main.c      **** //*/
- 223:.\main.c      ****     
- 224:.\main.c      **** /*//gyroscope//
- 225:.\main.c      **** int main()
- 226:.\main.c      **** {
- 227:.\main.c      ****     CyGlobalIntEnable; 
- 228:.\main.c      ****     UART_Start();
- 229:.\main.c      ****   
- 230:.\main.c      ****     I2C_Start();
- 231:.\main.c      ****   
- 232:.\main.c      ****     uint8 X_AXIS_L, X_AXIS_H, Y_AXIS_L, Y_AXIS_H, Z_AXIS_L, Z_AXIS_H;
- 233:.\main.c      ****     //uint8 X_L_M, X_H_M, Y_L_M, Y_H_M, Z_L_M, Z_H_M;
- 234:.\main.c      ****     //uint8 X_L_A, X_H_A, Y_L_A, Y_H_A, Z_L_A, Z_H_A;
- 235:.\main.c      ****     int16 X_AXIS, Y_AXIS, Z_AXIS;
- 236:.\main.c      ****     
- 237:.\main.c      ****     I2C_write(GYRO_ADDR, GYRO_CTRL1_REG, 0x0F);             // set gyroscope into active mode
- 238:.\main.c      ****     I2C_write(GYRO_ADDR, GYRO_CTRL4_REG, 0x30);             // set full scale selection to 2000dps 
- 239:.\main.c      ****     
- 240:.\main.c      ****     for(;;)
- 241:.\main.c      ****     {
-ARM GAS  C:\Users\dufma\AppData\Local\Temp\cckQZnrn.s 			page 6
+ 210:.\main.c      ****  /* //motor//
+ 211:.\main.c      **** int main()
+ 212:.\main.c      **** {
+ 213:.\main.c      ****     CyGlobalIntEnable; 
+ 214:.\main.c      ****     UART_Start();
+ 215:.\main.c      **** 
+ 216:.\main.c      ****     motor_Start();              // motor start
+ 217:.\main.c      **** 
+ 218:.\main.c      ****     motor_forward(50,2000);     // moving forward
+ 219:.\main.c      ****     motor_turn(10,50,2000);     // turn
+ 220:.\main.c      ****     motor_turn(50,10,2000);     // turn
+ 221:.\main.c      ****     motor_backward(50,2000);    // movinb backward
+ 222:.\main.c      ****        
+ 223:.\main.c      ****     motor_Stop();               // motor stop
+ 224:.\main.c      ****     
+ 225:.\main.c      ****     for(;;)
+ 226:.\main.c      ****     {
+ 227:.\main.c      **** 
+ 228:.\main.c      ****     }
+ 229:.\main.c      **** }
+ 230:.\main.c      **** //*/
+ 231:.\main.c      ****     
+ 232:.\main.c      **** /*//gyroscope//
+ 233:.\main.c      **** int main()
+ 234:.\main.c      **** {
+ 235:.\main.c      ****     CyGlobalIntEnable; 
+ 236:.\main.c      ****     UART_Start();
+ 237:.\main.c      ****   
+ 238:.\main.c      ****     I2C_Start();
+ 239:.\main.c      ****   
+ 240:.\main.c      ****     uint8 X_L_G, X_H_G, Y_L_G, Y_H_G, Z_L_G, Z_H_G;
+ 241:.\main.c      ****     int16 X_AXIS_G, Y_AXIS_G, Z_AXIS_G;
+ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccQkwjN8.s 			page 6
 
 
- 242:.\main.c      ****         //print out gyroscope output
- 243:.\main.c      ****         X_AXIS_L = I2C_read(GYRO_ADDR, OUT_X_AXIS_L);
- 244:.\main.c      ****         X_AXIS_H = I2C_read(GYRO_ADDR, OUT_X_AXIS_H);
- 245:.\main.c      ****         X_AXIS = convert_raw(X_AXIS_H, X_AXIS_L);
- 246:.\main.c      ****         
- 247:.\main.c      ****         
- 248:.\main.c      ****         Y_AXIS_L = I2C_read(GYRO_ADDR, OUT_Y_AXIS_L);
- 249:.\main.c      ****         Y_AXIS_H = I2C_read(GYRO_ADDR, OUT_Y_AXIS_H);
- 250:.\main.c      ****         Y_AXIS = convert_raw(Y_AXIS_H, Y_AXIS_L);
- 251:.\main.c      ****         
+ 242:.\main.c      ****     
+ 243:.\main.c      ****     I2C_write(GYRO_ADDR, GYRO_CTRL1_REG, 0x0F);             // set gyroscope into active mode
+ 244:.\main.c      ****     I2C_write(GYRO_ADDR, GYRO_CTRL4_REG, 0x30);             // set full scale selection to 2000dps 
+ 245:.\main.c      ****     
+ 246:.\main.c      ****     for(;;)
+ 247:.\main.c      ****     {
+ 248:.\main.c      ****         //print out gyroscope output
+ 249:.\main.c      ****         X_L_G = I2C_read(GYRO_ADDR, OUT_X_AXIS_L);
+ 250:.\main.c      ****         X_H_G = I2C_read(GYRO_ADDR, OUT_X_AXIS_H);
+ 251:.\main.c      ****         X_AXIS_G = convert_raw(X_H_G, X_L_G);
  252:.\main.c      ****         
- 253:.\main.c      ****         Z_AXIS_L = I2C_read(GYRO_ADDR, OUT_Z_AXIS_L);
- 254:.\main.c      ****         Z_AXIS_H = I2C_read(GYRO_ADDR, OUT_Z_AXIS_H);
- 255:.\main.c      ****         Z_AXIS = convert_raw(Z_AXIS_H, Z_AXIS_L);
- 256:.\main.c      ****      
- 257:.\main.c      ****         printf("H L : %d %d %d %d %d %d \r\n", X_AXIS_L, X_AXIS_H, Y_AXIS_L, Y_AXIS_H, Z_AXIS_L, Z_
- 258:.\main.c      ****         printf("%d %d %d \r\n", X_AXIS, Y_AXIS, Z_AXIS);
- 259:.\main.c      ****         //printf("%d %d %d \r\n", value_convert_gyro(X_AXIS), value_convert_gyro(Y_AXIS), value_con
- 260:.\main.c      ****         
- 261:.\main.c      ****        CyDelay(50);
- 262:.\main.c      ****     }
- 263:.\main.c      ****   
- 264:.\main.c      **** }   
- 265:.\main.c      **** //*/
- 266:.\main.c      **** 
- 267:.\main.c      **** /*//magnetometer//
- 268:.\main.c      **** int main()
- 269:.\main.c      **** {
- 270:.\main.c      ****     CyGlobalIntEnable; 
- 271:.\main.c      ****     UART_Start();
- 272:.\main.c      ****   
- 273:.\main.c      ****     I2C_Start();
- 274:.\main.c      ****    
- 275:.\main.c      ****     uint8 X_L_M, X_H_M, Y_L_M, Y_H_M, Z_L_M, Z_H_M;
- 276:.\main.c      ****     int16 X_AXIS, Y_AXIS, Z_AXIS;
- 277:.\main.c      ****     
- 278:.\main.c      ****     I2C_write(GYRO_ADDR, GYRO_CTRL1_REG, 0x0F);             // set gyroscope into active mode
- 279:.\main.c      ****     I2C_write(GYRO_ADDR, GYRO_CTRL4_REG, 0x30);             // set full scale selection to 2000dps
- 280:.\main.c      ****     I2C_write(ACCEL_MAG_ADDR, ACCEL_CTRL1_REG, 0x37);           // set accelerometer & magnetometer
- 281:.\main.c      ****     I2C_write(ACCEL_MAG_ADDR, ACCEL_CTRL7_REG, 0x22);
- 282:.\main.c      ****     
+ 253:.\main.c      ****         
+ 254:.\main.c      ****         Y_L_G = I2C_read(GYRO_ADDR, OUT_Y_AXIS_L);
+ 255:.\main.c      ****         Y_H_G = I2C_read(GYRO_ADDR, OUT_Y_AXIS_H);
+ 256:.\main.c      ****         Y_AXIS_G = convert_raw(Y_H_G, Y_L_G);
+ 257:.\main.c      ****         
+ 258:.\main.c      ****         
+ 259:.\main.c      ****         Z_L_G = I2C_read(GYRO_ADDR, OUT_Z_AXIS_L);
+ 260:.\main.c      ****         Z_H_G = I2C_read(GYRO_ADDR, OUT_Z_AXIS_H);
+ 261:.\main.c      ****         Z_AXIS_G = convert_raw(Z_H_G, Z_L_G);
+ 262:.\main.c      ****      
+ 263:.\main.c      ****         printf("H L : %d %d %d %d %d %d \r\n", X_L_G, X_H_G, Y_L_G, Y_H_G, Z_L_G, Z_H_G);
+ 264:.\main.c      ****         printf("%d %d %d \r\n", X_AXIS_G, Y_AXIS_G, Z_AXIS_G);
+ 265:.\main.c      ****         //printf("%d %d %d \r\n", value_convert_gyro(X_AXIS_G), value_convert_gyro(Y_AXIS_G), value
+ 266:.\main.c      ****         
+ 267:.\main.c      ****        CyDelay(50);
+ 268:.\main.c      ****     }
+ 269:.\main.c      ****   
+ 270:.\main.c      **** }   
+ 271:.\main.c      **** //*/
+ 272:.\main.c      **** 
+ 273:.\main.c      **** /*//magnetometer//
+ 274:.\main.c      **** int main()
+ 275:.\main.c      **** {
+ 276:.\main.c      ****     CyGlobalIntEnable; 
+ 277:.\main.c      ****     UART_Start();
+ 278:.\main.c      ****   
+ 279:.\main.c      ****     I2C_Start();
+ 280:.\main.c      ****    
+ 281:.\main.c      ****     uint8 X_L_M, X_H_M, Y_L_M, Y_H_M, Z_L_M, Z_H_M;
+ 282:.\main.c      ****     int16 X_AXIS, Y_AXIS, Z_AXIS;
  283:.\main.c      ****     
- 284:.\main.c      ****     for(;;)
- 285:.\main.c      ****     {
- 286:.\main.c      ****         X_L_M = I2C_read(ACCEL_MAG_ADDR, OUT_X_L_M);
- 287:.\main.c      ****         X_H_M = I2C_read(ACCEL_MAG_ADDR, OUT_X_H_M);
- 288:.\main.c      ****         X_AXIS = convert_raw(X_L_M, X_H_M);
- 289:.\main.c      ****         
- 290:.\main.c      ****         Y_L_M = I2C_read(ACCEL_MAG_ADDR, OUT_Y_L_M);
- 291:.\main.c      ****         Y_H_M = I2C_read(ACCEL_MAG_ADDR, OUT_Y_H_M);
- 292:.\main.c      ****         Y_AXIS = convert_raw(Y_L_M, Y_H_M);
- 293:.\main.c      ****         
- 294:.\main.c      ****         Z_L_M = I2C_read(ACCEL_MAG_ADDR, OUT_Z_L_M);
- 295:.\main.c      ****         Z_H_M = I2C_read(ACCEL_MAG_ADDR, OUT_Z_H_M);
- 296:.\main.c      ****         Z_AXIS = convert_raw(Z_L_M, Z_H_M);
- 297:.\main.c      ****         
- 298:.\main.c      ****         heading(X_AXIS, Y_AXIS);
-ARM GAS  C:\Users\dufma\AppData\Local\Temp\cckQZnrn.s 			page 7
+ 284:.\main.c      ****     I2C_write(GYRO_ADDR, GYRO_CTRL1_REG, 0x0F);             // set gyroscope into active mode
+ 285:.\main.c      ****     I2C_write(GYRO_ADDR, GYRO_CTRL4_REG, 0x30);             // set full scale selection to 2000dps
+ 286:.\main.c      ****     I2C_write(ACCEL_MAG_ADDR, ACCEL_CTRL1_REG, 0x37);           // set accelerometer & magnetometer
+ 287:.\main.c      ****     I2C_write(ACCEL_MAG_ADDR, ACCEL_CTRL7_REG, 0x22);
+ 288:.\main.c      ****     
+ 289:.\main.c      ****     
+ 290:.\main.c      ****     for(;;)
+ 291:.\main.c      ****     {
+ 292:.\main.c      ****         X_L_M = I2C_read(ACCEL_MAG_ADDR, OUT_X_L_M);
+ 293:.\main.c      ****         X_H_M = I2C_read(ACCEL_MAG_ADDR, OUT_X_H_M);
+ 294:.\main.c      ****         X_AXIS = convert_raw(X_L_M, X_H_M);
+ 295:.\main.c      ****         
+ 296:.\main.c      ****         Y_L_M = I2C_read(ACCEL_MAG_ADDR, OUT_Y_L_M);
+ 297:.\main.c      ****         Y_H_M = I2C_read(ACCEL_MAG_ADDR, OUT_Y_H_M);
+ 298:.\main.c      ****         Y_AXIS = convert_raw(Y_L_M, Y_H_M);
+ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccQkwjN8.s 			page 7
 
 
- 299:.\main.c      ****         printf("MAGNET: %d %d %d %d %d %d \r\n", X_L_M, X_H_M, Y_L_M, Y_H_M, Z_L_M, Z_H_M);
- 300:.\main.c      ****         printf("%d %d %d \r\n", X_AXIS,Y_AXIS, Z_AXIS);
- 301:.\main.c      ****         CyDelay(50);      
- 302:.\main.c      ****     }
- 303:.\main.c      **** }   
- 304:.\main.c      **** //*/
- 305:.\main.c      **** 
- 306:.\main.c      **** 
- 307:.\main.c      **** 
- 308:.\main.c      **** #if 0
- 309:.\main.c      **** int rread(void)
- 310:.\main.c      **** {
- 311:.\main.c      ****     SC0_SetDriveMode(PIN_DM_STRONG);
- 312:.\main.c      ****     SC0_Write(1);
- 313:.\main.c      ****     CyDelayUs(10);
- 314:.\main.c      ****     SC0_SetDriveMode(PIN_DM_DIG_HIZ);
- 315:.\main.c      ****     Timer_1_Start();
- 316:.\main.c      ****     uint16_t start = Timer_1_ReadCounter();
- 317:.\main.c      ****     uint16_t end = 0;
- 318:.\main.c      ****     while(!(Timer_1_ReadStatusRegister() & Timer_1_STATUS_TC)) {
- 319:.\main.c      ****         if(SC0_Read() == 0 && end == 0) {
- 320:.\main.c      ****             end = Timer_1_ReadCounter();
- 321:.\main.c      ****         }
- 322:.\main.c      ****     }
- 323:.\main.c      ****     Timer_1_Stop();
- 324:.\main.c      ****     
- 325:.\main.c      ****     return (start - end);
- 326:.\main.c      **** }
- 327:.\main.c      **** #endif
- 328:.\main.c      **** 
- 329:.\main.c      **** int _write(int file, char *ptr, int len)
- 330:.\main.c      **** {
-  45              		.loc 1 330 0
+ 299:.\main.c      ****         
+ 300:.\main.c      ****         Z_L_M = I2C_read(ACCEL_MAG_ADDR, OUT_Z_L_M);
+ 301:.\main.c      ****         Z_H_M = I2C_read(ACCEL_MAG_ADDR, OUT_Z_H_M);
+ 302:.\main.c      ****         Z_AXIS = convert_raw(Z_L_M, Z_H_M);
+ 303:.\main.c      ****         
+ 304:.\main.c      ****         heading(X_AXIS, Y_AXIS);
+ 305:.\main.c      ****         printf("MAGNET: %d %d %d %d %d %d \r\n", X_L_M, X_H_M, Y_L_M, Y_H_M, Z_L_M, Z_H_M);
+ 306:.\main.c      ****         printf("%d %d %d \r\n", X_AXIS,Y_AXIS, Z_AXIS);
+ 307:.\main.c      ****         CyDelay(50);      
+ 308:.\main.c      ****     }
+ 309:.\main.c      **** }   
+ 310:.\main.c      **** //*/
+ 311:.\main.c      **** 
+ 312:.\main.c      **** 
+ 313:.\main.c      **** 
+ 314:.\main.c      **** #if 0
+ 315:.\main.c      **** int rread(void)
+ 316:.\main.c      **** {
+ 317:.\main.c      ****     SC0_SetDriveMode(PIN_DM_STRONG);
+ 318:.\main.c      ****     SC0_Write(1);
+ 319:.\main.c      ****     CyDelayUs(10);
+ 320:.\main.c      ****     SC0_SetDriveMode(PIN_DM_DIG_HIZ);
+ 321:.\main.c      ****     Timer_1_Start();
+ 322:.\main.c      ****     uint16_t start = Timer_1_ReadCounter();
+ 323:.\main.c      ****     uint16_t end = 0;
+ 324:.\main.c      ****     while(!(Timer_1_ReadStatusRegister() & Timer_1_STATUS_TC)) {
+ 325:.\main.c      ****         if(SC0_Read() == 0 && end == 0) {
+ 326:.\main.c      ****             end = Timer_1_ReadCounter();
+ 327:.\main.c      ****         }
+ 328:.\main.c      ****     }
+ 329:.\main.c      ****     Timer_1_Stop();
+ 330:.\main.c      ****     
+ 331:.\main.c      ****     return (start - end);
+ 332:.\main.c      **** }
+ 333:.\main.c      **** #endif
+ 334:.\main.c      **** 
+ 335:.\main.c      **** int _write(int file, char *ptr, int len)
+ 336:.\main.c      **** {
+  45              		.loc 1 336 0
   46              		.cfi_startproc
   47              		@ args = 0, pretend = 0, frame = 0
   48              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -406,40 +412,40 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\cckQZnrn.s 			page 1
   55              		.cfi_offset 14, -4
   56 0002 1646     		mov	r6, r2
   57              	.LVL1:
- 331:.\main.c      ****     (void) file;
- 332:.\main.c      **** 	int n;
- 333:.\main.c      **** 	for(n = 0; n < len; n++) {
-  58              		.loc 1 333 0
+ 337:.\main.c      ****     (void) file;
+ 338:.\main.c      **** 	int n;
+ 339:.\main.c      **** 	for(n = 0; n < len; n++) {
+  58              		.loc 1 339 0
   59 0004 0024     		movs	r4, #0
   60 0006 05E0     		b	.L3
+ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccQkwjN8.s 			page 8
+
+
   61              	.LVL2:
   62              	.L4:
- 334:.\main.c      **** 		UART_PutChar(*ptr++);
-  63              		.loc 1 334 0 discriminator 3
+ 340:.\main.c      **** 		UART_PutChar(*ptr++);
+  63              		.loc 1 340 0 discriminator 3
   64 0008 4D1C     		adds	r5, r1, #1
   65              	.LVL3:
-ARM GAS  C:\Users\dufma\AppData\Local\Temp\cckQZnrn.s 			page 8
-
-
   66 000a 0878     		ldrb	r0, [r1]	@ zero_extendqisi2
   67 000c FFF7FEFF 		bl	UART_PutChar
   68              	.LVL4:
- 333:.\main.c      **** 		UART_PutChar(*ptr++);
-  69              		.loc 1 333 0 discriminator 3
+ 339:.\main.c      **** 		UART_PutChar(*ptr++);
+  69              		.loc 1 339 0 discriminator 3
   70 0010 0134     		adds	r4, r4, #1
   71              	.LVL5:
-  72              		.loc 1 334 0 discriminator 3
+  72              		.loc 1 340 0 discriminator 3
   73 0012 2946     		mov	r1, r5
   74              	.LVL6:
   75              	.L3:
- 333:.\main.c      **** 		UART_PutChar(*ptr++);
-  76              		.loc 1 333 0 discriminator 1
+ 339:.\main.c      **** 		UART_PutChar(*ptr++);
+  76              		.loc 1 339 0 discriminator 1
   77 0014 B442     		cmp	r4, r6
   78 0016 F7DB     		blt	.L4
- 335:.\main.c      **** 	}
- 336:.\main.c      **** 	return len;
- 337:.\main.c      **** }
-  79              		.loc 1 337 0
+ 341:.\main.c      **** 	}
+ 342:.\main.c      **** 	return len;
+ 343:.\main.c      **** }
+  79              		.loc 1 343 0
   80 0018 3046     		mov	r0, r6
   81 001a 70BD     		pop	{r4, r5, r6, pc}
   82              		.cfi_endproc
@@ -472,15 +478,15 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\cckQZnrn.s 			page 1
  109 0025 02       		.uleb128 0x2
  110 0026 01       		.byte	0x1
  111 0027 06       		.byte	0x6
+ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccQkwjN8.s 			page 9
+
+
  112 0028 FF010000 		.4byte	.LASF0
  113 002c 02       		.uleb128 0x2
  114 002d 01       		.byte	0x1
  115 002e 08       		.byte	0x8
  116 002f 4C000000 		.4byte	.LASF1
  117 0033 02       		.uleb128 0x2
-ARM GAS  C:\Users\dufma\AppData\Local\Temp\cckQZnrn.s 			page 9
-
-
  118 0034 02       		.byte	0x2
  119 0035 05       		.byte	0x5
  120 0036 D7010000 		.4byte	.LASF2
@@ -532,15 +538,15 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\cckQZnrn.s 			page 1
  166 0091 03       		.byte	0x3
  167 0092 2C       		.byte	0x2c
  168 0093 4C000000 		.4byte	0x4c
+ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccQkwjN8.s 			page 10
+
+
  169 0097 05       		.uleb128 0x5
  170 0098 3B000000 		.4byte	.LASF13
  171 009c 04       		.byte	0x4
  172 009d 3801     		.2byte	0x138
  173 009f 2C000000 		.4byte	0x2c
  174 00a3 02       		.uleb128 0x2
-ARM GAS  C:\Users\dufma\AppData\Local\Temp\cckQZnrn.s 			page 10
-
-
  175 00a4 04       		.byte	0x4
  176 00a5 04       		.byte	0x4
  177 00a6 41000000 		.4byte	.LASF14
@@ -563,64 +569,64 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\cckQZnrn.s 			page 1
  194 00c6 00000000 		.4byte	.LASF18
  195 00ca 08       		.byte	0x8
  196 00cb 05       		.byte	0x5
- 197 00cc 0A       		.byte	0xa
+ 197 00cc 0E       		.byte	0xe
  198 00cd FE000000 		.4byte	0xfe
  199 00d1 08       		.uleb128 0x8
  200 00d2 6C6C00   		.ascii	"ll\000"
  201 00d5 05       		.byte	0x5
- 202 00d6 0B       		.byte	0xb
+ 202 00d6 0F       		.byte	0xf
  203 00d7 81000000 		.4byte	0x81
  204 00db 00       		.byte	0
  205 00dc 08       		.uleb128 0x8
  206 00dd 6C7200   		.ascii	"lr\000"
  207 00e0 05       		.byte	0x5
- 208 00e1 0D       		.byte	0xd
+ 208 00e1 11       		.byte	0x11
  209 00e2 81000000 		.4byte	0x81
  210 00e6 02       		.byte	0x2
  211 00e7 08       		.uleb128 0x8
  212 00e8 726C00   		.ascii	"rl\000"
  213 00eb 05       		.byte	0x5
- 214 00ec 0E       		.byte	0xe
+ 214 00ec 12       		.byte	0x12
  215 00ed 81000000 		.4byte	0x81
  216 00f1 04       		.byte	0x4
  217 00f2 08       		.uleb128 0x8
  218 00f3 727200   		.ascii	"rr\000"
  219 00f6 05       		.byte	0x5
- 220 00f7 10       		.byte	0x10
+ 220 00f7 14       		.byte	0x14
  221 00f8 81000000 		.4byte	0x81
  222 00fc 06       		.byte	0x6
  223 00fd 00       		.byte	0
  224 00fe 07       		.uleb128 0x7
  225 00ff 75000000 		.4byte	.LASF19
+ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccQkwjN8.s 			page 11
+
+
  226 0103 08       		.byte	0x8
  227 0104 05       		.byte	0x5
- 228 0105 13       		.byte	0x13
+ 228 0105 1C       		.byte	0x1c
  229 0106 37010000 		.4byte	0x137
  230 010a 08       		.uleb128 0x8
  231 010b 6C6C00   		.ascii	"ll\000"
-ARM GAS  C:\Users\dufma\AppData\Local\Temp\cckQZnrn.s 			page 11
-
-
  232 010e 05       		.byte	0x5
- 233 010f 14       		.byte	0x14
+ 233 010f 1D       		.byte	0x1d
  234 0110 81000000 		.4byte	0x81
  235 0114 00       		.byte	0
  236 0115 08       		.uleb128 0x8
  237 0116 6C7200   		.ascii	"lr\000"
  238 0119 05       		.byte	0x5
- 239 011a 16       		.byte	0x16
+ 239 011a 1F       		.byte	0x1f
  240 011b 81000000 		.4byte	0x81
  241 011f 02       		.byte	0x2
  242 0120 08       		.uleb128 0x8
  243 0121 726C00   		.ascii	"rl\000"
  244 0124 05       		.byte	0x5
- 245 0125 17       		.byte	0x17
+ 245 0125 20       		.byte	0x20
  246 0126 81000000 		.4byte	0x81
  247 012a 04       		.byte	0x4
  248 012b 08       		.uleb128 0x8
  249 012c 727200   		.ascii	"rr\000"
  250 012f 05       		.byte	0x5
- 251 0130 19       		.byte	0x19
+ 251 0130 22       		.byte	0x22
  252 0131 81000000 		.4byte	0x81
  253 0135 06       		.byte	0x6
  254 0136 00       		.byte	0
@@ -631,7 +637,7 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\cckQZnrn.s 			page 1
  259 013e 09       		.uleb128 0x9
  260 013f 9A010000 		.4byte	.LASF28
  261 0143 01       		.byte	0x1
- 262 0144 28       		.byte	0x28
+ 262 0144 33       		.byte	0x33
  263 0145 73000000 		.4byte	0x73
  264 0149 00000000 		.4byte	.LFB63
  265 014d 02000000 		.4byte	.LFE63-.LFB63
@@ -640,7 +646,7 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\cckQZnrn.s 			page 1
  268 0153 0A       		.uleb128 0xa
  269 0154 D0010000 		.4byte	.LASF29
  270 0158 01       		.byte	0x1
- 271 0159 4901     		.2byte	0x149
+ 271 0159 4F01     		.2byte	0x14f
  272 015b 73000000 		.4byte	0x73
  273 015f 00000000 		.4byte	.LFB64
  274 0163 1C000000 		.4byte	.LFE64-.LFB64
@@ -650,28 +656,28 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\cckQZnrn.s 			page 1
  278 016d 0B       		.uleb128 0xb
  279 016e 47000000 		.4byte	.LASF21
  280 0172 01       		.byte	0x1
- 281 0173 4901     		.2byte	0x149
+ 281 0173 4F01     		.2byte	0x14f
  282 0175 73000000 		.4byte	0x73
+ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccQkwjN8.s 			page 12
+
+
  283 0179 00000000 		.4byte	.LLST0
  284 017d 0C       		.uleb128 0xc
  285 017e 70747200 		.ascii	"ptr\000"
  286 0182 01       		.byte	0x1
- 287 0183 4901     		.2byte	0x149
+ 287 0183 4F01     		.2byte	0x14f
  288 0185 BF000000 		.4byte	0xbf
-ARM GAS  C:\Users\dufma\AppData\Local\Temp\cckQZnrn.s 			page 12
-
-
  289 0189 21000000 		.4byte	.LLST1
  290 018d 0C       		.uleb128 0xc
  291 018e 6C656E00 		.ascii	"len\000"
  292 0192 01       		.byte	0x1
- 293 0193 4901     		.2byte	0x149
+ 293 0193 4F01     		.2byte	0x14f
  294 0195 73000000 		.4byte	0x73
  295 0199 4A000000 		.4byte	.LLST2
  296 019d 0D       		.uleb128 0xd
  297 019e 6E00     		.ascii	"n\000"
  298 01a0 01       		.byte	0x1
- 299 01a1 4C01     		.2byte	0x14c
+ 299 01a1 5201     		.2byte	0x152
  300 01a3 73000000 		.4byte	0x73
  301 01a7 68000000 		.4byte	.LLST3
  302 01ab 0E       		.uleb128 0xe
@@ -688,7 +694,7 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\cckQZnrn.s 			page 1
  313 01c6 11       		.uleb128 0x11
  314 01c7 0B020000 		.4byte	.LASF23
  315 01cb 05       		.byte	0x5
- 316 01cc 11       		.byte	0x11
+ 316 01cc 15       		.byte	0x15
  317 01cd D7010000 		.4byte	0x1d7
  318 01d1 05       		.uleb128 0x5
  319 01d2 03       		.byte	0x3
@@ -698,7 +704,7 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\cckQZnrn.s 			page 1
  323 01dc 11       		.uleb128 0x11
  324 01dd 26000000 		.4byte	.LASF24
  325 01e1 05       		.byte	0x5
- 326 01e2 1A       		.byte	0x1a
+ 326 01e2 23       		.byte	0x23
  327 01e3 ED010000 		.4byte	0x1ed
  328 01e7 05       		.uleb128 0x5
  329 01e8 03       		.byte	0x3
@@ -712,15 +718,15 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\cckQZnrn.s 			page 1
  337 01f9 13       		.uleb128 0x13
  338 01fa 97000000 		.4byte	0x97
  339 01fe 00       		.byte	0
+ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccQkwjN8.s 			page 13
+
+
  340 01ff 00       		.byte	0
  341              		.section	.debug_abbrev,"",%progbits
  342              	.Ldebug_abbrev0:
  343 0000 01       		.uleb128 0x1
  344 0001 11       		.uleb128 0x11
  345 0002 01       		.byte	0x1
-ARM GAS  C:\Users\dufma\AppData\Local\Temp\cckQZnrn.s 			page 13
-
-
  346 0003 25       		.uleb128 0x25
  347 0004 0E       		.uleb128 0xe
  348 0005 13       		.uleb128 0x13
@@ -772,15 +778,15 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\cckQZnrn.s 			page 1
  394 0033 08       		.uleb128 0x8
  395 0034 00       		.byte	0
  396 0035 00       		.byte	0
+ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccQkwjN8.s 			page 14
+
+
  397 0036 05       		.uleb128 0x5
  398 0037 16       		.uleb128 0x16
  399 0038 00       		.byte	0
  400 0039 03       		.uleb128 0x3
  401 003a 0E       		.uleb128 0xe
  402 003b 3A       		.uleb128 0x3a
-ARM GAS  C:\Users\dufma\AppData\Local\Temp\cckQZnrn.s 			page 14
-
-
  403 003c 0B       		.uleb128 0xb
  404 003d 3B       		.uleb128 0x3b
  405 003e 05       		.uleb128 0x5
@@ -832,15 +838,15 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\cckQZnrn.s 			page 1
  451 006c 00       		.byte	0
  452 006d 3F       		.uleb128 0x3f
  453 006e 19       		.uleb128 0x19
+ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccQkwjN8.s 			page 15
+
+
  454 006f 03       		.uleb128 0x3
  455 0070 0E       		.uleb128 0xe
  456 0071 3A       		.uleb128 0x3a
  457 0072 0B       		.uleb128 0xb
  458 0073 3B       		.uleb128 0x3b
  459 0074 0B       		.uleb128 0xb
-ARM GAS  C:\Users\dufma\AppData\Local\Temp\cckQZnrn.s 			page 15
-
-
  460 0075 49       		.uleb128 0x49
  461 0076 13       		.uleb128 0x13
  462 0077 11       		.uleb128 0x11
@@ -892,15 +898,15 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\cckQZnrn.s 			page 1
  508 00a7 49       		.uleb128 0x49
  509 00a8 13       		.uleb128 0x13
  510 00a9 02       		.uleb128 0x2
+ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccQkwjN8.s 			page 16
+
+
  511 00aa 17       		.uleb128 0x17
  512 00ab 00       		.byte	0
  513 00ac 00       		.byte	0
  514 00ad 0C       		.uleb128 0xc
  515 00ae 05       		.uleb128 0x5
  516 00af 00       		.byte	0
-ARM GAS  C:\Users\dufma\AppData\Local\Temp\cckQZnrn.s 			page 16
-
-
  517 00b0 03       		.uleb128 0x3
  518 00b1 08       		.uleb128 0x8
  519 00b2 3A       		.uleb128 0x3a
@@ -952,15 +958,15 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\cckQZnrn.s 			page 1
  565 00e2 19       		.uleb128 0x19
  566 00e3 3C       		.uleb128 0x3c
  567 00e4 19       		.uleb128 0x19
+ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccQkwjN8.s 			page 17
+
+
  568 00e5 00       		.byte	0
  569 00e6 00       		.byte	0
  570 00e7 10       		.uleb128 0x10
  571 00e8 35       		.uleb128 0x35
  572 00e9 00       		.byte	0
  573 00ea 49       		.uleb128 0x49
-ARM GAS  C:\Users\dufma\AppData\Local\Temp\cckQZnrn.s 			page 17
-
-
  574 00eb 13       		.uleb128 0x13
  575 00ec 00       		.byte	0
  576 00ed 00       		.byte	0
@@ -1012,15 +1018,15 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\cckQZnrn.s 			page 1
  622 0000 00000000 		.4byte	.LVL0
  623 0004 08000000 		.4byte	.LVL2
  624 0008 0100     		.2byte	0x1
+ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccQkwjN8.s 			page 18
+
+
  625 000a 50       		.byte	0x50
  626 000b 08000000 		.4byte	.LVL2
  627 000f 1C000000 		.4byte	.LFE64
  628 0013 0400     		.2byte	0x4
  629 0015 F3       		.byte	0xf3
  630 0016 01       		.uleb128 0x1
-ARM GAS  C:\Users\dufma\AppData\Local\Temp\cckQZnrn.s 			page 18
-
-
  631 0017 50       		.byte	0x50
  632 0018 9F       		.byte	0x9f
  633 0019 00000000 		.4byte	0
@@ -1072,15 +1078,15 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\cckQZnrn.s 			page 1
  679 000c 0000     		.2byte	0
  680 000e 0000     		.2byte	0
  681 0010 00000000 		.4byte	.LFB63
+ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccQkwjN8.s 			page 19
+
+
  682 0014 02000000 		.4byte	.LFE63-.LFB63
  683 0018 00000000 		.4byte	.LFB64
  684 001c 1C000000 		.4byte	.LFE64-.LFB64
  685 0020 00000000 		.4byte	0
  686 0024 00000000 		.4byte	0
  687              		.section	.debug_ranges,"",%progbits
-ARM GAS  C:\Users\dufma\AppData\Local\Temp\cckQZnrn.s 			page 19
-
-
  688              	.Ldebug_ranges0:
  689 0000 00000000 		.4byte	.LFB63
  690 0004 02000000 		.4byte	.LFE63
@@ -1132,15 +1138,15 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\cckQZnrn.s 			page 1
  714              	.LASF26:
  715 005a 2E5C6D61 		.ascii	".\\main.c\000"
  715      696E2E63 
+ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccQkwjN8.s 			page 20
+
+
  715      00
  716              	.LASF7:
  717 0063 6C6F6E67 		.ascii	"long unsigned int\000"
  717      20756E73 
  717      69676E65 
  717      6420696E 
-ARM GAS  C:\Users\dufma\AppData\Local\Temp\cckQZnrn.s 			page 20
-
-
  717      7400
  718              	.LASF19:
  719 0075 64696769 		.ascii	"digital_sensor_value_\000"
@@ -1192,15 +1198,15 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\cckQZnrn.s 			page 1
  735      73657273 
  735      5C647566 
  735      6D615C44 
+ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccQkwjN8.s 			page 21
+
+
  735      65736B74 
  736 0189 756D6F42 		.ascii	"umoBot_Lib.cydsn\000"
  736      6F745F4C 
  736      69622E63 
  736      7964736E 
  736      00
-ARM GAS  C:\Users\dufma\AppData\Local\Temp\cckQZnrn.s 			page 21
-
-
  737              	.LASF28:
  738 019a 6D61696E 		.ascii	"main\000"
  738      00

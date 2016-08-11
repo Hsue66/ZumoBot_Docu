@@ -1,6 +1,6 @@
 /**
  * @file    Gyro.c
- * @brief   Gyroscope method file. For more details, please refer to Gyro.h file. 
+ * @brief   Basic methods for operating gyroscope. For more details, please refer to Gyro.h file. 
  * @details part number: L3GD20H (included in Zumo shield)
 */
 #include "gyro.h"
