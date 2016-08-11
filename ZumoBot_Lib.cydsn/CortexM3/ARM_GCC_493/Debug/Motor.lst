@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccsx7pyK.s 			page 1
+ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccILEA17.s 			page 1
 
 
    1              		.syntax unified
@@ -29,15 +29,15 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccsx7pyK.s 			page 1
   26              		.file 1 ".\\Motor.c"
    1:.\Motor.c     **** /**
    2:.\Motor.c     ****  * @file    Motor.c
-   3:.\Motor.c     ****  * @brief   Motor method file
-   4:.\Motor.c     ****  * @details 
+   3:.\Motor.c     ****  * @brief   Basic methods for operating motor sensor. For more details, please refer to Motor.h fil
+   4:.\Motor.c     ****  * @details included in Zumo shield
    5:.\Motor.c     **** */
-   6:.\Motor.c     **** 
-   7:.\Motor.c     **** #include "Motor.h"
+   6:.\Motor.c     **** #include "Motor.h"
+   7:.\Motor.c     **** 
    8:.\Motor.c     **** 
    9:.\Motor.c     **** /**
-  10:.\Motor.c     **** * @brief    Start motors
-  11:.\Motor.c     **** * @details
+  10:.\Motor.c     **** * @brief    Starting motor sensors
+  11:.\Motor.c     **** * @details  
   12:.\Motor.c     **** */
   13:.\Motor.c     **** void motor_Start()
   14:.\Motor.c     **** {
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccsx7pyK.s 			page 1
   40              	.LFE63:
   41              		.size	motor_Start, .-motor_Start
   42              		.section	.text.motor_Stop,"ax",%progbits
-ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccsx7pyK.s 			page 2
+ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccILEA17.s 			page 2
 
 
   43              		.align	2
@@ -72,7 +72,7 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccsx7pyK.s 			page 1
   17:.\Motor.c     **** 
   18:.\Motor.c     **** 
   19:.\Motor.c     **** /**
-  20:.\Motor.c     **** * @brief    Stop motors
+  20:.\Motor.c     **** * @brief    Stopping motor sensors
   21:.\Motor.c     **** * @details
   22:.\Motor.c     **** */
   23:.\Motor.c     **** void motor_Stop()
@@ -103,39 +103,42 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccsx7pyK.s 			page 1
   72              	.LFB65:
   26:.\Motor.c     **** }
   27:.\Motor.c     **** 
-  28:.\Motor.c     **** /**
-  29:.\Motor.c     **** * @brief    Move motors forward
-  30:.\Motor.c     **** * @details  gives same speed to PWM make motor goes forward
-  31:.\Motor.c     **** */
-  32:.\Motor.c     **** void motor_forward(uint8 speed,uint32 delay)
-  33:.\Motor.c     **** {
-  73              		.loc 1 33 0
+  28:.\Motor.c     **** 
+  29:.\Motor.c     **** /**
+  30:.\Motor.c     **** * @brief    Moving motors forward
+  31:.\Motor.c     **** * @details  giveing same speed to each side of PWM to make motors go forward
+  32:.\Motor.c     **** * @param    uint8 speed : speed value
+  33:.\Motor.c     **** * @param    uint32 delay : delay time
+  34:.\Motor.c     **** */
+  35:.\Motor.c     **** void motor_forward(uint8 speed,uint32 delay)
+  36:.\Motor.c     **** {
+  73              		.loc 1 36 0
   74              		.cfi_startproc
   75              		@ args = 0, pretend = 0, frame = 0
   76              		@ frame_needed = 0, uses_anonymous_args = 0
   77              	.LVL2:
   78 0000 38B5     		push	{r3, r4, r5, lr}
+ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccILEA17.s 			page 3
+
+
   79              		.cfi_def_cfa_offset 16
   80              		.cfi_offset 3, -16
   81              		.cfi_offset 4, -12
-ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccsx7pyK.s 			page 3
-
-
   82              		.cfi_offset 5, -8
   83              		.cfi_offset 14, -4
   84 0002 0546     		mov	r5, r0
   85 0004 0C46     		mov	r4, r1
-  34:.\Motor.c     ****     PWM_WriteCompare1(speed); 
-  86              		.loc 1 34 0
+  37:.\Motor.c     ****     PWM_WriteCompare1(speed); 
+  86              		.loc 1 37 0
   87 0006 FFF7FEFF 		bl	PWM_WriteCompare1
   88              	.LVL3:
-  35:.\Motor.c     ****     PWM_WriteCompare2(speed); 
-  89              		.loc 1 35 0
+  38:.\Motor.c     ****     PWM_WriteCompare2(speed); 
+  89              		.loc 1 38 0
   90 000a 2846     		mov	r0, r5
   91 000c FFF7FEFF 		bl	PWM_WriteCompare2
   92              	.LVL4:
-  36:.\Motor.c     ****     CyDelay(delay);
-  93              		.loc 1 36 0
+  39:.\Motor.c     ****     CyDelay(delay);
+  93              		.loc 1 39 0
   94 0010 2046     		mov	r0, r4
   95 0012 FFF7FEFF 		bl	CyDelay
   96              	.LVL5:
@@ -151,15 +154,19 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccsx7pyK.s 			page 1
  106              		.type	motor_turn, %function
  107              	motor_turn:
  108              	.LFB66:
-  37:.\Motor.c     **** }
-  38:.\Motor.c     **** 
-  39:.\Motor.c     **** /**
-  40:.\Motor.c     **** * @brief    Move motors turn around
-  41:.\Motor.c     **** * @details  moving left when l_speed < r_speed or moving right when l_speed > r_speed
-  42:.\Motor.c     **** */
-  43:.\Motor.c     **** void motor_turn(uint8 l_speed, uint8 r_speed, uint32 delay)
-  44:.\Motor.c     **** {
- 109              		.loc 1 44 0
+  40:.\Motor.c     **** }
+  41:.\Motor.c     **** 
+  42:.\Motor.c     **** 
+  43:.\Motor.c     **** /**
+  44:.\Motor.c     **** * @brief    Moving motors to make a turn 
+  45:.\Motor.c     **** * @details  moving left when l_speed < r_speed or moving right when l_speed > r_speed
+  46:.\Motor.c     **** * @param    uint8 l_speed : left motor speed value
+  47:.\Motor.c     **** * @param    uint8 r_speed : right motor speed value
+  48:.\Motor.c     **** * @param    uint32 delay : delay time
+  49:.\Motor.c     **** */
+  50:.\Motor.c     **** void motor_turn(uint8 l_speed, uint8 r_speed, uint32 delay)
+  51:.\Motor.c     **** {
+ 109              		.loc 1 51 0
  110              		.cfi_startproc
  111              		@ args = 0, pretend = 0, frame = 0
  112              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -171,21 +178,21 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccsx7pyK.s 			page 1
  118              		.cfi_offset 5, -8
  119              		.cfi_offset 14, -4
  120 0002 0D46     		mov	r5, r1
+ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccILEA17.s 			page 4
+
+
  121 0004 1446     		mov	r4, r2
-  45:.\Motor.c     ****     PWM_WriteCompare1(l_speed); 
- 122              		.loc 1 45 0
+  52:.\Motor.c     ****     PWM_WriteCompare1(l_speed); 
+ 122              		.loc 1 52 0
  123 0006 FFF7FEFF 		bl	PWM_WriteCompare1
  124              	.LVL7:
-  46:.\Motor.c     ****     PWM_WriteCompare2(r_speed); 
- 125              		.loc 1 46 0
-ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccsx7pyK.s 			page 4
-
-
+  53:.\Motor.c     ****     PWM_WriteCompare2(r_speed); 
+ 125              		.loc 1 53 0
  126 000a 2846     		mov	r0, r5
  127 000c FFF7FEFF 		bl	PWM_WriteCompare2
  128              	.LVL8:
-  47:.\Motor.c     ****     CyDelay(delay);
- 129              		.loc 1 47 0
+  54:.\Motor.c     ****     CyDelay(delay);
+ 129              		.loc 1 54 0
  130 0010 2046     		mov	r0, r4
  131 0012 FFF7FEFF 		bl	CyDelay
  132              	.LVL9:
@@ -201,16 +208,18 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccsx7pyK.s 			page 1
  142              		.type	motor_backward, %function
  143              	motor_backward:
  144              	.LFB67:
-  48:.\Motor.c     **** }
-  49:.\Motor.c     **** 
-  50:.\Motor.c     **** 
-  51:.\Motor.c     **** /**
-  52:.\Motor.c     **** * @brief    Move motors backward
-  53:.\Motor.c     **** * @details  set backward mode to each motors and gives same speed to PWM
-  54:.\Motor.c     **** */
-  55:.\Motor.c     **** void motor_backward(uint8 speed,uint32 delay)
-  56:.\Motor.c     **** {
- 145              		.loc 1 56 0
+  55:.\Motor.c     **** }
+  56:.\Motor.c     **** 
+  57:.\Motor.c     **** 
+  58:.\Motor.c     **** /**
+  59:.\Motor.c     **** * @brief    Moving motors backward
+  60:.\Motor.c     **** * @details  setting backward mode to each motors and gives same speed to each side of PWM
+  61:.\Motor.c     **** * @param    uint8 speed : speed value
+  62:.\Motor.c     **** * @param    uint32 delay : delay time
+  63:.\Motor.c     **** */
+  64:.\Motor.c     **** void motor_backward(uint8 speed,uint32 delay)
+  65:.\Motor.c     **** {
+ 145              		.loc 1 65 0
  146              		.cfi_startproc
  147              		@ args = 0, pretend = 0, frame = 0
  148              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -223,32 +232,32 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccsx7pyK.s 			page 1
  155              		.cfi_offset 14, -4
  156 0002 0446     		mov	r4, r0
  157 0004 0D46     		mov	r5, r1
-  57:.\Motor.c     ****     MotorDirLeft_Write(1);      // set LeftMotor backward mode
- 158              		.loc 1 57 0
+  66:.\Motor.c     ****     MotorDirLeft_Write(1);      // set LeftMotor backward mode
+ 158              		.loc 1 66 0
  159 0006 0120     		movs	r0, #1
  160              	.LVL11:
  161 0008 FFF7FEFF 		bl	MotorDirLeft_Write
  162              	.LVL12:
-  58:.\Motor.c     ****     MotorDirRight_Write(1);     // set RightMotor backward mode
- 163              		.loc 1 58 0
+ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccILEA17.s 			page 5
+
+
+  67:.\Motor.c     ****     MotorDirRight_Write(1);     // set RightMotor backward mode
+ 163              		.loc 1 67 0
  164 000c 0120     		movs	r0, #1
  165 000e FFF7FEFF 		bl	MotorDirRight_Write
  166              	.LVL13:
-  59:.\Motor.c     ****     PWM_WriteCompare1(speed); 
- 167              		.loc 1 59 0
+  68:.\Motor.c     ****     PWM_WriteCompare1(speed); 
+ 167              		.loc 1 68 0
  168 0012 2046     		mov	r0, r4
  169 0014 FFF7FEFF 		bl	PWM_WriteCompare1
-ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccsx7pyK.s 			page 5
-
-
  170              	.LVL14:
-  60:.\Motor.c     ****     PWM_WriteCompare2(speed); 
- 171              		.loc 1 60 0
+  69:.\Motor.c     ****     PWM_WriteCompare2(speed); 
+ 171              		.loc 1 69 0
  172 0018 2046     		mov	r0, r4
  173 001a FFF7FEFF 		bl	PWM_WriteCompare2
  174              	.LVL15:
-  61:.\Motor.c     ****     CyDelay(delay);
- 175              		.loc 1 61 0
+  70:.\Motor.c     ****     CyDelay(delay);
+ 175              		.loc 1 70 0
  176 001e 2846     		mov	r0, r5
  177 0020 FFF7FEFF 		bl	CyDelay
  178              	.LVL16:
@@ -289,6 +298,9 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccsx7pyK.s 			page 1
  213 002e 08       		.byte	0x8
  214 002f 4F000000 		.4byte	.LASF1
  215 0033 02       		.uleb128 0x2
+ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccILEA17.s 			page 6
+
+
  216 0034 02       		.byte	0x2
  217 0035 05       		.byte	0x5
  218 0036 09020000 		.4byte	.LASF2
@@ -298,9 +310,6 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccsx7pyK.s 			page 1
  222 003d 47020000 		.4byte	.LASF3
  223 0041 03       		.uleb128 0x3
  224 0042 00000000 		.4byte	.LASF9
-ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccsx7pyK.s 			page 6
-
-
  225 0046 02       		.byte	0x2
  226 0047 3F       		.byte	0x3f
  227 0048 4C000000 		.4byte	0x4c
@@ -349,6 +358,9 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccsx7pyK.s 			page 1
  270 009c 3D000000 		.4byte	.LASF13
  271 00a0 02       		.uleb128 0x2
  272 00a1 08       		.byte	0x8
+ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccILEA17.s 			page 7
+
+
  273 00a2 04       		.byte	0x4
  274 00a3 9D000000 		.4byte	.LASF14
  275 00a7 02       		.uleb128 0x2
@@ -358,9 +370,6 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccsx7pyK.s 			page 1
  279 00ae 02       		.uleb128 0x2
  280 00af 04       		.byte	0x4
  281 00b0 07       		.byte	0x7
-ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccsx7pyK.s 			page 7
-
-
  282 00b1 ED010000 		.4byte	.LASF16
  283 00b5 06       		.uleb128 0x6
  284 00b6 3B020000 		.4byte	.LASF17
@@ -391,7 +400,7 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccsx7pyK.s 			page 1
  309 00f3 08       		.uleb128 0x8
  310 00f4 8F000000 		.4byte	.LASF21
  311 00f8 01       		.byte	0x1
- 312 00f9 20       		.byte	0x20
+ 312 00f9 23       		.byte	0x23
  313 00fa 00000000 		.4byte	.LFB65
  314 00fe 18000000 		.4byte	.LFE65-.LFB65
  315 0102 01       		.uleb128 0x1
@@ -400,15 +409,18 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccsx7pyK.s 			page 1
  318 0108 09       		.uleb128 0x9
  319 0109 E7010000 		.4byte	.LASF19
  320 010d 01       		.byte	0x1
- 321 010e 20       		.byte	0x20
+ 321 010e 23       		.byte	0x23
  322 010f 81000000 		.4byte	0x81
  323 0113 00000000 		.4byte	.LLST0
  324 0117 09       		.uleb128 0x9
  325 0118 49000000 		.4byte	.LASF20
  326 011c 01       		.byte	0x1
- 327 011d 20       		.byte	0x20
+ 327 011d 23       		.byte	0x23
  328 011e 8D000000 		.4byte	0x8d
  329 0122 21000000 		.4byte	.LLST1
+ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccILEA17.s 			page 8
+
+
  330 0126 0A       		.uleb128 0xa
  331 0127 0A000000 		.4byte	.LVL3
  332 012b 80020000 		.4byte	0x280
@@ -418,9 +430,6 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccsx7pyK.s 			page 1
  336 0135 50       		.byte	0x50
  337 0136 02       		.uleb128 0x2
  338 0137 75       		.byte	0x75
-ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccsx7pyK.s 			page 8
-
-
  339 0138 00       		.sleb128 0
  340 0139 00       		.byte	0
  341 013a 0A       		.uleb128 0xa
@@ -448,7 +457,7 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccsx7pyK.s 			page 1
  363 015f 08       		.uleb128 0x8
  364 0160 65010000 		.4byte	.LASF22
  365 0164 01       		.byte	0x1
- 366 0165 2B       		.byte	0x2b
+ 366 0165 32       		.byte	0x32
  367 0166 00000000 		.4byte	.LFB66
  368 016a 18000000 		.4byte	.LFE66-.LFB66
  369 016e 01       		.uleb128 0x1
@@ -457,19 +466,22 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccsx7pyK.s 			page 1
  372 0174 09       		.uleb128 0x9
  373 0175 46010000 		.4byte	.LASF23
  374 0179 01       		.byte	0x1
- 375 017a 2B       		.byte	0x2b
+ 375 017a 32       		.byte	0x32
  376 017b 81000000 		.4byte	0x81
  377 017f 3F000000 		.4byte	.LLST2
  378 0183 09       		.uleb128 0x9
  379 0184 19000000 		.4byte	.LASF24
  380 0188 01       		.byte	0x1
- 381 0189 2B       		.byte	0x2b
+ 381 0189 32       		.byte	0x32
  382 018a 81000000 		.4byte	0x81
  383 018e 60000000 		.4byte	.LLST3
  384 0192 09       		.uleb128 0x9
  385 0193 49000000 		.4byte	.LASF20
  386 0197 01       		.byte	0x1
- 387 0198 2B       		.byte	0x2b
+ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccILEA17.s 			page 9
+
+
+ 387 0198 32       		.byte	0x32
  388 0199 8D000000 		.4byte	0x8d
  389 019d 81000000 		.4byte	.LLST4
  390 01a1 07       		.uleb128 0x7
@@ -478,9 +490,6 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccsx7pyK.s 			page 1
  393 01aa 0A       		.uleb128 0xa
  394 01ab 10000000 		.4byte	.LVL8
  395 01af 91020000 		.4byte	0x291
-ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccsx7pyK.s 			page 9
-
-
  396 01b3 BE010000 		.4byte	0x1be
  397 01b7 0B       		.uleb128 0xb
  398 01b8 01       		.uleb128 0x1
@@ -503,7 +512,7 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccsx7pyK.s 			page 1
  415 01cf 08       		.uleb128 0x8
  416 01d0 0A000000 		.4byte	.LASF25
  417 01d4 01       		.byte	0x1
- 418 01d5 37       		.byte	0x37
+ 418 01d5 40       		.byte	0x40
  419 01d6 00000000 		.4byte	.LFB67
  420 01da 26000000 		.4byte	.LFE67-.LFB67
  421 01de 01       		.uleb128 0x1
@@ -512,13 +521,13 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccsx7pyK.s 			page 1
  424 01e4 09       		.uleb128 0x9
  425 01e5 E7010000 		.4byte	.LASF19
  426 01e9 01       		.byte	0x1
- 427 01ea 37       		.byte	0x37
+ 427 01ea 40       		.byte	0x40
  428 01eb 81000000 		.4byte	0x81
  429 01ef 9F000000 		.4byte	.LLST5
  430 01f3 09       		.uleb128 0x9
  431 01f4 49000000 		.4byte	.LASF20
  432 01f8 01       		.byte	0x1
- 433 01f9 37       		.byte	0x37
+ 433 01f9 40       		.byte	0x40
  434 01fa 8D000000 		.4byte	0x8d
  435 01fe C0000000 		.4byte	.LLST6
  436 0202 0A       		.uleb128 0xa
@@ -529,6 +538,9 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccsx7pyK.s 			page 1
  441 0210 01       		.uleb128 0x1
  442 0211 50       		.byte	0x50
  443 0212 01       		.uleb128 0x1
+ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccILEA17.s 			page 10
+
+
  444 0213 31       		.byte	0x31
  445 0214 00       		.byte	0
  446 0215 0A       		.uleb128 0xa
@@ -538,9 +550,6 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccsx7pyK.s 			page 1
  450 0222 0B       		.uleb128 0xb
  451 0223 01       		.uleb128 0x1
  452 0224 50       		.byte	0x50
-ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccsx7pyK.s 			page 10
-
-
  453 0225 01       		.uleb128 0x1
  454 0226 31       		.byte	0x31
  455 0227 00       		.byte	0
@@ -589,6 +598,9 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccsx7pyK.s 			page 1
  498 0277 05       		.byte	0x5
  499 0278 92       		.byte	0x92
  500 0279 0F       		.uleb128 0xf
+ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccILEA17.s 			page 11
+
+
  501 027a 1D020000 		.4byte	.LASF27
  502 027e 05       		.byte	0x5
  503 027f 93       		.byte	0x93
@@ -598,9 +610,6 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccsx7pyK.s 			page 1
  507 0286 C7       		.byte	0xc7
  508 0287 91020000 		.4byte	0x291
  509 028b 11       		.uleb128 0x11
-ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccsx7pyK.s 			page 11
-
-
  510 028c 81000000 		.4byte	0x81
  511 0290 00       		.byte	0
  512 0291 10       		.uleb128 0x10
@@ -649,6 +658,9 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccsx7pyK.s 			page 1
  555 0009 1B       		.uleb128 0x1b
  556 000a 0E       		.uleb128 0xe
  557 000b 55       		.uleb128 0x55
+ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccILEA17.s 			page 12
+
+
  558 000c 17       		.uleb128 0x17
  559 000d 11       		.uleb128 0x11
  560 000e 01       		.uleb128 0x1
@@ -658,9 +670,6 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccsx7pyK.s 			page 1
  564 0012 00       		.byte	0
  565 0013 02       		.uleb128 0x2
  566 0014 24       		.uleb128 0x24
-ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccsx7pyK.s 			page 12
-
-
  567 0015 00       		.byte	0
  568 0016 0B       		.uleb128 0xb
  569 0017 0B       		.uleb128 0xb
@@ -709,6 +718,9 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccsx7pyK.s 			page 1
  612 0042 00       		.byte	0
  613 0043 06       		.uleb128 0x6
  614 0044 2E       		.uleb128 0x2e
+ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccILEA17.s 			page 13
+
+
  615 0045 01       		.byte	0x1
  616 0046 3F       		.uleb128 0x3f
  617 0047 19       		.uleb128 0x19
@@ -718,9 +730,6 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccsx7pyK.s 			page 1
  621 004b 0B       		.uleb128 0xb
  622 004c 3B       		.uleb128 0x3b
  623 004d 0B       		.uleb128 0xb
-ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccsx7pyK.s 			page 13
-
-
  624 004e 11       		.uleb128 0x11
  625 004f 01       		.uleb128 0x1
  626 0050 12       		.uleb128 0x12
@@ -769,6 +778,9 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccsx7pyK.s 			page 1
  669 007f 00       		.byte	0
  670 0080 09       		.uleb128 0x9
  671 0081 05       		.uleb128 0x5
+ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccILEA17.s 			page 14
+
+
  672 0082 00       		.byte	0
  673 0083 03       		.uleb128 0x3
  674 0084 0E       		.uleb128 0xe
@@ -778,9 +790,6 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccsx7pyK.s 			page 1
  678 0088 0B       		.uleb128 0xb
  679 0089 49       		.uleb128 0x49
  680 008a 13       		.uleb128 0x13
-ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccsx7pyK.s 			page 14
-
-
  681 008b 02       		.uleb128 0x2
  682 008c 17       		.uleb128 0x17
  683 008d 00       		.byte	0
@@ -829,6 +838,9 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccsx7pyK.s 			page 1
  726 00bf 19       		.uleb128 0x19
  727 00c0 3C       		.uleb128 0x3c
  728 00c1 19       		.uleb128 0x19
+ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccILEA17.s 			page 15
+
+
  729 00c2 00       		.byte	0
  730 00c3 00       		.byte	0
  731 00c4 0E       		.uleb128 0xe
@@ -838,9 +850,6 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccsx7pyK.s 			page 1
  735 00c8 13       		.uleb128 0x13
  736 00c9 00       		.byte	0
  737 00ca 00       		.byte	0
-ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccsx7pyK.s 			page 15
-
-
  738 00cb 0F       		.uleb128 0xf
  739 00cc 2E       		.uleb128 0x2e
  740 00cd 00       		.byte	0
@@ -889,6 +898,9 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccsx7pyK.s 			page 1
  783 00f8 01       		.byte	0x1
  784 00f9 3F       		.uleb128 0x3f
  785 00fa 19       		.uleb128 0x19
+ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccILEA17.s 			page 16
+
+
  786 00fb 03       		.uleb128 0x3
  787 00fc 0E       		.uleb128 0xe
  788 00fd 3A       		.uleb128 0x3a
@@ -898,9 +910,6 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccsx7pyK.s 			page 1
  792 0101 27       		.uleb128 0x27
  793 0102 19       		.uleb128 0x19
  794 0103 3C       		.uleb128 0x3c
-ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccsx7pyK.s 			page 16
-
-
  795 0104 19       		.uleb128 0x19
  796 0105 00       		.byte	0
  797 0106 00       		.byte	0
@@ -949,6 +958,9 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccsx7pyK.s 			page 1
  840              	.LLST3:
  841 0060 00000000 		.4byte	.LVL6
  842 0064 09000000 		.4byte	.LVL7-1
+ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccILEA17.s 			page 17
+
+
  843 0068 0100     		.2byte	0x1
  844 006a 51       		.byte	0x51
  845 006b 09000000 		.4byte	.LVL7-1
@@ -958,9 +970,6 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccsx7pyK.s 			page 1
  849 0076 01       		.uleb128 0x1
  850 0077 51       		.byte	0x51
  851 0078 9F       		.byte	0x9f
-ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccsx7pyK.s 			page 17
-
-
  852 0079 00000000 		.4byte	0
  853 007d 00000000 		.4byte	0
  854              	.LLST4:
@@ -1009,6 +1018,9 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccsx7pyK.s 			page 1
  897 000e 0000     		.2byte	0
  898 0010 00000000 		.4byte	.LFB63
  899 0014 08000000 		.4byte	.LFE63-.LFB63
+ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccILEA17.s 			page 18
+
+
  900 0018 00000000 		.4byte	.LFB64
  901 001c 08000000 		.4byte	.LFE64-.LFB64
  902 0020 00000000 		.4byte	.LFB65
@@ -1018,9 +1030,6 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccsx7pyK.s 			page 1
  906 0030 00000000 		.4byte	.LFB67
  907 0034 26000000 		.4byte	.LFE67-.LFB67
  908 0038 00000000 		.4byte	0
-ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccsx7pyK.s 			page 18
-
-
  909 003c 00000000 		.4byte	0
  910              		.section	.debug_ranges,"",%progbits
  911              	.Ldebug_ranges0:
@@ -1038,7 +1047,7 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccsx7pyK.s 			page 1
  923 002c 00000000 		.4byte	0
  924              		.section	.debug_line,"",%progbits
  925              	.Ldebug_line0:
- 926 0000 E1010000 		.section	.debug_str,"MS",%progbits,1
+ 926 0000 E2010000 		.section	.debug_str,"MS",%progbits,1
  926      02008301 
  926      00000201 
  926      FB0E0D00 
@@ -1069,6 +1078,9 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccsx7pyK.s 			page 1
  938      7400
  939              	.LASF11:
  940 0043 75696E74 		.ascii	"uint8\000"
+ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccILEA17.s 			page 19
+
+
  940      3800
  941              	.LASF20:
  942 0049 64656C61 		.ascii	"delay\000"
@@ -1078,9 +1090,6 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccsx7pyK.s 			page 1
  944      676E6564 
  944      20636861 
  944      7200
-ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccsx7pyK.s 			page 19
-
-
  945              	.LASF5:
  946 005d 6C6F6E67 		.ascii	"long unsigned int\000"
  946      20756E73 
@@ -1129,6 +1138,9 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccsx7pyK.s 			page 1
  962 0139 756E7369 		.ascii	"unsigned int\000"
  962      676E6564 
  962      20696E74 
+ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccILEA17.s 			page 20
+
+
  962      00
  963              	.LASF23:
  964 0146 6C5F7370 		.ascii	"l_speed\000"
@@ -1138,9 +1150,6 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccsx7pyK.s 			page 1
  966      206C6F6E 
  966      6720756E 
  966      7369676E 
-ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccsx7pyK.s 			page 20
-
-
  966      65642069 
  967              	.LASF22:
  968 0165 6D6F746F 		.ascii	"motor_turn\000"
@@ -1189,6 +1198,9 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccsx7pyK.s 			page 1
  985      206C6F6E 
  985      6720696E 
  985      7400
+ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccILEA17.s 			page 21
+
+
  986              	.LASF15:
  987 0204 63686172 		.ascii	"char\000"
  987      00
@@ -1198,9 +1210,6 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccsx7pyK.s 			page 1
  989      7400
  990              	.LASF26:
  991 0213 50574D5F 		.ascii	"PWM_Start\000"
-ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccsx7pyK.s 			page 21
-
-
  991      53746172 
  991      7400
  992              	.LASF27:
