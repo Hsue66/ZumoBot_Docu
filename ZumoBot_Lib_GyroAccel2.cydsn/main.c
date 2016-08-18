@@ -208,9 +208,9 @@ int main()
         
         Z_L_G = I2C_read(GYRO_ADDR, OUT_Z_AXIS_L);
         Z_H_G = I2C_read(GYRO_ADDR, OUT_Z_AXIS_H);
-        Z_AXIS_G = convert_raw(Z_H_G, Z_L_G);
-     
-        
+        Z_AXIS_G = convert_raw(Z_H_G, Z_L_G); 
+
+
         //printf("ACCEL: %d %d %d %d %d %d \r\n", X_L_A, X_H_A, Y_L_A, Y_H_A, Z_L_A, Z_H_A);
         value_convert_accel(X_AXIS_A, Y_AXIS_A, Z_AXIS_A,X_AXIS_G,Y_AXIS_G);
         
