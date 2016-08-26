@@ -1,5 +1,5 @@
 # ZumoBot_Lib
-# 2016-08-04 12:12:35Z
+# 2016-08-26 10:21:50Z
 
 # IO_0@[IOP=(1)][IoId=(0)] is reserved: SWDDebugEnabled
 dont_use_io iocell 1 0
@@ -23,3 +23,6 @@ set_io "LR(0)" iocell 3 4
 set_io "Echo(0)" iocell 2 0
 set_io "Trig(0)" iocell 0 7
 set_io "IR_receiver(0)" iocell 1 7
+set_io "\ADC_Battery:Bypass(0)\" iocell 0 2
+set_io "Battery_pin(0)" iocell 2 7
+set_location "\ADC_Battery:ADC_SAR\" sarcell -1 -1 1

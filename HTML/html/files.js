@@ -5,7 +5,7 @@ var files =
     [ "Ambient.c", "_ambient_8c.html", "_ambient_8c" ],
     [ "Ambient.h", "_ambient_8h.html", "_ambient_8h" ],
     [ "cyapicallbacks.h", "cyapicallbacks_8h.html", null ],
-    [ "Gyro.c", "_gyro_8c.html", null ],
+    [ "Gyro.c", "_gyro_8c.html", "_gyro_8c" ],
     [ "Gyro.h", "_gyro_8h.html", "_gyro_8h" ],
     [ "I2C_made.c", "_i2_c__made_8c.html", "_i2_c__made_8c" ],
     [ "I2C_made.h", "_i2_c__made_8h.html", "_i2_c__made_8h" ],

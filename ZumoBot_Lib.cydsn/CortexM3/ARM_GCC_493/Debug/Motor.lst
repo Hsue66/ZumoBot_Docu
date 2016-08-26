@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccILEA17.s 			page 1
+ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccABttIy.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccILEA17.s 			page 1
   40              	.LFE63:
   41              		.size	motor_Start, .-motor_Start
   42              		.section	.text.motor_Stop,"ax",%progbits
-ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccILEA17.s 			page 2
+ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccABttIy.s 			page 2
 
 
   43              		.align	2
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccILEA17.s 			page 1
   76              		@ frame_needed = 0, uses_anonymous_args = 0
   77              	.LVL2:
   78 0000 38B5     		push	{r3, r4, r5, lr}
-ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccILEA17.s 			page 3
+ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccABttIy.s 			page 3
 
 
   79              		.cfi_def_cfa_offset 16
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccILEA17.s 			page 1
  118              		.cfi_offset 5, -8
  119              		.cfi_offset 14, -4
  120 0002 0D46     		mov	r5, r1
-ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccILEA17.s 			page 4
+ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccABttIy.s 			page 4
 
 
  121 0004 1446     		mov	r4, r2
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccILEA17.s 			page 1
  160              	.LVL11:
  161 0008 FFF7FEFF 		bl	MotorDirLeft_Write
  162              	.LVL12:
-ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccILEA17.s 			page 5
+ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccABttIy.s 			page 5
 
 
   67:.\Motor.c     ****     MotorDirRight_Write(1);     // set RightMotor backward mode
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccILEA17.s 			page 1
  213 002e 08       		.byte	0x8
  214 002f 4F000000 		.4byte	.LASF1
  215 0033 02       		.uleb128 0x2
-ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccILEA17.s 			page 6
+ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccABttIy.s 			page 6
 
 
  216 0034 02       		.byte	0x2
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccILEA17.s 			page 1
  270 009c 3D000000 		.4byte	.LASF13
  271 00a0 02       		.uleb128 0x2
  272 00a1 08       		.byte	0x8
-ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccILEA17.s 			page 7
+ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccABttIy.s 			page 7
 
 
  273 00a2 04       		.byte	0x4
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccILEA17.s 			page 1
  327 011d 23       		.byte	0x23
  328 011e 8D000000 		.4byte	0x8d
  329 0122 21000000 		.4byte	.LLST1
-ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccILEA17.s 			page 8
+ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccABttIy.s 			page 8
 
 
  330 0126 0A       		.uleb128 0xa
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccILEA17.s 			page 1
  384 0192 09       		.uleb128 0x9
  385 0193 49000000 		.4byte	.LASF20
  386 0197 01       		.byte	0x1
-ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccILEA17.s 			page 9
+ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccABttIy.s 			page 9
 
 
  387 0198 32       		.byte	0x32
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccILEA17.s 			page 1
  441 0210 01       		.uleb128 0x1
  442 0211 50       		.byte	0x50
  443 0212 01       		.uleb128 0x1
-ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccILEA17.s 			page 10
+ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccABttIy.s 			page 10
 
 
  444 0213 31       		.byte	0x31
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccILEA17.s 			page 1
  498 0277 05       		.byte	0x5
  499 0278 92       		.byte	0x92
  500 0279 0F       		.uleb128 0xf
-ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccILEA17.s 			page 11
+ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccABttIy.s 			page 11
 
 
  501 027a 1D020000 		.4byte	.LASF27
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccILEA17.s 			page 1
  555 0009 1B       		.uleb128 0x1b
  556 000a 0E       		.uleb128 0xe
  557 000b 55       		.uleb128 0x55
-ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccILEA17.s 			page 12
+ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccABttIy.s 			page 12
 
 
  558 000c 17       		.uleb128 0x17
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccILEA17.s 			page 1
  612 0042 00       		.byte	0
  613 0043 06       		.uleb128 0x6
  614 0044 2E       		.uleb128 0x2e
-ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccILEA17.s 			page 13
+ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccABttIy.s 			page 13
 
 
  615 0045 01       		.byte	0x1
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccILEA17.s 			page 1
  669 007f 00       		.byte	0
  670 0080 09       		.uleb128 0x9
  671 0081 05       		.uleb128 0x5
-ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccILEA17.s 			page 14
+ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccABttIy.s 			page 14
 
 
  672 0082 00       		.byte	0
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccILEA17.s 			page 1
  726 00bf 19       		.uleb128 0x19
  727 00c0 3C       		.uleb128 0x3c
  728 00c1 19       		.uleb128 0x19
-ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccILEA17.s 			page 15
+ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccABttIy.s 			page 15
 
 
  729 00c2 00       		.byte	0
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccILEA17.s 			page 1
  783 00f8 01       		.byte	0x1
  784 00f9 3F       		.uleb128 0x3f
  785 00fa 19       		.uleb128 0x19
-ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccILEA17.s 			page 16
+ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccABttIy.s 			page 16
 
 
  786 00fb 03       		.uleb128 0x3
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccILEA17.s 			page 1
  840              	.LLST3:
  841 0060 00000000 		.4byte	.LVL6
  842 0064 09000000 		.4byte	.LVL7-1
-ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccILEA17.s 			page 17
+ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccABttIy.s 			page 17
 
 
  843 0068 0100     		.2byte	0x1
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccILEA17.s 			page 1
  897 000e 0000     		.2byte	0
  898 0010 00000000 		.4byte	.LFB63
  899 0014 08000000 		.4byte	.LFE63-.LFB63
-ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccILEA17.s 			page 18
+ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccABttIy.s 			page 18
 
 
  900 0018 00000000 		.4byte	.LFB64
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccILEA17.s 			page 1
  938      7400
  939              	.LASF11:
  940 0043 75696E74 		.ascii	"uint8\000"
-ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccILEA17.s 			page 19
+ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccABttIy.s 			page 19
 
 
  940      3800
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccILEA17.s 			page 1
  962 0139 756E7369 		.ascii	"unsigned int\000"
  962      676E6564 
  962      20696E74 
-ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccILEA17.s 			page 20
+ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccABttIy.s 			page 20
 
 
  962      00
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccILEA17.s 			page 1
  985      206C6F6E 
  985      6720696E 
  985      7400
-ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccILEA17.s 			page 21
+ARM GAS  C:\Users\dufma\AppData\Local\Temp\ccABttIy.s 			page 21
 
 
  986              	.LASF15:

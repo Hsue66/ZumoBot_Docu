@@ -188,6 +188,20 @@
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\IR_receiver_aliases.h</File>
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\IR_receiver.c</File>
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\IR_receiver.h</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\ADC_Battery.c</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\ADC_Battery.h</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\ADC_Battery_INT.c</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\ADC_Battery_PM.c</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\Battery_pin_aliases.h</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\Battery_pin.c</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\Battery_pin.h</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\ADC_Battery_IRQ.c</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\ADC_Battery_IRQ.h</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\ADC_Battery_theACLK.c</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\ADC_Battery_theACLK.h</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\ADC_Battery_Bypass_aliases.h</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\ADC_Battery_Bypass.c</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\ADC_Battery_Bypass.h</File>
         </Files>
       </Folder>
       <Folder BuildType="STRICT" Path="C:\Users\dufma\Desktop\Project\ZumoBot_Docu\ZumoBot_Lib.cydsn\Export\ARM_GCC_Generic">
