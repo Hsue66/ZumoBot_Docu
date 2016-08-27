@@ -103,22 +103,49 @@ $(document).ready(function(){initNavTree('_gyro_8c.html','');});
 </div>
 
 <div class="header">
+  <div class="summary">
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">Gyro.c File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Gyroscope method file. For more details, please refer to <a class="el" href="_gyro_8h.html" title="Gyroscope header file. ">Gyro.h</a> file.  
+<p>Basic methods for operating gyroscope. For more details, please refer to <a class="el" href="_gyro_8h.html" title="Gyroscope header file. ">Gyro.h</a> file.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="_gyro_8h_source.html">gyro.h</a>&quot;</code><br />
 </div>
 <p><a href="_gyro_8c_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a949323433b868fa7df876b710d24f9f0"><td class="memItemLeft" align="right" valign="top">uint16&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_gyro_8c.html#a949323433b868fa7df876b710d24f9f0">value_convert_gyro</a> (uint16 raw)</td></tr>
+<tr class="separator:a949323433b868fa7df876b710d24f9f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Gyroscope method file. For more details, please refer to <a class="el" href="_gyro_8h.html" title="Gyroscope header file. ">Gyro.h</a> file. </p>
+<div class="textblock"><p>Basic methods for operating gyroscope. For more details, please refer to <a class="el" href="_gyro_8h.html" title="Gyroscope header file. ">Gyro.h</a> file. </p>
 <p>part number: L3GD20H (included in Zumo shield) </p>
 
 <p>Definition in file <a class="el" href="_gyro_8c_source.html">Gyro.c</a>.</p>
-</div></div><!-- contents -->
+</div><h2 class="groupheader">Function Documentation</h2>
+<a class="anchor" id="a949323433b868fa7df876b710d24f9f0"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16 value_convert_gyro </td>
+          <td>(</td>
+          <td class="paramtype">uint16&#160;</td>
+          <td class="paramname"><em>raw</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_gyro_8c_source.html#l00009">9</a> of file <a class="el" href="_gyro_8c_source.html">Gyro.c</a>.</p>
+<div class="fragment"><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;{</div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <span class="keywordtype">float</span> rate_result;</div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="keywordtype">float</span> G_GAIN = 0.07;                        <span class="comment">// FS = 2000 dps</span></div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;  </div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    rate_result = (float)raw * G_GAIN;          <span class="comment">// degrees per second for Gyroscope</span></div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    </div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keywordflow">return</span> rate_result;</div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;}</div></div><!-- fragment -->
+</div>
+</div>
+</div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

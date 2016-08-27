@@ -1,13 +1,12 @@
 /**
 * @mainpage ZumoBot Project
 * @brief    You can make your own ZumoBot with various sensors.
-* @details  <br>
+* @details  <br><br>
     <p>
     <B>General</B><br>
     You will use Pololu Zumo Shields for your robot project with CY8CKIT-059(PSoC 5LP) from Cypress semiconductor.This 
     library has basic methods of various sensors and communications so that you can make what you want with them. <br> 
-    ************************To be modified later*******************
-    <br><br><br>
+    <br><br>
     </p>
     
     <p>
@@ -55,6 +54,30 @@ int main()
 }
 
 
+/*//battery level//
+int main()
+{
+    CyGlobalIntEnable; 
+    UART_Start();
+    ADC_Battery_Start();        
+    
+    for(;;)
+    {
+        int16 adcresult =0;
+        float volts = 0.0;
+        
+        ADC_Battery_StartConvert();
+        if(ADC_Battery_IsEndConversion(ADC_Battery_WAIT_FOR_RESULT))    // wait for get ADC converted value
+            adcresult = ADC_Battery_GetResult16();
+        volts = ADC_Battery_CountsTo_Volts(adcresult);                  // convert value to Volts
+        
+        // If you want to print value
+        //printf("%d %f\r\n",adcresult, volts);
+    }
+ }   
+//*/
+
+
 /*//ultra sonic sensor//
 int main()
 {
@@ -63,6 +86,7 @@ int main()
     Ultra_Start();                          // Ultra Sonic Start function
  }   
 //*/
+
 
 /*//nunchuk//
 int main()
@@ -80,6 +104,7 @@ int main()
 }   
 //*/
 
+
 /*//IR receiver//
 int main()
 {
@@ -96,6 +121,7 @@ int main()
  }   
 //*/
 
+
 /*//Ambient light sensor//
 int main()
 {
@@ -104,22 +130,11 @@ int main()
     
     I2C_Start();
     
-    uint16 value =0;
+    I2C_write(0x29,0x80,0x00);          // set to power down
+    I2C_write(0x29,0x80,0x03);          // set to power on
     
-    I2C_write(0x29,0x80,0x00);
-    
-    value = I2C_read(0x29,0x80);
-    printf("%x ",value);
-    
-    I2C_write(0x29,0x80,0x03);
-    value = I2C_read(0x29,0x80);
-    printf("%x\r\n",value);
-        
-    value = I2C_read(0x29,0x81);
-    printf("%x\r\n",value);
     for(;;)
-    {
-        
+    {    
         uint8 Data0Low,Data0High,Data1Low,Data1High;
         Data0Low = I2C_read(0x29,CH0_L);
         Data0High = I2C_read(0x29,CH0_H);
@@ -127,24 +142,20 @@ int main()
         Data1High = I2C_read(0x29,CH1_H);
         
         uint8 CH0, CH1;
-        CH0 = convert_raw(Data0Low,Data0High);
-        CH1 = convert_raw(Data1Low,Data1High);
+        CH0 = convert_raw(Data0Low,Data0High);      // combine Data0
+        CH1 = convert_raw(Data1Low,Data1High);      // combine Data1
 
-   //     printf("%d %d %d %d\r\n",Data0Low,Data0High, Data1Low,Data1High);
-   //     printf("%d %d\r\n",CH0,CH1);
-   //        printf("%f\r\n",(float)CH1/CH0);
-        
-   
         double Ch0 = CH0;
         double Ch1 = CH1;
         
         double data = 0;
         data = getLux(Ch0,Ch1);
-        printf("%lf\r\n",data);    
+        
+        // If you want to print out data
+        //printf("%lf\r\n",data);    
     }    
  }   
-*/
-
+//*/
 
 
 /*//accelerometer//
@@ -216,10 +227,10 @@ int main()
 
     motor_Start();              // motor start
 
-    motor_forward(50,2000);     // moving forward
-    motor_turn(10,50,2000);     // turn
-    motor_turn(50,10,2000);     // turn
-    motor_backward(50,2000);    // movinb backward
+    motor_forward(100,2000);     // moving forward
+    motor_turn(200,50,2000);     // turn
+    motor_turn(50,200,2000);     // turn
+    motor_backward(100,2000);    // movinb backward
        
     motor_Stop();               // motor stop
     
@@ -230,6 +241,7 @@ int main()
 }
 //*/
     
+
 /*//gyroscope//
 int main()
 {
@@ -261,15 +273,13 @@ int main()
         Z_H_G = I2C_read(GYRO_ADDR, OUT_Z_AXIS_H);
         Z_AXIS_G = convert_raw(Z_H_G, Z_L_G);
      
-        printf("H L : %d %d %d %d %d %d \r\n", X_L_G, X_H_G, Y_L_G, Y_H_G, Z_L_G, Z_H_G);
+        // If you want to print value
         printf("%d %d %d \r\n", X_AXIS_G, Y_AXIS_G, Z_AXIS_G);
-        //printf("%d %d %d \r\n", value_convert_gyro(X_AXIS_G), value_convert_gyro(Y_AXIS_G), value_convert_gyro(Z_AXIS_G));
-        
-       CyDelay(50);
+        CyDelay(50);
     }
-  
 }   
 //*/
+
 
 /*//magnetometer//
 int main()
@@ -309,7 +319,6 @@ int main()
     }
 }   
 //*/
-
 
 
 #if 0

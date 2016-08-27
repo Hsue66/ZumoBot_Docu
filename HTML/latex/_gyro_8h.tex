@@ -122,3 +122,18 @@ Definition at line 11 of file Gyro.\+h.
 \item[{uint16}]{raw}
 \end{DoxyParamCaption}
 )}\hypertarget{_gyro_8h_a949323433b868fa7df876b710d24f9f0}{}\label{_gyro_8h_a949323433b868fa7df876b710d24f9f0}
+
+
+Definition at line 9 of file Gyro.\+c.
+
+
+\begin{DoxyCode}
+10 \{
+11     \textcolor{keywordtype}{float} rate\_result;
+12     \textcolor{keywordtype}{float} G\_GAIN = 0.07;                        \textcolor{comment}{// FS = 2000 dps}
+13   
+14     rate\_result = (float)raw * G\_GAIN;          \textcolor{comment}{// degrees per second for Gyroscope}
+15     
+16     \textcolor{keywordflow}{return} rate\_result;
+17 \}
+\end{DoxyCode}

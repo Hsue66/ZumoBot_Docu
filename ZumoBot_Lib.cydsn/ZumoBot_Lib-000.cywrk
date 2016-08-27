@@ -8,7 +8,6 @@
 <files />
 <projects>
 <v>.\ZumoBot_Lib.cyprj</v>
-<v>..\ZumoBot_Lib_Backup.cydsn\ZumoBot_Lib_Backup.cyprj</v>
 </projects>
 <workspace_id v="7ed0b5c8-cf9d-413d-ac0b-f14ff77e7fe0" />
 <WriteAppVersionLastSavedWith v="3.3.0.9604" />

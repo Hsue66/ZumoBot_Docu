@@ -101,8 +101,22 @@
   <file name="C:\Users\dufma\Desktop\Project\ZumoBot_Docu\ZumoBot_Lib.cydsn\codegentemp\IR_receiver_aliases.h" value="NONE;IR_receiver" />
   <file name="C:\Users\dufma\Desktop\Project\ZumoBot_Docu\ZumoBot_Lib.cydsn\codegentemp\IR_receiver.c" value="ARM_C_FILE;IR_receiver" />
   <file name="C:\Users\dufma\Desktop\Project\ZumoBot_Docu\ZumoBot_Lib.cydsn\codegentemp\IR_receiver.h" value="NONE;IR_receiver" />
+  <file name="C:\Users\dufma\Desktop\Project\ZumoBot_Docu\ZumoBot_Lib.cydsn\codegentemp\ADC_Battery.c" value="ARM_C_FILE;ADC_Battery" />
+  <file name="C:\Users\dufma\Desktop\Project\ZumoBot_Docu\ZumoBot_Lib.cydsn\codegentemp\ADC_Battery.h" value="NONE;ADC_Battery" />
+  <file name="C:\Users\dufma\Desktop\Project\ZumoBot_Docu\ZumoBot_Lib.cydsn\codegentemp\ADC_Battery_INT.c" value="ARM_C_FILE;ADC_Battery" />
+  <file name="C:\Users\dufma\Desktop\Project\ZumoBot_Docu\ZumoBot_Lib.cydsn\codegentemp\ADC_Battery_PM.c" value="ARM_C_FILE;ADC_Battery" />
+  <file name="C:\Users\dufma\Desktop\Project\ZumoBot_Docu\ZumoBot_Lib.cydsn\codegentemp\Battery_pin_aliases.h" value="NONE;Battery_pin" />
+  <file name="C:\Users\dufma\Desktop\Project\ZumoBot_Docu\ZumoBot_Lib.cydsn\codegentemp\Battery_pin.c" value="ARM_C_FILE;Battery_pin" />
+  <file name="C:\Users\dufma\Desktop\Project\ZumoBot_Docu\ZumoBot_Lib.cydsn\codegentemp\Battery_pin.h" value="NONE;Battery_pin" />
   <file name="C:\Users\dufma\Desktop\Project\ZumoBot_Docu\ZumoBot_Lib.cydsn\codegentemp\UART_IntClock.c" value="ARM_C_FILE;UART_IntClock" />
   <file name="C:\Users\dufma\Desktop\Project\ZumoBot_Docu\ZumoBot_Lib.cydsn\codegentemp\UART_IntClock.h" value="NONE;UART_IntClock" />
+  <file name="C:\Users\dufma\Desktop\Project\ZumoBot_Docu\ZumoBot_Lib.cydsn\codegentemp\ADC_Battery_IRQ.c" value="ARM_C_FILE;ADC_Battery_IRQ" />
+  <file name="C:\Users\dufma\Desktop\Project\ZumoBot_Docu\ZumoBot_Lib.cydsn\codegentemp\ADC_Battery_IRQ.h" value="NONE;ADC_Battery_IRQ" />
+  <file name="C:\Users\dufma\Desktop\Project\ZumoBot_Docu\ZumoBot_Lib.cydsn\codegentemp\ADC_Battery_theACLK.c" value="ARM_C_FILE;ADC_Battery_theACLK" />
+  <file name="C:\Users\dufma\Desktop\Project\ZumoBot_Docu\ZumoBot_Lib.cydsn\codegentemp\ADC_Battery_theACLK.h" value="NONE;ADC_Battery_theACLK" />
+  <file name="C:\Users\dufma\Desktop\Project\ZumoBot_Docu\ZumoBot_Lib.cydsn\codegentemp\ADC_Battery_Bypass_aliases.h" value="NONE;ADC_Battery_Bypass" />
+  <file name="C:\Users\dufma\Desktop\Project\ZumoBot_Docu\ZumoBot_Lib.cydsn\codegentemp\ADC_Battery_Bypass.c" value="ARM_C_FILE;ADC_Battery_Bypass" />
+  <file name="C:\Users\dufma\Desktop\Project\ZumoBot_Docu\ZumoBot_Lib.cydsn\codegentemp\ADC_Battery_Bypass.h" value="NONE;ADC_Battery_Bypass" />
   <file name="C:\Users\dufma\Desktop\Project\ZumoBot_Docu\ZumoBot_Lib.cydsn\codegentemp\cycodeshareimport.ld" value="NONE;" />
   <file name="C:\Users\dufma\Desktop\Project\ZumoBot_Docu\ZumoBot_Lib.cydsn\codegentemp\cycodeshareexport.ld" value="NONE;" />
   <file name="C:\Users\dufma\Desktop\Project\ZumoBot_Docu\ZumoBot_Lib.cydsn\codegentemp\cycodeshareimport.scat" value="NONE;" />

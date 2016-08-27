@@ -2,13 +2,42 @@
 \label{_gyro_8c}\index{Gyro.\+c@{Gyro.\+c}}
 
 
-Gyroscope method file. For more details, please refer to \hyperlink{_gyro_8h}{Gyro.\+h} file.  
+Basic methods for operating gyroscope. For more details, please refer to \hyperlink{_gyro_8h}{Gyro.\+h} file.  
 
 
 {\ttfamily \#include \char`\"{}gyro.\+h\char`\"{}}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+uint16 \hyperlink{_gyro_8c_a949323433b868fa7df876b710d24f9f0}{value\+\_\+convert\+\_\+gyro} (uint16 raw)
+\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
-Gyroscope method file. For more details, please refer to \hyperlink{_gyro_8h}{Gyro.\+h} file. 
+Basic methods for operating gyroscope. For more details, please refer to \hyperlink{_gyro_8h}{Gyro.\+h} file. 
 
 part number\+: L3\+G\+D20H (included in Zumo shield) 
+
+\subsection{Function Documentation}
+\index{Gyro.\+c@{Gyro.\+c}!value\+\_\+convert\+\_\+gyro@{value\+\_\+convert\+\_\+gyro}}
+\index{value\+\_\+convert\+\_\+gyro@{value\+\_\+convert\+\_\+gyro}!Gyro.\+c@{Gyro.\+c}}
+\subsubsection[{\texorpdfstring{value\+\_\+convert\+\_\+gyro(uint16 raw)}{value_convert_gyro(uint16 raw)}}]{\setlength{\rightskip}{0pt plus 5cm}uint16 value\+\_\+convert\+\_\+gyro (
+\begin{DoxyParamCaption}
+\item[{uint16}]{raw}
+\end{DoxyParamCaption}
+)}\hypertarget{_gyro_8c_a949323433b868fa7df876b710d24f9f0}{}\label{_gyro_8c_a949323433b868fa7df876b710d24f9f0}
+
+
+Definition at line 9 of file Gyro.\+c.
+
+
+\begin{DoxyCode}
+10 \{
+11     \textcolor{keywordtype}{float} rate\_result;
+12     \textcolor{keywordtype}{float} G\_GAIN = 0.07;                        \textcolor{comment}{// FS = 2000 dps}
+13   
+14     rate\_result = (float)raw * G\_GAIN;          \textcolor{comment}{// degrees per second for Gyroscope}
+15     
+16     \textcolor{keywordflow}{return} rate\_result;
+17 \}
+\end{DoxyCode}

@@ -1,5 +1,5 @@
 -- Project:   ZumoBot_Lib
--- Generated: 08/04/2016 15:12:35
+-- Generated: 08/26/2016 13:21:50
 -- PSoC Creator  3.3 CP3
 
 ENTITY ZumoBot_Lib IS
@@ -31,6 +31,7 @@ ENTITY ZumoBot_Lib IS
 END ZumoBot_Lib;
 
 ARCHITECTURE __DEFAULT__ OF ZumoBot_Lib IS
+    SIGNAL Battery_pin(0)__PA : bit;
     SIGNAL ClockBlock_100k : bit;
     SIGNAL ClockBlock_1k : bit;
     SIGNAL ClockBlock_32k : bit;
@@ -69,6 +70,8 @@ ARCHITECTURE __DEFAULT__ OF ZumoBot_Lib IS
     SIGNAL Net_3205 : bit;
     SIGNAL Net_3223 : bit;
     SIGNAL Net_3270 : bit;
+    SIGNAL Net_3416 : bit;
+    SIGNAL Net_3419 : bit;
     SIGNAL Net_3633 : bit;
     SIGNAL Net_3907 : bit;
     ATTRIBUTE udbclken_assigned OF Net_3907 : SIGNAL IS "True";
@@ -87,6 +90,23 @@ ARCHITECTURE __DEFAULT__ OF ZumoBot_Lib IS
     SIGNAL SDA_1(0)__PA : bit;
     SIGNAL Trig(0)__PA : bit;
     SIGNAL Tx_1(0)__PA : bit;
+    SIGNAL \\\ADC_Battery:Bypass(0)\\__PA\ : bit;
+    SIGNAL \ADC_Battery:Net_207_0\ : bit;
+    SIGNAL \ADC_Battery:Net_207_10\ : bit;
+    SIGNAL \ADC_Battery:Net_207_11\ : bit;
+    SIGNAL \ADC_Battery:Net_207_1\ : bit;
+    SIGNAL \ADC_Battery:Net_207_2\ : bit;
+    SIGNAL \ADC_Battery:Net_207_3\ : bit;
+    SIGNAL \ADC_Battery:Net_207_4\ : bit;
+    SIGNAL \ADC_Battery:Net_207_5\ : bit;
+    SIGNAL \ADC_Battery:Net_207_6\ : bit;
+    SIGNAL \ADC_Battery:Net_207_7\ : bit;
+    SIGNAL \ADC_Battery:Net_207_8\ : bit;
+    SIGNAL \ADC_Battery:Net_207_9\ : bit;
+    SIGNAL \ADC_Battery:Net_252\ : bit;
+    SIGNAL \ADC_Battery:Net_376\ : bit;
+    ATTRIBUTE global_signal OF \ADC_Battery:Net_376\ : SIGNAL IS true;
+    SIGNAL \ADC_Battery:Net_376_local\ : bit;
     SIGNAL \I2C:Net_1109_0\ : bit;
     SIGNAL \I2C:Net_1109_1\ : bit;
     SIGNAL \I2C:Net_643_0\ : bit;
@@ -223,6 +243,10 @@ ARCHITECTURE __DEFAULT__ OF ZumoBot_Lib IS
     ATTRIBUTE Location OF Trig(0) : LABEL IS "P0[7]";
     ATTRIBUTE lib_model OF IR_receiver(0) : LABEL IS "iocell16";
     ATTRIBUTE Location OF IR_receiver(0) : LABEL IS "P1[7]";
+    ATTRIBUTE lib_model OF \ADC_Battery:Bypass(0)\ : LABEL IS "iocell17";
+    ATTRIBUTE Location OF \ADC_Battery:Bypass(0)\ : LABEL IS "P0[2]";
+    ATTRIBUTE lib_model OF Battery_pin(0) : LABEL IS "iocell18";
+    ATTRIBUTE Location OF Battery_pin(0) : LABEL IS "P2[7]";
     ATTRIBUTE lib_model OF \PWM:PWMUDB:status_2\ : LABEL IS "macrocell1";
     ATTRIBUTE lib_model OF Net_310 : LABEL IS "macrocell2";
     ATTRIBUTE lib_model OF \UART:BUART:counter_load_not\ : LABEL IS "macrocell3";
@@ -252,6 +276,7 @@ ARCHITECTURE __DEFAULT__ OF ZumoBot_Lib IS
     ATTRIBUTE lib_model OF \Timer:TimerUDB:rstSts:stsreg\ : LABEL IS "statusicell4";
     ATTRIBUTE lib_model OF \Timer:TimerUDB:sT16:timerdp:u0\ : LABEL IS "datapathcell5";
     ATTRIBUTE lib_model OF \Timer:TimerUDB:sT16:timerdp:u1\ : LABEL IS "datapathcell6";
+    ATTRIBUTE Location OF \ADC_Battery:ADC_SAR\ : LABEL IS "F(SAR,1)";
     ATTRIBUTE lib_model OF \PWM:PWMUDB:runmode_enable\ : LABEL IS "macrocell19";
     ATTRIBUTE lib_model OF \PWM:PWMUDB:prevCompare1\ : LABEL IS "macrocell20";
     ATTRIBUTE lib_model OF \PWM:PWMUDB:prevCompare2\ : LABEL IS "macrocell21";
@@ -595,6 +620,36 @@ ARCHITECTURE __DEFAULT__ OF ZumoBot_Lib IS
     ATTRIBUTE udb_chain OF macrocell : COMPONENT IS "cin,cout";
     ATTRIBUTE chain_lsb OF macrocell : COMPONENT IS "cin";
     ATTRIBUTE chain_msb OF macrocell : COMPONENT IS "cout";
+    COMPONENT sarcell
+        PORT (
+            clock : IN std_ulogic;
+            pump_clock : IN std_ulogic;
+            clk_udb : IN std_ulogic;
+            sof_udb : IN std_ulogic;
+            vp_ctl_udb_0 : IN std_ulogic;
+            vp_ctl_udb_1 : IN std_ulogic;
+            vp_ctl_udb_2 : IN std_ulogic;
+            vp_ctl_udb_3 : IN std_ulogic;
+            vn_ctl_udb_0 : IN std_ulogic;
+            vn_ctl_udb_1 : IN std_ulogic;
+            vn_ctl_udb_2 : IN std_ulogic;
+            vn_ctl_udb_3 : IN std_ulogic;
+            data_out_udb_0 : OUT std_ulogic;
+            data_out_udb_1 : OUT std_ulogic;
+            data_out_udb_2 : OUT std_ulogic;
+            data_out_udb_3 : OUT std_ulogic;
+            data_out_udb_4 : OUT std_ulogic;
+            data_out_udb_5 : OUT std_ulogic;
+            data_out_udb_6 : OUT std_ulogic;
+            data_out_udb_7 : OUT std_ulogic;
+            data_out_udb_8 : OUT std_ulogic;
+            data_out_udb_9 : OUT std_ulogic;
+            data_out_udb_10 : OUT std_ulogic;
+            data_out_udb_11 : OUT std_ulogic;
+            eof_udb : OUT std_ulogic;
+            irq : OUT std_ulogic;
+            next : OUT std_ulogic);
+    END COMPONENT;
     COMPONENT statusicell
         PORT (
             status_0 : IN std_ulogic;
@@ -640,12 +695,14 @@ BEGIN
             clk_bus => ClockBlock_BUS_CLK_local,
             dsi_clkin_div => open,
             dsi_glb_div => open,
-            dclk_glb_0 => Net_3907,
-            dclk_0 => Net_3907_local,
-            dclk_glb_1 => \UART:Net_9\,
-            dclk_1 => \UART:Net_9_local\,
-            dclk_glb_2 => Net_59,
-            dclk_2 => Net_59_local,
+            dclk_glb_0 => \ADC_Battery:Net_376\,
+            dclk_0 => \ADC_Battery:Net_376_local\,
+            dclk_glb_1 => Net_3907,
+            dclk_1 => Net_3907_local,
+            dclk_glb_2 => \UART:Net_9\,
+            dclk_2 => \UART:Net_9_local\,
+            dclk_glb_3 => Net_59,
+            dclk_3 => Net_59_local,
             clk_bus_glb_ff => \ClockBlock.clk_bus_glb_ff__sig\);
 
     MotorPwmLeft:logicalport
@@ -2109,6 +2166,184 @@ BEGIN
             out_clock_en => '1',
             out_reset => '0');
 
+    \ADC_Battery:Bypass\:logicalport
+        GENERIC MAP(
+            drive_mode => "000",
+            ibuf_enabled => "0",
+            id => "a3a2c142-b8f1-40c7-9a86-c5ed8a52849f/16a808f6-2e13-45b9-bce0-b001c8655113",
+            init_dr_st => "0",
+            input_buffer_sel => "",
+            input_clk_en => 0,
+            input_sync => "1",
+            input_sync_mode => "0",
+            intr_mode => "00",
+            invert_in_clock => 0,
+            invert_in_clock_en => 0,
+            invert_in_reset => 0,
+            invert_out_clock => 0,
+            invert_out_clock_en => 0,
+            invert_out_reset => 0,
+            io_voltage => "",
+            layout_mode => "CONTIGUOUS",
+            oe_conn => "0",
+            oe_reset => 0,
+            oe_sync => "0",
+            output_clk_en => 0,
+            output_clock_mode => "0",
+            output_conn => "0",
+            output_mode => "0",
+            output_reset => 0,
+            output_sync => "0",
+            ovt_hyst_trim => "",
+            ovt_needed => "",
+            ovt_slew_control => "",
+            pa_in_clock => -1,
+            pa_in_clock_en => -1,
+            pa_in_reset => -1,
+            pa_out_clock => -1,
+            pa_out_clock_en => -1,
+            pa_out_reset => -1,
+            pin_aliases => "",
+            pin_mode => "A",
+            por_state => 4,
+            port_alias_group => "",
+            port_alias_required => 0,
+            sio_group_cnt => 0,
+            sio_hifreq => "",
+            sio_hyst => "0",
+            sio_ibuf => "00000000",
+            sio_info => "00",
+            sio_obuf => "00000000",
+            sio_refsel => "00000000",
+            sio_vohsel => "",
+            sio_vtrip => "00000000",
+            slew_rate => "0",
+            spanning => 0,
+            sw_only => 0,
+            use_annotation => "0",
+            vtrip => "10",
+            width => 1,
+            in_clk_inv => 0,
+            in_clken_inv => 0,
+            in_clken_mode => 1,
+            in_rst_inv => 0,
+            out_clk_inv => 0,
+            out_clken_inv => 0,
+            out_clken_mode => 1,
+            out_rst_inv => 0)
+        PORT MAP(
+            in_clock_en => open,
+            in_reset => open,
+            out_clock_en => open,
+            out_reset => open);
+
+    \ADC_Battery:Bypass(0)\:iocell
+        GENERIC MAP(
+            in_sync_mode => 0,
+            out_sync_mode => 0,
+            oe_sync_mode => 0,
+            logicalport => "\ADC_Battery:Bypass\",
+            logicalport_pin_id => 0,
+            io_capabilities => "0000000000000000000000000000000000000000000000000000000000000010")
+        PORT MAP(
+            pa_out => \\\ADC_Battery:Bypass(0)\\__PA\,
+            oe => open,
+            in_clock => open,
+            in_clock_en => '1',
+            in_reset => '0',
+            out_clock => open,
+            out_clock_en => '1',
+            out_reset => '0');
+
+    Battery_pin:logicalport
+        GENERIC MAP(
+            drive_mode => "000",
+            ibuf_enabled => "0",
+            id => "77715107-f8d5-47e5-a629-0fb83101ac6b",
+            init_dr_st => "0",
+            input_buffer_sel => "00",
+            input_clk_en => 0,
+            input_sync => "1",
+            input_sync_mode => "0",
+            intr_mode => "00",
+            invert_in_clock => 0,
+            invert_in_clock_en => 0,
+            invert_in_reset => 0,
+            invert_out_clock => 0,
+            invert_out_clock_en => 0,
+            invert_out_reset => 0,
+            io_voltage => "",
+            layout_mode => "CONTIGUOUS",
+            oe_conn => "0",
+            oe_reset => 0,
+            oe_sync => "0",
+            output_clk_en => 0,
+            output_clock_mode => "0",
+            output_conn => "0",
+            output_mode => "0",
+            output_reset => 0,
+            output_sync => "0",
+            ovt_hyst_trim => "0",
+            ovt_needed => "0",
+            ovt_slew_control => "00",
+            pa_in_clock => -1,
+            pa_in_clock_en => -1,
+            pa_in_reset => -1,
+            pa_out_clock => -1,
+            pa_out_clock_en => -1,
+            pa_out_reset => -1,
+            pin_aliases => "",
+            pin_mode => "A",
+            por_state => 4,
+            port_alias_group => "",
+            port_alias_required => 0,
+            sio_group_cnt => 0,
+            sio_hifreq => "00000000",
+            sio_hyst => "1",
+            sio_ibuf => "00000000",
+            sio_info => "00",
+            sio_obuf => "00000000",
+            sio_refsel => "00000000",
+            sio_vohsel => "00000000",
+            sio_vtrip => "00000000",
+            slew_rate => "0",
+            spanning => 0,
+            sw_only => 0,
+            use_annotation => "0",
+            vtrip => "10",
+            width => 1,
+            in_clk_inv => 0,
+            in_clken_inv => 0,
+            in_clken_mode => 1,
+            in_rst_inv => 0,
+            out_clk_inv => 0,
+            out_clken_inv => 0,
+            out_clken_mode => 1,
+            out_rst_inv => 0)
+        PORT MAP(
+            in_clock_en => open,
+            in_reset => open,
+            out_clock_en => open,
+            out_reset => open);
+
+    Battery_pin(0):iocell
+        GENERIC MAP(
+            in_sync_mode => 0,
+            out_sync_mode => 0,
+            oe_sync_mode => 0,
+            logicalport => "Battery_pin",
+            logicalport_pin_id => 0,
+            io_capabilities => "0000000000000000000000000000000000000000000000000000000000000010")
+        PORT MAP(
+            pa_out => Battery_pin(0)__PA,
+            oe => open,
+            in_clock => open,
+            in_clock_en => '1',
+            in_reset => '0',
+            out_clock => open,
+            out_clock_en => '1',
+            out_reset => '0');
+
     \PWM:PWMUDB:status_2\:macrocell
         GENERIC MAP(
             eqn_main => "(main_0 * main_1)",
@@ -2717,6 +2952,43 @@ BEGIN
         PORT MAP(
             interrupt => Net_4030,
             clock => ClockBlock_BUS_CLK);
+
+    \ADC_Battery:IRQ\:interrupt
+        GENERIC MAP(
+            int_type => "10")
+        PORT MAP(
+            interrupt => Net_3416,
+            clock => ClockBlock_BUS_CLK);
+
+    \ADC_Battery:ADC_SAR\:sarcell
+        GENERIC MAP(
+            cy_registers => "")
+        PORT MAP(
+            clk_udb => \ADC_Battery:Net_376_local\,
+            sof_udb => open,
+            vp_ctl_udb_3 => open,
+            vp_ctl_udb_2 => open,
+            vp_ctl_udb_1 => open,
+            vp_ctl_udb_0 => open,
+            vn_ctl_udb_3 => open,
+            vn_ctl_udb_2 => open,
+            vn_ctl_udb_1 => open,
+            vn_ctl_udb_0 => open,
+            irq => \ADC_Battery:Net_252\,
+            next => Net_3419,
+            data_out_udb_11 => \ADC_Battery:Net_207_11\,
+            data_out_udb_10 => \ADC_Battery:Net_207_10\,
+            data_out_udb_9 => \ADC_Battery:Net_207_9\,
+            data_out_udb_8 => \ADC_Battery:Net_207_8\,
+            data_out_udb_7 => \ADC_Battery:Net_207_7\,
+            data_out_udb_6 => \ADC_Battery:Net_207_6\,
+            data_out_udb_5 => \ADC_Battery:Net_207_5\,
+            data_out_udb_4 => \ADC_Battery:Net_207_4\,
+            data_out_udb_3 => \ADC_Battery:Net_207_3\,
+            data_out_udb_2 => \ADC_Battery:Net_207_2\,
+            data_out_udb_1 => \ADC_Battery:Net_207_1\,
+            data_out_udb_0 => \ADC_Battery:Net_207_0\,
+            eof_udb => Net_3416);
 
     \PWM:PWMUDB:runmode_enable\:macrocell
         GENERIC MAP(
